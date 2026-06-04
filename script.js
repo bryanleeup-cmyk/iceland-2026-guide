@@ -35,8 +35,8 @@ const data = {
         afterIceland: [
           "09/28 巴黎短停：日落塞纳河游船 + 20:00 埃菲尔铁塔亮灯 / 闪灯",
           "10/06 曼彻斯特短停：机场火车进城，北区 / 国家足球博物馆 / 大教堂轻量线",
-          "10/07 里斯本半日游",
-          "10/08 晚上从哥本哈根回北京",
+          "10/07 里斯本半日 CityWalk",
+          "10/08 哥本哈根转机一日游：市区轻量 CityWalk，19:05 CPH 飞北京",
         ],
       },
     },
@@ -104,6 +104,127 @@ const data = {
       },
     },
   ],
+  roleViews: [
+    {
+      id: "all",
+      name: "总览",
+      title: "我负责统筹全局",
+      groupId: "all",
+      spotSegments: ["iceland-six"],
+      accent: "#174e78",
+      summary: "看所有人的重合窗口、共同住宿、六人核心段和后续分流。",
+      notes: ["适合发起人或临时查全局时使用。", "默认显示六人共同段，保留去年参考和完整时间轴。", "如果只想看自己的每天安排，切到下面任意组合。"],
+      facts: [
+        ["共同窗口", "10/03 15:10-10/06 08:00", "六个人真正一起在冰岛"],
+        ["六人核心", "10/04-10/05", "南岸两日 + 蓝冰洞"],
+        ["住宿动作", "取消/改订 10/04", "Fosshotel Lind 原订单要处理"],
+      ],
+      focusDays: [
+        ["10/03", "六人会合 + 追极光", "Fosshotel Lind 会合，晚上报团。"],
+        ["10/04", "南岸两日 Day 1", "08:15 Bus Stop 13 集合，08:30 出发。"],
+        ["10/05", "蓝冰洞 Day 2", "晚上回雷克雅未克，建皇准备早班机。"],
+        ["10/06+", "建皇离开，四人继续", "海港组 + 彤燕组补黄金圈/斯奈山/Reykjanes。"],
+      ],
+      cta: "查看全局",
+    },
+    {
+      id: "jianhuang",
+      name: "建皇组合",
+      title: "我是建皇这一组",
+      groupId: "huangjian",
+      spotSegments: ["jianhuang-spots", "iceland-six"],
+      accent: "#2F80ED",
+      summary: "9/26 三人辛特拉一日游，9/27 早上大巴去波尔图，9/28 经巴黎去冰岛；10/07 里斯本半日，10/08 哥本哈根转机一日游。",
+      notes: ["重点看：9/26 辛特拉团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎转冰岛、10/04-10/05 六人南岸两日、10/07 里斯本半日、10/08 哥本哈根转机。", "10/05 晚回雷克雅未克后不要安排太晚，第二天 08:00 KEF 飞走。", "娘娘 9/28 早上直飞阿姆，后面不进入冰岛主线。"],
+      facts: [
+        ["到冰岛", "09/29 07:50", "你们最早到，可先玩提前段"],
+        ["共同段", "10/04-10/05", "南岸两日 + 蓝冰洞"],
+        ["离开冰岛", "10/06 08:00", "04:45-05:00 建议从酒店出发"],
+        ["回国转机", "10/08 CPH", "哥本哈根轻量一日游"],
+      ],
+      focusDays: [
+        ["09/26", "三人辛特拉一日游", "建皇 + 建建 + 娘娘，08:30 集合，18:00 回集合点。"],
+        ["09/27", "早上大巴去波尔图", "里斯本到波尔图约 3.5 小时，下午玩波尔图。"],
+        ["09/28", "波尔图飞巴黎转冰岛", "一早从 OPO 出发，经巴黎，最后去雷克雅未克。"],
+        ["10/03", "Fosshotel Lind 会合", "下午等彤燕组到齐，晚上追极光。"],
+        ["10/04", "08:15 集合", "Bus Stop 13，上南岸两日小巴。"],
+        ["10/05", "蓝冰洞后回雷市", "晚上不要太晚，确认次日去 KEF 的车。"],
+        ["10/06", "清晨去机场", "KEF 08:00 飞曼彻斯特。"],
+        ["10/07", "里斯本半日 CityWalk", "回到里斯本后只做半日轻量城市步行。"],
+        ["10/08", "哥本哈根转机一日游", "23:00 前一晚到 CPH，19:05 飞北京；白天只走市区轻量线。"],
+      ],
+      cta: "切到建皇",
+    },
+    {
+      id: "haigang",
+      name: "海港组",
+      title: "我是海港组",
+      groupId: "haigang",
+      spotSegments: ["iceland-six", "four-after", "niangniang"],
+      accent: "#F2994A",
+      summary: "10/03 早到冰岛，10/04-10/05 六人南岸两日；10/08 晚飞阿姆，10/09 和娘娘汇合。",
+      notes: ["重点看：10/03 酒店会合、六人南岸两日、10/06 后四人补线、10/08 KEF 飞 AMS。", "10/08 白天不要排太远，必须留还车、行李和值机时间。", "阿姆段只看你们和娘娘相关内容即可。"],
+      facts: [
+        ["到冰岛", "10/03 07:40", "先到酒店寄存/入住"],
+        ["共同段", "10/04-10/05", "南岸两日 + 蓝冰洞"],
+        ["离开冰岛", "10/08 19:15", "KEF 飞阿姆斯特丹"],
+      ],
+      focusDays: [
+        ["10/03", "先到雷市", "去 Fosshotel Lind 放行李，晚上六人追极光。"],
+        ["10/04", "08:15 集合", "Bus Stop 13，上南岸两日小巴。"],
+        ["10/06", "四人继续", "建皇离开后，和彤燕组补线。"],
+        ["10/08", "晚飞 AMS", "白天轻量，留足还车/值机。"],
+        ["10/09", "阿姆汇合", "和娘娘本地玩一天。"],
+      ],
+      cta: "切到海港组",
+    },
+    {
+      id: "tongyan",
+      name: "彤燕组",
+      title: "我是彤燕组",
+      groupId: "tongyan",
+      spotSegments: ["iceland-six", "four-after"],
+      accent: "#27AE60",
+      summary: "10/03 下午到 KEF 后六人齐；10/04-10/05 六人南岸两日，10/10 早上离开冰岛。",
+      notes: ["重点看：10/03 抵达后会合、六人南岸两日、10/06 后四人补线、10/10 早班机。", "10/09 晚建议住机场交通稳定的位置，避免 10/10 早班机压力。", "阿姆斯特丹段与你们无关，默认弱化。"],
+      facts: [
+        ["到冰岛", "10/03 15:10", "你们到后六人正式齐"],
+        ["共同段", "10/04-10/05", "南岸两日 + 蓝冰洞"],
+        ["离开冰岛", "10/10 07:35", "前一晚住机场交通稳的位置"],
+      ],
+      focusDays: [
+        ["10/03", "到 KEF 会合", "去 Fosshotel Lind，晚上追极光。"],
+        ["10/04", "08:15 集合", "Bus Stop 13，上南岸两日小巴。"],
+        ["10/06", "四人继续", "建皇离开后，和海港组补线。"],
+        ["10/09", "离开前轻量", "不要跑远，优先机场交通稳定。"],
+        ["10/10", "早班机", "07:35 KEF 飞布鲁塞尔。"],
+      ],
+      cta: "切到彤燕组",
+    },
+    {
+      id: "niangniang",
+      name: "娘娘",
+      title: "我是娘娘",
+      groupId: null,
+      spotSegments: ["niangniang"],
+      accent: "#8E6AC8",
+      summary: "9/26 和建皇、建建一起走辛特拉一日游；9/28 早上从葡萄牙直飞阿姆，后面不进冰岛主线。",
+      notes: ["重点看：9/26 辛特拉一日游、9/28 早上直飞阿姆、10/09 和海港组阿姆本地汇合。", "9/27 波尔图和 9/28 巴黎转机不是你的主线。", "冰岛住宿、南岸两日、机场转移默认不进入你的主视角。"],
+      facts: [
+        ["你的主线", "辛特拉 + 阿姆", "不去冰岛"],
+        ["葡萄牙", "09/26", "三人辛特拉一日游"],
+        ["去阿姆", "09/28 早上", "葡萄牙直飞阿姆斯特丹"],
+      ],
+      focusDays: [
+        ["09/26", "辛特拉一日游", "08:30 集合，地狱之口、罗卡角、佩纳宫、辛特拉、雷加莱拉庄园。"],
+        ["09/28", "早上直飞阿姆", "和建皇/建建分开；他们走波尔图-巴黎-冰岛。"],
+        ["09/28-10/08", "阿姆上班", "冰岛段与你无关，默认不看。"],
+        ["10/09", "阿姆汇合", "运河区、Museumplein、博物馆二选一、晚饭。"],
+        ["10/10", "送海港回布鲁塞尔", "可一起坐火车或本地送行。"],
+      ],
+      cta: "切到娘娘",
+    },
+  ],
   overlap: {
     start: "2026-10-03T15:10:00",
     end: "2026-10-06T08:00:00",
@@ -140,6 +261,7 @@ const data = {
       name: "Fosshotel Lind（林德城河酒店）",
       status: "需改订",
       detail: "原订 10/03-10/06 三晚；因 10/04 晚南岸团含住宿，需取消/改订 10/04 晚，保留 10/03 和 10/05 雷市住宿。",
+      audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#174e78",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=Fosshotel%20Lind%20Raudararstigur%2018%20Reykjavik",
     },
@@ -151,6 +273,7 @@ const data = {
       name: "南岸两日团含住宿",
       status: "团含",
       detail: "Guide to Iceland 南岸两日 + 蓝冰洞团含南部住宿一晚和早餐；具体酒店可能是 Gerði Guesthouse / Hotel Smyrlabjörg 或同级替代，以确认单为准。",
+      audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#2f6f7e",
     },
     {
@@ -161,6 +284,7 @@ const data = {
       name: "转机前夜住宿",
       status: "待补订单",
       detail: "09/29 06:00 从 CDG 飞 KEF，建议住 CDG 附近或机场交通稳定的位置。",
+      audiences: ["jianhuang"],
       accent: "#2f80ed",
     },
     {
@@ -171,6 +295,7 @@ const data = {
       name: "冰岛提前段住宿",
       status: "待补订单",
       detail: "建皇 09/29 早到冰岛，10/03 再换到六人共同酒店；建议仍住雷克雅未克市区。",
+      audiences: ["jianhuang"],
       accent: "#2f80ed",
     },
     {
@@ -181,6 +306,7 @@ const data = {
       name: "四人后续住宿",
       status: "待补订单",
       detail: "六人段已覆盖南岸和冰河湖，四人后续更适合补黄金圈、斯奈山或 Reykjanes / 蓝湖；10/08 海港 19:15 飞 AMS，最后一晚位置要方便回 KEF。",
+      audiences: ["haigang", "tongyan"],
       accent: "#4ca88f",
     },
     {
@@ -191,6 +317,7 @@ const data = {
       name: "海港组阿姆住宿",
       status: "待补订单",
       detail: "10/09 和娘娘阿姆本地汇合，10/10 坐火车回布鲁塞尔；建议住火车站 / 运河区交通方便处。",
+      audiences: ["haigang", "niangniang"],
       accent: "#f2994a",
     },
     {
@@ -201,6 +328,7 @@ const data = {
       name: "彤燕组离开前住宿",
       status: "待补订单",
       detail: "10/10 07:35 从 KEF 飞布鲁塞尔，10/09 晚建议住机场交通稳定的位置。",
+      audiences: ["tongyan"],
       accent: "#27ae60",
     },
   ],
@@ -212,6 +340,7 @@ const data = {
       plan: "六个人住 Fosshotel Lind；白天只做酒店会合、晚饭、超市补给；晚上六个人报一个追极光团。",
       avoid: "不要排黄金圈、斯奈山半岛、冰河湖这种长距离路线，晚上留体力；第二天 08:30 南岸团出发。",
       stay: "住 Fosshotel Lind；同时确认 10/04 南岸团接送点 Bus Stop 13 和行李限制。",
+      audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#7bb8d8",
     },
     {
@@ -221,6 +350,7 @@ const data = {
       plan: "08:15 左右到 Fosshotel Lind 对应 Bus Stop 13 等车；小巴沿南岸走 Seljalandsfoss、Skógafoss、Reynisfjara 黑沙滩，继续向东到 Jökulsárlón 冰河湖一带。",
       avoid: "今天不要再排黄金圈或市区项目；只带 1 件手提行李，大件行李留在雷克雅未克寄存或酒店协调。",
       stay: "住南岸团含住宿（含早餐）；取消/改订 Fosshotel Lind 10/04 这一晚。",
+      audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#2f6f7e",
     },
     {
@@ -230,6 +360,7 @@ const data = {
       plan: "穿高帮防水登山鞋，导游发头盔和冰爪后坐超级吉普去瓦特纳冰川蓝冰洞；看当天最佳可进入冰洞、钻石沙滩/冰河湖，晚上回雷克雅未克。",
       avoid: "不要安排 10/05 晚从 KEF 离开的航班；回城可能受天气和路况影响。建皇 10/06 早班机需提前订清晨去 KEF 的车。",
       stay: "回雷克雅未克住 Fosshotel Lind；10/06 中午前退房。",
+      audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#54a7c7",
     },
     {
@@ -239,6 +370,7 @@ const data = {
       plan: "建皇中午到曼彻斯特后进城短停：Piccadilly、Northern Quarter、国家足球博物馆 / 大教堂；海港组 + 彤燕组四个人开始包车继续冰岛路线。",
       avoid: "建皇 17:30 左右回到 MAN 机场更稳；四人包车也不要从机场直接冲太远，司机/向导路线要提前确认。",
       stay: "六人共同酒店今天退房；四人后续住宿待补订单。",
+      audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#2f80ed",
     },
     {
@@ -248,6 +380,7 @@ const data = {
       plan: "六人段已经走南岸、冰河湖和蓝冰洞，四人后续建议补黄金圈、斯奈山半岛，或改 Reykjanes / 蓝湖轻量收尾，按天气、住宿和司机建议决定。",
       avoid: "10 月天气变化大，不要重复冲东南长线；10/08 海港晚航班必须留回程余量。",
       stay: "四人包车段住宿待补订单，建议按最终路线订。",
+      audiences: ["haigang", "tongyan"],
       accent: "#4ca88f",
     },
     {
@@ -257,6 +390,7 @@ const data = {
       plan: "白天可做轻量安排，晚上飞阿姆斯特丹。",
       avoid: "注意还车、行李和 KEF 值机时间。",
       stay: "海港组阿姆住宿待补订单；彤燕组继续冰岛住宿待补订单。",
+      audiences: ["haigang", "tongyan"],
       accent: "#f2994a",
     },
     {
@@ -266,6 +400,7 @@ const data = {
       plan: "娘娘不去冰岛，但这天和海港组在阿姆斯特丹本地一起玩；彤燕组仍在冰岛。",
       avoid: "这天不是冰岛六人同游日。",
       stay: "海港组住阿姆待补订单；彤燕组 10/10 早班机前夜住宿待补订单。",
+      audiences: ["haigang", "tongyan", "niangniang"],
       accent: "#f2994a",
     },
     {
@@ -275,6 +410,7 @@ const data = {
       plan: "海港从阿姆斯特丹坐火车回布鲁塞尔；彤燕 07:35 从 KEF 飞布鲁塞尔。",
       avoid: "两组可在布鲁塞尔重新汇合。",
       stay: "冰岛段结束；布鲁塞尔住宿如已订，后续可继续补进总表。",
+      audiences: ["haigang", "tongyan", "niangniang"],
       accent: "#27ae60",
     },
   ],
@@ -291,6 +427,7 @@ const data = {
         ["21:00-01:00", "追极光团按旅行社通知出发；第二天早出发，今晚别熬太满。"],
       ],
       sleep: "住 Fosshotel Lind，10/03 15:00 后入住；大件行李提前问前台能否寄存到 10/05 晚回雷市。",
+      audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#7bb8d8",
     },
     {
@@ -309,6 +446,7 @@ const data = {
         ["晚上", "住旅行团安排的南部住宿，含早餐；远离光污染，天气好有机会看极光。"],
       ],
       sleep: "团含冰岛南部住宿 1 晚和早餐；需要取消/改订 Fosshotel Lind 10/04 晚。",
+      audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#2f6f7e",
     },
     {
@@ -326,6 +464,7 @@ const data = {
         ["晚上", "回 Fosshotel Lind 住 10/05 晚；建皇提前确认 10/06 04:45-05:00 去 KEF 的车。"],
       ],
       sleep: "住 Fosshotel Lind；10/06 中午前退房。",
+      audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#54a7c7",
     },
     {
@@ -340,6 +479,7 @@ const data = {
         ["10/08", "海港 19:15 从 KEF 飞 AMS，当天必须留足还车、行李和值机时间。"],
       ],
       sleep: "四人后续住宿待补订单；最后一晚尽量方便回 KEF。",
+      audiences: ["haigang", "tongyan"],
       accent: "#4ca88f",
     },
   ],
@@ -347,13 +487,13 @@ const data = {
     {
       id: "jianhuang",
       name: "建皇",
-      role: "建皇全程一起：先葡萄牙，巴黎短停看日落塞纳河和亮灯铁塔；最早到冰岛，提前段只报团不自驾；10/06 曼彻斯特短停后回里斯本。",
+      role: "建皇组合：9/26 和娘娘三人走辛特拉一日游，9/27 早上大巴去波尔图，9/28 从波尔图经巴黎去冰岛；10/06 曼彻斯特短停后回里斯本，10/07 半日 CityWalk，10/08 哥本哈根转机一日游。",
       color: "#2F80ED",
       days: [
         ["09/25", "北京 → 伦敦 → 里斯本", "晚上到里斯本，今天只做落地、入住、吃饭。"],
-        ["09/26", "里斯本 + 娘娘加入", "娘娘不去冰岛，但会来葡萄牙和你们一起玩；Belém、修道院外观、大发现纪念碑、Alfama、观景台。"],
-        ["09/27", "波尔图一日", "Ribeira 河岸、路易一世大桥、酒窖 / Douro 河边，晚上早点收行李。"],
-        ["09/28", "波尔图 → 巴黎短停", "09:20 OPO 飞 BVA，12:30 到巴黎博韦；下午转进巴黎/存包，18:45 左右上塞纳河游船看日落，20:00 去 Trocadéro / Champ de Mars 看埃菲尔铁塔亮灯和整点闪灯，22:00 前后回 CDG 附近睡。"],
+        ["09/26", "三人辛特拉一日游", "建皇组合 + 娘娘三个人报里斯本周边一日游：08:30 集合，地狱之口、罗卡角、佩纳宫、辛特拉小镇、雷加莱拉庄园，18:00 回集合点。"],
+        ["09/27", "里斯本 → 波尔图", "早上坐约 3.5 小时大巴从里斯本到波尔图；下午玩 Ribeira 河岸、路易一世大桥、杜罗河边，晚上早点收行李。"],
+        ["09/28", "波尔图 → 巴黎 → 冰岛", "一大早从波尔图出发，09:20 OPO 飞 BVA，巴黎中转后接 09/29 06:00 CDG → KEF；这天和娘娘分开，娘娘早上直飞阿姆。"],
         ["09/29", "清晨 CDG → 冰岛", "06:00 CDG 飞 KEF，07:50 到冰岛；Reykjanes 半岛、蓝湖或雷克雅未克补给，早点睡。"],
         ["09/30", "高地候选 1", "天气和路况允许时选 Landmannalaugar / Þórsmörk 专业 Super Jeep；10 月不自己开 F 路。"],
         ["10/01", "高地候选 2 / 备选线", "高地团不开就走 Reykjanes、蓝湖或雷克雅未克周边；黄金圈/斯奈山可以留给 10/06 后四人补线。"],
@@ -362,7 +502,8 @@ const data = {
         ["10/04", "六人南岸两日团 Day 1", "08:15 左右到 Bus Stop 13 集合，08:30 从雷克雅未克出发；看 Seljalandsfoss、Skógafoss、Reynisfjara 黑沙滩，晚上住团含南部住宿。"],
         ["10/05", "六人蓝冰洞 Day 2", "坐超级吉普去瓦特纳冰川蓝冰洞，看冰洞、Jökulsárlón 冰河湖和 Diamond Beach，晚上回 Fosshotel Lind；提前确认 10/06 清晨去 KEF 的车。"],
         ["10/06", "KEF → 曼彻斯特短停 → 里斯本", "建议 04:45-05:00 从 Fosshotel Lind 出发去 KEF；11:40 到 MAN T2，若入境顺利且无托运行李，12:45 左右坐火车到 Piccadilly；17:30 左右回到机场，20:05 MAN T3 飞 LIS。"],
-        ["10/07", "里斯本半日", "市区收尾、吃饭、买伴手礼。"],
+        ["10/07", "里斯本半日 CityWalk", "回到里斯本后只做半日轻量城市步行，市区收尾、吃饭、买伴手礼。"],
+        ["10/08", "哥本哈根转机一日游", "10/07 23:00 到 CPH，10/08 19:05 飞北京；白天走 Nyhavn、国王新广场、新港运河、Amalienborg / 小美人鱼轻量线，16:00 左右回机场更稳。"],
       ],
     },
     {
@@ -404,12 +545,12 @@ const data = {
     {
       id: "niangniang",
       name: "娘娘",
-      role: "住阿姆斯特丹，在审计公司要加班，不去冰岛；葡萄牙和建皇一起玩，海港组到阿姆后再本地汇合。",
+      role: "住阿姆斯特丹，在审计公司要加班，不去冰岛；9/26 和建皇组合三人辛特拉一日游，9/28 早上直飞阿姆，海港组到阿姆后再本地汇合。",
       color: "#8E6AC8",
       days: [
-        ["09/26", "到葡萄牙和建皇汇合", "建议里斯本会合：Belém、Alfama、观景台、晚饭。"],
-        ["09/27", "葡萄牙继续一起玩", "可一起去波尔图，或按你的可用时间做里斯本 / 辛特拉备选。"],
-        ["09/28-10/08", "回阿姆上班", "娘娘不去冰岛，在审计公司要加班；冰岛段在页面里不算入人数。"],
+        ["09/26", "三人辛特拉一日游", "和建皇组合一起报里斯本周边一日游：08:30 集合，地狱之口、罗卡角、佩纳宫、辛特拉小镇、雷加莱拉庄园，18:00 回集合点。"],
+        ["09/28", "葡萄牙 → 阿姆斯特丹", "早上直飞阿姆斯特丹；从这天开始不跟建皇组合去波尔图/巴黎/冰岛。"],
+        ["09/28-10/08", "阿姆上班", "娘娘不去冰岛，在审计公司要加班；冰岛段在页面里不算入人数。"],
         ["10/09", "阿姆斯特丹本地和海港组汇合", "运河区、Museumplein、Rijksmuseum / Van Gogh Museum 二选一、晚饭。"],
         ["10/10", "送海港回布鲁塞尔", "可一起走阿姆 → 布鲁塞尔火车，或在阿姆本地送行。"],
       ],
@@ -424,28 +565,49 @@ const data = {
   ],
   spots: [
     {
-      id: "belem",
+      id: "sintra-day-tour",
       category: "portugal",
       segments: ["jianhuang-spots", "niangniang"],
-      participant: "建皇 + 娘娘",
-      transport: "城市步行 / 打车 / 公共交通，不涉及冰岛包车",
+      participant: "建皇组合 + 娘娘（三人）",
+      transport: "飞猪一日游小团 / 旅行社车；08:30 集合点出发",
       date: "09/26",
+      city: "里斯本周边",
+      title: "辛特拉 + 罗卡角一日游",
+      image: "assets/spots/sintra-pena.jpg",
+      images: ["assets/spots/sintra-pena.jpg", "assets/spots/gallery/cabo-da-roca.jpg"],
+      bestTime: "08:30-18:00",
+      open: "按旅行社确认单为准；截图行程为 08:30 集合，18:00 回到集合点。",
+      sunset: "里斯本 09/26 日落约 19:28",
+      viewpoint: "罗卡角看欧洲大陆西端海岸线；佩纳宫看彩色宫殿和辛特拉山景；雷加莱拉庄园看花园和井。",
+      notes: [
+        "截图行程：09:30 地狱之口，10:30 罗卡角，12:00 佩纳宫，14:00 辛特拉小镇，15:00 雷加莱拉庄园，17:00 返程。",
+        "这是建皇组合 + 娘娘三个人的葡萄牙共同日。",
+        "佩纳宫和雷加莱拉庄园步行不少，穿舒服鞋；当天不要再叠加里斯本市区重行程。",
+      ],
+    },
+    {
+      id: "belem",
+      category: "portugal",
+      segments: ["jianhuang-spots"],
+      participant: "建皇组合",
+      transport: "城市步行 / 打车 / 公共交通，不涉及冰岛包车",
+      date: "10/07",
       city: "里斯本",
-      title: "Belém 河边线",
+      title: "里斯本半日 CityWalk",
       image: "assets/spots/belem.jpg",
       images: ["assets/spots/belem.jpg", "assets/spots/gallery/belem-1.jpg", "assets/spots/gallery/belem-2.jpg"],
-      bestTime: "16:30-19:30",
+      bestTime: "半天轻量安排",
       open: "Jeronimos 修道院常规日间开放，周一通常关闭；2026 具体票务时间出发前复核。",
-      sunset: "里斯本 09/26 日落约 19:28",
-      viewpoint: "MAAT 河边 / Belém Tower 外侧草地，看塔和特茹河夕阳。",
-      notes: ["娘娘和建皇在葡萄牙一起玩。", "修道院和贝伦塔如果排队长，优先外观 + 河边日落。", "Pastéis de Belém 可当补给，不要把晚饭排太晚。"],
+      sunset: "里斯本 10/07 日落约 19:10",
+      viewpoint: "Belém 河边 / Alfama 观景台二选一，不要把半天走成满日。",
+      notes: ["10/07 只留半天给里斯本 CityWalk。", "建议 Belém、Alfama、观景台按体力二选一，不再塞辛特拉。", "Pastéis de Belém 可当补给，晚上留时间去机场/整理行李。"],
     },
     {
       id: "porto",
       category: "portugal",
-      segments: ["jianhuang-spots", "niangniang"],
-      participant: "建皇 + 娘娘（按娘娘可用时间）",
-      transport: "火车 / 城市步行 / 打车，不涉及冰岛包车",
+      segments: ["jianhuang-spots"],
+      participant: "建皇组合",
+      transport: "09/27 早上里斯本 → 波尔图大巴约 3.5 小时；本地步行 / 打车",
       date: "09/27",
       city: "波尔图",
       title: "路易一世大桥 + Ribeira",
@@ -455,7 +617,7 @@ const data = {
       open: "桥梁和河岸全天可看；酒窖参观需看各酒庄预约。",
       sunset: "波尔图 09/27 日落约 19:24",
       viewpoint: "Jardim do Morro / Serra do Pilar，看大桥、老城和杜罗河日落。",
-      notes: ["晚风大，桥上拍照注意保暖。", "第二天要飞巴黎，晚上别喝太晚。", "日落后桥和河岸亮灯很适合拍合照。"],
+      notes: ["早上从里斯本坐约 3.5 小时大巴到波尔图。", "下午只抓 Ribeira、路易一世大桥、杜罗河边这些高性价比区域。", "第二天 09/28 一大早飞巴黎，晚上别喝太晚。"],
     },
     {
       id: "paris-cruise",
@@ -611,6 +773,27 @@ const data = {
       notes: ["建皇无托运行李才适合进城。", "17:30 左右回到 MAN 机场更稳。", "若入境排队久，改机场吃饭休息。"],
     },
     {
+      id: "copenhagen-layover",
+      category: "copenhagen",
+      segments: ["jianhuang-spots"],
+      participant: "建皇组合",
+      transport: "CPH 机场火车 / 地铁进城；轻量步行，不租车",
+      date: "10/08",
+      city: "哥本哈根",
+      title: "哥本哈根转机一日游",
+      image: "assets/spots/copenhagen.jpg",
+      images: ["assets/spots/copenhagen.jpg"],
+      bestTime: "10:00-16:00",
+      open: "10/07 23:00 到 CPH，10/08 19:05 CPH 飞北京；按机场行李、安检和值机情况动态压缩。",
+      sunset: "哥本哈根 10/08 日落约 18:20",
+      viewpoint: "Nyhavn 新港彩色房子、Kongens Nytorv、Amalienborg 王宫广场；有余力再去小美人鱼。",
+      notes: [
+        "建议 09:30-10:00 进城，先走 Nyhavn / 国王新广场 / 王宫广场。",
+        "午餐放新港或 Torvehallerne 附近，别排太远的餐厅。",
+        "16:00 左右回 CPH 机场更稳；若有托运行李或值机压力，删掉小美人鱼。",
+      ],
+    },
+    {
       id: "amsterdam",
       category: "amsterdam",
       segments: ["niangniang"],
@@ -761,6 +944,8 @@ const timelineStart = asDate(data.meta.timelineStart);
 const timelineEnd = asDate(data.meta.timelineEnd);
 const totalMs = timelineEnd - timelineStart;
 
+const roleChooserEl = document.querySelector("#roleChooser");
+const roleDashboardEl = document.querySelector("#roleDashboard");
 const rowsEl = document.querySelector("#timelineRows");
 const gridEl = document.querySelector("#timelineGrid");
 const canvasEl = document.querySelector("#timelineCanvas");
@@ -780,6 +965,13 @@ const mobileTimelineEl = document.querySelector("#mobileTimelineList");
 const tooltipEl = document.querySelector("#tooltip");
 const referenceTabIds = ["route", "cost", "tips", "packing"];
 let referenceExpanded = false;
+const roleIds = data.roleViews.map((role) => role.id);
+const queryRole = new URLSearchParams(window.location.search).get("role");
+const hashRole = window.location.hash.replace("#", "");
+const roleParam = queryRole || hashRole;
+let activeRoleId = roleIds.includes(roleParam) ? roleParam : "all";
+if (!roleIds.includes(activeRoleId)) activeRoleId = "all";
+const shouldNormalizeRoleUrl = roleIds.includes(queryRole || "");
 
 function asDate(value) {
   return new Date(value);
@@ -797,11 +989,112 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+function getRole(roleId = activeRoleId) {
+  return data.roleViews.find((role) => role.id === roleId) || data.roleViews[0];
+}
+
+function isForRole(item, roleId = activeRoleId) {
+  return roleId === "all" || !item.audiences || item.audiences.includes(roleId);
+}
+
+function updateRoleUrl(roleId) {
+  const url = new URL(window.location.href);
+  url.searchParams.delete("role");
+  url.searchParams.delete("v");
+  if (roleId === "all") {
+    url.hash = "";
+  } else {
+    url.hash = roleId;
+  }
+  window.history.replaceState({}, "", url);
+}
+
 function setWindowPosition(el, start, end) {
   const left = percentAt(start);
   const right = percentAt(end);
   el.style.left = `${left}%`;
   el.style.width = `${Math.max(right - left, 1.2)}%`;
+}
+
+function renderRoleChooser(roleId = activeRoleId) {
+  roleChooserEl.innerHTML = `
+    <div class="role-cards" aria-label="选择角色">
+      ${data.roleViews
+        .map(
+          (role) => `
+            <button
+              class="role-card ${role.id === roleId ? "is-active" : ""}"
+              type="button"
+              data-role="${role.id}"
+              style="--accent:${role.accent}"
+              aria-pressed="${role.id === roleId}"
+            >
+              <span>${role.title}</span>
+              <strong>${role.name}</strong>
+            </button>
+          `,
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function renderRoleDashboard(roleId = activeRoleId) {
+  const role = getRole(roleId);
+  const showGlobalButton = roleId !== "all";
+  roleDashboardEl.innerHTML = `
+    <div class="dashboard-head" style="--accent:${role.accent}">
+      <div>
+        <span>我的重点</span>
+        <h2>${role.name}</h2>
+        <p>${role.summary}</p>
+      </div>
+      <div class="dashboard-actions">
+        ${showGlobalButton ? `<button type="button" data-role="all">看总览</button>` : ""}
+        <a href="#core">看细节</a>
+      </div>
+    </div>
+    <div class="dashboard-facts">
+      ${role.facts
+        .map(
+          ([label, value, note]) => `
+            <article>
+              <span>${label}</span>
+              <strong>${value}</strong>
+              <p>${note}</p>
+            </article>
+          `,
+        )
+        .join("")}
+    </div>
+    <div class="dashboard-plan">
+      <div class="dashboard-plan__title">
+        <span>只看这几天</span>
+        <strong>${roleId === "all" ? "全局关键节点" : "你的关键节点"}</strong>
+      </div>
+      <div class="dashboard-days">
+        ${role.focusDays
+          .map(
+            ([date, title, detail]) => `
+              <article>
+                <time>${date}</time>
+                <div>
+                  <strong>${title}</strong>
+                  <p>${detail}</p>
+                </div>
+              </article>
+            `,
+          )
+          .join("")}
+      </div>
+    </div>
+    <div class="dashboard-next">
+      <a href="#hotel">住宿</a>
+      <a href="#spots">景点</a>
+      <a href="#flights">交通</a>
+      ${showGlobalButton ? `<button type="button" data-role="all">进入完整总览</button>` : `<a href="#timeline">完整时间轴</a>`}
+    </div>
+  `;
 }
 
 function renderGrid() {
@@ -854,8 +1147,9 @@ function renderHighlights() {
   setWindowPosition(document.querySelector(".day-two"), "2026-10-05T00:00:00", "2026-10-06T00:00:00");
 }
 
-function renderDays() {
-  dayGridEl.innerHTML = data.recommendedPlan
+function renderDays(roleId = activeRoleId) {
+  const days = data.recommendedPlan.filter((day) => isForRole(day, roleId));
+  dayGridEl.innerHTML = days
     .map(
       (day) => `
       <article class="day" style="--accent:${day.accent}">
@@ -868,11 +1162,12 @@ function renderDays() {
       </article>
     `,
     )
-    .join("");
+    .join("") || `<p class="empty-state">这个角色没有需要单独跟进的每日行动卡。</p>`;
 }
 
-function renderCoreDays() {
-  coreGridEl.innerHTML = data.coreDays
+function renderCoreDays(roleId = activeRoleId) {
+  const days = data.coreDays.filter((day) => isForRole(day, roleId));
+  coreGridEl.innerHTML = days
     .map(
       (day) => `
         <article class="core-card" style="--accent:${day.accent}">
@@ -903,13 +1198,14 @@ function renderCoreDays() {
         </article>
       `,
     )
-    .join("");
+    .join("") || `<p class="empty-state">这个视角不需要看冰岛六人核心段；如要统筹全部内容，请切回“总览”。</p>`;
 }
 
-function renderStayList() {
+function renderStayList(roleId = activeRoleId) {
+  const stays = data.staySchedule.filter((stay) => isForRole(stay, roleId));
   stayListEl.innerHTML = `
     <div class="stay-list">
-      ${data.staySchedule
+      ${stays
         .map(
           (stay) => `
             <article class="stay-item ${stay.status === "已订" ? "is-booked" : ""}" style="--accent:${stay.accent}">
@@ -924,7 +1220,7 @@ function renderStayList() {
             </article>
           `,
         )
-        .join("")}
+        .join("") || `<p class="empty-state">这个视角暂无需要关注的住宿订单。</p>`}
     </div>
   `;
 }
@@ -1171,7 +1467,13 @@ function applySpotFilter(filter) {
 window.applySpotFilter = applySpotFilter;
 
 function renderSpots(active = "iceland-six") {
-  const spots = active === "all" ? data.spots : data.spots.filter((spot) => spot.segments.includes(active));
+  const roleMatch = typeof active === "string" && active.startsWith("role:");
+  const role = roleMatch ? getRole(active.replace("role:", "")) : null;
+  const spots = role
+    ? data.spots.filter((spot) => spot.segments.some((segment) => role.spotSegments.includes(segment)))
+    : active === "all"
+      ? data.spots
+      : data.spots.filter((spot) => spot.segments.includes(active));
   spotGridEl.innerHTML = spots
     .map(
       (spot) => `
@@ -1208,7 +1510,7 @@ function renderSpots(active = "iceland-six") {
         </article>
       `,
     )
-    .join("");
+    .join("") || `<p class="empty-state">这个视角暂无需要关注的景点卡。</p>`;
 }
 
 function renderPersonTabs(activeId = data.personPlans[0].id) {
@@ -1284,11 +1586,24 @@ function listItems(items) {
   return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 }
 
-function renderFlights() {
-  flightGridEl.innerHTML = data.groups
+function renderFlights(roleId = activeRoleId) {
+  const role = getRole(roleId);
+  const groups =
+    roleId === "all"
+      ? data.groups
+      : role.groupId
+        ? data.groups.filter((group) => group.id === role.groupId)
+        : [];
+
+  if (!groups.length) {
+    flightGridEl.innerHTML = `<p class="empty-state">这个视角没有冰岛航班卡；娘娘主要看葡萄牙和阿姆斯特丹本地汇合。</p>`;
+    return;
+  }
+
+  flightGridEl.innerHTML = groups
     .map(
       (group, index) => `
-      <details class="flight-card" ${index === 1 ? "open" : ""}>
+      <details class="flight-card" ${roleId !== "all" || index === 1 ? "open" : ""}>
         <summary>
           <span class="flight-card__head">
             <strong>${group.name}</strong>
@@ -1390,24 +1705,62 @@ function hideTooltip() {
   tooltipEl.style.display = "none";
 }
 
+function applyRoleView(roleId = activeRoleId, { persist = true } = {}) {
+  activeRoleId = roleIds.includes(roleId) ? roleId : "all";
+  const role = getRole(activeRoleId);
+
+  document.body.dataset.role = activeRoleId;
+  if (persist) {
+    updateRoleUrl(activeRoleId);
+  }
+
+  renderRoleChooser(activeRoleId);
+  renderRoleDashboard(activeRoleId);
+  renderCoreDays(activeRoleId);
+  renderStayList(activeRoleId);
+  renderDays(activeRoleId);
+  renderFlights(activeRoleId);
+
+  if (activeRoleId === "all") {
+    renderSpotFilters("iceland-six");
+    renderSpots("iceland-six");
+    renderPersonTabs();
+    renderPersonPanel();
+    applyFilter("all");
+    return;
+  }
+
+  renderSpotFilters("__role");
+  renderSpots(`role:${activeRoleId}`);
+  renderPersonTabs(activeRoleId);
+  renderPersonPanel(activeRoleId);
+  applyFilter(role.groupId || "all");
+}
+
 renderGrid();
 renderRows();
 renderHighlights();
-renderCoreDays();
-renderStayList();
 renderHotel();
 const requestedReferenceTab = new URLSearchParams(window.location.search).get("ref");
 renderReferenceGuide(
   referenceTabIds.includes(requestedReferenceTab) ? requestedReferenceTab : "route",
   referenceTabIds.includes(requestedReferenceTab),
 );
-renderSpotFilters();
-renderSpots();
 renderMobileTimeline();
-renderDays();
-renderFlights();
-renderPersonTabs();
-renderPersonPanel();
+applyRoleView(activeRoleId, { persist: shouldNormalizeRoleUrl });
+
+roleChooserEl.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-role]");
+  if (!button) return;
+  applyRoleView(button.dataset.role);
+});
+
+roleDashboardEl.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-role]");
+  if (!button) return;
+  applyRoleView(button.dataset.role);
+  document.querySelector("#roleGate")?.scrollIntoView({ behavior: "smooth", block: "start" });
+});
 
 document.querySelectorAll(".filter").forEach((button) => {
   button.addEventListener("click", () => applyFilter(button.dataset.filter));
@@ -1428,8 +1781,7 @@ personTabsEl.addEventListener("click", (event) => {
   const button = event.target.closest("[data-person]");
   if (!button) return;
   const personId = button.dataset.person;
-  renderPersonTabs(personId);
-  renderPersonPanel(personId);
+  applyRoleView(personId);
 });
 
 spotFiltersEl.addEventListener("click", (event) => {

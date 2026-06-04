@@ -4,20 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#eef5f7" />
-    <title>2026 国庆｜三组六人冰岛行程</title>
-    <link rel="stylesheet" href="styles.css?v=ref9" />
+    <title>2026 国庆｜按角色看的冰岛行程</title>
+    <link rel="stylesheet" href="styles.css?v=ref13" />
   </head>
   <body>
     <header class="hero">
       <div class="hero__shade"></div>
       <nav class="topbar" aria-label="页面导航">
-        <a href="#core">六人核心</a>
-        <a href="#hotel">住宿总表</a>
-        <a href="#spots">景点图卡</a>
-        <a href="#reference">去年参考</a>
-        <a href="#personal">个人视角</a>
-        <a href="#timeline">重合时间</a>
-        <a href="#plan">每日安排</a>
+        <a href="#roleGate">选择身份</a>
+        <a href="#myDashboard">我的重点</a>
+        <a href="#core">细节</a>
+        <a href="#timeline">总览</a>
       </nav>
       <div class="hero__content">
         <p class="eyebrow">2026 国庆旅行同步表</p>
@@ -27,7 +24,7 @@
           <span>三组六人行程</span>
         </h1>
         <p class="hero__lead">
-          一眼看清谁什么时候到冰岛、什么时候离开，以及冰岛六人真正一起玩的窗口。
+          先选身份，只看自己的关键日期、集合点、住宿和交通；需要统筹时再切回总览。
         </p>
       </div>
       <div class="hero__next">
@@ -37,7 +34,22 @@
     </header>
 
     <main>
-      <section class="summary" aria-label="核心结论">
+      <section class="role-gate" id="roleGate" aria-label="选择自己的旅行角色">
+        <div class="section-head section-head--compact">
+          <div>
+            <p class="eyebrow">Start here</p>
+            <h2>先选你是谁</h2>
+          </div>
+          <p>选完后，页面只保留和你有关的重点；总览入口仍然保留。</p>
+        </div>
+        <div id="roleChooser"></div>
+      </section>
+
+      <section class="role-dashboard" id="myDashboard" aria-label="我的旅行重点">
+        <div id="roleDashboard"></div>
+      </section>
+
+      <section class="summary global-only" aria-label="核心结论">
         <article>
           <span class="summary__label">共同窗口</span>
           <strong>10/03 15:10 后 - 10/06 08:00 前</strong>
@@ -55,7 +67,7 @@
         </article>
       </section>
 
-      <section class="h5-guide" aria-label="手机快速阅读">
+      <section class="h5-guide global-only" aria-label="手机快速阅读">
         <div class="section-head section-head--compact">
           <div>
             <p class="eyebrow">H5 quick read</p>
@@ -127,7 +139,7 @@
         <div class="core-grid" id="coreGrid"></div>
       </section>
 
-      <section class="panel reference-panel" id="reference">
+      <section class="panel reference-panel global-only" id="reference">
         <div class="section-head">
           <div>
             <p class="eyebrow">2025 reference</p>
@@ -138,7 +150,7 @@
         <div id="referenceGuide"></div>
       </section>
 
-      <section class="panel" id="timeline">
+      <section class="panel global-only" id="timeline">
         <div class="section-head">
           <div>
             <p class="eyebrow">Iceland overlap</p>
@@ -174,7 +186,7 @@
         </div>
       </section>
 
-      <section class="panel" id="plan">
+      <section class="panel global-only" id="plan">
         <div class="section-head">
           <div>
             <p class="eyebrow">Daily plan</p>
@@ -185,7 +197,7 @@
         <div class="day-grid" id="dayGrid"></div>
       </section>
 
-      <section class="panel" id="personal">
+      <section class="panel role-detail-only" id="personal">
         <div class="section-head">
           <div>
             <p class="eyebrow">Personal view</p>
@@ -197,7 +209,7 @@
         <div class="person-panel" id="personPanel" aria-live="polite"></div>
       </section>
 
-      <section class="panel split">
+      <section class="panel split global-only">
         <div>
           <p class="eyebrow">Simple read</p>
           <h2>给每组的一句话版本</h2>
@@ -241,12 +253,12 @@
     </footer>
 
     <nav class="h5-dock" aria-label="手机快捷导航">
+      <a href="#roleGate">身份</a>
       <a href="#core">核心</a>
       <a href="#hotel">住宿</a>
-      <a href="#reference">参考</a>
       <a href="#personal">个人</a>
     </nav>
 
-    <script src="script.js?v=ref9"></script>
+    <script src="script.js?v=ref13"></script>
   </body>
 </html>
