@@ -198,12 +198,12 @@ main {
 
 .role-cards {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
 
 .role-card {
-  min-height: 96px;
+  min-height: 78px;
   border: 1px solid rgba(217, 229, 233, 0.92);
   border-top: 5px solid var(--accent);
   border-radius: 8px;
@@ -223,17 +223,9 @@ main {
   background: linear-gradient(180deg, #ffffff, color-mix(in srgb, var(--accent), transparent 91%));
 }
 
-.role-card span {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 900;
-}
-
 .role-card strong {
   display: block;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .empty-state {
@@ -252,9 +244,6 @@ main {
 }
 
 .dashboard-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
   border: 1px solid rgba(217, 229, 233, 0.88);
   border-left: 8px solid var(--accent);
   border-radius: 8px;
@@ -277,7 +266,6 @@ main {
 }
 
 .dashboard-head p {
-  max-width: 700px;
   margin-bottom: 0;
   color: var(--muted);
   font-size: 17px;
@@ -336,6 +324,7 @@ main {
 
 .dashboard-plan {
   border: 1px solid rgba(217, 229, 233, 0.88);
+  border-top: 5px solid var(--accent);
   border-radius: 8px;
   padding: 18px;
   background: linear-gradient(180deg, #ffffff, rgba(246, 250, 250, 0.96));
@@ -344,8 +333,7 @@ main {
 .dashboard-plan__title {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: flex-start;
   margin-bottom: 12px;
 }
 
@@ -386,7 +374,8 @@ main {
 }
 
 body:not([data-role="all"]) .global-only,
-body:not([data-role="all"]) .role-detail-only {
+body:not([data-role="all"]) .role-detail-only,
+body:not([data-role="all"]) main > section.panel:not(.reference-panel) {
   display: none;
 }
 
@@ -1173,6 +1162,7 @@ footer p {
 }
 
 .reference-panel {
+  margin-bottom: 16px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(241, 247, 242, 0.94)),
     var(--paper);
@@ -1180,7 +1170,7 @@ footer p {
 
 .reference-collapsed {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 16px;
   border-radius: 8px;
@@ -1189,7 +1179,6 @@ footer p {
   box-shadow: inset 0 0 0 1px rgba(217, 229, 233, 0.86);
 }
 
-.reference-collapsed span,
 .reference-full-head span {
   color: var(--muted);
   font-size: 12px;
@@ -1209,19 +1198,11 @@ footer p {
   line-height: 1.55;
 }
 
-.reference-collapsed__chips {
+.reference-actions {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px;
-  max-width: 360px;
-}
-
-.reference-collapsed__chips span {
-  border-radius: 999px;
-  padding: 7px 10px;
-  background: #edf4f6;
-  color: #174e78;
 }
 
 .reference-expand,
@@ -1237,12 +1218,21 @@ footer p {
   white-space: nowrap;
 }
 
+.reference-expand--light {
+  background: #e7eef1;
+  color: #174e78;
+}
+
 .reference-full-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 12px;
+}
+
+.reference-full-head strong {
+  font-size: 20px;
 }
 
 .reference-collapse {
@@ -1886,7 +1876,6 @@ footer {
 
   .summary,
   .dashboard-head,
-  .dashboard-facts,
   .core-grid,
   .hotel-layout,
   .spot-grid,
@@ -1901,22 +1890,11 @@ footer {
   }
 
   .role-cards {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 8px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .role-card {
-    flex: 0 0 min(58vw, 230px);
-    scroll-snap-align: start;
-  }
-
-  .dashboard-actions {
-    justify-content: flex-start;
+    min-height: 70px;
   }
 
   .dashboard-days article {
@@ -1932,7 +1910,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .reference-collapsed__chips {
+  .reference-actions {
     justify-content: flex-start;
     max-width: none;
   }
@@ -2365,4 +2343,11 @@ footer {
   .packing-list {
     grid-template-columns: 1fr;
   }
+}
+
+body[data-role="none"] main > section:not(.role-gate),
+body:not([data-role="all"]) main > section.panel:not(.reference-panel),
+body:not([data-role="all"]) .global-only,
+body:not([data-role="all"]) .role-detail-only {
+  display: none !important;
 }

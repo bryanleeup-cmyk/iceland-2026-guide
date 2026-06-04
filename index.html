@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#eef5f7" />
     <title>2026 国庆｜按角色看的冰岛行程</title>
-    <link rel="stylesheet" href="styles.css?v=ref13" />
+    <link rel="stylesheet" href="styles.css?v=ref18" />
   </head>
   <body>
     <header class="hero">
       <div class="hero__shade"></div>
       <nav class="topbar" aria-label="页面导航">
-        <a href="#roleGate">选择身份</a>
-        <a href="#myDashboard">我的重点</a>
-        <a href="#core">细节</a>
-        <a href="#timeline">总览</a>
+        <a href="#roleGate">选择组合</a>
+        <a href="#myDashboard">我的行程</a>
       </nav>
       <div class="hero__content">
         <p class="eyebrow">2026 国庆旅行同步表</p>
@@ -24,7 +22,7 @@
           <span>三组六人行程</span>
         </h1>
         <p class="hero__lead">
-          先选身份，只看自己的关键日期、集合点、住宿和交通；需要统筹时再切回总览。
+          选组合，看自己的每天安排。
         </p>
       </div>
       <div class="hero__next">
@@ -37,16 +35,18 @@
       <section class="role-gate" id="roleGate" aria-label="选择自己的旅行角色">
         <div class="section-head section-head--compact">
           <div>
-            <p class="eyebrow">Start here</p>
             <h2>先选你是谁</h2>
           </div>
-          <p>选完后，页面只保留和你有关的重点；总览入口仍然保留。</p>
         </div>
         <div id="roleChooser"></div>
       </section>
 
       <section class="role-dashboard" id="myDashboard" aria-label="我的旅行重点">
         <div id="roleDashboard"></div>
+      </section>
+
+      <section class="panel reference-panel" id="reference" aria-label="行程和花销参考">
+        <div id="referenceGuide"></div>
       </section>
 
       <section class="summary global-only" aria-label="核心结论">
@@ -84,17 +84,17 @@
           <article>
             <span>02</span>
             <strong>住宿要改订</strong>
-            <p>Fosshotel Lind 保留 10/03 和 10/05；10/04 晚团含南部住宿，需取消/改订。</p>
+            <p>林德城河酒店保留 10/03 和 10/05；10/04 晚团含南部住宿，需取消/改订。</p>
           </article>
           <article>
             <span>03</span>
             <strong>六人南岸两日团</strong>
-            <p>10/04 08:15 左右去 Bus Stop 13 集合，08:30 雷克雅未克出发。</p>
+            <p>10/04 08:15 左右去 13 号接送点集合，08:30 雷克雅未克出发。</p>
           </article>
           <article>
             <span>04</span>
             <strong>10/06 建皇飞走</strong>
-            <p>08:00 KEF 起飞，需清晨从酒店去机场。</p>
+            <p>08:00 从雷克雅未克凯夫拉维克机场起飞，需清晨从酒店去机场。</p>
           </article>
           <article>
             <span>05</span>
@@ -134,20 +134,9 @@
             <p class="eyebrow">Six-person core</p>
             <h2>10/04-10/05 六人冰岛核心玩法</h2>
           </div>
-          <p>改成南岸两日小巴团：10/04 从雷克雅未克出发，团含南部住宿；10/05 晚回雷克雅未克，建皇 10/06 清晨再去 KEF。</p>
+          <p>改成南岸两日小巴团：10/04 从雷克雅未克出发，团含南部住宿；10/05 晚回雷克雅未克，建皇 10/06 清晨再去雷克雅未克凯夫拉维克机场。</p>
         </div>
         <div class="core-grid" id="coreGrid"></div>
-      </section>
-
-      <section class="panel reference-panel global-only" id="reference">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">2025 reference</p>
-            <h2>去年朋友十一冰岛攻略参考</h2>
-          </div>
-          <p>默认收起，只保留去年攻略的轻量摘要；需要对照时再展开查看路线、费用、经验和行李清单。</p>
-        </div>
-        <div id="referenceGuide"></div>
       </section>
 
       <section class="panel global-only" id="timeline">
@@ -203,7 +192,7 @@
             <p class="eyebrow">Personal view</p>
             <h2>每个人点开看自己的每天安排</h2>
           </div>
-          <p>手机上点组名切换视角；建皇全程一起，娘娘不去冰岛但参与葡萄牙和阿姆本地段。</p>
+          <p>手机上点组名切换视角；建皇葡萄牙段和娘娘一起到波尔图，娘娘不去冰岛，后面参与阿姆斯特丹本地段。</p>
         </div>
         <div class="person-tabs" id="personTabs" aria-label="选择个人视角"></div>
         <div class="person-panel" id="personPanel" aria-live="polite"></div>
@@ -217,7 +206,7 @@
         <div class="readable-list">
           <article style="--accent:#2f80ed">
             <strong>建皇</strong>
-            <p>你最早到冰岛，朋友到齐前可以先玩非核心点；10/04-10/05 和六个人一起走南岸两日团，10/06 清晨去 KEF。</p>
+            <p>你最早到冰岛，朋友到齐前可以先玩非核心点；10/04-10/05 和六个人一起走南岸两日团，10/06 清晨去雷克雅未克凯夫拉维克机场。</p>
           </article>
           <article style="--accent:#f2994a">
             <strong>海港组</strong>
@@ -225,7 +214,7 @@
           </article>
           <article style="--accent:#8e6ac8">
             <strong>娘娘</strong>
-            <p>你不去冰岛，在审计公司要加班；你和建皇在葡萄牙一起玩，海港组到阿姆后再本地汇合。</p>
+            <p>你不去冰岛，在审计公司要加班；你 9/26 和建皇一起走里斯本郊区海边一日游，9/27 一起去波尔图，9/28 从波尔图去阿姆斯特丹。</p>
           </article>
           <article style="--accent:#27ae60">
             <strong>彤燕组</strong>
@@ -253,12 +242,10 @@
     </footer>
 
     <nav class="h5-dock" aria-label="手机快捷导航">
-      <a href="#roleGate">身份</a>
-      <a href="#core">核心</a>
-      <a href="#hotel">住宿</a>
-      <a href="#personal">个人</a>
+      <a href="#roleGate">组合</a>
+      <a href="#myDashboard">行程</a>
     </nav>
 
-    <script src="script.js?v=ref13"></script>
+    <script src="script.js?v=ref18"></script>
   </body>
 </html>
