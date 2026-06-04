@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eef5f7" />
+    <title>2026 国庆｜三组六人冰岛行程</title>
+    <link rel="stylesheet" href="styles.css?v=ref9" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__shade"></div>
+      <nav class="topbar" aria-label="页面导航">
+        <a href="#core">六人核心</a>
+        <a href="#hotel">住宿总表</a>
+        <a href="#spots">景点图卡</a>
+        <a href="#reference">去年参考</a>
+        <a href="#personal">个人视角</a>
+        <a href="#timeline">重合时间</a>
+        <a href="#plan">每日安排</a>
+      </nav>
+      <div class="hero__content">
+        <p class="eyebrow">2026 国庆旅行同步表</p>
+        <h1>
+          <span>葡萄牙 + 冰岛 +</span>
+          <span>布鲁塞尔</span>
+          <span>三组六人行程</span>
+        </h1>
+        <p class="hero__lead">
+          一眼看清谁什么时候到冰岛、什么时候离开，以及冰岛六人真正一起玩的窗口。
+        </p>
+      </div>
+      <div class="hero__next">
+        <span>冰岛六人都在</span>
+        <strong>10/03 15:10 后 - 10/06 08:00 前</strong>
+      </div>
+    </header>
+
+    <main>
+      <section class="summary" aria-label="核心结论">
+        <article>
+          <span class="summary__label">共同窗口</span>
+          <strong>10/03 15:10 后 - 10/06 08:00 前</strong>
+          <p>彤燕组落地后冰岛六人齐，建皇 10/06 早班机离开。</p>
+        </article>
+        <article>
+          <span class="summary__label">六人核心日</span>
+          <strong>10/04-10/05 南岸两日 + 蓝冰洞</strong>
+          <p>六个人一起报小巴团，雷克雅未克接送，团里含 10/04 南部住宿和早餐。</p>
+        </article>
+        <article>
+          <span class="summary__label">娘娘</span>
+          <strong>葡萄牙 + 阿姆本地一起玩，不去冰岛</strong>
+          <p>娘娘在审计公司要加班，葡萄牙和建皇一起玩，阿姆斯特丹和海港组本地汇合。</p>
+        </article>
+      </section>
+
+      <section class="h5-guide" aria-label="手机快速阅读">
+        <div class="section-head section-head--compact">
+          <div>
+            <p class="eyebrow">H5 quick read</p>
+            <h2>手机先看这个</h2>
+          </div>
+          <p>给群里转发时，大家先看这 5 件事就不会乱。</p>
+        </div>
+        <div class="h5-guide__rail">
+          <article>
+            <span>01</span>
+            <strong>10/03 晚追极光</strong>
+            <p>六个人晚上报团追极光；冰岛全程不自驾。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>住宿要改订</strong>
+            <p>Fosshotel Lind 保留 10/03 和 10/05；10/04 晚团含南部住宿，需取消/改订。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>六人南岸两日团</strong>
+            <p>10/04 08:15 左右去 Bus Stop 13 集合，08:30 雷克雅未克出发。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <strong>10/06 建皇飞走</strong>
+            <p>08:00 KEF 起飞，需清晨从酒店去机场。</p>
+          </article>
+          <article>
+            <span>05</span>
+            <strong>10/06 后四人包车</strong>
+            <p>建皇离开后，海港组 + 彤燕组四个人包车继续。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel hotel-panel" id="hotel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Shared stay</p>
+            <h2>住宿总表</h2>
+          </div>
+          <p>已订住宿放在最前面；还没订的夜晚也一起列出，后续补订单时直接替换成酒店信息。</p>
+        </div>
+        <div id="stayList"></div>
+        <div id="hotelCard"></div>
+      </section>
+
+      <section class="panel spot-panel" id="spots">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Visual spots</p>
+            <h2>按参与对象看景点</h2>
+          </div>
+          <p>默认只看冰岛六人共同段；其他人按自己的入口切换。每张卡顶部是真实照片横滑图集，图片尽量匹配日落、亮灯、夜景等场景。</p>
+        </div>
+        <div class="spot-filters" id="spotFilters" aria-label="景点筛选"></div>
+        <div class="spot-grid" id="spotGrid"></div>
+      </section>
+
+      <section class="panel core-panel" id="core">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Six-person core</p>
+            <h2>10/04-10/05 六人冰岛核心玩法</h2>
+          </div>
+          <p>改成南岸两日小巴团：10/04 从雷克雅未克出发，团含南部住宿；10/05 晚回雷克雅未克，建皇 10/06 清晨再去 KEF。</p>
+        </div>
+        <div class="core-grid" id="coreGrid"></div>
+      </section>
+
+      <section class="panel reference-panel" id="reference">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">2025 reference</p>
+            <h2>去年朋友十一冰岛攻略参考</h2>
+          </div>
+          <p>默认收起，只保留去年攻略的轻量摘要；需要对照时再展开查看路线、费用、经验和行李清单。</p>
+        </div>
+        <div id="referenceGuide"></div>
+      </section>
+
+      <section class="panel" id="timeline">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Iceland overlap</p>
+            <h2>冰岛停留时间轴</h2>
+          </div>
+          <p>冰岛段统一按当地时间展示。时间轴只放到达和离开，详细航班在下方展开。</p>
+        </div>
+
+        <div class="controls" aria-label="筛选">
+          <button class="filter is-active" type="button" data-filter="all">全部</button>
+          <button class="filter" type="button" data-filter="huangjian">葡萄牙：建皇</button>
+          <button class="filter" type="button" data-filter="haigang">海港组</button>
+          <button class="filter" type="button" data-filter="tongyan">彤燕组</button>
+          <button class="filter filter--overlap" type="button" data-filter="overlap">只看重合窗口</button>
+        </div>
+
+        <p class="mobile-hint">手机先看三张时间卡；下面的横向时间轴可以滑动精看 09/29 到 10/10 全段。</p>
+        <div class="mobile-timeline-list" id="mobileTimelineList" aria-label="手机三组时间卡"></div>
+        <div class="timeline-wrap" tabindex="0" aria-label="2026 年 9 月 29 日到 10 月 10 日的冰岛停留时间轴">
+          <div class="timeline" id="timelineCanvas">
+            <div class="timeline__grid" id="timelineGrid" aria-hidden="true"></div>
+            <div class="timeline__shared" id="sharedWindow" aria-hidden="true"></div>
+            <div class="timeline__full-day day-one" aria-hidden="true"></div>
+            <div class="timeline__full-day day-two" aria-hidden="true"></div>
+            <div class="timeline__rows" id="timelineRows"></div>
+          </div>
+        </div>
+
+        <div class="context" id="contextPanel" aria-live="polite">
+          <span class="context__chip">当前视角</span>
+          <h3>全部三组</h3>
+          <p>先看三条时间条的交集：10/03 下午冰岛六人齐，10/03 晚追极光团，10/04-10/05 六人南岸两日 + 蓝冰洞小巴团，全程无人自驾，10/06 建皇早班机离开。</p>
+        </div>
+      </section>
+
+      <section class="panel" id="plan">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Daily plan</p>
+            <h2>每日行动卡</h2>
+          </div>
+          <p>从会合到各自离开，每天只保留最重要的判断。</p>
+        </div>
+        <div class="day-grid" id="dayGrid"></div>
+      </section>
+
+      <section class="panel" id="personal">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Personal view</p>
+            <h2>每个人点开看自己的每天安排</h2>
+          </div>
+          <p>手机上点组名切换视角；建皇全程一起，娘娘不去冰岛但参与葡萄牙和阿姆本地段。</p>
+        </div>
+        <div class="person-tabs" id="personTabs" aria-label="选择个人视角"></div>
+        <div class="person-panel" id="personPanel" aria-live="polite"></div>
+      </section>
+
+      <section class="panel split">
+        <div>
+          <p class="eyebrow">Simple read</p>
+          <h2>给每组的一句话版本</h2>
+        </div>
+        <div class="readable-list">
+          <article style="--accent:#2f80ed">
+            <strong>建皇</strong>
+            <p>你最早到冰岛，朋友到齐前可以先玩非核心点；10/04-10/05 和六个人一起走南岸两日团，10/06 清晨去 KEF。</p>
+          </article>
+          <article style="--accent:#f2994a">
+            <strong>海港组</strong>
+            <p>你们 10/03 早上到冰岛，10/08 晚上飞阿姆斯特丹；10/09 和娘娘在阿姆本地一起玩，10/10 坐火车回布鲁塞尔。</p>
+          </article>
+          <article style="--accent:#8e6ac8">
+            <strong>娘娘</strong>
+            <p>你不去冰岛，在审计公司要加班；你和建皇在葡萄牙一起玩，海港组到阿姆后再本地汇合。</p>
+          </article>
+          <article style="--accent:#27ae60">
+            <strong>彤燕组</strong>
+            <p>你们 10/03 下午到冰岛，是六人齐的开始点；10/10 早上飞回布鲁塞尔，和海港组在布鲁塞尔段重新接上。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="flights">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Flight cards</p>
+            <h2>航班与后续摘要</h2>
+          </div>
+          <p>默认收起，点开看完整交通信息。</p>
+        </div>
+        <div class="flight-grid" id="flightGrid"></div>
+      </section>
+    </main>
+
+    <div class="tooltip" id="tooltip" role="status"></div>
+
+    <footer>
+      <p>时间说明：冰岛 2026 年全年 GMT / UTC+0，本页冰岛段按当地时间展示。高地、海岸线和天气相关安排需出发前复核 road.is / safetravel.is。</p>
+    </footer>
+
+    <nav class="h5-dock" aria-label="手机快捷导航">
+      <a href="#core">核心</a>
+      <a href="#hotel">住宿</a>
+      <a href="#reference">参考</a>
+      <a href="#personal">个人</a>
+    </nav>
+
+    <script src="script.js?v=ref9"></script>
+  </body>
+</html>
