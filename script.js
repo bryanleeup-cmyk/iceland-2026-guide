@@ -832,8 +832,8 @@ const data = {
       date: "10/09",
       city: "阿姆斯特丹",
       title: "运河 + 博物馆区",
-      image: "assets/spots/amsterdam.jpg",
-      images: ["assets/spots/amsterdam.jpg"],
+      image: "assets/spots/city/amsterdam-canal.jpg",
+      images: ["assets/spots/city/amsterdam-canal.jpg", "assets/spots/city/amsterdam-rijksmuseum.jpg", "assets/spots/city/amsterdam-magere-brug.jpg"],
       bestTime: "10:30-20:00",
       open: "荷兰国家博物馆当前常规 09:00-17:00；梵高博物馆需预约时段，以官网为准。",
       sunset: "阿姆斯特丹 10/09 日落约 19:00",
@@ -976,8 +976,8 @@ const dailyVisuals = {
   "jianhuang|09/27": { city: "波尔图", sunrise: "07:26", sunset: "19:23", season: "9 月底波尔图日落在杜罗河边最舒服，傍晚看大桥和老城灯光。", images: ["assets/spots/porto.jpg", "assets/spots/gallery/porto-1.jpg"] },
   "jianhuang|09/28": { city: "巴黎", sunrise: "07:45", sunset: "19:36", season: "9 月底巴黎入秋，傍晚塞纳河和埃菲尔铁塔亮灯最值得留时间。", images: ["assets/spots/eiffel.jpg", "assets/spots/gallery/eiffel-1.jpg", "assets/spots/gallery/eiffel-2.jpg", "assets/spots/gallery/eiffel-3.jpg", "assets/spots/paris-cruise.jpg"] },
   "jianhuang|09/29": { city: "雷克雅未克", sunrise: "07:29", sunset: "19:04", season: "刚到冰岛，9 月底白天还有足够光线，适合市区补给和轻量看海岸。", images: ["assets/spots/aurora.jpg", "assets/spots/gullfoss.jpg"] },
-  "jianhuang|09/30": { city: "索斯莫克", sunrise: "07:22", sunset: "18:51", season: "索斯莫克 9 月底是秋色，山谷苔原、冰川河和火山地貌层次明显，风雨变化也快。", images: ["assets/spots/season/thorsmork-autumn.jpg"] },
-  "jianhuang|10/01": { city: "雷克雅未克 / 高地", sunrise: "07:35", sunset: "18:57", season: "10 月初高地天气开始硬核，彩色山、熔岩地貌和温泉区很美，但必须听专业团安排。", images: ["assets/spots/landmannalaugar.jpg", "assets/spots/season/thorsmork-autumn.jpg"] },
+  "jianhuang|09/30": { city: "索斯莫克", sunrise: "07:22", sunset: "18:51", season: "索斯莫克 9 月底是秋色，山谷苔原、冰川河和火山地貌层次明显，风雨变化也快。", images: ["assets/spots/season/thorsmork-autumn.jpg", "assets/spots/season/thorsmork-valley-summer.jpg", "assets/spots/season/thorsmork-hiking-summer.jpg"] },
+  "jianhuang|10/01": { city: "雷克雅未克 / 高地", sunrise: "07:35", sunset: "18:57", season: "10 月初高地天气开始硬核，彩色山、熔岩地貌和温泉区很美，但必须听专业团安排。", images: ["assets/spots/iceland/landmannalaugar-1.jpg", "assets/spots/iceland/landmannalaugar-2.jpg", "assets/spots/iceland/landmannalaugar-3.jpg"] },
   "jianhuang|10/02": { city: "雷克雅未克 / 斯奈山", sunrise: "07:38", sunset: "18:54", season: "斯奈山 10 月初海风强、云层变化快，半岛瀑布、海岸线和教会山都适合阴天氛围。", images: ["assets/spots/season/snaefellsnes-autumn.jpg", "assets/spots/snaefellsnes.jpg"] },
   "jianhuang|10/03": { city: "雷克雅未克", sunrise: "07:41", sunset: "18:50", season: "10 月初黄金圈水量和秋色都好，蓝湖适合放在长线之后恢复体力。", images: ["assets/spots/gullfoss.jpg", "assets/spots/gallery/gullfoss-strokkur.jpg", "assets/spots/gallery/gullfoss-thingvellir.jpg", "assets/spots/aurora.jpg"] },
   "jianhuang|10/04": { city: "冰岛南岸", sunrise: "07:33", sunset: "18:38", season: "10 月初南岸瀑布水雾大，黑沙滩风浪也大，照片很出片但要离浪线远一点。", images: ["assets/spots/reynisfjara.jpg", "assets/spots/gallery/reynisfjara-seljalandsfoss.jpg", "assets/spots/gallery/reynisfjara-skogafoss.jpg"] },
@@ -994,8 +994,8 @@ const dailyVisuals = {
   "haigang|10/05": { city: "冰岛南岸", sunrise: "07:36", sunset: "18:34", season: "蓝冰洞、冰河湖和钻石沙滩是这天的核心，光线偏冷，拍照很好看。", images: ["assets/spots/jokulsarlon.jpg", "assets/spots/reynisfjara.jpg"] },
   "haigang|10/06": { city: "雷克雅未克", sunrise: "07:50", sunset: "18:40", season: "建皇离开后，四人段适合按天气补黄金圈或雷克雅未克周边。", images: ["assets/spots/gullfoss.jpg", "assets/spots/gallery/gullfoss-thingvellir.jpg"] },
   "haigang|10/07": { city: "雷克雅未克 / 斯奈山", sunrise: "07:53", sunset: "18:36", season: "如果天气稳，斯奈山半岛的海岸线和教会山适合放在这天。", images: ["assets/spots/season/snaefellsnes-autumn.jpg", "assets/spots/snaefellsnes.jpg"] },
-  "haigang|10/08": { city: "雷克雅未克 / 阿姆斯特丹", sunrise: "07:55", sunset: "18:33", season: "离开冰岛当天不要跑远，适合蓝湖或机场附近轻量收尾。", images: ["assets/spots/aurora.jpg", "assets/spots/amsterdam.jpg"] },
-  "haigang|10/09": { city: "阿姆斯特丹", sunrise: "07:54", sunset: "19:00", season: "10 月初阿姆斯特丹运河区入秋，傍晚蓝调时刻很好看。", images: ["assets/spots/amsterdam.jpg"] },
+  "haigang|10/08": { city: "雷克雅未克 / 阿姆斯特丹", sunrise: "07:55", sunset: "18:33", season: "离开冰岛当天不要跑远，适合蓝湖或机场附近轻量收尾。", images: ["assets/spots/aurora.jpg", "assets/spots/city/amsterdam-canal.jpg", "assets/spots/city/amsterdam-magere-brug.jpg"] },
+  "haigang|10/09": { city: "阿姆斯特丹", sunrise: "07:54", sunset: "19:00", season: "10 月初阿姆斯特丹运河区入秋，傍晚蓝调时刻很好看。", images: ["assets/spots/city/amsterdam-canal.jpg", "assets/spots/city/amsterdam-rijksmuseum.jpg", "assets/spots/city/amsterdam-magere-brug.jpg"] },
   "haigang|10/10": { city: "布鲁塞尔", sunrise: "07:56", sunset: "19:01", season: "布鲁塞尔 10 月初适合广场、巧克力和轻量城市步行。", images: ["assets/spots/brussels.jpg"] },
   "haigang|10/11-10/12": { city: "布鲁塞尔 / 上海", sunrise: "07:58", sunset: "18:59", season: "返程两天只看转机和休息，欧洲段已进入明显秋天。", images: ["assets/spots/brussels.jpg", "assets/spots/shanghai.jpg"] },
 
@@ -1012,11 +1012,11 @@ const dailyVisuals = {
 
   "niangniang|09/25": { city: "里斯本", sunrise: "07:26", sunset: "19:29", season: "9 月底从阿姆斯特丹飞到里斯本，晚上只适合入住和吃饭。", images: ["assets/spots/belem.jpg", "assets/spots/sintra-pena.jpg"] },
   "niangniang|09/26": { city: "里斯本周边", sunrise: "07:27", sunset: "19:27", season: "辛特拉和罗卡角是葡萄牙海边秋日感最强的一天。", images: ["assets/spots/sintra-pena.jpg", "assets/spots/gallery/cabo-da-roca.jpg", "assets/tours/sintra-roca-0926.png"] },
-  "niangniang|09/27": { city: "波尔图 / 阿姆斯特丹", sunrise: "07:26", sunset: "19:23", season: "白天看波尔图河岸，晚上飞回阿姆斯特丹，别把下午排太满。", images: ["assets/spots/porto.jpg", "assets/spots/amsterdam.jpg"] },
-  "niangniang|09/28": { city: "阿姆斯特丹", sunrise: "07:35", sunset: "19:25", season: "9 月底阿姆斯特丹入秋，今天以恢复和工作节奏为主。", images: ["assets/spots/amsterdam.jpg"] },
-  "niangniang|09/28-10/08": { city: "阿姆斯特丹", sunrise: "07:35-07:52", sunset: "19:25-19:02", season: "阿姆斯特丹这段是工作节奏，周末或下班后看运河区最合适。", images: ["assets/spots/amsterdam.jpg"] },
-  "niangniang|10/09": { city: "阿姆斯特丹", sunrise: "07:54", sunset: "19:00", season: "10 月初阿姆斯特丹运河和博物馆区适合和海港组汇合。", images: ["assets/spots/amsterdam.jpg"] },
-  "niangniang|10/10": { city: "阿姆斯特丹 / 布鲁塞尔", sunrise: "07:56", sunset: "19:01", season: "如果一起去布鲁塞尔，秋天广场夜景比白天更有氛围。", images: ["assets/spots/amsterdam.jpg", "assets/spots/brussels.jpg"] },
+  "niangniang|09/27": { city: "波尔图 / 阿姆斯特丹", sunrise: "07:26", sunset: "19:23", season: "白天看波尔图河岸，晚上飞回阿姆斯特丹，别把下午排太满。", images: ["assets/spots/city/porto-ribeira-bridge-1.jpg", "assets/spots/city/porto-ribeira-bridge-2.jpg", "assets/spots/city/amsterdam-canal.jpg"] },
+  "niangniang|09/28": { city: "阿姆斯特丹", sunrise: "07:35", sunset: "19:25", season: "9 月底阿姆斯特丹入秋，今天以恢复和工作节奏为主。", images: ["assets/spots/city/amsterdam-canal.jpg", "assets/spots/city/amsterdam-rijksmuseum.jpg", "assets/spots/city/amsterdam-magere-brug.jpg"] },
+  "niangniang|09/28-10/08": { city: "阿姆斯特丹", sunrise: "07:35-07:52", sunset: "19:25-19:02", season: "阿姆斯特丹这段是工作节奏，周末或下班后看运河区最合适。", images: ["assets/spots/city/amsterdam-canal.jpg", "assets/spots/city/amsterdam-rijksmuseum.jpg", "assets/spots/city/amsterdam-magere-brug.jpg"] },
+  "niangniang|10/09": { city: "阿姆斯特丹", sunrise: "07:54", sunset: "19:00", season: "10 月初阿姆斯特丹运河和博物馆区适合和海港组汇合。", images: ["assets/spots/city/amsterdam-canal.jpg", "assets/spots/city/amsterdam-rijksmuseum.jpg", "assets/spots/city/amsterdam-magere-brug.jpg"] },
+  "niangniang|10/10": { city: "阿姆斯特丹 / 布鲁塞尔", sunrise: "07:56", sunset: "19:01", season: "如果一起去布鲁塞尔，秋天广场夜景比白天更有氛围。", images: ["assets/spots/city/amsterdam-canal.jpg", "assets/spots/city/amsterdam-magere-brug.jpg", "assets/spots/brussels.jpg"] },
 };
 
 const fallbackDailyVisual = {
@@ -1026,6 +1026,40 @@ const fallbackDailyVisual = {
   season: "按当天主要停留地看天气和日照，照片为同线路真实参考。",
   images: ["assets/route-hero.png"],
 };
+
+const iconicImageRules = [
+  {
+    match: (key) => key === "jianhuang|09/30",
+    images: ["assets/spots/season/thorsmork-autumn.jpg", "assets/spots/season/thorsmork-valley-summer.jpg", "assets/spots/season/thorsmork-hiking-summer.jpg"],
+    replace: true,
+  },
+  {
+    match: (key) => key === "jianhuang|10/01",
+    images: ["assets/spots/iceland/landmannalaugar-1.jpg", "assets/spots/iceland/landmannalaugar-2.jpg", "assets/spots/iceland/landmannalaugar-3.jpg"],
+    replace: true,
+  },
+  { match: (_, visual) => visual.city.includes("阿姆斯特丹"), images: ["assets/spots/city/amsterdam-canal.jpg", "assets/spots/city/amsterdam-rijksmuseum.jpg", "assets/spots/city/amsterdam-magere-brug.jpg"], replace: true },
+  { match: (_, visual) => visual.city.includes("哥本哈根"), images: ["assets/spots/city/copenhagen-nyhavn.jpg", "assets/spots/city/copenhagen-little-mermaid.jpg", "assets/spots/city/copenhagen-amalienborg.jpg"] },
+  { match: (_, visual) => visual.city.includes("曼彻斯特"), images: ["assets/spots/city/manchester-town-hall.jpg", "assets/spots/city/manchester-rylands.jpg", "assets/spots/city/manchester-castlefield.jpg"], replace: true },
+  { match: (_, visual) => visual.city.includes("布鲁塞尔"), images: ["assets/spots/brussels.jpg", "assets/spots/city/brussels-atomium.jpg", "assets/spots/city/brussels-galeries.jpg"] },
+  { match: (_, visual) => visual.city.includes("上海"), images: ["assets/spots/city/shanghai-bund-promenade.jpg", "assets/spots/city/shanghai-yuyuan.jpg", "assets/spots/city/shanghai-lujiazui-bund.jpg"], replace: true },
+  { match: (_, visual) => visual.city.includes("深圳"), images: ["assets/spots/city/shenzhen-civic-center.jpg", "assets/spots/city/shenzhen-pingan.jpg", "assets/spots/city/shenzhen-oct-harbour.jpg"], replace: true },
+  { match: (_, visual) => visual.city.includes("北京"), images: ["assets/spots/city/beijing-forbidden-city.jpg", "assets/spots/city/beijing-temple-heaven.jpg", "assets/spots/city/beijing-tiananmen.jpg"], replace: true },
+  { match: (_, visual) => visual.city.includes("里斯本"), images: ["assets/spots/belem.jpg", "assets/spots/gallery/belem-1.jpg", "assets/spots/gallery/belem-2.jpg"] },
+  { match: (_, visual) => visual.city.includes("波尔图"), images: ["assets/spots/city/porto-ribeira-bridge-1.jpg", "assets/spots/city/porto-ribeira-bridge-2.jpg", "assets/spots/city/porto-ribeira-bridge-3.jpg"], replace: true },
+  { match: (_, visual) => visual.city.includes("雷克雅未克") && visual.city.includes("斯奈山"), images: ["assets/spots/season/snaefellsnes-autumn.jpg", "assets/spots/snaefellsnes.jpg", "assets/spots/gallery/gullfoss-thingvellir.jpg"] },
+  { match: (_, visual) => visual.city.includes("斯奈山"), images: ["assets/spots/season/snaefellsnes-autumn.jpg", "assets/spots/snaefellsnes.jpg", "assets/spots/gallery/gullfoss-thingvellir.jpg"] },
+  { match: (_, visual) => visual.city.includes("雷克雅未克") && !visual.city.includes("高地"), images: ["assets/spots/iceland/reykjavik-hallgrimskirkja.jpg", "assets/spots/iceland/reykjavik-harpa.jpg", "assets/spots/iceland/reykjavik-coast.jpg"] },
+  { match: (_, visual) => visual.city.includes("黄金圈"), images: ["assets/spots/gullfoss.jpg", "assets/spots/iceland/thingvellir-1.jpg", "assets/spots/iceland/strokkur-1.jpg"] },
+  { match: (_, visual) => visual.city.includes("冰岛南岸"), images: ["assets/spots/reynisfjara.jpg", "assets/spots/gallery/reynisfjara-seljalandsfoss.jpg", "assets/spots/gallery/reynisfjara-skogafoss.jpg", "assets/spots/iceland/jokulsarlon-1.jpg", "assets/spots/iceland/diamond-beach-1.jpg"] },
+];
+
+Object.entries(dailyVisuals).forEach(([key, visual]) => {
+  const rule = iconicImageRules.find((item) => item.match(key, visual));
+  if (!rule) return;
+  const baseImages = rule.replace ? [] : visual.images.filter((image) => image !== "assets/spots/amsterdam.jpg");
+  visual.images = [...new Set([...baseImages, ...rule.images])].slice(0, Math.max(3, rule.images.length));
+});
 
 function getDailyVisual(personId, date, title, detail) {
   const direct = dailyVisuals[`${personId}|${date}`];
