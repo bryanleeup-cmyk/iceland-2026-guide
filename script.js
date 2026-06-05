@@ -25,8 +25,8 @@ const data = {
           "10/08 哥本哈根机场 T3 19:05 → 10/09 北京首都机场 T3 09:55｜TP8782",
         ],
         icelandOutbound: [
-          "09/28 波尔图机场 09:20 → 巴黎博韦机场 12:30｜瑞安航空 FR594",
-          "09/29 巴黎戴高乐机场 06:00 → 雷克雅未克凯夫拉维克机场 07:50｜易捷航空 EZY4629",
+          "09/28 波尔图弗朗西斯科卡内罗机场 09:05 → 巴黎奥利机场 T1 12:15｜易捷航空 U24886",
+          "09/29 巴黎戴高乐机场 T2D 06:00 → 雷克雅未克凯夫拉维克机场 07:50｜易捷航空 U24629",
         ],
         icelandReturn: [
           "10/06 雷克雅未克凯夫拉维克机场 08:00 → 曼彻斯特机场 T2 11:40",
@@ -121,7 +121,7 @@ const data = {
       ],
       focusDays: [
         ["10/03", "六人会合 + 追极光", "林德城河酒店会合，晚上报团。"],
-        ["10/04", "南岸两日第一天", "08:15 到 13 号接送点集合，08:30 出发。"],
+        ["10/04", "南岸两日第一天", "Nice Travel 南岸两日团想订；集合点和出发时间以确认单为准。"],
         ["10/05", "蓝冰洞第二天", "晚上回雷克雅未克，建皇准备早班机。"],
         ["10/06+", "建皇离开，四人继续", "海港组 + 彤燕组补黄金圈、斯奈山或雷克雅内斯半岛。"],
       ],
@@ -134,8 +134,8 @@ const data = {
       groupId: "huangjian",
       spotSegments: ["jianhuang-spots", "iceland-six"],
       accent: "#2F80ED",
-      summary: "9/26 里斯本郊区海边一日游，9/27 三个人一起去波尔图，9/28 建皇经巴黎去冰岛；10/07 里斯本半日，10/08 哥本哈根转机一日游。",
-      notes: ["重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎转冰岛、10/02 冰岛一日游、10/04-10/05 六人南岸两日、10/07 里斯本半日、10/08 哥本哈根转机。", "10/05 晚回雷克雅未克后不要安排太晚，第二天 08:00 从雷克雅未克凯夫拉维克机场飞走。", "娘娘 9/27 一起去波尔图，9/28 从波尔图飞阿姆斯特丹，后面不进入冰岛主线。"],
+      summary: "9/26 里斯本郊区海边一日游，9/27 三个人一起去波尔图，娘娘当晚飞回阿姆斯特丹；9/28 建皇经巴黎奥利机场去冰岛。",
+      notes: ["重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、10/01 高地超级吉普、10/02 斯奈山、10/03 黄金圈 + 蓝湖、10/04-10/05 六人南岸两日、10/07 里斯本半日、10/08 哥本哈根转机。", "10/05 晚回雷克雅未克后不要安排太晚，第二天 08:00 从雷克雅未克凯夫拉维克机场飞走。", "娘娘 9/27 一起去波尔图，20:50 从波尔图飞阿姆斯特丹，9/28 00:25 落地，后面不进入冰岛主线。"],
       facts: [
         ["到冰岛", "09/29 07:50", "你们最早到，可先玩提前段"],
         ["共同段", "10/04-10/05", "南岸两日 + 蓝冰洞"],
@@ -143,13 +143,13 @@ const data = {
         ["回国转机", "10/08 哥本哈根", "哥本哈根轻量一日游"],
       ],
       focusDays: [
-        ["09/26", "里斯本郊区海边一日游", "建皇 + 建建 + 娘娘，08:30 集合，18:00 回集合点。"],
+        ["09/26", "里斯本出发辛特拉 + 罗卡角一日游", "建皇 + 建建 + 娘娘，09:00 从里斯本市区出发；地狱之口、罗卡角、雷加莱拉庄园、辛特拉王宫、佩纳宫。"],
         ["09/27", "三个人去波尔图", "里斯本到波尔图约 3.5 小时，下午玩波尔图。"],
-        ["09/28", "建皇飞巴黎转冰岛", "建皇一早从波尔图机场出发，经巴黎，最后去雷克雅未克；娘娘从波尔图飞阿姆斯特丹。"],
-        ["10/03", "林德城河酒店会合", "下午等彤燕组到齐，晚上追极光。"],
-        ["10/04", "08:15 集合", "13 号接送点，上南岸两日小巴。"],
-        ["10/02", "报一日游多看景点", "不要浪费整天，优先选能当天往返的自然景观一日游。"],
-        ["10/03", "灵活休整 + 等朋友", "朋友陆续到冰岛，白天可温泉、观鲸或市区补给，晚上追极光。"],
+        ["09/28", "建皇飞巴黎转冰岛", "建皇 09:05 从波尔图机场出发，12:15 落地巴黎奥利机场，航班易捷航空 U24886；娘娘已在 09/27 晚飞回阿姆斯特丹。"],
+        ["10/01", "想订高地超级吉普", "兰德曼那劳卡高地团，约 08:00 接，约 19:00 回；看高地景点，徒步约 2 小时，也可直接泡天然温泉。"],
+        ["10/02", "想订斯奈山一日团", "雷克雅未克往返小团，看教会山、黑教堂、海岸线、渔村和黑沙滩。"],
+        ["10/03", "想订黄金圈 + 蓝湖", "白天走辛格维利尔国家公园、盖歇尔间歇泉、黄金瀑布，再去蓝湖；晚上六人追极光。"],
+        ["10/04", "想订南岸两日", "Nice Travel 团想订；集合点和出发时间以确认单为准。"],
         ["10/05", "蓝冰洞后回雷市", "晚上不要太晚，确认次日去雷克雅未克凯夫拉维克机场的车。"],
         ["10/06", "清晨去机场", "08:00 从雷克雅未克凯夫拉维克机场飞曼彻斯特。"],
         ["10/07", "里斯本半日城市步行", "回到里斯本后只做半日轻量城市步行。"],
@@ -173,7 +173,7 @@ const data = {
       ],
       focusDays: [
         ["10/03", "先到雷市", "去林德城河酒店放行李，晚上六人追极光。"],
-        ["10/04", "08:15 集合", "13 号接送点，上南岸两日小巴。"],
+        ["10/04", "想订南岸两日", "Nice Travel 团想订；集合点和出发时间以确认单为准。"],
         ["10/06", "四人继续", "建皇离开后，和彤燕组补线。"],
         ["10/08", "晚飞阿姆斯特丹", "白天轻量，留足还车/值机。"],
         ["10/09", "阿姆汇合", "和娘娘本地玩一天。"],
@@ -196,7 +196,7 @@ const data = {
       ],
       focusDays: [
         ["10/03", "到冰岛会合", "去林德城河酒店，晚上追极光。"],
-        ["10/04", "08:15 集合", "13 号接送点，上南岸两日小巴。"],
+        ["10/04", "想订南岸两日", "Nice Travel 团想订；集合点和出发时间以确认单为准。"],
         ["10/06", "四人继续", "建皇离开后，和海港组补线。"],
         ["10/09", "离开前轻量", "不要跑远，优先机场交通稳定。"],
         ["10/10", "早班机", "07:35 从雷克雅未克凯夫拉维克机场飞布鲁塞尔。"],
@@ -210,17 +210,19 @@ const data = {
       groupId: null,
       spotSegments: ["niangniang"],
       accent: "#8E6AC8",
-      summary: "9/26 和建皇、建建一起走里斯本郊区海边一日游；9/27 一起去波尔图；9/28 从波尔图飞阿姆斯特丹，后面不进冰岛主线。",
-      notes: ["重点看：9/26 里斯本郊区海边一日游、9/27 去波尔图、9/28 从波尔图飞阿姆斯特丹、10/09 和海港组阿姆斯特丹本地汇合。", "9/28 巴黎转机和冰岛段不是你的主线。", "冰岛住宿、南岸两日、机场转移默认不进入你的主视角。"],
+      summary: "9/25 阿姆斯特丹飞里斯本；9/26 一起走里斯本郊区海边一日游；9/27 一起去波尔图，晚上飞回阿姆斯特丹。",
+      notes: ["重点看：9/25 阿姆斯特丹飞里斯本、9/26 里斯本郊区海边一日游、9/27 去波尔图并晚班机回阿姆斯特丹、10/09 和海港组阿姆斯特丹本地汇合。", "9/28 巴黎转机和冰岛段不是你的主线。", "冰岛住宿、南岸两日、机场转移默认不进入你的主视角。"],
       facts: [
         ["你的主线", "葡萄牙 + 阿姆斯特丹", "不去冰岛"],
-        ["葡萄牙", "09/26", "里斯本郊区海边一日游"],
-        ["去阿姆斯特丹", "09/28 早上", "从波尔图飞阿姆斯特丹"],
+        ["葡萄牙", "09/26", "辛特拉 + 罗卡角一日游"],
+        ["到里斯本", "09/25 晚上", "19:40 阿姆斯特丹起飞，21:50 里斯本落地"],
+        ["回阿姆斯特丹", "09/27-09/28", "20:50 波尔图起飞，00:25 阿姆斯特丹落地"],
       ],
       focusDays: [
-        ["09/26", "里斯本郊区海边一日游", "08:30 集合，地狱之口、罗卡角、佩纳宫、辛特拉小镇、雷加莱拉庄园。"],
+        ["09/25", "阿姆斯特丹飞里斯本", "19:40 从阿姆斯特丹史基浦机场起飞，21:50 落地里斯本机场 T1；飞行 2 小时 10 分，无中转。"],
+        ["09/26", "里斯本出发辛特拉 + 罗卡角一日游", "09:00 从里斯本市区出发；10:00 地狱之口，10:50 罗卡角，12:00 雷加莱拉庄园，14:30 辛特拉王宫，16:00 佩纳宫。"],
         ["09/27", "一起去波尔图", "和建皇、建建一起坐大巴去波尔图，下午玩波尔图。"],
-        ["09/28", "波尔图飞阿姆斯特丹", "从波尔图出发去阿姆斯特丹；建皇、建建从波尔图经巴黎去冰岛。"],
+        ["09/27 晚-09/28", "波尔图飞阿姆斯特丹", "20:50 从波尔图弗朗西斯科卡内罗机场起飞，09/28 00:25 落地阿姆斯特丹史基浦机场，航班荷兰泛航 HV6004；飞行 2 小时 35 分，无中转。"],
         ["09/28-10/08", "阿姆斯特丹上班", "冰岛段与你无关，默认不看。"],
         ["10/09", "阿姆斯特丹汇合", "运河区、博物馆区、博物馆二选一、晚饭。"],
         ["10/10", "送海港回布鲁塞尔", "可一起坐火车或本地送行。"],
@@ -249,8 +251,8 @@ const data = {
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Fosshotel%20Lind%20Raudararstigur%2018%20Reykjavik",
     notes: [
       "10/03 建皇和海港组先到，可先问前台寄存行李；彤燕组 15:10 落地后到酒店会合。",
-      "10/04-10/05 南岸两日团接送点选林德城河酒店对应的 13 号接送点，以确认单最终写法为准。",
-      "10/04 晚南岸两日团已含冰岛南部住宿和早餐；林德城河酒店原 10/04 晚需要取消或改订，避免双付。",
+      "10/04-10/05 南岸两日团想订 Nice Travel；接送点和出发时间以确认单最终写法为准。",
+      "10/04 晚南岸两日团通常团内含冰岛南部住宿和早餐；林德城河酒店原 10/04 晚需要取消或改订，避免双付。",
       "建皇 10/06 08:00 从雷克雅未克凯夫拉维克机场起飞，建议 04:45-05:00 从酒店出发去机场；提前订机场巴士、包车或出租车。",
       "订单号和酒店确认号不放在公开分享页，需要时看预订截图。"
     ],
@@ -275,7 +277,7 @@ const data = {
       city: "冰岛南部",
       name: "南岸两日团含住宿",
       status: "团含",
-      detail: "Guide to Iceland 南岸两日 + 蓝冰洞团含南部住宿一晚和早餐；具体酒店可能是 Gerði Guesthouse / Hotel Smyrlabjörg 或同级替代，以确认单为准。",
+      detail: "Nice Travel 南岸两日 + 蓝冰洞团通常含南部住宿一晚和早餐；具体酒店和早餐规则以确认单为准。",
       audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#2f6f7e",
     },
@@ -283,10 +285,10 @@ const data = {
       date: "09/28",
       nights: "1 晚",
       people: "建皇",
-      city: "巴黎 / 戴高乐机场附近",
+      city: "巴黎 / 奥利机场到戴高乐机场之间",
       name: "转机前夜住宿",
       status: "待补订单",
-      detail: "09/29 06:00 从巴黎戴高乐机场飞雷克雅未克凯夫拉维克机场，建议住戴高乐机场附近或机场交通稳定的位置。",
+      detail: "09/28 12:15 落地巴黎奥利机场，09/29 06:00 从巴黎戴高乐机场 T2D 飞雷克雅未克凯夫拉维克机场。建议住戴高乐机场附近或机场交通稳定的位置。",
       audiences: ["jianhuang"],
       accent: "#2f80ed",
     },
@@ -341,16 +343,16 @@ const data = {
       title: "会合 + 六人追极光",
       status: "彤燕组 15:10 到冰岛后，冰岛六人齐",
       plan: "六个人住林德城河酒店；白天只做酒店会合、晚饭、超市补给；晚上六个人报一个追极光团。",
-      avoid: "不要排黄金圈、斯奈山半岛、冰河湖这种长距离路线，晚上留体力；第二天 08:30 南岸团出发。",
-      stay: "住林德城河酒店；同时确认 10/04 南岸团 13 号接送点和行李限制。",
+      avoid: "不要排黄金圈、斯奈山半岛、冰河湖这种长距离路线，晚上留体力；第二天南岸团出发时间以确认单为准。",
+      stay: "住林德城河酒店；同时确认 10/04 南岸团接送点和行李限制。",
       audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#7bb8d8",
     },
     {
       date: "10/04 周日",
       title: "六人核心日 1",
-      status: "南岸两日团第一天：雷克雅未克 08:30 出发",
-      plan: "08:15 左右到林德城河酒店对应的 13 号接送点等车；小巴沿南岸走塞里雅兰瀑布、斯科加瀑布、雷尼斯黑沙滩，继续向东到杰古沙龙冰河湖一带。",
+      status: "南岸两日团第一天：想订 Nice Travel",
+      plan: "集合点和出发时间以确认单为准；小巴沿南岸走塞里雅兰瀑布、斯科加瀑布、雷尼斯黑沙滩，继续向东到杰古沙龙冰河湖一带。",
       avoid: "今天不要再排黄金圈或市区项目；只带 1 件手提行李，大件行李留在雷克雅未克寄存或酒店协调。",
       stay: "住南岸团含住宿（含早餐）；取消/改订林德城河酒店 10/04 这一晚。",
       audiences: ["jianhuang", "haigang", "tongyan"],
@@ -426,7 +428,7 @@ const data = {
       checkpoints: ["六人会合", "晚饭", "超市补给", "追极光团", "不要跑长线"],
       details: [
         ["15:10 后", "彤燕组落地冰岛，六个人正式齐；先到酒店放行李。"],
-        ["晚饭前后", "确认第二天南岸团接送点：林德城河酒店对应 13 号接送点。"],
+        ["晚饭前后", "确认第二天 Nice Travel 南岸团接送点、出发时间和行李规则。"],
         ["21:00-01:00", "追极光团按旅行社通知出发；第二天早出发，今晚别熬太满。"],
       ],
       sleep: "住林德城河酒店，10/03 15:00 后入住；大件行李提前问前台能否寄存到 10/05 晚回雷市。",
@@ -438,10 +440,10 @@ const data = {
       title: "南岸两日团第一天",
       route: "雷克雅未克 → 塞里雅兰瀑布 → 斯科加瀑布 → 雷尼斯黑沙滩 → 杰古沙龙冰河湖 / 南部住宿",
       why: "把六个人共同段最值得远行的南岸、冰河湖和蓝冰洞集中在 10/04-10/05；小巴接送，不需要大家自驾和找路。",
-      checkpoints: ["08:15 集合", "08:30 出发", "塞里雅兰瀑布", "斯科加瀑布", "雷尼斯黑沙滩", "冰河湖区域"],
+      checkpoints: ["按确认单集合", "雷克雅未克出发", "塞里雅兰瀑布", "斯科加瀑布", "雷尼斯黑沙滩", "冰河湖区域"],
       details: [
-        ["08:15", "在 13 号接送点集合；这是林德城河酒店对应接送点，最终以确认单为准。"],
-        ["08:30", "雷克雅未克出发，小巴交通，司机/本地向导全程带队。"],
+        ["按确认单", "确认 Nice Travel 最终接送点、集合时间和可携带行李。"],
+        ["出发后", "雷克雅未克出发，小巴交通，司机/本地向导全程带队。"],
         ["上午", "看 Seljalandsfoss 塞里雅兰瀑布：天气和步道允许时可从瀑布后方看水帘。"],
         ["中午前后", "看 Skógafoss 斯科加瀑布：高崖落差大，水汽重，防水外套和防水鞋很重要。"],
         ["下午", "Reynisfjara 黑沙滩和 Reynisdrangar 玄武岩海蚀柱；远离海浪，注意 sneaker waves 暗浪警示。"],
@@ -490,20 +492,20 @@ const data = {
     {
       id: "jianhuang",
       name: "建皇",
-      role: "建皇组合：9/26 和娘娘三个人走里斯本郊区海边一日游，9/27 一起去波尔图，9/28 建皇从波尔图经巴黎去冰岛；10/06 曼彻斯特短停后回里斯本，10/07 半日城市步行，10/08 哥本哈根转机一日游。",
+      role: "建皇组合：9/26 和娘娘三个人想订里斯本郊区海边一日游，9/27 一起去波尔图，娘娘当晚飞回阿姆斯特丹；9/28 建皇从波尔图经巴黎奥利机场去冰岛；9/30 索斯莫克、10/01 高地超级吉普、10/02 斯奈山、10/03 黄金圈 + 蓝湖、10/04-10/05 南岸两日目前都只是想订。",
       color: "#2F80ED",
       days: [
         ["09/25", "北京 → 伦敦中转 → 里斯本", "13:35 从北京首都机场 T3 起飞，17:40 落地伦敦希思罗机场 T2；伦敦中转 1 小时 05 分，18:45 从伦敦希思罗机场 T2 起飞，21:35 落地里斯本机场 T1。落地后只做入住、吃饭。"],
-        ["09/26", "里斯本郊区海边一日游", "建皇组合 + 娘娘三个人报里斯本周边一日游：08:30 集合，地狱之口、罗卡角、佩纳宫、辛特拉小镇、雷加莱拉庄园，18:00 回集合点。"],
+        ["09/26", "里斯本出发辛特拉 + 罗卡角一日游", "建皇组合 + 娘娘三个人报名这个专业路线：09:00 从里斯本市区出发，10:00 地狱之口，10:50 罗卡角，12:00 雷加莱拉庄园，14:30 辛特拉王宫，16:00 佩纳宫。主打大西洋海岸、欧亚大陆最西端、雷加莱拉庄园创始之井和两座宫殿；当天不再叠加里斯本市区重行程。"],
         ["09/27", "里斯本 → 波尔图", "早上和娘娘一起坐约 3.5 小时大巴从里斯本到波尔图；下午玩老城河岸、路易一世大桥、杜罗河边，晚上早点收行李。"],
-        ["09/28", "波尔图 → 巴黎跨夜中转", "09:20 从波尔图机场起飞，12:30 落地巴黎博韦机场；巴黎跨夜中转 17 小时 30 分，第二天 06:00 从巴黎戴高乐机场起飞去冰岛。注意这是换机场中转，要预留从博韦机场到戴高乐机场附近住宿的交通时间；娘娘当天从波尔图飞阿姆斯特丹。"],
-        ["09/29", "巴黎 → 冰岛", "06:00 从巴黎戴高乐机场起飞，07:50 落地雷克雅未克凯夫拉维克机场；到冰岛后可走雷克雅未克周边、蓝湖或市区补给，早点睡。"],
-        ["09/30", "高地候选一", "天气和路况允许时选彩虹山或索斯莫克山谷专业越野团；10 月不自己开高地路。"],
-        ["10/01", "高地候选 2 / 备选线", "高地团不开就走雷克雅未克周边、蓝湖或雷克雅内斯半岛；黄金圈/斯奈山可以留给 10/06 后四人补线。"],
-        ["10/02", "冰岛一日游", "这天是一整天，不建议只休整。优先报当天往返的一日游，多看自然景观；候选：黄金圈深度线、雷克雅内斯半岛 + 蓝湖、或天气允许的专业高地团。"],
-        ["10/03", "灵活休整 + 等朋友到齐", "朋友陆续到冰岛，这天保持灵活：可以泡温泉、观鲸、逛雷克雅未克市区、超市补给；下午彤燕组到后六人齐，晚上报追极光团。"],
-        ["10/04", "六人南岸两日团第一天", "08:15 左右到 13 号接送点集合，08:30 从雷克雅未克出发；看塞里雅兰瀑布、斯科加瀑布、雷尼斯黑沙滩，晚上住团含南部住宿。"],
-        ["10/05", "六人蓝冰洞第二天", "坐超级吉普去瓦特纳冰川蓝冰洞，看冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店；提前确认 10/06 清晨去雷克雅未克凯夫拉维克机场的车。"],
+        ["09/28", "波尔图 → 巴黎跨夜中转", "09:05 从波尔图弗朗西斯科卡内罗机场起飞，12:15 落地巴黎奥利机场 T1，航班易捷航空 U24886；巴黎跨夜中转 17 小时 45 分，第二天 06:00 从巴黎戴高乐机场 T2D 起飞去冰岛。注意这是换机场中转，奥利机场离市区更近，但仍要预留去戴高乐机场附近住宿或清晨去戴高乐机场的交通时间；娘娘已在 09/27 晚从波尔图飞回阿姆斯特丹。"],
+        ["09/29", "巴黎 → 冰岛", "06:00 从巴黎戴高乐机场 T2D 起飞，07:50 落地雷克雅未克凯夫拉维克机场，航班易捷航空 U24629；飞行 3 小时 50 分。到冰岛后可走雷克雅未克周边、蓝湖或市区补给，早点睡。"],
+        ["09/30", "想订：索斯莫克山谷超级吉普徒步", "Guide to Iceland 索斯莫克山谷超级吉普徒步团；页面写约 8 小时，从 Hvolsvöllur 基地出发，英文向导，超级吉普进山谷，约 4 小时徒步。你和建建如果 9/30 报这个，要先确认雷克雅未克到集合基地的接驳、实际发团日期和回程时间；页面标注运营季到 9 月，9/30 是否可订以最终确认单为准。<a href=\"https://cn.guidetoiceland.is/book-holiday-trips/thorsmoerk-hike?adults=2&children=0&dateFrom=2026-09-30&dateTo=2026-10-02&startingLocationId=0&startingLocationName=%E5%86%B0%E5%B2%9B%E4%BB%BB%E6%84%8F%E5%9C%B0%E7%82%B9\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/01", "想订：兰德曼那劳卡高地超级吉普一日团", "Arctic Adventures 超级吉普团，雷克雅未克接送，约 08:00 出发、约 19:00 返回，以确认单为准。这个版本会打卡高地景点；徒步约 2 小时，也可以不徒步直接泡天然温泉。带泳衣、毛巾、防水外套、防水鞋。<a href=\"https://cn.adventures.is/iceland/day-tours/super-jeeps/landmannalaugar-safari/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/02", "想订：斯奈山半岛一日团", "Arctic Adventures 斯奈山小团，雷克雅未克接送，约 11 小时，以确认单为准。看斯奈山半岛海岸线、渔村、黑教堂、教会山、黑沙滩等自然景观；这天车程长，带午餐、零食和防风防水外套。<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/03", "想订：黄金圈 + 蓝湖温泉一日团", "Arctic Adventures 一日团，雷克雅未克接送，约 11-12 小时，以确认单为准。白天走辛格维利尔国家公园、盖歇尔间歇泉、黄金瀑布，再去蓝湖温泉；蓝湖套餐内容以订单为准。下午彤燕组 15:10 到冰岛，晚上六人追极光，注意体力。<a href=\"https://cn.adventures.is/iceland/day-tours/blue-lagoon-tours/golden-circle-and-blue-lagoon-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/04", "想订：六人南岸两日团第一天", "Nice Travel 南岸两日团，10/04 预计从雷克雅未克出发；看塞里雅兰瀑布、斯科加瀑布、雷尼斯黑沙滩，晚上住团含南部住宿，以最终团页和确认单为准。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/05", "想订：南岸两日团第二天 + 蓝冰洞", "继续 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 清晨去雷克雅未克凯夫拉维克机场的车。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/06", "冰岛 → 曼彻斯特短停 → 里斯本", "建议 04:45-05:00 从林德城河酒店出发去雷克雅未克凯夫拉维克机场；08:00 从雷克雅未克凯夫拉维克机场起飞，11:40 落地曼彻斯特机场 T2。曼彻斯特中转 8 小时 25 分，20:05 从曼彻斯特机场 T3 起飞，23:00 落地里斯本机场 T1。若入境顺利且无托运行李，可 12:45 左右坐火车到曼彻斯特市中心，17:30 左右回机场更稳。"],
         ["10/07", "里斯本半日城市步行 + 飞哥本哈根", "白天只做里斯本半日轻量城市步行，市区收尾、吃饭、买伴手礼；18:15 从里斯本机场 T1 起飞，23:00 落地哥本哈根机场 T3。哥本哈根转机停留 20 小时 05 分，下一班 10/08 19:05 起飞回北京。"],
         ["10/08", "哥本哈根转机一日游 + 回北京", "10/07 23:00 已落地哥本哈根机场 T3；10/08 白天走新港、国王新广场、阿美琳堡王宫 / 小美人鱼轻量线，16:00 左右回机场更稳。19:05 从哥本哈根机场 T3 起飞，10/09 09:55 落地北京首都机场 T3。"],
@@ -519,8 +521,8 @@ const data = {
         ["10/01", "北京 → 上海中转", "11:40 从北京大兴机场起飞，13:55 落地上海浦东机场 T2；上海中转 11 小时 40 分，下一班 10/02 01:35 从上海浦东机场 T2 起飞去布鲁塞尔。核心是行李、吃饭和休息。"],
         ["10/02", "上海 → 布鲁塞尔中转 → 哥本哈根", "01:35 从上海浦东机场 T2 起飞，07:30 落地布鲁塞尔机场；布鲁塞尔中转 7 小时 45 分，15:15 从布鲁塞尔机场起飞，16:45 落地哥本哈根机场。哥本哈根过夜中转 13 小时 35 分，下一班 10/03 06:20 起飞去冰岛。"],
         ["10/03", "哥本哈根 → 冰岛 + 酒店会合", "06:20 从哥本哈根机场起飞，07:40 落地雷克雅未克凯夫拉维克机场；先去林德城河酒店寄存行李 / 入住，下午等彤燕组，晚上六个人报追极光团。"],
-        ["10/04", "六人南岸两日团第一天", "08:15 左右到 13 号接送点集合，08:30 从雷克雅未克出发；看瀑布、黑沙滩，晚上住团含南部住宿。"],
-        ["10/05", "六人蓝冰洞第二天", "看瓦特纳冰川蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店。"],
+        ["10/04", "想订：六人南岸两日团第一天", "Nice Travel 南岸两日团，10/04 预计从雷克雅未克出发；看瀑布、黑沙滩，晚上住团含南部住宿，以最终团页和确认单为准。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/05", "想订：南岸两日团第二天 + 蓝冰洞", "继续 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店，以最终团页和确认单为准。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/06", "四人包车开始", "建皇离开后，海港组 + 彤燕组四个人补黄金圈、雷克雅未克周边或雷克雅内斯半岛 / 蓝湖轻量线；四人段住宿待补订单。"],
         ["10/07", "四人冰岛加玩", "天气稳定可走斯奈山半岛；天气差就走雷克雅内斯半岛 / 蓝湖 / 市区备选；住宿按路线待补。"],
         ["10/08", "雷克雅未克 / 蓝湖 → 阿姆斯特丹", "白天轻量，必须留足还车、行李和值机时间；19:15 从雷克雅未克凯夫拉维克机场起飞，10/09 00:20 落地阿姆斯特丹史基浦机场。阿姆斯特丹住宿待补订单。"],
@@ -537,8 +539,8 @@ const data = {
       days: [
         ["10/02", "深圳 → 上海中转", "17:10 从深圳宝安机场 T3 起飞，19:40 落地上海浦东机场；上海中转 6 小时 30 分，下一班 10/03 02:10 从上海浦东机场 T2 起飞去布鲁塞尔。"],
         ["10/03", "上海 → 布鲁塞尔中转 → 冰岛 + 酒店会合", "02:10 从上海浦东机场 T2 起飞，08:10 落地布鲁塞尔机场；布鲁塞尔中转 5 小时 40 分，13:50 从布鲁塞尔机场起飞，15:10 落地雷克雅未克凯夫拉维克机场。落地后去林德城河酒店和大家会合，晚上六个人报追极光团。"],
-        ["10/04", "六人南岸两日团第一天", "08:15 左右到 13 号接送点集合，08:30 从雷克雅未克出发；看瀑布、黑沙滩，晚上住团含南部住宿。"],
-        ["10/05", "六人蓝冰洞第二天", "看瓦特纳冰川蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店。"],
+        ["10/04", "想订：六人南岸两日团第一天", "Nice Travel 南岸两日团，10/04 预计从雷克雅未克出发；看瀑布、黑沙滩，晚上住团含南部住宿，以最终团页和确认单为准。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/05", "想订：南岸两日团第二天 + 蓝冰洞", "继续 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店，以最终团页和确认单为准。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/06", "四人包车开始", "建皇离开后，和海港组一起补黄金圈、雷克雅未克周边或雷克雅内斯半岛 / 蓝湖轻量线；四人段住宿待补订单。"],
         ["10/07", "四人冰岛加玩", "天气稳定可走斯奈山半岛；天气差就走雷克雅内斯半岛 / 蓝湖 / 市区备选；住宿按路线待补。"],
         ["10/08", "海港离开后", "送海港去雷克雅未克凯夫拉维克机场；自己留雷克雅未克、蓝湖或雷克雅内斯半岛；住宿待补订单。"],
@@ -550,12 +552,13 @@ const data = {
     {
       id: "niangniang",
       name: "娘娘",
-      role: "住阿姆斯特丹，在审计公司要加班，不去冰岛；9/26 和建皇组合走里斯本郊区海边一日游，9/27 一起去波尔图，9/28 从波尔图飞阿姆斯特丹，海港组到阿姆斯特丹后再本地汇合。",
+      role: "住阿姆斯特丹，在审计公司要加班，不去冰岛；9/25 从阿姆斯特丹飞里斯本，9/26 和建皇组合走里斯本郊区海边一日游，9/27 一起去波尔图并当晚飞回阿姆斯特丹。",
       color: "#8E6AC8",
       days: [
-        ["09/26", "里斯本郊区海边一日游", "和建皇组合一起报里斯本周边一日游：08:30 集合，地狱之口、罗卡角、佩纳宫、辛特拉小镇、雷加莱拉庄园，18:00 回集合点。"],
-        ["09/27", "一起去波尔图", "和建皇组合一起坐约 3.5 小时大巴去波尔图；下午玩波尔图老城、路易一世大桥、杜罗河边。"],
-        ["09/28", "波尔图 → 阿姆斯特丹", "从波尔图机场飞阿姆斯特丹史基浦机场；这段航班起飞时间、落地时间和是否中转待补。补齐后这里需要写清：几点从波尔图起飞、几点落地阿姆斯特丹；如有中转，也写中转机场和停留多久。从这天开始不跟建皇组合去巴黎/冰岛。"],
+        ["09/25", "阿姆斯特丹 → 里斯本", "19:40 从阿姆斯特丹史基浦机场起飞，21:50 落地里斯本机场 T1；飞行 2 小时 10 分，无中转。落地后只做入住、休息。"],
+        ["09/26", "里斯本出发辛特拉 + 罗卡角一日游", "和建皇组合一起报名这个专业路线：09:00 从里斯本市区出发，10:00 地狱之口，10:50 罗卡角，12:00 雷加莱拉庄园，14:30 辛特拉王宫，16:00 佩纳宫。主打大西洋海岸、罗卡角、创始之井和辛特拉宫殿线。"],
+        ["09/27", "里斯本 → 波尔图 + 晚上飞阿姆斯特丹", "早上和建皇组合一起坐约 3.5 小时大巴去波尔图；下午玩波尔图老城、路易一世大桥、杜罗河边。20:50 从波尔图弗朗西斯科卡内罗机场起飞，09/28 00:25 落地阿姆斯特丹史基浦机场，航班荷兰泛航 HV6004；飞行 2 小时 35 分，无中转。"],
+        ["09/28", "抵达阿姆斯特丹", "00:25 落地阿姆斯特丹史基浦机场；今天开始不跟建皇组合去巴黎/冰岛，按阿姆斯特丹工作节奏安排。"],
         ["09/28-10/08", "阿姆斯特丹上班", "娘娘不去冰岛，在审计公司要加班；冰岛段在页面里不算入人数。"],
         ["10/09", "阿姆斯特丹本地和海港组汇合", "运河区、博物馆区、荷兰国家博物馆 / 梵高博物馆二选一、晚饭。"],
         ["10/10", "送海港回布鲁塞尔", "可一起走阿姆斯特丹 → 布鲁塞尔火车，或在阿姆斯特丹本地送行。"],
@@ -575,20 +578,20 @@ const data = {
       category: "portugal",
       segments: ["jianhuang-spots", "niangniang"],
       participant: "建皇组合 + 娘娘（三人）",
-      transport: "飞猪一日游小团 / 旅行社车；08:30 集合点出发",
+      transport: "好云旅游一日游 / 旅行社车；09:00 里斯本市区出发",
       date: "09/26",
       city: "里斯本周边",
-      title: "辛特拉 + 罗卡角一日游",
+      title: "里斯本出发辛特拉 + 罗卡角一日游",
       image: "assets/spots/sintra-pena.jpg",
-      images: ["assets/spots/sintra-pena.jpg", "assets/spots/gallery/cabo-da-roca.jpg"],
-      bestTime: "08:30-18:00",
-      open: "按旅行社确认单为准；截图行程为 08:30 集合，18:00 回到集合点。",
+      images: ["assets/spots/sintra-pena.jpg", "assets/spots/gallery/cabo-da-roca.jpg", "assets/tours/sintra-roca-0926.png"],
+      bestTime: "09:00 出发，全天",
+      open: "按旅行社确认单为准；截图行程为 09:00 里斯本市区出发。",
       sunset: "里斯本 09/26 日落约 19:28",
       viewpoint: "罗卡角看欧洲大陆西端海岸线；佩纳宫看彩色宫殿和辛特拉山景；雷加莱拉庄园看花园和井。",
       notes: [
-        "截图行程：09:30 地狱之口，10:30 罗卡角，12:00 佩纳宫，14:00 辛特拉小镇，15:00 雷加莱拉庄园，17:00 返程。",
-        "这是建皇组合 + 娘娘三个人的葡萄牙共同日。",
-        "佩纳宫和雷加莱拉庄园步行不少，穿舒服鞋；当天不要再叠加里斯本市区重行程。",
+        "截图行程：09:00 里斯本市区出发，10:00 地狱之口，10:50 罗卡角，12:00 雷加莱拉庄园，14:30 辛特拉王宫，16:00 佩纳宫。",
+        "这是建皇组合 + 娘娘三个人想订的葡萄牙共同日；目前只有截图信息，暂无可点击购买链接。",
+        "佩纳宫和雷加莱拉庄园步行不少，穿舒服鞋；罗卡角风大，带外套；当天不要再叠加里斯本市区重行程。",
       ],
     },
     {
@@ -623,7 +626,7 @@ const data = {
       open: "桥梁和河岸全天可看；酒窖参观需看各酒庄预约。",
       sunset: "波尔图 09/27 日落约 19:24",
       viewpoint: "Jardim do Morro / Serra do Pilar，看大桥、老城和杜罗河日落。",
-      notes: ["早上从里斯本坐约 3.5 小时大巴到波尔图。", "下午只抓老城河岸、路易一世大桥、杜罗河边这些高性价比区域。", "第二天 09/28 一大早飞巴黎，晚上别喝太晚。"],
+      notes: ["早上从里斯本坐约 3.5 小时大巴到波尔图。", "下午只抓老城河岸、路易一世大桥、杜罗河边这些高性价比区域。", "娘娘 20:50 从波尔图飞阿姆斯特丹；建皇 09/28 09:05 从波尔图飞巴黎奥利机场，晚上别喝太晚。"],
     },
     {
       id: "paris-cruise",
@@ -640,7 +643,7 @@ const data = {
       open: "Bateaux Mouches 当前高季 10:00-22:00，每 30 分钟一班，船程约 1 小时。",
       sunset: "巴黎 09/28 日落约 19:37",
       viewpoint: "优先坐露天上层右侧，接近 Eiffel Tower 和 Alexandre III 时最好拍。",
-      notes: ["巴黎博韦机场到巴黎市区时间长，先存包再去游船。", "18:30-19:00 上船最适合吃到日落光。", "游船结束立刻去特罗卡德罗广场，不要临时加卢浮宫。"],
+      notes: ["巴黎奥利机场离市区更近，但仍要先确认行李寄存和去戴高乐机场的交通。", "18:30-19:00 上船最适合吃到日落光。", "游船结束立刻去特罗卡德罗广场，不要临时加卢浮宫。"],
     },
     {
       id: "eiffel-night",
@@ -657,30 +660,51 @@ const data = {
       open: "官方说明：铁塔夜幕后亮灯，整点开始闪灯 5 分钟，持续到闭塔。",
       sunset: "巴黎 09/28 日落约 19:37；20:00 大概率是第一场好看的整点闪灯。",
       viewpoint: "Trocadéro 平台第一选择；人多就退到 Pont d'Iéna 桥侧。",
-      notes: ["夜间灯光有版权限制，自己朋友圈一般没问题，商业发布要注意。", "20:10 后马上去巴黎戴高乐机场附近休息，第二天 06:00 飞冰岛。", "地铁/打车预留堵车和安检时间。"],
+      notes: ["夜间灯光有版权限制，自己朋友圈一般没问题，商业发布要注意。", "20:10 后马上去巴黎戴高乐机场附近休息，第二天 06:00 从戴高乐机场 T2D 飞冰岛。", "地铁/打车预留堵车和安检时间。"],
     },
     {
       id: "landmannalaugar",
       category: "iceland",
       segments: ["jianhuang-spots"],
-      participant: "建皇提前到冰岛可选",
-      transport: "只报专业高地团 / 超级吉普；无人自驾，不自己开高地路",
-      date: "09/30-10/01",
+      participant: "建皇组合 10/01 想订",
+      transport: "Arctic Adventures 超级吉普团；雷克雅未克接送，约 08:00 出发、约 19:00 返回，以确认单为准",
+      date: "10/01",
       city: "冰岛高地",
-      title: "彩虹山 / 高地候选",
+      title: "兰德曼那劳卡高地超级吉普一日团",
       image: "assets/spots/landmannalaugar.jpg",
       images: ["assets/spots/landmannalaugar.jpg"],
-      bestTime: "白天，按团出发",
-      open: "高地 F 路季节性关闭，9 月底/10 月初不写死开放；以 road.is / safetravel.is 和专业团通知为准。",
+      bestTime: "08:00-19:00 左右",
+      open: "按想订团处理；高地天气变化大，最终出发、路线和温泉停留以旅行社确认单和当天安全判断为准。",
       sunset: "雷克雅未克 09/29 日落约 19:05，10/03 日落约 18:51",
-      viewpoint: "彩色山徒步短线 / 温泉区视野；天气差则取消。",
-      notes: ["建皇提前到冰岛才考虑。", "10 月不自驾高地路，只能看专业团是否发团。", "备选：雷克雅内斯半岛、蓝湖、雷克雅未克市区；黄金圈和斯奈山可留给 10/06 后四人补线。"],
+      viewpoint: "高地彩色山、熔岩地貌、温泉区；想少走路就把重点放在景观点和泡温泉。",
+      notes: ["想订的是超级吉普版本，会打卡各个高地景点。", "徒步约 2 小时，也可以选择不徒步，直接泡天然温泉。", "带泳衣、毛巾、防水外套、防水鞋；10 月高地风大，不要只穿城市鞋。", "<a href=\"https://cn.adventures.is/iceland/day-tours/super-jeeps/landmannalaugar-safari/\" target=\"_blank\" rel=\"noreferrer\">打开 Arctic Adventures 团页</a>"],
+    },
+    {
+      id: "thorsmork",
+      category: "iceland",
+      segments: ["jianhuang-spots"],
+      participant: "建皇组合 09/30 想订",
+      transport: "Guide to Iceland 超级吉普徒步团；页面写从 Hvolsvöllur 基地出发",
+      date: "09/30",
+      city: "索斯莫克山谷",
+      title: "索斯莫克山谷超级吉普徒步",
+      image: "assets/spots/season/thorsmork-autumn.jpg",
+      images: ["assets/spots/season/thorsmork-autumn.jpg"],
+      bestTime: "约 8 小时，按确认单",
+      open: "页面写 5 月到 9 月运营，9/30 是否可订、接送方式和集合时间必须以下单确认单为准。",
+      sunset: "索斯莫克 09/30 日出约 07:22 / 日落约 18:51",
+      viewpoint: "索斯莫克山谷、冰川河谷、火山地貌和秋色徒步线。",
+      notes: [
+        "页面写英文向导、超级吉普进山谷、约 4 小时徒步。",
+        "重点先确认雷克雅未克到 Hvolsvöllur 基地的交通，不要默认市区上门接。",
+        "<a href=\"https://cn.guidetoiceland.is/book-holiday-trips/thorsmoerk-hike?adults=2&children=0&dateFrom=2026-09-30&dateTo=2026-10-02&startingLocationId=0&startingLocationName=%E5%86%B0%E5%B2%9B%E4%BB%BB%E6%84%8F%E5%9C%B0%E7%82%B9\" target=\"_blank\" rel=\"noreferrer\">打开 Guide to Iceland 团页</a>",
+      ],
     },
     {
       id: "aurora",
       category: "iceland",
       segments: ["iceland-six"],
-      participant: "冰岛六人",
+      participant: "冰岛六人想订",
       transport: "六个人报追极光团；无人自驾",
       date: "10/03 夜",
       city: "雷克雅未克",
@@ -697,52 +721,52 @@ const data = {
       id: "south-coast-two-day",
       category: "iceland",
       segments: ["iceland-six"],
-      participant: "冰岛六人",
+      participant: "冰岛六人 10/04-10/05 想订",
       transport: "两日小巴团；雷克雅未克接送；蓝冰洞段换乘超级吉普",
       date: "10/04-10/05",
       city: "冰岛南岸",
       title: "南岸两日 + 蓝冰洞",
       image: "assets/spots/reynisfjara.jpg",
       images: ["assets/spots/reynisfjara.jpg", "assets/spots/gallery/reynisfjara-seljalandsfoss.jpg", "assets/spots/gallery/reynisfjara-skogafoss.jpg", "assets/spots/gallery/reynisfjara-dyrholaey.jpg", "assets/spots/jokulsarlon.jpg"],
-      bestTime: "10/04 08:15 集合；10/05 晚回雷克雅未克",
-      open: "Guide to Iceland 团：10 月-4 月运营；08:30 从 Reykjavík 出发；含南部住宿、早餐、蓝冰洞和雷克雅未克接送。",
+      bestTime: "10/04 出发；10/05 晚回雷克雅未克，以确认单为准",
+      open: "Nice Travel 团页：南岸两日、蓝冰洞、杰古沙龙冰河湖、黑沙滩和瀑布；具体接送、住宿和行李规则以最终确认单为准。",
       sunset: "雷克雅未克 10/04 日落约 18:47，10/05 约 18:44",
       viewpoint: "塞里雅兰瀑布后方、斯科加瀑布正面水雾、雷尼斯黑沙滩玄武岩柱、杰古沙龙冰河湖湖边和钻石沙滩。",
-      notes: ["接送点选林德城河酒店对应 13 号接送点，最终以确认单为准。", "只允许携带 1 件手提行李，大件行李要寄存在雷克雅未克。", "黑沙滩不要靠近浪线；蓝冰洞必须听冰川向导指挥。"],
+      notes: ["这是 10/04-10/05 六个人想订的南岸两日团。", "接送点、住宿、早餐和行李规则最终以 Nice Travel 确认单为准。", "黑沙滩不要靠近浪线；蓝冰洞必须听冰川向导指挥。", "<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">打开 Nice Travel 团页</a>"],
     },
     {
       id: "golden-circle",
       category: "iceland",
-      segments: ["four-after"],
-      participant: "海港组 + 彤燕组四人候选",
-      transport: "四人包车 / 当地团，不自驾",
-      date: "10/06-10/08 候选",
+      segments: ["jianhuang-spots", "four-after"],
+      participant: "建皇组合 10/03 想订；四人后续可参考",
+      transport: "Arctic Adventures 一日团；雷克雅未克接送，约 11-12 小时，以确认单为准",
+      date: "10/03",
       city: "黄金圈",
-      title: "Þingvellir + Geysir + Gullfoss + Kerið",
+      title: "黄金圈 + 蓝湖温泉一日团",
       image: "assets/spots/gullfoss.jpg",
       images: ["assets/spots/gullfoss.jpg", "assets/spots/gallery/gullfoss-strokkur.jpg", "assets/spots/gallery/gullfoss-thingvellir.jpg"],
       bestTime: "09:00-18:30",
-      open: "多数自然景点户外可看；停车场、游客中心和 Kerið 收费/开放时间以当天公告为准。",
+      open: "黄金圈自然景点按团游览；蓝湖入场时间、套餐内容和停留时长以订单为准。",
       sunset: "雷克雅未克 10/04 日落约 18:47",
-      viewpoint: "Gullfoss 上层观景台和 Kerið 火山口边缘适合收尾光线。",
-      notes: ["10/04-10/05 已改南岸两日团，黄金圈顺延为四人后续候选。", "Strokkur 喷泉别站在下风口太久。", "10 月路面可能湿滑，所有人穿防水鞋。"],
+      viewpoint: "辛格维利尔国家公园、盖歇尔间歇泉、黄金瀑布、蓝湖温泉。",
+      notes: ["建皇组合 10/03 想订，下午彤燕组到冰岛，晚上六人还要追极光。", "盖歇尔间歇泉别站在下风口太久；黄金瀑布水雾大，穿防水外套。", "蓝湖带泳衣；毛巾、饮品、面膜等以最终套餐为准。", "<a href=\"https://cn.adventures.is/iceland/day-tours/blue-lagoon-tours/golden-circle-and-blue-lagoon-tour/\" target=\"_blank\" rel=\"noreferrer\">打开 Arctic Adventures 团页</a>"],
     },
     {
       id: "snaefellsnes",
       category: "iceland",
-      segments: ["four-after"],
-      participant: "海港组 + 彤燕组四人候选",
-      transport: "四人包车 / 当地团，不自驾",
-      date: "10/06-10/08 候选",
+      segments: ["jianhuang-spots", "four-after"],
+      participant: "建皇组合 10/02 想订；四人后续可参考",
+      transport: "Arctic Adventures 小团；雷克雅未克接送，约 11 小时，以确认单为准",
+      date: "10/02",
       city: "斯奈山半岛",
-      title: "Kirkjufell + 黑教堂 + 海岸线",
-      image: "assets/spots/snaefellsnes.jpg",
-      images: ["assets/spots/snaefellsnes.jpg"],
-      bestTime: "08:00-19:00",
-      open: "多数自然景点户外可看；10 月风大路滑，按司机和 road.is 当天情况调整停留。",
+      title: "斯奈山半岛一日团",
+      image: "assets/spots/season/snaefellsnes-autumn.jpg",
+      images: ["assets/spots/season/snaefellsnes-autumn.jpg", "assets/spots/snaefellsnes.jpg"],
+      bestTime: "全天，按团出发",
+      open: "斯奈山半岛一日团想订；具体接送点、出发时间和停靠顺序以旅行社确认单为准。",
       sunset: "雷克雅未克 10/05 日落约 18:44",
-      viewpoint: "Kirkjufellsfoss 看 Kirkjufell 教会山；Arnarstapi 海岸线适合短走和拍海蚀柱。",
-      notes: ["10/04-10/05 已改南岸两日团，斯奈山顺延为四人后续候选。", "车程较长，午餐、厕所和加油点让司机提前规划。", "若 10/07 天气差，宁愿改雷克雅内斯半岛 / 蓝湖轻量线。"],
+      viewpoint: "教会山、黑教堂、海岸线、渔村、黑沙滩；按当天路线和天气调整。",
+      notes: ["建皇组合 10/02 想订，主打半岛自然景观，不是城市教堂线。", "车程长，建议带午餐、零食、水和晕车药。", "10 月风大路滑，穿防风防水外套和防水鞋。", "<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">打开 Arctic Adventures 团页</a>"],
     },
     {
       id: "jokulsarlon",
@@ -826,7 +850,7 @@ const data = {
       { label: "LJ 样本合计", value: "¥35,663", note: "含个人大交通、当地团、住宿、餐饮和购物" },
     ],
     yearLinks: [
-      "今年 10/04-10/05 已把南岸两日 + 蓝冰洞放进六人共同段，去年这条路线的拆法可直接参考。",
+      "今年 10/04-10/05 计划把南岸两日 + 蓝冰洞放进六人共同段，去年这条路线的拆法可直接参考。",
       "去年南岸两日团花销最高，但它覆盖瀑布、黑沙滩、冰河湖、蓝冰洞和一晚住宿，信息密度也最高。",
       "黄金圈和斯奈山今年不再占 10/04-10/05，可留给 10/06 后四人按天气补线。",
       "机场交通、超市补给、防风防水装备是去年攻略里最有复用价值的部分。",
@@ -945,6 +969,121 @@ const data = {
     },
   },
 };
+
+const dailyVisuals = {
+  "jianhuang|09/25": { city: "里斯本", sunrise: "07:26", sunset: "19:29", season: "9 月底里斯本傍晚温和，落地后适合只看老城夜色和休息。", images: ["assets/spots/belem.jpg", "assets/spots/gallery/belem-1.jpg"] },
+  "jianhuang|09/26": { city: "里斯本周边", sunrise: "07:27", sunset: "19:27", season: "辛特拉山里偏凉，罗卡角海风大；9 月底海边光线很适合拍悬崖和宫殿。", images: ["assets/spots/sintra-pena.jpg", "assets/spots/gallery/cabo-da-roca.jpg", "assets/tours/sintra-roca-0926.png"] },
+  "jianhuang|09/27": { city: "波尔图", sunrise: "07:26", sunset: "19:23", season: "9 月底波尔图日落在杜罗河边最舒服，傍晚看大桥和老城灯光。", images: ["assets/spots/porto.jpg", "assets/spots/gallery/porto-1.jpg"] },
+  "jianhuang|09/28": { city: "巴黎", sunrise: "07:45", sunset: "19:36", season: "9 月底巴黎入秋，傍晚塞纳河和埃菲尔铁塔亮灯最值得留时间。", images: ["assets/spots/eiffel.jpg", "assets/spots/gallery/eiffel-1.jpg", "assets/spots/gallery/eiffel-2.jpg", "assets/spots/gallery/eiffel-3.jpg", "assets/spots/paris-cruise.jpg"] },
+  "jianhuang|09/29": { city: "雷克雅未克", sunrise: "07:29", sunset: "19:04", season: "刚到冰岛，9 月底白天还有足够光线，适合市区补给和轻量看海岸。", images: ["assets/spots/aurora.jpg", "assets/spots/gullfoss.jpg"] },
+  "jianhuang|09/30": { city: "索斯莫克", sunrise: "07:22", sunset: "18:51", season: "索斯莫克 9 月底是秋色，山谷苔原、冰川河和火山地貌层次明显，风雨变化也快。", images: ["assets/spots/season/thorsmork-autumn.jpg"] },
+  "jianhuang|10/01": { city: "雷克雅未克 / 高地", sunrise: "07:35", sunset: "18:57", season: "10 月初高地天气开始硬核，彩色山、熔岩地貌和温泉区很美，但必须听专业团安排。", images: ["assets/spots/landmannalaugar.jpg", "assets/spots/season/thorsmork-autumn.jpg"] },
+  "jianhuang|10/02": { city: "雷克雅未克 / 斯奈山", sunrise: "07:38", sunset: "18:54", season: "斯奈山 10 月初海风强、云层变化快，半岛瀑布、海岸线和教会山都适合阴天氛围。", images: ["assets/spots/season/snaefellsnes-autumn.jpg", "assets/spots/snaefellsnes.jpg"] },
+  "jianhuang|10/03": { city: "雷克雅未克", sunrise: "07:41", sunset: "18:50", season: "10 月初黄金圈水量和秋色都好，蓝湖适合放在长线之后恢复体力。", images: ["assets/spots/gullfoss.jpg", "assets/spots/gallery/gullfoss-strokkur.jpg", "assets/spots/gallery/gullfoss-thingvellir.jpg", "assets/spots/aurora.jpg"] },
+  "jianhuang|10/04": { city: "冰岛南岸", sunrise: "07:33", sunset: "18:38", season: "10 月初南岸瀑布水雾大，黑沙滩风浪也大，照片很出片但要离浪线远一点。", images: ["assets/spots/reynisfjara.jpg", "assets/spots/gallery/reynisfjara-seljalandsfoss.jpg", "assets/spots/gallery/reynisfjara-skogafoss.jpg"] },
+  "jianhuang|10/05": { city: "冰岛南岸", sunrise: "07:36", sunset: "18:34", season: "10 月初蓝冰洞季刚开始，冰河湖和钻石沙滩的光线偏冷，很适合看冰川景观。", images: ["assets/spots/jokulsarlon.jpg", "assets/spots/reynisfjara.jpg"] },
+  "jianhuang|10/06": { city: "曼彻斯特", sunrise: "07:18", sunset: "18:34", season: "10 月初曼彻斯特是典型英式秋天，短停只适合轻量市区和吃饭。", images: ["assets/spots/manchester.jpg"] },
+  "jianhuang|10/07": { city: "里斯本", sunrise: "07:37", sunset: "19:10", season: "10 月初里斯本仍然明亮温暖，半日城市步行适合河边、观景台和蛋挞。", images: ["assets/spots/belem.jpg", "assets/spots/gallery/belem-1.jpg", "assets/spots/gallery/belem-2.jpg"] },
+  "jianhuang|10/08": { city: "哥本哈根", sunrise: "07:25", sunset: "18:28", season: "10 月初哥本哈根白天不长，适合新港、王宫和市中心轻量线。", images: ["assets/spots/copenhagen.jpg"] },
+  "jianhuang|10/09": { city: "北京", sunrise: "06:17", sunset: "17:45", season: "回到北京后只做恢复日，不再安排旅行强度。", images: ["assets/spots/beijing.jpg"] },
+
+  "haigang|10/01": { city: "上海", sunrise: "05:47", sunset: "17:40", season: "10 月初上海天黑较早，中转日以机场休息和补给为主。", images: ["assets/spots/shanghai.jpg"] },
+  "haigang|10/02": { city: "布鲁塞尔 / 哥本哈根", sunrise: "07:13", sunset: "18:43", season: "欧洲 10 月初入秋，中转时间长，适合只看机场周边或市区轻量一瞥。", images: ["assets/spots/brussels.jpg", "assets/spots/copenhagen.jpg"] },
+  "haigang|10/03": { city: "雷克雅未克", sunrise: "07:41", sunset: "18:50", season: "10 月初冰岛早晚冷，第一天先寄存、补给，晚上看极光要留体力。", images: ["assets/spots/aurora.jpg", "assets/spots/gullfoss.jpg"] },
+  "haigang|10/04": { city: "冰岛南岸", sunrise: "07:33", sunset: "18:38", season: "南岸瀑布和黑沙滩在 10 月初很有戏剧感，防风防水最重要。", images: ["assets/spots/reynisfjara.jpg", "assets/spots/gallery/reynisfjara-seljalandsfoss.jpg", "assets/spots/gallery/reynisfjara-skogafoss.jpg"] },
+  "haigang|10/05": { city: "冰岛南岸", sunrise: "07:36", sunset: "18:34", season: "蓝冰洞、冰河湖和钻石沙滩是这天的核心，光线偏冷，拍照很好看。", images: ["assets/spots/jokulsarlon.jpg", "assets/spots/reynisfjara.jpg"] },
+  "haigang|10/06": { city: "雷克雅未克", sunrise: "07:50", sunset: "18:40", season: "建皇离开后，四人段适合按天气补黄金圈或雷克雅未克周边。", images: ["assets/spots/gullfoss.jpg", "assets/spots/gallery/gullfoss-thingvellir.jpg"] },
+  "haigang|10/07": { city: "雷克雅未克 / 斯奈山", sunrise: "07:53", sunset: "18:36", season: "如果天气稳，斯奈山半岛的海岸线和教会山适合放在这天。", images: ["assets/spots/season/snaefellsnes-autumn.jpg", "assets/spots/snaefellsnes.jpg"] },
+  "haigang|10/08": { city: "雷克雅未克 / 阿姆斯特丹", sunrise: "07:55", sunset: "18:33", season: "离开冰岛当天不要跑远，适合蓝湖或机场附近轻量收尾。", images: ["assets/spots/aurora.jpg", "assets/spots/amsterdam.jpg"] },
+  "haigang|10/09": { city: "阿姆斯特丹", sunrise: "07:54", sunset: "19:00", season: "10 月初阿姆斯特丹运河区入秋，傍晚蓝调时刻很好看。", images: ["assets/spots/amsterdam.jpg"] },
+  "haigang|10/10": { city: "布鲁塞尔", sunrise: "07:56", sunset: "19:01", season: "布鲁塞尔 10 月初适合广场、巧克力和轻量城市步行。", images: ["assets/spots/brussels.jpg"] },
+  "haigang|10/11-10/12": { city: "布鲁塞尔 / 上海", sunrise: "07:58", sunset: "18:59", season: "返程两天只看转机和休息，欧洲段已进入明显秋天。", images: ["assets/spots/brussels.jpg", "assets/spots/shanghai.jpg"] },
+
+  "tongyan|10/02": { city: "深圳 / 上海", sunrise: "06:16", sunset: "18:10", season: "出发日以机场节奏为主，深圳和上海都还偏暖。", images: ["assets/spots/shenzhen.jpg", "assets/spots/shanghai.jpg"] },
+  "tongyan|10/03": { city: "布鲁塞尔 / 雷克雅未克", sunrise: "07:41", sunset: "18:50", season: "这天跨到冰岛，落地后很快进入冷风和极光季节奏。", images: ["assets/spots/brussels.jpg", "assets/spots/aurora.jpg"] },
+  "tongyan|10/04": { city: "冰岛南岸", sunrise: "07:33", sunset: "18:38", season: "南岸 10 月初瀑布、黑沙滩和低云很有冰岛感。", images: ["assets/spots/reynisfjara.jpg", "assets/spots/gallery/reynisfjara-dyrholaey.jpg"] },
+  "tongyan|10/05": { city: "冰岛南岸", sunrise: "07:36", sunset: "18:34", season: "冰河湖、钻石沙滩和蓝冰洞是冷色系景观，注意保暖和防滑。", images: ["assets/spots/jokulsarlon.jpg", "assets/spots/reynisfjara.jpg"] },
+  "tongyan|10/06": { city: "雷克雅未克", sunrise: "07:50", sunset: "18:40", season: "四人段第一天适合看天气决定黄金圈、蓝湖或周边轻量线。", images: ["assets/spots/gullfoss.jpg", "assets/spots/gallery/gullfoss-strokkur.jpg"] },
+  "tongyan|10/07": { city: "雷克雅未克 / 斯奈山", sunrise: "07:53", sunset: "18:36", season: "天气好再走斯奈山，天气差就留雷克雅内斯半岛和蓝湖。", images: ["assets/spots/season/snaefellsnes-autumn.jpg", "assets/spots/snaefellsnes.jpg"] },
+  "tongyan|10/08": { city: "雷克雅未克", sunrise: "07:55", sunset: "18:33", season: "送海港离开后，适合蓝湖、机场附近或市区慢一点。", images: ["assets/spots/aurora.jpg", "assets/spots/gullfoss.jpg"] },
+  "tongyan|10/09": { city: "雷克雅未克", sunrise: "07:58", sunset: "18:29", season: "早班机前一天不要跑远，留给蓝湖、补给和机场附近住宿。", images: ["assets/spots/aurora.jpg", "assets/spots/gullfoss.jpg"] },
+  "tongyan|10/10": { city: "布鲁塞尔", sunrise: "07:56", sunset: "19:01", season: "从冰岛回到欧洲大陆，布鲁塞尔秋天适合轻量城市收尾。", images: ["assets/spots/brussels.jpg"] },
+  "tongyan|10/11-10/12": { city: "布鲁塞尔 / 北京 / 深圳", sunrise: "07:58", sunset: "18:59", season: "返程日只看航班和中转，别再安排城市项目。", images: ["assets/spots/brussels.jpg", "assets/spots/shenzhen.jpg"] },
+
+  "niangniang|09/25": { city: "里斯本", sunrise: "07:26", sunset: "19:29", season: "9 月底从阿姆斯特丹飞到里斯本，晚上只适合入住和吃饭。", images: ["assets/spots/belem.jpg", "assets/spots/sintra-pena.jpg"] },
+  "niangniang|09/26": { city: "里斯本周边", sunrise: "07:27", sunset: "19:27", season: "辛特拉和罗卡角是葡萄牙海边秋日感最强的一天。", images: ["assets/spots/sintra-pena.jpg", "assets/spots/gallery/cabo-da-roca.jpg", "assets/tours/sintra-roca-0926.png"] },
+  "niangniang|09/27": { city: "波尔图 / 阿姆斯特丹", sunrise: "07:26", sunset: "19:23", season: "白天看波尔图河岸，晚上飞回阿姆斯特丹，别把下午排太满。", images: ["assets/spots/porto.jpg", "assets/spots/amsterdam.jpg"] },
+  "niangniang|09/28": { city: "阿姆斯特丹", sunrise: "07:35", sunset: "19:25", season: "9 月底阿姆斯特丹入秋，今天以恢复和工作节奏为主。", images: ["assets/spots/amsterdam.jpg"] },
+  "niangniang|09/28-10/08": { city: "阿姆斯特丹", sunrise: "07:35-07:52", sunset: "19:25-19:02", season: "阿姆斯特丹这段是工作节奏，周末或下班后看运河区最合适。", images: ["assets/spots/amsterdam.jpg"] },
+  "niangniang|10/09": { city: "阿姆斯特丹", sunrise: "07:54", sunset: "19:00", season: "10 月初阿姆斯特丹运河和博物馆区适合和海港组汇合。", images: ["assets/spots/amsterdam.jpg"] },
+  "niangniang|10/10": { city: "阿姆斯特丹 / 布鲁塞尔", sunrise: "07:56", sunset: "19:01", season: "如果一起去布鲁塞尔，秋天广场夜景比白天更有氛围。", images: ["assets/spots/amsterdam.jpg", "assets/spots/brussels.jpg"] },
+};
+
+const fallbackDailyVisual = {
+  city: "旅途中",
+  sunrise: "按当地",
+  sunset: "按当地",
+  season: "按当天主要停留地看天气和日照，照片为同线路真实参考。",
+  images: ["assets/route-hero.png"],
+};
+
+function getDailyVisual(personId, date, title, detail) {
+  const direct = dailyVisuals[`${personId}|${date}`];
+  if (direct) return direct;
+  const text = `${date} ${title} ${detail}`;
+  const keywordMap = [
+    ["巴黎", dailyVisuals["jianhuang|09/28"]],
+    ["埃菲尔", dailyVisuals["jianhuang|09/28"]],
+    ["索斯莫克", dailyVisuals["jianhuang|09/30"]],
+    ["兰德曼", dailyVisuals["jianhuang|10/01"]],
+    ["斯奈山", dailyVisuals["jianhuang|10/02"]],
+    ["黄金圈", dailyVisuals["jianhuang|10/03"]],
+    ["蓝湖", dailyVisuals["jianhuang|10/03"]],
+    ["南岸", dailyVisuals["jianhuang|10/04"]],
+    ["蓝冰洞", dailyVisuals["jianhuang|10/05"]],
+    ["杰古沙龙", dailyVisuals["jianhuang|10/05"]],
+    ["里斯本", dailyVisuals["jianhuang|10/07"]],
+    ["波尔图", dailyVisuals["jianhuang|09/27"]],
+    ["哥本哈根", dailyVisuals["jianhuang|10/08"]],
+    ["阿姆斯特丹", dailyVisuals["haigang|10/09"]],
+    ["布鲁塞尔", dailyVisuals["haigang|10/10"]],
+    ["上海", dailyVisuals["haigang|10/01"]],
+    ["深圳", dailyVisuals["tongyan|10/02"]],
+  ];
+  return keywordMap.find(([keyword]) => text.includes(keyword))?.[1] || fallbackDailyVisual;
+}
+
+function renderDailyCard(personId, date, title, detail) {
+  const visual = getDailyVisual(personId, date, title, detail);
+  const images = visual.images || fallbackDailyVisual.images;
+  return `
+    <article class="daily-card">
+      <div class="daily-card__media" aria-label="${date} ${title} 真实照片，可左右滑动">
+        ${images
+          .map(
+            (image, index) => `
+              <figure>
+                <img src="${image}" alt="${title}真实景色 ${index + 1}" loading="lazy" />
+              </figure>
+            `,
+          )
+          .join("")}
+      </div>
+      <div class="daily-card__body">
+        <div class="daily-card__top">
+          <time>${date}</time>
+          <div class="daily-card__sun">
+            <span>日出 ${visual.sunrise}</span>
+            <span>日落 ${visual.sunset}</span>
+          </div>
+        </div>
+        <strong>${title}</strong>
+        <p class="daily-card__season">${visual.city}：${visual.season}</p>
+        <p>${detail}</p>
+      </div>
+    </article>
+  `;
+}
 
 const timelineStart = asDate(data.meta.timelineStart);
 const timelineEnd = asDate(data.meta.timelineEnd);
@@ -1065,17 +1204,7 @@ function renderRoleDashboard(roleId = activeRoleId) {
       </div>
       <div class="dashboard-days">
         ${days
-          .map(
-            ([date, title, detail]) => `
-              <article>
-                <time>${date}</time>
-                <div>
-                  <strong>${title}</strong>
-                  <p>${detail}</p>
-                </div>
-              </article>
-            `,
-          )
+          .map(([date, title, detail]) => renderDailyCard(roleId, date, title, detail))
           .join("")}
       </div>
     </div>
@@ -1519,15 +1648,7 @@ function renderPersonPanel(personId = data.personPlans[0].id) {
     </div>
     <div class="person-days">
       ${person.days
-        .map(
-          ([date, title, detail]) => `
-            <article class="person-day">
-              <time>${date}</time>
-              <strong>${title}</strong>
-              <p>${detail}</p>
-            </article>
-          `,
-        )
+        .map(([date, title, detail]) => renderDailyCard(person.id, date, title, detail))
         .join("")}
     </div>
   `;

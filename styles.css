@@ -346,7 +346,7 @@ main {
   gap: 10px;
 }
 
-.dashboard-days article {
+.dashboard-days > article:not(.daily-card) {
   display: grid;
   grid-template-columns: 86px minmax(0, 1fr);
   gap: 12px;
@@ -366,6 +366,111 @@ main {
   display: block;
   margin-bottom: 4px;
   font-size: 18px;
+}
+
+.daily-card {
+  display: grid;
+  grid-template-columns: minmax(150px, 210px) minmax(0, 1fr);
+  gap: 14px;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(217, 229, 233, 0.82);
+}
+
+.daily-card__media {
+  display: flex;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  background: #e8f0f2;
+}
+
+.daily-card__media::-webkit-scrollbar {
+  display: none;
+}
+
+.daily-card__media figure {
+  flex: 0 0 88%;
+  min-height: 100%;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.daily-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  object-fit: cover;
+}
+
+.daily-card__body {
+  padding: 14px 14px 14px 0;
+  min-width: 0;
+}
+
+.daily-card__top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.daily-card__top time {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.daily-card__sun {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.daily-card__sun span {
+  border-radius: 999px;
+  padding: 5px 8px;
+  background: rgba(233, 242, 244, 0.92);
+  color: #24414d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.daily-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 1.28;
+}
+
+.daily-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.58;
+}
+
+.daily-card p + p {
+  margin-top: 8px;
+}
+
+.daily-card__season {
+  color: #516d77;
+  font-weight: 800;
+}
+
+.daily-card a {
+  display: inline-flex;
+  margin-left: 6px;
+  color: #145aa8;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .dashboard-next {
@@ -1900,6 +2005,23 @@ footer {
   .dashboard-days article {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+
+  .daily-card {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-card__media figure {
+    flex-basis: 86%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .daily-card__media img {
+    min-height: 190px;
+  }
+
+  .daily-card__body {
+    padding: 14px;
   }
 
   .reference-bridge ul {
