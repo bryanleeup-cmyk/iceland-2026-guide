@@ -117,7 +117,7 @@ const data = {
       facts: [
         ["共同窗口", "10/03 15:10-10/06 08:00", "六个人真正一起在冰岛"],
         ["六人核心", "10/04-10/05", "南岸两日 + 蓝冰洞"],
-        ["住宿动作", "取消/改订 10/04", "林德城河酒店原订单要处理"],
+        ["住宿", "林德城河酒店", "冰岛统一基地；10/04 晚南岸团含住宿"],
       ],
       focusDays: [
         ["10/03", "六人会合 + 追极光", "林德城河酒店会合，晚上报团。"],
@@ -241,31 +241,44 @@ const data = {
     name: "Fosshotel Lind（林德城河酒店）",
     cnName: "林德城河酒店",
     address: "Rauðarárstígur 18, Reykjavík",
-    dates: "保留 10/03 晚 + 10/05 晚；10/04 晚改住南岸团含住宿",
-    checkin: "10/03 15:00 后入住；10/05 晚回雷市再入住/续住",
-    checkout: "10/06 12:00 前退房",
-    rooms: "3 间房 × 2 晚目标，原 3 晚订单需改",
-    people: "三拨人六个人共同住宿",
-    payment: "原订单已预付 ¥3169.83，需按改订结果更新",
-    cancel: "酒店当地时间 2026-10-01 15:00 前可免费取消/调整，优先处理 10/04 晚",
+    dates: "冰岛全程住林德城河酒店；10/04 晚住南岸团含住宿",
+    checkin: "09/29 起陆续入住；10/04 晚离店住南岸团；10/05 晚回到林德城河酒店",
+    checkout: "各组按离开冰岛时间退房：建皇 10/06 清晨离开；海港组 10/08 离开；彤燕组 10/10 清晨离开",
+    rooms: "标准双床 / 双人床房；截图订单均为 1 间",
+    people: "冰岛期间统一住这家酒店；10/04 晚除外",
+    payment: "已订截图：09/29-10/03 ¥4804.42；10/05-10/06 ¥988.61；后续同酒店续住信息不公开订单号",
+    cancel: "两段订单均显示预订成功；订单号和确认号不放公开页",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Fosshotel%20Lind%20Raudararstigur%2018%20Reykjavik",
     notes: [
-      "10/03 建皇和海港组先到，可先问前台寄存行李；彤燕组 15:10 落地后到酒店会合。",
+      "09/29-10/03 这段为 4 晚 1 间，订单金额 ¥4804.42；10/05-10/06 这段为 1 晚 1 间，订单金额 ¥988.61。",
+      "10/03 建皇和海港组先到，可先问前台寄存行李；彤燕组 15:10 落地后到酒店会合，六个人都住这里。",
       "10/04-10/05 南岸两日团想订 Nice Travel；接送点和出发时间以确认单最终写法为准。",
-      "10/04 晚南岸两日团通常团内含冰岛南部住宿和早餐；林德城河酒店原 10/04 晚需要取消或改订，避免双付。",
+      "10/04 晚南岸两日团通常团内含冰岛南部住宿和早餐，所以这晚不住林德城河酒店。",
       "建皇 10/06 08:00 从雷克雅未克凯夫拉维克机场起飞，建议 04:45-05:00 从酒店出发去机场；提前订机场巴士、包车或出租车。",
       "订单号和酒店确认号不放在公开分享页，需要时看预订截图。"
     ],
   },
   staySchedule: [
     {
-      date: "10/03 + 10/05",
-      nights: "2 晚目标",
+      date: "09/29-10/03",
+      nights: "4 晚 / 1 间",
+      people: "建皇提前段",
+      city: "雷克雅未克",
+      name: "Fosshotel Lind（林德城河酒店）",
+      status: "已订",
+      detail: "预订成功：09/29 入住、10/03 退房，4 晚 / 1 间，标准双床 / 双人床房，金额 ¥4804.42。建皇提前到冰岛这几晚都住这里。",
+      audiences: ["jianhuang"],
+      accent: "#174e78",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Fosshotel%20Lind%20Raudararstigur%2018%20Reykjavik",
+    },
+    {
+      date: "10/03-10/04",
+      nights: "1 晚",
       people: "冰岛六人",
       city: "雷克雅未克",
       name: "Fosshotel Lind（林德城河酒店）",
-      status: "需改订",
-      detail: "原订 10/03-10/06 三晚；因 10/04 晚南岸团含住宿，需取消/改订 10/04 晚，保留 10/03 和 10/05 雷市住宿。",
+      status: "同酒店",
+      detail: "10/03 晚冰岛六人会合后统一住林德城河酒店；这晚是六人共同酒店，不再写成待定。",
       audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#174e78",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=Fosshotel%20Lind%20Raudararstigur%2018%20Reykjavik",
@@ -282,6 +295,18 @@ const data = {
       accent: "#2f6f7e",
     },
     {
+      date: "10/05-10/06",
+      nights: "1 晚 / 1 间",
+      people: "冰岛六人 / 建皇离开前",
+      city: "雷克雅未克",
+      name: "Fosshotel Lind（林德城河酒店）",
+      status: "已订",
+      detail: "预订成功：10/05 入住、10/06 退房，1 晚 / 1 间，标准双床 / 双人床房，金额 ¥988.61。南岸两日团结束后回到这里住，建皇 10/06 清晨从这里去机场。",
+      audiences: ["jianhuang", "haigang", "tongyan"],
+      accent: "#174e78",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Fosshotel%20Lind%20Raudararstigur%2018%20Reykjavik",
+    },
+    {
       date: "09/28",
       nights: "1 晚",
       people: "建皇",
@@ -293,26 +318,16 @@ const data = {
       accent: "#2f80ed",
     },
     {
-      date: "09/29-10/02",
-      nights: "4 晚",
-      people: "建皇",
-      city: "雷克雅未克",
-      name: "冰岛提前段住宿",
-      status: "待补订单",
-      detail: "建皇 09/29 早到冰岛，10/03 再换到六人共同酒店；建议仍住雷克雅未克市区。",
-      audiences: ["jianhuang"],
-      accent: "#2f80ed",
-    },
-    {
       date: "10/06-10/08",
       nights: "2 晚",
       people: "海港组 + 彤燕组",
       city: "冰岛四人后续段",
-      name: "四人后续住宿",
-      status: "待补订单",
-      detail: "10/03 海港已和建皇走黄金圈，六人段已覆盖南岸和冰河湖；四人后续更适合补斯奈山或雷克雅内斯半岛 / 蓝湖；10/08 海港 19:15 飞阿姆斯特丹，最后一晚位置要方便回雷克雅未克凯夫拉维克机场。",
+      name: "Fosshotel Lind（林德城河酒店）",
+      status: "同酒店",
+      detail: "建皇 10/06 清晨离开后，海港组 + 彤燕组继续住林德城河酒店；10/04 晚南岸团含住宿除外。金额、房间数和订单号不放公开页。",
       audiences: ["haigang", "tongyan"],
       accent: "#4ca88f",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Fosshotel%20Lind%20Raudararstigur%2018%20Reykjavik",
     },
     {
       date: "10/08-10/10",
@@ -329,12 +344,13 @@ const data = {
       date: "10/08-10/10",
       nights: "2 晚",
       people: "彤燕组",
-      city: "雷克雅未克 / 凯夫拉维克机场附近",
-      name: "彤燕组离开前住宿",
-      status: "待补订单",
-      detail: "10/10 07:35 从雷克雅未克凯夫拉维克机场飞布鲁塞尔，10/09 晚建议住机场交通稳定的位置。",
+      city: "雷克雅未克",
+      name: "Fosshotel Lind（林德城河酒店）",
+      status: "同酒店",
+      detail: "彤燕组 10/08 海港离开后继续住林德城河酒店，直到 10/10 清晨去雷克雅未克凯夫拉维克机场；10/09 晚不要安排太远。",
       audiences: ["tongyan"],
       accent: "#27ae60",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Fosshotel%20Lind%20Raudararstigur%2018%20Reykjavik",
     },
   ],
   recommendedPlan: [
@@ -374,7 +390,7 @@ const data = {
       status: "建皇 08:00 从雷克雅未克凯夫拉维克机场飞走",
       plan: "建皇中午到曼彻斯特后进城短停：市中心、北区、国家足球博物馆 / 大教堂；海港组 + 彤燕组四个人开始包车继续冰岛路线。",
       avoid: "建皇 17:30 左右回到曼彻斯特机场更稳；四人包车也不要从机场直接冲太远，司机/向导路线要提前确认。",
-      stay: "六人共同酒店今天退房；四人后续住宿待补订单。",
+      stay: "建皇清晨从林德城河酒店去机场；海港组 + 彤燕组继续住林德城河酒店。",
       audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#2f80ed",
     },
@@ -384,7 +400,7 @@ const data = {
       status: "海港组 + 彤燕组",
       plan: "10/03 海港已经走黄金圈，六人段已经走南岸、冰河湖和蓝冰洞；四人后续建议优先补斯奈山半岛，或改雷克雅内斯半岛 / 蓝湖轻量收尾，按天气、住宿和司机建议决定。",
       avoid: "10 月天气变化大，不要重复冲东南长线；10/08 海港晚航班必须留回程余量。",
-      stay: "四人包车段住宿待补订单，建议按最终路线订。",
+      stay: "继续住林德城河酒店；当天路线不要离雷克雅未克太远，方便回酒店。",
       audiences: ["haigang", "tongyan"],
       accent: "#4ca88f",
     },
@@ -394,7 +410,7 @@ const data = {
       status: "19:15 雷克雅未克凯夫拉维克机场 → 阿姆斯特丹",
       plan: "白天可做轻量安排，晚上飞阿姆斯特丹。",
       avoid: "注意还车、行李和雷克雅未克凯夫拉维克机场值机时间。",
-      stay: "海港组阿姆住宿待补订单；彤燕组继续冰岛住宿待补订单。",
+      stay: "海港组晚上飞阿姆斯特丹；彤燕组继续住林德城河酒店。",
       audiences: ["haigang", "tongyan"],
       accent: "#f2994a",
     },
@@ -404,7 +420,7 @@ const data = {
       status: "阿姆斯特丹本地玩 1 天",
       plan: "娘娘不去冰岛，但这天和海港组在阿姆斯特丹本地一起玩；彤燕组仍在冰岛。",
       avoid: "这天不是冰岛六人同游日。",
-      stay: "海港组住阿姆待补订单；彤燕组 10/10 早班机前夜住宿待补订单。",
+      stay: "海港组住阿姆斯特丹；彤燕组继续住林德城河酒店，10/10 清晨去机场。",
       audiences: ["haigang", "tongyan", "niangniang"],
       accent: "#f2994a",
     },
@@ -481,11 +497,11 @@ const data = {
       why: "10/03 海港已经和建皇走黄金圈；六人段覆盖南岸、冰河湖和蓝冰洞，四人后续更适合补斯奈山半岛、雷克雅内斯半岛或蓝湖，不再重复东南长线。",
       checkpoints: ["斯奈山候选", "雷克雅内斯半岛备选", "蓝湖候选", "雷克雅未克轻量日", "10/08 海港飞阿姆斯特丹"],
       details: [
-        ["10/06", "建皇离开后，四个人按天气和住宿决定斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线。"],
+        ["10/06", "建皇离开后，四个人按天气决定斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上回林德城河酒店。"],
         ["10/07", "若天气稳定可走斯奈山半岛；若风雪或雨大，改雷克雅内斯半岛 / 蓝湖 / 市区。"],
         ["10/08", "海港 19:15 从雷克雅未克凯夫拉维克机场飞阿姆斯特丹，当天必须留足还车、行李和值机时间。"],
       ],
-      sleep: "四人后续住宿待补订单；最后一晚尽量方便回雷克雅未克凯夫拉维克机场。",
+      sleep: "四人后续继续住林德城河酒店；海港组 10/08 晚离开，彤燕组住到 10/10 清晨去机场。",
       audiences: ["haigang", "tongyan"],
       accent: "#4ca88f",
     },
@@ -525,9 +541,9 @@ const data = {
         ["10/03", "哥本哈根 → 冰岛 + 下午黄金圈", "06:20 从哥本哈根机场起飞，07:40 落地雷克雅未克凯夫拉维克机场；先去林德城河酒店寄存行李 / 入住。中午到雷克雅未克市区和建皇组合汇合，12:00-12:30 从港口 4 号跟黄金圈下午团出发，看辛格维利尔国家公园、盖歇尔间歇泉、黄金瀑布，约 19:00 回雷克雅未克；晚上六个人报追极光团。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-and-whale-watching-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/04", "想订：六人南岸两日团第一天", "Nice Travel 南岸两日团，10/04 预计从雷克雅未克出发；看瀑布、黑沙滩，晚上住团含南部住宿，以最终团页和确认单为准。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/05", "想订：南岸两日团第二天 + 蓝冰洞", "继续 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店，以最终团页和确认单为准。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/06", "四人包车开始", "建皇离开后，海港组 + 彤燕组四个人优先补斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；四人段住宿待补订单。"],
-        ["10/07", "四人冰岛加玩", "天气稳定可走斯奈山半岛；天气差就走雷克雅内斯半岛 / 蓝湖 / 市区备选；住宿按路线待补。"],
-        ["10/08", "雷克雅未克 / 蓝湖 → 阿姆斯特丹", "白天轻量，必须留足还车、行李和值机时间；19:15 从雷克雅未克凯夫拉维克机场起飞，10/09 00:20 落地阿姆斯特丹史基浦机场。阿姆斯特丹住宿待补订单。"],
+        ["10/06", "四人包车开始", "建皇离开后，海港组 + 彤燕组四个人优先补斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上继续住林德城河酒店。"],
+        ["10/07", "四人冰岛加玩", "天气稳定可走斯奈山半岛；天气差就走雷克雅内斯半岛 / 蓝湖 / 市区备选；晚上继续住林德城河酒店。"],
+        ["10/08", "雷克雅未克 / 蓝湖 → 阿姆斯特丹", "白天轻量，必须留足还车、行李和值机时间；从林德城河酒店出发去雷克雅未克凯夫拉维克机场，19:15 起飞，10/09 00:20 落地阿姆斯特丹史基浦机场。阿姆斯特丹住宿待补。"],
         ["10/09", "阿姆斯特丹本地游", "和娘娘本地汇合：运河、市区、荷兰国家博物馆 / 梵高博物馆二选一；阿姆斯特丹住宿待补订单。"],
         ["10/10", "火车回布鲁塞尔", "娘娘可一起走阿姆斯特丹 → 布鲁塞尔，或在阿姆斯特丹本地送行；海港组坐火车回布鲁塞尔。"],
         ["10/11-10/12", "布鲁塞尔 → 上海中转 → 北京", "10/11 12:20 从布鲁塞尔机场起飞，10/12 05:20 落地上海浦东机场 T2；上海中转 3 小时，08:20 从上海浦东机场 T2 起飞，10:35 落地北京大兴机场。这两天只做返程。"],
@@ -543,10 +559,10 @@ const data = {
         ["10/03", "上海 → 布鲁塞尔中转 → 冰岛 + 酒店会合", "02:10 从上海浦东机场 T2 起飞，08:10 落地布鲁塞尔机场；布鲁塞尔中转 5 小时 40 分，13:50 从布鲁塞尔机场起飞，15:10 落地雷克雅未克凯夫拉维克机场。落地后去林德城河酒店和大家会合，晚上六个人报追极光团。"],
         ["10/04", "想订：六人南岸两日团第一天", "Nice Travel 南岸两日团，10/04 预计从雷克雅未克出发；看瀑布、黑沙滩，晚上住团含南部住宿，以最终团页和确认单为准。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/05", "想订：南岸两日团第二天 + 蓝冰洞", "继续 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店，以最终团页和确认单为准。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/06", "四人包车开始", "建皇离开后，和海港组一起优先补斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；四人段住宿待补订单。"],
-        ["10/07", "四人冰岛加玩", "天气稳定可走斯奈山半岛；天气差就走雷克雅内斯半岛 / 蓝湖 / 市区备选；住宿按路线待补。"],
-        ["10/08", "海港离开后", "送海港去雷克雅未克凯夫拉维克机场；自己留雷克雅未克、蓝湖或雷克雅内斯半岛；住宿待补订单。"],
-        ["10/09", "离开前轻量日", "不要跑远，建议雷克雅内斯半岛、蓝湖、机场附近住宿；10/10 早班机前夜要优先订。"],
+        ["10/06", "四人包车开始", "建皇离开后，和海港组一起优先补斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上继续住林德城河酒店。"],
+        ["10/07", "四人冰岛加玩", "天气稳定可走斯奈山半岛；天气差就走雷克雅内斯半岛 / 蓝湖 / 市区备选；晚上继续住林德城河酒店。"],
+        ["10/08", "海港离开后", "送海港去雷克雅未克凯夫拉维克机场；自己留雷克雅未克、蓝湖或雷克雅内斯半岛；晚上继续住林德城河酒店。"],
+        ["10/09", "离开前轻量日", "不要跑远，建议雷克雅内斯半岛、蓝湖或雷克雅未克市区轻量收尾；晚上仍住林德城河酒店，10/10 清晨去机场。"],
         ["10/10", "冰岛 → 布鲁塞尔", "07:35 从雷克雅未克凯夫拉维克机场起飞，12:55 落地布鲁塞尔机场，和海港布鲁塞尔段重新接上。"],
         ["10/11-10/12", "布鲁塞尔 → 北京中转 → 深圳", "10/11 13:20 从布鲁塞尔机场起飞，10/12 05:00 落地北京首都机场；北京中转 3 小时 30 分，08:30 从北京首都机场 T2 起飞，11:50 落地深圳宝安机场。"],
       ],
@@ -1131,9 +1147,61 @@ function getDailyVisual(personId, date, title, detail) {
   return keywordMap.find(([keyword]) => text.includes(keyword))?.[1] || fallbackDailyVisual;
 }
 
+function getDailyStay(personId, date, title) {
+  const hotelStay = {
+    label: "住宿",
+    name: "林德城河酒店",
+    detail: "冰岛期间统一住这里；点开可跳转谷歌地图。",
+    url: data.hotel.mapUrl,
+  };
+  const tourStay = {
+    label: "住宿",
+    name: "南岸两日团含住宿",
+    detail: "10/04 晚住旅行团安排的冰岛南部住宿，以最终确认单为准。",
+    url: "",
+  };
+  const airportStay = {
+    label: "住宿",
+    name: "林德城河酒店",
+    detail: "清晨从酒店出发去雷克雅未克凯夫拉维克机场；这天不再住冰岛。",
+    url: data.hotel.mapUrl,
+  };
+
+  if (personId === "jianhuang") {
+    if (["09/29", "09/30", "10/01", "10/02", "10/03", "10/05"].includes(date)) return hotelStay;
+    if (date === "10/04") return tourStay;
+    if (date === "10/06") return airportStay;
+  }
+
+  if (personId === "haigang") {
+    if (["10/03", "10/05", "10/06", "10/07"].includes(date)) return hotelStay;
+    if (date === "10/04") return tourStay;
+    if (date === "10/08") {
+      return {
+        ...hotelStay,
+        detail: "白天从林德城河酒店出发去雷克雅未克凯夫拉维克机场；晚上飞阿姆斯特丹。",
+      };
+    }
+  }
+
+  if (personId === "tongyan") {
+    if (["10/03", "10/05", "10/06", "10/07", "10/08", "10/09"].includes(date)) return hotelStay;
+    if (date === "10/04") return tourStay;
+    if (date === "10/10") {
+      return {
+        ...hotelStay,
+        detail: "清晨从林德城河酒店出发去雷克雅未克凯夫拉维克机场；这天离开冰岛。",
+      };
+    }
+  }
+
+  return null;
+}
+
 function renderDailyCard(personId, date, title, detail) {
   const visual = getDailyVisual(personId, date, title, detail);
   const images = visual.images || fallbackDailyVisual.images;
+  const stay = getDailyStay(personId, date, title);
   return `
     <article class="daily-card">
       <div class="daily-card__media" aria-label="${date} ${title} 真实照片，可左右滑动">
@@ -1141,7 +1209,7 @@ function renderDailyCard(personId, date, title, detail) {
           .map(
             (image, index) => `
               <figure>
-                <img src="${image}" alt="${title}真实景色 ${index + 1}" loading="lazy" />
+                <img src="${image}" alt="${title}真实景色 ${index + 1}" loading="lazy" draggable="false" />
               </figure>
             `,
           )
@@ -1158,6 +1226,17 @@ function renderDailyCard(personId, date, title, detail) {
         <strong>${title}</strong>
         <p class="daily-card__season">${visual.city}：${visual.season}</p>
         <p>${detail}</p>
+        ${
+          stay
+            ? `<p class="daily-card__stayline">
+                ${stay.label}：${
+                  stay.url
+                    ? `<a href="${stay.url}" target="_blank" rel="noopener">${stay.name}</a>`
+                    : `<strong>${stay.name}</strong>`
+                }
+              </p>`
+            : ""
+        }
       </div>
     </article>
   `;
@@ -1938,6 +2017,16 @@ roleChooserEl.addEventListener("click", (event) => {
   if (!button) return;
   applyRoleView(button.dataset.role);
 });
+
+roleDashboardEl.addEventListener(
+  "click",
+  (event) => {
+    if (!event.target.closest(".daily-card__media")) return;
+    event.preventDefault();
+    event.stopPropagation();
+  },
+  true,
+);
 
 roleDashboardEl.addEventListener("click", (event) => {
   const button = event.target.closest("[data-role]");
