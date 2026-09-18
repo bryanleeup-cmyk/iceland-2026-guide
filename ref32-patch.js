@@ -211,6 +211,7 @@
   applyRoleView(activeRoleId || "jianhuang", { persist: false });
 })();
 
+/* Haigang shares Tongtong itinerary through 10/07. */
 (function applyTongtongUpdate() {
   const googleMaps = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   const parisHotel = {
