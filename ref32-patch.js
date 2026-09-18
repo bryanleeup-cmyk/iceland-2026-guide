@@ -226,8 +226,8 @@
   if (tongtong) {
     tongtong.name = "2号出发的机票：彤彤";
     tongtong.shortName = "彤彤";
-    tongtong.tags = ["1 人", "10/03 下午到", "10/10 离开冰岛"];
-    tongtong.summary = "10/02 先抵达巴黎，10/03 清晨坐大巴到布鲁塞尔后按原计划飞冰岛；15:10 到冰岛后五人齐。";
+    tongtong.tags = ["彤彤 + 龙龙", "10/03 下午到", "10/10 布鲁塞尔收尾"];
+    tongtong.summary = "10/03 下午约 16:00 到雷克雅未克；随后按截图补入南岸两日、兰德曼那劳卡、斯奈山、黄金圈、温泉与布鲁塞尔收尾。";
     tongtong.flights.europeLongHaul = [
       "10/02 深圳宝安机场 T3 01:30 → 巴黎戴高乐机场 T1 08:10｜海南航空 HU757",
       "10/11 布鲁塞尔机场 11:40 → 10/12 深圳宝安机场 T3 05:00｜海南航空 HU760",
@@ -243,24 +243,29 @@
   if (tongtongRole) {
     tongtongRole.name = "彤彤";
     tongtongRole.title = "我是彤彤";
-    tongtongRole.summary = "10/02 抵达巴黎，10/03 先坐大巴到布鲁塞尔、再飞冰岛；15:10 落地后五人齐。";
+    tongtongRole.summary = "10/02 抵达巴黎，10/03 先坐大巴到布鲁塞尔、再飞冰岛；下午约 16:00 到雷克雅未克，后续行程按截图已补齐。";
     tongtongRole.notes = [
-      "重点看：10/02 深圳飞巴黎、与龙龙住巴黎酒店；10/03 清晨从 Paris Pershing–Porte Maillot 坐大巴到布鲁塞尔南站，再按原计划飞冰岛。",
+      "重点看：10/02 深圳飞巴黎、与龙龙住巴黎酒店；10/03 清晨从 Paris Pershing–Porte Maillot 坐大巴到布鲁塞尔南站，再按原计划飞冰岛，下午约 16:00 到雷克雅未克。",
       "Paris Pershing–Porte Maillot 上车点和巴黎酒店名称都可直接点开地图。",
-      "10/09 晚建议住机场交通稳定的位置，避免 10/10 早班机压力。",
+      "10/04-10/10 的人数、集合点、时段和用餐提醒均按你最新截图记录；10/09 住机场附近，10/10 在布鲁塞尔市中心 Hilton 收尾。",
     ];
     tongtongRole.facts = [
       ["巴黎抵达", "10/02 08:10", "HU757 抵达巴黎戴高乐 T1"],
       ["大巴", "10/03 06:30", "Paris Pershing–Porte Maillot → Brussels Midi"],
-      ["到冰岛", "10/03 15:10", "彤彤到后五人正式齐"],
-      ["离开冰岛", "10/10 07:35", "前一晚住机场交通稳的位置"],
+      ["到雷市", "10/03 约 16:00", "入住林德城河酒店"],
+      ["冰岛后段", "10/06-10/09", "5 人 → 3 人，按截图走一日团与温泉"],
+      ["布鲁塞尔", "10/10", "市中心 Hilton 附近半日游"],
     ];
     tongtongRole.focusDays = [
       ["10/02", "深圳 → 巴黎 + 巴黎住宿", "01:30 从深圳宝安 T3 起飞，08:10 到巴黎戴高乐 T1；当晚与龙龙住 Ibis Clichy Centre Mairie。"],
-      ["10/03", "巴黎大巴 → 布鲁塞尔 → 冰岛", "06:30 从 Paris Pershing–Porte Maillot 出发，乘 BlaBlaCar Bus（€8.99）抵达 Brussels Midi 后前往机场，13:50 飞冰岛。"],
-      ["10/04", "南岸两日已订", "Nice Travel 五人南岸两日 + 蓝冰洞；接送点和出发时间待确认。"],
-      ["10/06", "三人继续", "建皇离开后，和海港组继续补线。"],
-      ["10/10", "早班机", "07:35 从雷克雅未克凯夫拉维克机场飞布鲁塞尔。"],
+      ["10/03", "雷克雅未克下午 4 点到（2 人）", "15:10 抵达雷克雅未克凯夫拉维克机场，约 16:00 到雷克雅未克，入住林德城河酒店；晚餐按截图可预定 7 人一桌。"],
+      ["10/04", "南岸两日游（7 人）", "Nice Travel 南岸两日游，08:30 前到 Bus Stop #13（Nice Travel）集合；团含南部住宿。餐食不含（有补给点）。"],
+      ["10/05", "南岸两日游第 2 天（7 人）", "继续南岸两日游，完成蓝冰洞、冰河湖与钻石沙滩；含早餐，沿途有补给点。预计不晚于 21:00 回到雷克雅未克，回城后入住林德城河酒店。"],
+      ["10/06", "兰德曼那劳卡高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐（途中有一个小超市）。"],
+      ["10/07", "斯奈山半岛一日游（5 人）", "原 Bus Stop #12 改为 Bus Stop #9 集合；08:00 前到，预计 19:00 回城；不含餐（中途有餐厅）。"],
+      ["10/08", "黄金圈一日游（3 人）", "Troll 团，Bus Stop #13 集合，09:00-17:00；不含餐。"],
+      ["10/09", "温泉 + 雷市一日游（3 人）", "住宿在机场附近；安排温泉 + 雷克雅未克一日游。"],
+      ["10/10", "布鲁塞尔半日游（2 人）", "住宿为布鲁塞尔市中心 Hilton，安排市中心半日游。"],
     ];
     tongtongRole.cta = "切到彤彤";
   }
@@ -268,17 +273,17 @@
   const tongtongPlan = data.personPlans.find((person) => person.id === "tongyan");
   if (tongtongPlan) {
     tongtongPlan.name = "彤彤";
-    tongtongPlan.role = "彤彤 1 人：10/02 飞巴黎、与龙龙住一晚；10/03 清晨坐大巴到布鲁塞尔后飞冰岛；10/06 建皇离开后，和海港组 3 人继续冰岛。";
+    tongtongPlan.role = "彤彤 + 龙龙：10/02 飞巴黎并住一晚；10/03 清晨坐大巴到布鲁塞尔后飞冰岛；10/04-10/10 的冰岛与布鲁塞尔行程按最新截图补齐。";
     tongtongPlan.days = [
-      ["10/02", "深圳 → 巴黎 + 巴黎住宿", "01:30 从深圳宝安机场 T3 起飞，08:10 抵达巴黎戴高乐机场 T1，航班海南航空 HU757。当天与龙龙入住 <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Ibis%20Clichy%20Centre%20Mairie%2C%204%20Rue%20Marcellin%20Berthelot%2C%2092110%20Clichy%2C%20France\" target=\"_blank\" rel=\"noreferrer\">宜必思克利希中心市政厅酒店（Ibis Clichy Centre Mairie）</a>（10/02 入住、10/03 退房，1 晚 / 1 间）。"],
-      ["10/03", "巴黎 → 布鲁塞尔南站 → 冰岛", "06:30 从 <a href=\"https://www.google.com/maps/search/?api=1&amp;query=24%20Boulevard%20Pershing%2C%2075017%20Paris%2C%20France\" target=\"_blank\" rel=\"noreferrer\">Paris Pershing–Porte Maillot 上车点</a>（24 Boulevard Pershing, 75017 Paris）乘 BlaBlaCar Bus（€8.99）前往 Brussels Midi / Brussels South West（预计抵达 87 Rue de France, 1060 Brussels）。之后前往布鲁塞尔机场，13:50 起飞、15:10 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI555；落地后去林德城河酒店会合，晚上五人追极光。"],
-      ["10/04", "已订：五人南岸两日团第一天", "Nice Travel 五人团已订并支付定金；接送点待确认。当天看瀑布、黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-      ["10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-      ["10/06", "三人继续冰岛", "建皇离开后，和海港组两人一起优先补斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上继续住林德城河酒店。"],
-      ["10/07", "三人冰岛加玩", "天气稳定可走斯奈山半岛；天气差就走雷克雅内斯半岛 / 蓝湖 / 市区备选；晚上继续住林德城河酒店。"],
-      ["10/08", "海港离开后", "送海港去雷克雅未克凯夫拉维克机场；自己留雷克雅未克、蓝湖或雷克雅内斯半岛；晚上继续住林德城河酒店。"],
-      ["10/09", "离开前轻量日", "不要跑远，建议雷克雅内斯半岛、蓝湖或雷克雅未克市区轻量收尾；晚上仍住林德城河酒店，10/10 清晨去机场。"],
-      ["10/10", "冰岛 → 布鲁塞尔", "07:35 从雷克雅未克凯夫拉维克机场起飞，12:55 落地布鲁塞尔机场。"],
+      ["10/02", "深圳 → 巴黎 + 巴黎住宿", "01:30 从深圳宝安机场 T3 起飞，08:10 抵达巴黎戴高乐机场 T1，航班海南航空 HU757；当晚与龙龙入住 Ibis Clichy Centre Mairie。"],
+      ["10/03", "雷克雅未克下午 4 点到（2 人）", "15:10 抵达雷克雅未克凯夫拉维克机场，约 16:00 到雷克雅未克并入住林德城河酒店；晚餐按截图可预定 7 人一桌。"],
+      ["10/04", "南岸两日游（7 人）", "08:30 前到 Bus Stop #13（Nice Travel）集合；团含南部住宿。餐食不含（有补给点）。"],
+      ["10/05", "南岸两日游第 2 天（7 人）", "完成蓝冰洞、冰河湖与钻石沙滩；含早餐，沿途有补给点。预计不晚于 21:00 回到雷克雅未克，回城后入住林德城河酒店。"],
+      ["10/06", "兰德曼那劳卡高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐（途中有一个小超市）。"],
+      ["10/07", "斯奈山半岛一日游（5 人）", "原 Bus Stop #12 改为 Bus Stop #9 集合；08:00 前到，预计 19:00 回城；不含餐（中途有餐厅）。"],
+      ["10/08", "黄金圈一日游（3 人）", "Bus Stop #13 随 Troll 团出发，09:00-17:00；不含餐。"],
+      ["10/09", "温泉 + 雷市一日游（3 人）", "住机场附近；安排温泉 + 雷克雅未克一日游。"],
+      ["10/10", "布鲁塞尔半日游（2 人）", "住布鲁塞尔市中心 Hilton，安排市中心半日游。"],
       ["10/11", "布鲁塞尔 → 深圳", "11:40 从布鲁塞尔机场起飞，10/12 05:00 抵达深圳宝安机场 T3，航班海南航空 HU760。"],
     ];
   }
@@ -304,6 +309,35 @@
       stay.detail = stay.detail.replaceAll("彤燕组", "彤彤").replaceAll("彤燕", "彤彤").replaceAll("海港组 + 彤彤四个人", "海港组 + 彤彤三个人").replaceAll("四人", "三人");
     }
   });
+  const tongtongIcelandDates = new Set(["10/03-10/04", "10/04", "10/05-10/06", "10/06-10/08"]);
+  data.staySchedule.forEach((stay) => {
+    if (tongtongIcelandDates.has(stay.date) && stay.audiences?.includes("tongyan")) {
+      stay.audiences = stay.audiences.filter((audience) => audience !== "tongyan");
+    }
+  });
+  const tongtongStays = [
+    {
+      date: "10/03-10/04", nights: "1 晚", people: "彤彤 + 龙龙（共 2 人）", city: "雷克雅未克", name: "林德城河酒店（Fosshotel Lind）", status: "已订",
+      detail: "10/03 下午约 16:00 到雷克雅未克后入住；晚餐可按截图为 7 人预订一桌。", audiences: ["tongyan"], accent: "#27ae60", mapUrl: data.hotel.mapUrl,
+    },
+    {
+      date: "10/04-10/05", nights: "1 晚（团含）", people: "南岸团 7 人", city: "冰岛南部", name: "南岸两日团含住宿", status: "已订",
+      detail: "10/04 08:30 前到 Bus Stop #13（Nice Travel）集合；餐食不含，沿途有补给点。", audiences: ["tongyan"], accent: "#2f6f7e",
+    },
+    {
+      date: "10/05-10/09", nights: "4 晚", people: "10/06-10/07：5 人；10/08：3 人", city: "雷克雅未克", name: "林德城河酒店（Fosshotel Lind）", status: "已订",
+      detail: "10/05 晚南岸团回城后入住至 10/09；10/06 高地超级吉普、10/07 斯奈山、10/08 黄金圈均从雷克雅未克出发。", audiences: ["tongyan"], accent: "#27ae60", mapUrl: data.hotel.mapUrl,
+    },
+    {
+      date: "10/09", nights: "1 晚", people: "3 人", city: "凯夫拉维克机场附近", name: "机场附近住宿", status: "已确认区域",
+      detail: "截图确认住机场附近；具体酒店名称待补。", audiences: ["tongyan"], accent: "#27ae60", mapUrl: googleMaps("Keflavik Airport hotels"),
+    },
+    {
+      date: "10/10", nights: "1 晚", people: "2 人", city: "布鲁塞尔市中心", name: "布鲁塞尔市中心 Hilton", status: "已确认",
+      detail: "截图确认住布鲁塞尔市中心 Hilton，安排半日游。", audiences: ["tongyan"], accent: "#27ae60", mapUrl: googleMaps("Hilton Brussels city centre"),
+    },
+  ];
+  data.staySchedule.unshift(...tongtongStays);
 
   const parisStay = {
     label: "住宿（已订）",
@@ -311,9 +345,46 @@
     detail: "10/02 入住、10/03 退房；彤彤和龙龙入住，1 晚 / 1 间。点开可跳转谷歌地图。",
     url: parisHotel.mapUrl,
   };
+  const tongtongIcelandStays = {
+    reykjavikArrival: {
+      label: "住宿",
+      name: "林德城河酒店（Fosshotel Lind）",
+      detail: "10/03 下午约 16:00 到雷克雅未克后入住；当天截图记录为 2 人抵达，晚餐可按 7 人预订一桌。",
+      url: data.hotel.mapUrl,
+    },
+    southCoast: {
+      label: "住宿（团含）",
+      name: "南岸两日团含住宿",
+      detail: "10/04 晚：7 人南岸两日游团含住宿；餐食不含，沿途有补给点。",
+      url: "",
+    },
+    lindFiveToNine: {
+      label: "住宿",
+      name: "林德城河酒店（Fosshotel Lind）",
+      detail: "10/05 回城后入住至 10/09；10/06-10/07 按截图 5 人，10/08 起按截图 3 人。",
+      url: data.hotel.mapUrl,
+    },
+    airportNearby: {
+      label: "住宿（已确认）",
+      name: "凯夫拉维克机场附近住宿",
+      detail: "10/09 晚：3 人，截图仅确认机场附近，酒店名称待补。",
+      url: googleMaps("Keflavik Airport hotels"),
+    },
+    brusselsHilton: {
+      label: "住宿",
+      name: "布鲁塞尔市中心 Hilton",
+      detail: "10/10：2 人，布鲁塞尔市中心半日游后入住；点开可跳转地图。",
+      url: googleMaps("Hilton Brussels city centre"),
+    },
+  };
   const previousGetDailyStay = getDailyStay;
   getDailyStay = function getDailyStayTongtong(personId, date, title) {
     if (personId === "tongyan" && date === "10/02") return parisStay;
+    if (personId === "tongyan" && date === "10/03") return tongtongIcelandStays.reykjavikArrival;
+    if (personId === "tongyan" && date === "10/04") return tongtongIcelandStays.southCoast;
+    if (personId === "tongyan" && ["10/05", "10/06", "10/07", "10/08"].includes(date)) return tongtongIcelandStays.lindFiveToNine;
+    if (personId === "tongyan" && date === "10/09") return tongtongIcelandStays.airportNearby;
+    if (personId === "tongyan" && date === "10/10") return tongtongIcelandStays.brusselsHilton;
     return previousGetDailyStay(personId, date, title);
   };
 
@@ -331,6 +402,53 @@
     season: "当天跨三城，清晨大巴后直接衔接机场，抵达冰岛后优先酒店会合和保暖。",
     images: ["assets/spots/paris-cruise.jpg", "assets/spots/brussels.jpg", "assets/spots/aurora.jpg"],
   };
+  dailyVisuals["tongyan|10/04"] = {
+    city: "雷克雅未克 / 冰岛南岸",
+    sunrise: "07:33",
+    sunset: "18:38",
+    season: "南岸两日游第 1 天，瀑布、黑沙滩和低云海岸线适合跟团完成；餐食不含，沿途有补给点。",
+    images: ["assets/spots/gallery/reynisfjara-seljalandsfoss.jpg", "assets/spots/reynisfjara.jpg", "assets/spots/tourlink/nice-south-waterfall-1.jpg"],
+  };
+  dailyVisuals["tongyan|10/05"] = {
+    city: "冰岛南岸 / 雷克雅未克",
+    sunrise: "07:36",
+    sunset: "18:34",
+    season: "南岸两日游第 2 天，蓝冰洞、冰河湖与钻石沙滩是当天重点；预计不晚于 21:00 回雷市。",
+    images: ["assets/spots/iceland/jokulsarlon-1.jpg", "assets/spots/iceland/diamond-beach-1.jpg", "assets/spots/jokulsarlon.jpg"],
+  };
+  dailyVisuals["tongyan|10/06"] = {
+    city: "雷克雅未克 / 兰德曼那劳卡",
+    sunrise: "07:50",
+    sunset: "18:40",
+    season: "5 人高地段第一天，酒店门口接送，08:30-20:00；自备午餐，途中有小超市。",
+    images: ["assets/spots/iceland/landmannalaugar-1.jpg", "assets/spots/iceland/landmannalaugar-2.jpg", "assets/spots/iceland/landmannalaugar-3.jpg"],
+  };
+  dailyVisuals["tongyan|10/07"] = {
+    city: "雷克雅未克 / 斯奈山半岛",
+    sunrise: "07:53",
+    sunset: "18:36",
+    season: "5 人斯奈山一日游，改到 Bus Stop #9 集合；08:00 前到，预计 19:00 回城。",
+    images: ["assets/spots/tourlink/snaefellsnes-aa-1.jpg", "assets/spots/tourlink/snaefellsnes-aa-2.jpg", "assets/spots/season/snaefellsnes-autumn.jpg"],
+  };
+  dailyVisuals["tongyan|10/08"] = {
+    city: "雷克雅未克 / 黄金圈",
+    sunrise: "07:55",
+    sunset: "18:33",
+    season: "3 人黄金圈一日游，Bus Stop #13 集合，09:00-17:00；不含餐。",
+    images: ["assets/spots/gullfoss.jpg", "assets/spots/iceland/thingvellir-1.jpg", "assets/spots/iceland/strokkur-1.jpg"],
+  };
+  dailyVisuals["tongyan|10/09"] = {
+    city: "凯夫拉维克 / 雷克雅未克",
+    sunrise: "07:58",
+    sunset: "18:29",
+    season: "3 人温泉与雷克雅未克轻量收尾；当天不跑远，为次日离开冰岛保留机动时间。",
+    images: ["assets/spots/iceland/blue-lagoon-1.jpg", "assets/spots/iceland/reykjavik-hallgrimskirkja.jpg", "assets/spots/iceland/reykjavik-harpa.jpg"],
+  };
+
+  dailyVisuals["tongyan|10/06"] = { ...dailyVisuals["tongyan|10/06"], city: "兰德曼卡高地", season: "5 人高地超级吉普，酒店门口接送。", images: dailyVisuals["jianhuang|10/02"].images };
+  dailyVisuals["tongyan|10/07"].season = "5 人斯奈山半岛一日游，12 号站改 9 号站。";
+  dailyVisuals["tongyan|10/08"] = { ...dailyVisuals["tongyan|10/08"], city: "黄金圈", season: "3 人黄金圈一日游，Troll 团。", images: dailyVisuals["jianhuang|10/03"].images };
+  dailyVisuals["tongyan|10/09"] = { ...dailyVisuals["tongyan|10/09"], season: "3 人温泉 + 雷市一日游，晚住机场附近。", images: ["assets/spots/iceland/blue-lagoon-1.jpg", "assets/spots/iceland/reykjavik-harpa.jpg"] };
 
   const replacementPairs = [
     ["彤燕组", "彤彤"],
@@ -355,8 +473,14 @@
   };
   rewriteStrings(data);
 
-  data.overlap.label = "冰岛五人都在：10/03 15:10 后 - 10/06 19:20 前";
-  data.overlap.context = "这是冰岛五人全部在的时间段。10/03 晚五人追极光；10/04-10/05 五人一起走南岸两日 + 蓝冰洞小巴团；10/06 建皇上午去 Sky Lagoon，14:00 左右回城后前往机场，19:20 从凯夫拉维克机场离开冰岛。";
+  data.overlap.label = "冰岛同行窗口：10/03 15:10 后 - 10/06 19:20 前";
+  data.overlap.context = "同行人数以每日安排为准：10/04-10/05 为 7 人南岸两日 + 蓝冰洞；10/06-10/07 为 5 人高地与斯奈山段；10/08-10/09 为 3 人黄金圈与温泉段。建皇 10/06 19:20 从凯夫拉维克机场离开。";
+  const allRoleAfterTongtongUpdate = data.roleViews.find((role) => role.id === "all");
+  if (allRoleAfterTongtongUpdate) {
+    allRoleAfterTongtongUpdate.facts[0] = ["同行窗口", "10/03 15:10-10/06 19:20", "人数按每日行程卡为准"];
+    allRoleAfterTongtongUpdate.focusDays[0] = ["10/04-10/05", "南岸两日 + 蓝冰洞（7 人）", "团含 10/04 南部住宿；10/05 晚回雷市。"];
+    allRoleAfterTongtongUpdate.focusDays[3] = ["10/06+", "5 人 → 3 人后续段", "10/06 高地、10/07 斯奈山、10/08 黄金圈、10/09 温泉；人数按截图递减。"];
+  }
   data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；海港组 10/08 离开；彤彤 10/10 清晨离开";
 
   document.querySelector(".hotel-badge")?.replaceChildren("共同基地");
