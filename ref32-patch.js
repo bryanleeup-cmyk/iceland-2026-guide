@@ -43,6 +43,7 @@
     role.focusDays[8] = ["10/06", "已订：Sky Lagoon 温泉团（¥2135.58/2人） + 晚飞米兰", "11:00 参加 Sky Lagoon 温泉团，预计 14:00 回到雷克雅未克市区，简单逛逛后前往机场；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://cn.adventures.is/iceland/day-tours/natural-hot-springs-tours/sky-lagoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"];
     role.focusDays[9] = ["10/07", "米兰转机到里斯本", "01:30 到米兰马尔彭萨，06:30 从 T2 飞里斯本，08:30 到里斯本；白天只做半日轻量城市步行，晚上飞哥本哈根并住 Cabinn Metro Hotel。"];
     role.focusDays[10] = ["10/08", "哥本哈根转机一日游", "前一晚住 Cabinn Metro Hotel；19:05 飞北京，白天只走市区轻量线。"];
+    role.focusDays[0] = ["09/26", "辛特拉海岸 + 两张已购门票", "雷加莱拉庄园 14:30 固定入场；佩纳公园（仅花园、不含宫殿）无时段票，16:45 左右入园；辛特拉王宫改为可选外观停留，确保 20:30 回里斯本市区晚餐。"];
   }
 
   const stayBeforeLeave = data.staySchedule.find((stay) => stay.date === "10/05-10/06");
@@ -84,7 +85,7 @@
     replaceDay(
       "09/26",
       "里斯本郊区海边一日游",
-      "建皇（两人）、龙龙、娘娘四人走里斯本郊区海边一日游：09:00 从市区出发，依次看地狱之口、罗卡角、雷加莱拉庄园、辛特拉王宫和佩纳宫。午餐已订两个备选，按当天情况二选一：12:00 <a href=\"https://www.google.com/maps/search/?api=1&query=Adega%20das%20Azenhas%20Avenida%20Comiss%C3%A3o%20de%20Melhoramentos%201928%201%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Adega das Azenhas</a>（4 人）；12:30 <a href=\"https://www.google.com/maps/search/?api=1&query=%C3%81gua%20e%20Sal%20Largo%20do%20Padre%20Ant%C3%B3nio%205%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Água e Sal</a>（4 人，Terrace）。晚餐 20:30 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Frade%20dos%20Mares%20Avenida%20Dom%20Carlos%20I%2055A%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Frade Dos Mares</a>（4 人）；当晚继续住 The Delight Hostel 豪华四人间。"
+      "建皇（两人）、龙龙、娘娘四人走里斯本郊区海边一日游。09:00 从里斯本市区出发；10:00 抵达 <a href=\"https://www.google.com/maps/search/?api=1&query=Boca%20do%20Inferno%20Cascais\" target=\"_blank\" rel=\"noreferrer\">地狱之口</a>；10:50 到 <a href=\"https://www.google.com/maps/search/?api=1&query=Cabo%20da%20Roca%20Colares\" target=\"_blank\" rel=\"noreferrer\">罗卡角</a>。午餐按当天情况二选一：若选 12:00 <a href=\"https://www.google.com/maps/search/?api=1&query=Adega%20das%20Azenhas%20Avenida%20Comiss%C3%A3o%20de%20Melhoramentos%201928%201%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Adega das Azenhas</a>（4 人），11:35 左右从罗卡角出发；若选 12:30 <a href=\"https://www.google.com/maps/search/?api=1&query=%C3%81gua%20e%20Sal%20Largo%20do%20Padre%20Ant%C3%B3nio%205%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Água e Sal</a>（4 人、Terrace），则在罗卡角多留至约 12:05。两种方案均以 14:20 前抵达 <a href=\"https://www.google.com/maps/search/?api=1&query=Quinta%20da%20Regaleira%20Sintra\" target=\"_blank\" rel=\"noreferrer\">雷加莱拉庄园</a> 为准：已购 4 张票，14:30 固定入场，最晚 18:30 闭园。16:10 左右离开，16:45 左右到 <a href=\"https://www.google.com/maps/search/?api=1&query=Parque%20da%20Pena%20Sintra\" target=\"_blank\" rel=\"noreferrer\">佩纳公园</a>；已购 4 张花园票（不含宫殿、无时段），18:10 左右离园，公园 19:00 闭园。原先的辛特拉王宫不再安排入内，以免影响 14:30 固定入场；若午餐和车程均提前，只作外观拍照。18:10 后返回里斯本市区，20:30 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Frade%20dos%20Mares%20Avenida%20Dom%20Carlos%20I%2055A%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Frade Dos Mares</a>（4 人，桌位至 22:30）；当晚继续住 The Delight Hostel 豪华四人间。"
     );
     replaceDay(
       "09/27",
@@ -124,12 +125,23 @@
     }
     const coastalDay = niangniangPlan.days.find((day) => day[0] === "09/26");
     if (coastalDay) {
-      coastalDay[2] = "和建皇组合、龙龙一起报名这个专业路线：09:00 从里斯本市区出发，10:00 地狱之口，10:50 罗卡角，12:00 雷加莱拉庄园，14:30 辛特拉王宫，16:00 佩纳宫。午餐有两个已订备选，按当天情况二选一：12:00 <a href=\"https://www.google.com/maps/search/?api=1&query=Adega%20das%20Azenhas%20Avenida%20Comiss%C3%A3o%20de%20Melhoramentos%201928%201%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Adega das Azenhas</a>（4 人）；12:30 <a href=\"https://www.google.com/maps/search/?api=1&query=%C3%81gua%20e%20Sal%20Largo%20do%20Padre%20Ant%C3%B3nio%205%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Água e Sal</a>（4 人，Terrace）。晚餐 20:30 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Frade%20dos%20Mares%20Avenida%20Dom%20Carlos%20I%2055A%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Frade Dos Mares</a>（4 人）。";
+      coastalDay[2] = "和建皇组合、龙龙一起报名这个专业路线：09:00 从里斯本市区出发，10:00 地狱之口，10:50 罗卡角。午餐有两个已订备选，按当天情况二选一：12:00 <a href=\"https://www.google.com/maps/search/?api=1&query=Adega%20das%20Azenhas%20Avenida%20Comiss%C3%A3o%20de%20Melhoramentos%201928%201%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Adega das Azenhas</a>（4 人）或 12:30 <a href=\"https://www.google.com/maps/search/?api=1&query=%C3%81gua%20e%20Sal%20Largo%20do%20Padre%20Ant%C3%B3nio%205%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Água e Sal</a>（4 人、Terrace）。14:30 凭已购 4 张票固定入场雷加莱拉庄园，最晚 18:30 闭园；16:45 左右进入已购花园票（不含宫殿、无时段）的佩纳公园，19:00 闭园。辛特拉王宫改为可选外观拍照，不安排入内。18:10 后回里斯本市区，20:30 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Frade%20dos%20Mares%20Avenida%20Dom%20Carlos%20I%2055A%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Frade Dos Mares</a>（4 人，桌位至 22:30）。";
     }
     const portoDay = niangniangPlan.days.find((day) => day[0] === "09/27");
     if (portoDay) {
       portoDay[2] = "早上和建皇组合、龙龙一起坐约 3.5 小时大巴去波尔图；12:00 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Meia-Nau%20Porto\" target=\"_blank\" rel=\"noreferrer\">Meia-Nau Porto</a> 午餐（3 人，姓名 Hector Pei；Porto 门店，迟到宽限 10 分钟）。下午玩波尔图老城、路易一世大桥、杜罗河边。20:50 从波尔图弗朗西斯科卡内罗机场起飞，09/28 00:25 落地阿姆斯特丹史基浦机场，航班荷兰泛航 HV6004；飞行 2 小时 35 分，无中转。";
     }
+  }
+
+  const sintraDay = data.spots.find((spot) => spot.id === "sintra-day-tour");
+  if (sintraDay) {
+    sintraDay.bestTime = "09:00 出发；14:30 雷加莱拉固定入场；16:45 左右佩纳公园入园";
+    sintraDay.open = "雷加莱拉庄园已购 4 张 14:30 入场票，18:30 闭园；佩纳公园已购 4 张花园票（不含宫殿、无时段），19:00 闭园。";
+    sintraDay.notes = [
+      "09:00 里斯本市区出发 → 10:00 地狱之口 → 10:50 罗卡角；午餐按 12:00 Adega das Azenhas 或 12:30 Água e Sal 二选一调整罗卡角停留。",
+      "14:20 前到雷加莱拉庄园，14:30 固定入场；16:10 左右离开，16:45 左右进入佩纳公园。辛特拉王宫改为可选外观拍照，不安排入内。",
+      "18:10 左右离开佩纳公园返回里斯本市区；20:30 Frade Dos Mares 晚餐（4 人，桌位至 22:30）。",
+    ];
   }
 
   dailyVisuals["jianhuang|10/06"] = {
