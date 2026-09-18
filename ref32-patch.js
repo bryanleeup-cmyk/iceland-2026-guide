@@ -288,6 +288,14 @@
     ];
   }
 
+  const haigangPlan = data.personPlans.find((person) => person.id === "haigang");
+  if (haigangPlan && tongtongPlan) {
+    const sameIcelandDates = new Set(["10/03", "10/04", "10/05", "10/06", "10/07"]);
+    const tongtongIcelandDays = new Map(tongtongPlan.days.filter(([date]) => sameIcelandDates.has(date)).map((day) => [day[0], day]));
+    haigangPlan.days = haigangPlan.days.map((day) => tongtongIcelandDays.get(day[0]) || day);
+    haigangPlan.role = "两个人：10/03 早到冰岛；10/03-10/07 行程与彤彤一致；10/08 晚飞阿姆斯特丹。";
+  }
+
   data.staySchedule = data.staySchedule.filter((stay) => !(stay.audiences?.includes("tongyan") && stay.date === "10/08-10/10"));
   if (!data.staySchedule.some((stay) => stay.date === "10/02-10/03" && stay.audiences?.includes("tongyan"))) {
     data.staySchedule.unshift({
