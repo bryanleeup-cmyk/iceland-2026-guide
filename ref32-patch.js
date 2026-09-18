@@ -84,12 +84,12 @@
     replaceDay(
       "09/26",
       "里斯本郊区海边一日游",
-      "建皇（两人）、龙龙、娘娘四人走里斯本郊区海边一日游：09:00 从市区出发，依次看地狱之口、罗卡角、雷加莱拉庄园、辛特拉王宫和佩纳宫；当晚继续住 The Delight Hostel 豪华四人间。"
+      "建皇（两人）、龙龙、娘娘四人走里斯本郊区海边一日游：09:00 从市区出发，依次看地狱之口、罗卡角、雷加莱拉庄园、辛特拉王宫和佩纳宫。午餐已订两个备选，按当天情况二选一：12:00 <a href=\"https://www.google.com/maps/search/?api=1&query=Adega%20das%20Azenhas%20Avenida%20Comiss%C3%A3o%20de%20Melhoramentos%201928%201%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Adega das Azenhas</a>（4 人）；12:30 <a href=\"https://www.google.com/maps/search/?api=1&query=%C3%81gua%20e%20Sal%20Largo%20do%20Padre%20Ant%C3%B3nio%205%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Água e Sal</a>（4 人，Terrace）。晚餐 20:30 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Frade%20dos%20Mares%20Avenida%20Dom%20Carlos%20I%2055A%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Frade Dos Mares</a>（4 人）；当晚继续住 The Delight Hostel 豪华四人间。"
     );
     replaceDay(
       "09/27",
       "里斯本 → 波尔图",
-      "早上和龙龙、娘娘一起坐约 3.5 小时大巴从里斯本到波尔图；下午玩老城河岸、路易一世大桥和杜罗河边。娘娘当晚飞往阿姆斯特丹；21:00 左右办理入住波尔图盖亚美居酒店（Mercure Porto Gaia Hotel）：标准双人床房（带加床），1 间 1 晚；订单入住 09/27、退房 09/28，建皇（两人）和龙龙共 3 人入住，实付款 ¥544.94。"
+      "早上和龙龙、娘娘一起坐约 3.5 小时大巴从里斯本到波尔图；12:00 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Meia-Nau%20Porto\" target=\"_blank\" rel=\"noreferrer\">Meia-Nau Porto</a> 午餐（3 人，姓名 Hector Pei；需前往 Porto 门店，迟到宽限 10 分钟）。下午玩老城河岸、路易一世大桥和杜罗河边。娘娘当晚飞往阿姆斯特丹；21:00 左右办理入住波尔图盖亚美居酒店（Mercure Porto Gaia Hotel）：标准双人床房（带加床），1 间 1 晚；订单入住 09/27、退房 09/28，建皇（两人）和龙龙共 3 人入住，实付款 ¥544.94。"
     );
         replaceDay("10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>");
     replaceDay("10/06", "已订：Sky Lagoon 温泉团（¥2135.58/2人） → 米兰转机", "上午 11:00 去 Sky Lagoon 泡温泉，预计 14:00 回到雷克雅未克市区，简单逛逛后前往机场；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://cn.adventures.is/iceland/day-tours/natural-hot-springs-tours/sky-lagoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>");
@@ -121,6 +121,14 @@
     const arrivalDay = niangniangPlan.days.find((day) => day[0] === "09/25");
     if (arrivalDay) {
       arrivalDay[2] = "19:40 从阿姆斯特丹史基浦机场起飞，21:50 落地里斯本机场 T1；飞行 2 小时 10 分，无中转。落地后与建皇组合、龙龙入住已订的 The Delight Hostel 豪华四人间。23:30 已预约 <a href=\"https://www.google.com/maps/search/?api=1&query=Alfama8848%20Comida%20Portuguese%20Tapas%20and%20Bar%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Alfama8848 Comida Portuguese, Tapas and Bar</a>，4 人用餐。";
+    }
+    const coastalDay = niangniangPlan.days.find((day) => day[0] === "09/26");
+    if (coastalDay) {
+      coastalDay[2] = "和建皇组合、龙龙一起报名这个专业路线：09:00 从里斯本市区出发，10:00 地狱之口，10:50 罗卡角，12:00 雷加莱拉庄园，14:30 辛特拉王宫，16:00 佩纳宫。午餐有两个已订备选，按当天情况二选一：12:00 <a href=\"https://www.google.com/maps/search/?api=1&query=Adega%20das%20Azenhas%20Avenida%20Comiss%C3%A3o%20de%20Melhoramentos%201928%201%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Adega das Azenhas</a>（4 人）；12:30 <a href=\"https://www.google.com/maps/search/?api=1&query=%C3%81gua%20e%20Sal%20Largo%20do%20Padre%20Ant%C3%B3nio%205%20Colares%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Água e Sal</a>（4 人，Terrace）。晚餐 20:30 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Frade%20dos%20Mares%20Avenida%20Dom%20Carlos%20I%2055A%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Frade Dos Mares</a>（4 人）。";
+    }
+    const portoDay = niangniangPlan.days.find((day) => day[0] === "09/27");
+    if (portoDay) {
+      portoDay[2] = "早上和建皇组合、龙龙一起坐约 3.5 小时大巴去波尔图；12:00 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Meia-Nau%20Porto\" target=\"_blank\" rel=\"noreferrer\">Meia-Nau Porto</a> 午餐（3 人，姓名 Hector Pei；Porto 门店，迟到宽限 10 分钟）。下午玩波尔图老城、路易一世大桥、杜罗河边。20:50 从波尔图弗朗西斯科卡内罗机场起飞，09/28 00:25 落地阿姆斯特丹史基浦机场，航班荷兰泛航 HV6004；飞行 2 小时 35 分，无中转。";
     }
   }
 
