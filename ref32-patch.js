@@ -79,7 +79,7 @@
     replaceDay(
       "09/25",
       "北京 → 伦敦中转 → 里斯本",
-      "13:35 从北京首都机场 T3 起飞，经伦敦希思罗机场 T2 中转后，21:35 抵达里斯本机场 T1。落地后入住 The Delight Hostel 豪华四人间（带私人浴室）：1 张双人床 + 2 张单人床；建皇（两人）、龙龙、娘娘共 4 人入住；09/25 入住、09/27 退房，共 2 晚。"
+      "13:35 从北京首都机场 T3 起飞，经伦敦希思罗机场 T2 中转后，21:35 抵达里斯本机场 T1。落地后入住 The Delight Hostel 豪华四人间（带私人浴室）：1 张双人床 + 2 张单人床；建皇（两人）、龙龙、娘娘共 4 人入住；09/25 入住、09/27 退房，共 2 晚。23:30 已预约 <a href=\"https://www.google.com/maps/search/?api=1&query=Alfama8848%20Comida%20Portuguese%20Tapas%20and%20Bar%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Alfama8848 Comida Portuguese, Tapas and Bar</a>，4 人用餐。"
     );
     replaceDay(
       "09/26",
@@ -114,6 +114,14 @@
       viewpoint: "Sky Lagoon 海水温泉、无边际池和海岸景观；回城后只安排轻量逛街。",
       notes: ["10/06 已订 Sky Lagoon 温泉团，价格 ¥2135.58/2人。", "11:00 入场，预计 14:00 左右回到雷克雅未克市区。", "从酒店退房后确认行李寄存或直接带行李转移；傍晚提前去凯夫拉维克机场，19:20 飞米兰。", "<a href=\"https://cn.adventures.is/iceland/day-tours/natural-hot-springs-tours/sky-lagoon/\" target=\"_blank\" rel=\"noreferrer\">打开 Sky Lagoon 团页</a>"],
     });
+  }
+
+  const niangniangPlan = data.personPlans.find((person) => person.id === "niangniang");
+  if (niangniangPlan) {
+    const arrivalDay = niangniangPlan.days.find((day) => day[0] === "09/25");
+    if (arrivalDay) {
+      arrivalDay[2] = "19:40 从阿姆斯特丹史基浦机场起飞，21:50 落地里斯本机场 T1；飞行 2 小时 10 分，无中转。落地后与建皇组合、龙龙入住已订的 The Delight Hostel 豪华四人间。23:30 已预约 <a href=\"https://www.google.com/maps/search/?api=1&query=Alfama8848%20Comida%20Portuguese%20Tapas%20and%20Bar%20Lisbon\" target=\"_blank\" rel=\"noreferrer\">Alfama8848 Comida Portuguese, Tapas and Bar</a>，4 人用餐。";
+    }
   }
 
   dailyVisuals["jianhuang|10/06"] = {
