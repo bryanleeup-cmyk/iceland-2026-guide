@@ -76,7 +76,22 @@
       const index = plan.days.findIndex((day) => day[0] === date);
       if (index >= 0) plan.days[index] = [date, title, detail];
     };
-    replaceDay("10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>");
+    replaceDay(
+      "09/25",
+      "北京 → 伦敦中转 → 里斯本",
+      "13:35 从北京首都机场 T3 起飞，经伦敦希思罗机场 T2 中转后，21:35 抵达里斯本机场 T1。落地后入住 The Delight Hostel 豪华四人间（带私人浴室）：1 张双人床 + 2 张单人床；建皇（两人）、龙龙、娘娘共 4 人入住；09/25 入住、09/27 退房，共 2 晚。"
+    );
+    replaceDay(
+      "09/26",
+      "里斯本郊区海边一日游",
+      "建皇（两人）、龙龙、娘娘四人走里斯本郊区海边一日游：09:00 从市区出发，依次看地狱之口、罗卡角、雷加莱拉庄园、辛特拉王宫和佩纳宫；当晚继续住 The Delight Hostel 豪华四人间。"
+    );
+    replaceDay(
+      "09/27",
+      "里斯本 → 波尔图",
+      "早上和龙龙、娘娘一起坐约 3.5 小时大巴从里斯本到波尔图；下午玩老城河岸、路易一世大桥和杜罗河边。娘娘当晚飞往阿姆斯特丹；21:00 左右办理入住波尔图盖亚美居酒店（Mercure Porto Gaia Hotel）：标准双人床房（带加床），1 间 1 晚；订单入住 09/27、退房 09/28，建皇（两人）和龙龙共 3 人入住，实付款 ¥544.94。"
+    );
+        replaceDay("10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>");
     replaceDay("10/06", "已订：Sky Lagoon 温泉团（¥2135.58/2人） → 米兰转机", "上午 11:00 去 Sky Lagoon 泡温泉，预计 14:00 回到雷克雅未克市区，简单逛逛后前往机场；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://cn.adventures.is/iceland/day-tours/natural-hot-springs-tours/sky-lagoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>");
     replaceDay("10/07", "米兰 → 里斯本半日 → 哥本哈根", "06:30 从米兰马尔彭萨机场 T2 起飞，08:30 落地里斯本机场 T1，航班易捷航空 U23873。白天只做里斯本半日轻量城市步行，市区收尾、吃饭、买伴手礼；18:15 从里斯本机场 T1 起飞，23:00 落地哥本哈根机场 T3。晚上入住 Cabinn Metro Hotel，地址 Arne Jacobsens Allé 2，电话 +4532465700。");
     replaceDay("10/08", "哥本哈根转机一日游 + 回北京", "10/07 23:00 已落地哥本哈根机场 T3；10/08 白天走新港、国王新广场、阿美琳堡王宫 / 小美人鱼轻量线，16:00 左右回机场更稳。19:05 从哥本哈根机场 T3 起飞，10/09 09:55 落地北京首都机场 T3。");
@@ -111,16 +126,16 @@
 
   getDailyStay = function getDailyStayRef32(personId, date, title) {
     const lisbonStay = {
-      label: "住宿（¥230/人/晚）",
+      label: "住宿（¥223.43/人/晚）",
       name: "The Delight Hostel（欢乐青年旅馆）",
-      detail: "09/25-09/27 已订经济三人间；点开可跳转谷歌地图。",
+      detail: "09/25 14:00 后入住、09/27 11:30 前退房；豪华四人间（带私人浴室），1 间 / 2 晚，1 张双人床 + 2 张单人床；建皇（两人）、龙龙、娘娘共 4 人入住。实付总价 ¥1,787.44，按 4 人、2 晚计算为 ¥223.43/人/晚。点开可跳转谷歌地图。",
       url: "https://www.google.com/maps/search/?api=1&query=The%20Delight%20Hostel%20R.%20Tomas%20Ribeiro%2095%20Lisbon",
     };
     const portoStay = {
-      label: "住宿（¥319.55/人/晚）",
-      name: "ABC Hotel Porto Campanha",
-      detail: "09/27 晚入住、09/28 早退房；R. de Pinto Bessa 528；电话 +351229765410。点开可跳转谷歌地图。",
-      url: "https://www.google.com/maps/search/?api=1&query=ABC%20Hotel%20Porto%20Campanha%20R.%20de%20Pinto%20Bessa%20528",
+      label: "住宿（¥181.65/人/晚）",
+      name: "波尔图盖亚美居酒店（Mercure Porto Gaia Hotel）",
+      detail: "09/27 晚入住（计划 21:00 左右办理入住）、09/28 退房；标准双人床房（带加床），1 间 1 晚；建皇（两人）和龙龙共 3 人入住，实付款 ¥544.94。点开可跳转谷歌地图。",
+      url: "https://www.google.com/maps/search/?api=1&query=Mercure%20Porto%20Gaia%20Hotel",
     };
     const hotelStay = {
       label: "住宿",
