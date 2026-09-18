@@ -210,3 +210,159 @@
   renderMobileTimeline();
   applyRoleView(activeRoleId || "jianhuang", { persist: false });
 })();
+
+(function applyTongtongUpdate() {
+  const googleMaps = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  const parisHotel = {
+    name: "宜必思克利希中心市政厅酒店（Ibis Clichy Centre Mairie）",
+    mapUrl: googleMaps("Ibis Clichy Centre Mairie, 4 Rue Marcellin Berthelot, 92110 Clichy, France"),
+  };
+  const parisBusStop = {
+    name: "Paris Pershing–Porte Maillot 上车点",
+    mapUrl: googleMaps("24 Boulevard Pershing, 75017 Paris, France"),
+  };
+
+  const tongtong = data.groups.find((group) => group.id === "tongyan");
+  if (tongtong) {
+    tongtong.name = "2号出发的机票：彤彤";
+    tongtong.shortName = "彤彤";
+    tongtong.tags = ["1 人", "10/03 下午到", "10/10 离开冰岛"];
+    tongtong.summary = "10/02 先抵达巴黎，10/03 清晨坐大巴到布鲁塞尔后按原计划飞冰岛；15:10 到冰岛后五人齐。";
+    tongtong.flights.europeLongHaul = [
+      "10/02 深圳宝安机场 T3 01:30 → 巴黎戴高乐机场 T1 08:10｜海南航空 HU757",
+      "10/11 布鲁塞尔机场 11:40 → 10/12 深圳宝安机场 T3 05:00｜海南航空 HU760",
+    ];
+    tongtong.flights.icelandOutbound = [
+      "10/03 巴黎 Pershing–Porte Maillot 06:30 → 布鲁塞尔南站（BlaBlaCar Bus，€8.99）",
+      "10/03 布鲁塞尔机场 13:50 → 雷克雅未克凯夫拉维克机场 15:10｜冰岛航空 FI555",
+    ];
+    tongtong.flights.afterIceland = ["10/11 布鲁塞尔 → 深圳｜海南航空 HU760"];
+  }
+
+  const tongtongRole = data.roleViews.find((role) => role.id === "tongyan");
+  if (tongtongRole) {
+    tongtongRole.name = "彤彤";
+    tongtongRole.title = "我是彤彤";
+    tongtongRole.summary = "10/02 抵达巴黎，10/03 先坐大巴到布鲁塞尔、再飞冰岛；15:10 落地后五人齐。";
+    tongtongRole.notes = [
+      "重点看：10/02 深圳飞巴黎、与龙龙住巴黎酒店；10/03 清晨从 Paris Pershing–Porte Maillot 坐大巴到布鲁塞尔南站，再按原计划飞冰岛。",
+      "Paris Pershing–Porte Maillot 上车点和巴黎酒店名称都可直接点开地图。",
+      "10/09 晚建议住机场交通稳定的位置，避免 10/10 早班机压力。",
+    ];
+    tongtongRole.facts = [
+      ["巴黎抵达", "10/02 08:10", "HU757 抵达巴黎戴高乐 T1"],
+      ["大巴", "10/03 06:30", "Paris Pershing–Porte Maillot → Brussels Midi"],
+      ["到冰岛", "10/03 15:10", "彤彤到后五人正式齐"],
+      ["离开冰岛", "10/10 07:35", "前一晚住机场交通稳的位置"],
+    ];
+    tongtongRole.focusDays = [
+      ["10/02", "深圳 → 巴黎 + 巴黎住宿", "01:30 从深圳宝安 T3 起飞，08:10 到巴黎戴高乐 T1；当晚与龙龙住 Ibis Clichy Centre Mairie。"],
+      ["10/03", "巴黎大巴 → 布鲁塞尔 → 冰岛", "06:30 从 Paris Pershing–Porte Maillot 出发，乘 BlaBlaCar Bus（€8.99）抵达 Brussels Midi 后前往机场，13:50 飞冰岛。"],
+      ["10/04", "南岸两日已订", "Nice Travel 五人南岸两日 + 蓝冰洞；接送点和出发时间待确认。"],
+      ["10/06", "三人继续", "建皇离开后，和海港组继续补线。"],
+      ["10/10", "早班机", "07:35 从雷克雅未克凯夫拉维克机场飞布鲁塞尔。"],
+    ];
+    tongtongRole.cta = "切到彤彤";
+  }
+
+  const tongtongPlan = data.personPlans.find((person) => person.id === "tongyan");
+  if (tongtongPlan) {
+    tongtongPlan.name = "彤彤";
+    tongtongPlan.role = "彤彤 1 人：10/02 飞巴黎、与龙龙住一晚；10/03 清晨坐大巴到布鲁塞尔后飞冰岛；10/06 建皇离开后，和海港组 3 人继续冰岛。";
+    tongtongPlan.days = [
+      ["10/02", "深圳 → 巴黎 + 巴黎住宿", "01:30 从深圳宝安机场 T3 起飞，08:10 抵达巴黎戴高乐机场 T1，航班海南航空 HU757。当天与龙龙入住 <a href=\"https://www.google.com/maps/search/?api=1&amp;query=Ibis%20Clichy%20Centre%20Mairie%2C%204%20Rue%20Marcellin%20Berthelot%2C%2092110%20Clichy%2C%20France\" target=\"_blank\" rel=\"noreferrer\">宜必思克利希中心市政厅酒店（Ibis Clichy Centre Mairie）</a>（10/02 入住、10/03 退房，1 晚 / 1 间）。"],
+      ["10/03", "巴黎 → 布鲁塞尔南站 → 冰岛", "06:30 从 <a href=\"https://www.google.com/maps/search/?api=1&amp;query=24%20Boulevard%20Pershing%2C%2075017%20Paris%2C%20France\" target=\"_blank\" rel=\"noreferrer\">Paris Pershing–Porte Maillot 上车点</a>（24 Boulevard Pershing, 75017 Paris）乘 BlaBlaCar Bus（€8.99）前往 Brussels Midi / Brussels South West（预计抵达 87 Rue de France, 1060 Brussels）。之后前往布鲁塞尔机场，13:50 起飞、15:10 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI555；落地后去林德城河酒店会合，晚上五人追极光。"],
+      ["10/04", "已订：五人南岸两日团第一天", "Nice Travel 五人团已订并支付定金；接送点待确认。当天看瀑布、黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+      ["10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+      ["10/06", "三人继续冰岛", "建皇离开后，和海港组两人一起优先补斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上继续住林德城河酒店。"],
+      ["10/07", "三人冰岛加玩", "天气稳定可走斯奈山半岛；天气差就走雷克雅内斯半岛 / 蓝湖 / 市区备选；晚上继续住林德城河酒店。"],
+      ["10/08", "海港离开后", "送海港去雷克雅未克凯夫拉维克机场；自己留雷克雅未克、蓝湖或雷克雅内斯半岛；晚上继续住林德城河酒店。"],
+      ["10/09", "离开前轻量日", "不要跑远，建议雷克雅内斯半岛、蓝湖或雷克雅未克市区轻量收尾；晚上仍住林德城河酒店，10/10 清晨去机场。"],
+      ["10/10", "冰岛 → 布鲁塞尔", "07:35 从雷克雅未克凯夫拉维克机场起飞，12:55 落地布鲁塞尔机场。"],
+      ["10/11", "布鲁塞尔 → 深圳", "11:40 从布鲁塞尔机场起飞，10/12 05:00 抵达深圳宝安机场 T3，航班海南航空 HU760。"],
+    ];
+  }
+
+  data.staySchedule = data.staySchedule.filter((stay) => !(stay.audiences?.includes("tongyan") && stay.date === "10/08-10/10"));
+  if (!data.staySchedule.some((stay) => stay.date === "10/02-10/03" && stay.audiences?.includes("tongyan"))) {
+    data.staySchedule.unshift({
+      date: "10/02-10/03",
+      nights: "1 晚 / 1 间",
+      people: "彤彤 + 龙龙（共 2 人）",
+      city: "巴黎",
+      name: parisHotel.name,
+      status: "已订",
+      detail: "10/02 入住、10/03 退房；彤彤和龙龙入住，1 晚 / 1 间。点开可跳转谷歌地图。",
+      audiences: ["tongyan"],
+      accent: "#27ae60",
+      mapUrl: parisHotel.mapUrl,
+    });
+  }
+  data.staySchedule.forEach((stay) => {
+    if (stay.audiences?.includes("tongyan")) {
+      stay.people = stay.people.replaceAll("彤燕组", "彤彤").replaceAll("海港组 + 彤彤", "海港组 + 彤彤（共 3 人）");
+      stay.detail = stay.detail.replaceAll("彤燕组", "彤彤").replaceAll("彤燕", "彤彤").replaceAll("海港组 + 彤彤四个人", "海港组 + 彤彤三个人").replaceAll("四人", "三人");
+    }
+  });
+
+  const parisStay = {
+    label: "住宿（已订）",
+    name: parisHotel.name,
+    detail: "10/02 入住、10/03 退房；彤彤和龙龙入住，1 晚 / 1 间。点开可跳转谷歌地图。",
+    url: parisHotel.mapUrl,
+  };
+  const previousGetDailyStay = getDailyStay;
+  getDailyStay = function getDailyStayTongtong(personId, date, title) {
+    if (personId === "tongyan" && date === "10/02") return parisStay;
+    return previousGetDailyStay(personId, date, title);
+  };
+
+  dailyVisuals["tongyan|10/02"] = {
+    city: "深圳 / 巴黎",
+    sunrise: "07:48",
+    sunset: "19:25",
+    season: "巴黎 10 月初早晚偏凉，抵达后优先办理入住并为次日清晨大巴留出休息时间。",
+    images: ["assets/spots/paris-cruise.jpg", "assets/spots/eiffel.jpg"],
+  };
+  dailyVisuals["tongyan|10/03"] = {
+    city: "巴黎 / 布鲁塞尔 / 雷克雅未克",
+    sunrise: "07:41",
+    sunset: "18:50",
+    season: "当天跨三城，清晨大巴后直接衔接机场，抵达冰岛后优先酒店会合和保暖。",
+    images: ["assets/spots/paris-cruise.jpg", "assets/spots/brussels.jpg", "assets/spots/aurora.jpg"],
+  };
+
+  const replacementPairs = [
+    ["彤燕组", "彤彤"],
+    ["彤燕", "彤彤"],
+    ["六个人", "五个人"],
+    ["六人", "五人"],
+    ["四人后续", "三人后续"],
+    ["海港组 + 彤彤四个人", "海港组 + 彤彤三个人"],
+    ["海港组 + 彤彤四人", "海港组 + 彤彤三人"],
+    ["和彤彤四个人", "和彤彤三个人"],
+    ["冰岛四人后续段", "冰岛三人后续段"],
+  ];
+  const rewrite = (value) => replacementPairs.reduce((text, [from, to]) => text.replaceAll(from, to), value);
+  const rewriteStrings = (value, seen = new WeakSet()) => {
+    if (!value || typeof value !== "object") return;
+    if (seen.has(value)) return;
+    seen.add(value);
+    Object.entries(value).forEach(([key, child]) => {
+      if (typeof child === "string") value[key] = rewrite(child);
+      else if (child && typeof child === "object") rewriteStrings(child, seen);
+    });
+  };
+  rewriteStrings(data);
+
+  data.overlap.label = "冰岛五人都在：10/03 15:10 后 - 10/06 19:20 前";
+  data.overlap.context = "这是冰岛五人全部在的时间段。10/03 晚五人追极光；10/04-10/05 五人一起走南岸两日 + 蓝冰洞小巴团；10/06 建皇上午去 Sky Lagoon，14:00 左右回城后前往机场，19:20 从凯夫拉维克机场离开冰岛。";
+  data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；海港组 10/08 离开；彤彤 10/10 清晨离开";
+
+  document.querySelector(".hotel-badge")?.replaceChildren("共同基地");
+  renderRows();
+  renderHighlights();
+  renderHotel();
+  renderMobileTimeline();
+  applyRoleView(activeRoleId || "jianhuang", { persist: false });
+})();

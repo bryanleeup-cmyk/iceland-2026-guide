@@ -516,8 +516,68 @@ main {
 
 body:not([data-role="all"]) .global-only,
 body:not([data-role="all"]) .role-detail-only,
-body:not([data-role="all"]) main > section.panel:not(.reference-panel):not(.route-atlas-panel) {
+body:not([data-role="all"]) main > section.panel:not(.reference-panel):not(.route-atlas-panel):not(.booked-tours-panel) {
   display: none;
+}
+
+.booked-tours-panel {
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(241, 248, 247, 0.95));
+}
+
+.booked-tours-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.booked-tours-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.booked-tours-table th,
+.booked-tours-table td {
+  padding: 0.78rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.booked-tours-table thead th {
+  background: var(--surface-muted);
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.booked-tours-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.booked-tour-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.28rem 0.58rem;
+  background: #e4f3eb;
+  color: #1d7047;
+  font-size: 0.78rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.booked-tour-status--pending {
+  background: #fff2d8;
+  color: #986016;
+}
+
+.booked-tour-status--neutral {
+  background: #edf2f3;
+  color: var(--ink-muted);
 }
 
 .summary {
@@ -2945,7 +3005,7 @@ footer {
 }
 
 body[data-role="none"] main > section:not(.role-gate),
-body:not([data-role="all"]) main > section.panel:not(.reference-panel):not(.route-atlas-panel),
+body:not([data-role="all"]) main > section.panel:not(.reference-panel):not(.route-atlas-panel):not(.booked-tours-panel),
 body:not([data-role="all"]) .global-only,
 body:not([data-role="all"]) .role-detail-only {
   display: none !important;
