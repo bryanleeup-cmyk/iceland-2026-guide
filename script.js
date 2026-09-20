@@ -1380,7 +1380,6 @@ const hotelCardEl = document.querySelector("#hotelCard");
 const stayListEl = document.querySelector("#stayList");
 const referenceGuideEl = document.querySelector("#referenceGuide");
 const personTabsEl = document.querySelector("#personTabs");
-const personPanelEl = document.querySelector("#personPanel");
 const spotFiltersEl = document.querySelector("#spotFilters");
 const spotGridEl = document.querySelector("#spotGrid");
 const mobileTimelineEl = document.querySelector("#mobileTimelineList");
@@ -2154,22 +2153,6 @@ function renderPersonTabs(activeId = data.personPlans[0].id) {
     .join("");
 }
 
-function renderPersonPanel(personId = data.personPlans[0].id) {
-  const person = data.personPlans.find((item) => item.id === personId) || data.personPlans[0];
-  personPanelEl.innerHTML = `
-    <div class="person-panel__head" style="--accent:${person.color}">
-      <span>当前个人视角</span>
-      <h3>${person.name}</h3>
-      <p>${person.role}</p>
-    </div>
-    <div class="person-days">
-      ${person.days
-        .map(([date, title, detail]) => renderDailyCard(person.id, date, title, detail))
-        .join("")}
-    </div>
-  `;
-}
-
 function renderMobileTimeline() {
   mobileTimelineEl.innerHTML = data.groups
     .map((group) => {
@@ -2342,9 +2325,7 @@ function applyRoleView(roleId = activeRoleId, { persist = true } = {}) {
     renderSpotFilters("__role");
     renderSpots("__none");
     renderPersonTabs(data.personPlans[0].id);
-    renderPersonPanel(data.personPlans[0].id);
     observeDeferredImages(roleDashboardEl);
-    observeDeferredImages(personPanelEl);
     return;
   }
 
@@ -2357,10 +2338,8 @@ function applyRoleView(roleId = activeRoleId, { persist = true } = {}) {
   renderSpotFilters("__role");
   renderSpots(`role:${activeRoleId}`);
   renderPersonTabs(activeRoleId);
-  renderPersonPanel(activeRoleId);
   applyFilter(role.groupId || "all");
   observeDeferredImages(roleDashboardEl);
-  observeDeferredImages(personPanelEl);
 }
 
 renderGrid();
