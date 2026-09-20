@@ -68,7 +68,7 @@ a {
   display: grid;
   align-items: end;
   overflow: hidden;
-  background-image: url("assets/route-hero.png");
+  background-image: url("assets/route-hero.webp");
   background-size: cover;
   background-position: center;
 }

@@ -107,8 +107,8 @@
       transport: "Sky Lagoon 温泉团；11:00 入场，预计 14:00 回雷克雅未克市区，之后前往凯夫拉维克机场",
       city: "Sky Lagoon / 雷克雅未克 / 凯夫拉维克",
       title: "Sky Lagoon 温泉团（已订 ¥2135.58/2人）",
-      image: "assets/spots/iceland/blue-lagoon-1.jpg",
-      images: ["assets/spots/iceland/blue-lagoon-1.jpg", "assets/spots/iceland/reykjavik-coast.jpg", "assets/spots/iceland/reykjavik-harpa.jpg"],
+      image: "assets/spots/iceland/blue-lagoon-1.webp",
+      images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
       bestTime: "11:00-14:00 左右，按确认单",
       open: "已订 Sky Lagoon 温泉团，11:00 入场，预计 14:00 回到雷克雅未克市区；之后简单逛逛并前往机场。",
       sunset: "雷克雅未克 10/06 日落约 18:40",
@@ -149,7 +149,7 @@
     sunrise: "07:50",
     sunset: "18:40",
     season: "10 月初泡温泉很适合放松；11:00 入场，14:00 左右回城，之后只安排轻量逛街和机场交通。",
-    images: ["assets/spots/iceland/blue-lagoon-1.jpg", "assets/spots/iceland/reykjavik-coast.jpg", "assets/spots/iceland/reykjavik-harpa.jpg"],
+    images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
   };
 
   getDailyStay = function getDailyStayRef32(personId, date, title) {
@@ -211,6 +211,7 @@
   applyRoleView(activeRoleId || "jianhuang", { persist: false });
 })();
 
+/* Haigang shares Tongtong itinerary through 10/07. */
 (function applyTongtongUpdate() {
   const googleMaps = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   const parisHotel = {
@@ -258,7 +259,7 @@
     ];
     tongtongRole.focusDays = [
       ["10/02", "巴黎一日游 + 巴黎住宿", "08:10 抵达巴黎戴高乐机场 T1。先到 Ibis Clichy Centre Mairie 酒店寄存行李；上午吃早午餐。之后乘坐塞纳河游船，前往凯旋门和香榭丽舍，再参观卢浮宫；晚上看埃菲尔铁塔，结束后回酒店休息。"],
-      ["10/03", "雷克雅未克下午 4 点到（2 人）", "15:10 抵达雷克雅未克凯夫拉维克机场，约 16:00 到雷克雅未克，入住林德城河酒店；晚餐按截图可预定 7 人一桌。"],
+      ["10/03", "雷克雅未克下午 4 点到（2 人）", "06:30 从 Paris Pershing–Porte Maillot 上车点（24 Boulevard Pershing, 75017 Paris）乘 BlaBlaCar Bus（€8.99）前往 Brussels Midi / Brussels South West（预计抵达 87 Rue de France, 1060 Brussels）。之后前往布鲁塞尔机场，13:50 起飞、15:10 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI555；落地后去林德城河酒店会合，晚上五人追极光。"],
       ["10/04", "南岸两日游（7 人）", "Nice Travel 南岸两日游，08:30 前到 Bus Stop #13（Nice Travel）集合；团含南部住宿。餐食不含（有补给点）。"],
       ["10/05", "南岸两日游第 2 天（7 人）", "继续南岸两日游，完成蓝冰洞、冰河湖与钻石沙滩；含早餐，沿途有补给点。预计不晚于 21:00 回到雷克雅未克，回城后入住林德城河酒店。"],
       ["10/06", "兰德曼那劳卡高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐（途中有一个小超市）。"],
@@ -276,7 +277,7 @@
     tongtongPlan.role = "彤彤 + 龙龙：10/02 飞巴黎并住一晚；10/03 清晨坐大巴到布鲁塞尔后飞冰岛；10/04-10/10 的冰岛与布鲁塞尔行程按最新截图补齐。";
     tongtongPlan.days = [
       ["10/02", "巴黎一日游 + 巴黎住宿", "01:30 从深圳宝安机场 T3 起飞，08:10 抵达巴黎戴高乐机场 T1，航班海南航空 HU757。先到 Ibis Clichy Centre Mairie 酒店寄存行李；上午吃早午餐。之后乘坐塞纳河游船，前往凯旋门和香榭丽舍，再参观卢浮宫；晚上看埃菲尔铁塔，结束后回酒店休息。"],
-      ["10/03", "雷克雅未克下午 4 点到（2 人）", "15:10 抵达雷克雅未克凯夫拉维克机场，约 16:00 到雷克雅未克并入住林德城河酒店；晚餐按截图可预定 7 人一桌。"],
+      ["10/03", "雷克雅未克下午 4 点到（2 人）", "06:30 从 Paris Pershing–Porte Maillot 上车点（24 Boulevard Pershing, 75017 Paris）乘 BlaBlaCar Bus（€8.99）前往 Brussels Midi / Brussels South West（预计抵达 87 Rue de France, 1060 Brussels）。之后前往布鲁塞尔机场，13:50 起飞、15:10 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI555；落地后去林德城河酒店会合，晚上五人追极光。"],
       ["10/04", "南岸两日游（7 人）", "08:30 前到 Bus Stop #13（Nice Travel）集合；团含南部住宿。餐食不含（有补给点）。"],
       ["10/05", "南岸两日游第 2 天（7 人）", "完成蓝冰洞、冰河湖与钻石沙滩；含早餐，沿途有补给点。预计不晚于 21:00 回到雷克雅未克，回城后入住林德城河酒店。"],
       ["10/06", "兰德曼那劳卡高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐（途中有一个小超市）。"],
@@ -286,6 +287,14 @@
       ["10/10", "布鲁塞尔半日游（2 人）", "住布鲁塞尔市中心 Hilton，安排市中心半日游。"],
       ["10/11", "布鲁塞尔 → 深圳", "11:40 从布鲁塞尔机场起飞，10/12 05:00 抵达深圳宝安机场 T3，航班海南航空 HU760。"],
     ];
+  }
+
+  const haigangPlan = data.personPlans.find((person) => person.id === "haigang");
+  if (haigangPlan && tongtongPlan) {
+    const sameIcelandDates = new Set(["10/03", "10/04", "10/05", "10/06", "10/07"]);
+    const tongtongIcelandDays = new Map(tongtongPlan.days.filter(([date]) => sameIcelandDates.has(date)).map((day) => [day[0], day]));
+    haigangPlan.days = haigangPlan.days.map((day) => tongtongIcelandDays.get(day[0]) || day);
+    haigangPlan.role = "两个人：10/03 早到冰岛；10/03-10/07 行程与彤彤一致；10/08 晚飞阿姆斯特丹。";
   }
 
   data.staySchedule = data.staySchedule.filter((stay) => !(stay.audiences?.includes("tongyan") && stay.date === "10/08-10/10"));
@@ -393,62 +402,62 @@
     sunrise: "07:48",
     sunset: "19:25",
     season: "巴黎 10 月初早晚偏凉，抵达后优先办理入住并为次日清晨大巴留出休息时间。",
-    images: ["assets/spots/paris-cruise.jpg", "assets/spots/eiffel.jpg"],
+    images: ["assets/spots/paris-cruise.webp", "assets/spots/eiffel.webp"],
   };
   dailyVisuals["tongyan|10/03"] = {
     city: "巴黎 / 布鲁塞尔 / 雷克雅未克",
     sunrise: "07:41",
     sunset: "18:50",
     season: "当天跨三城，清晨大巴后直接衔接机场，抵达冰岛后优先酒店会合和保暖。",
-    images: ["assets/spots/paris-cruise.jpg", "assets/spots/brussels.jpg", "assets/spots/aurora.jpg"],
+    images: ["assets/spots/paris-cruise.webp", "assets/spots/brussels.webp", "assets/spots/aurora.webp"],
   };
   dailyVisuals["tongyan|10/04"] = {
     city: "雷克雅未克 / 冰岛南岸",
     sunrise: "07:33",
     sunset: "18:38",
     season: "南岸两日游第 1 天，瀑布、黑沙滩和低云海岸线适合跟团完成；餐食不含，沿途有补给点。",
-    images: ["assets/spots/gallery/reynisfjara-seljalandsfoss.jpg", "assets/spots/reynisfjara.jpg", "assets/spots/tourlink/nice-south-waterfall-1.jpg"],
+    images: ["assets/spots/gallery/reynisfjara-seljalandsfoss.webp", "assets/spots/reynisfjara.webp", "assets/spots/tourlink/nice-south-waterfall-1.webp"],
   };
   dailyVisuals["tongyan|10/05"] = {
     city: "冰岛南岸 / 雷克雅未克",
     sunrise: "07:36",
     sunset: "18:34",
     season: "南岸两日游第 2 天，蓝冰洞、冰河湖与钻石沙滩是当天重点；预计不晚于 21:00 回雷市。",
-    images: ["assets/spots/iceland/jokulsarlon-1.jpg", "assets/spots/iceland/diamond-beach-1.jpg", "assets/spots/jokulsarlon.jpg"],
+    images: ["assets/spots/iceland/jokulsarlon-1.webp", "assets/spots/iceland/diamond-beach-1.webp", "assets/spots/jokulsarlon.webp"],
   };
   dailyVisuals["tongyan|10/06"] = {
     city: "雷克雅未克 / 兰德曼那劳卡",
     sunrise: "07:50",
     sunset: "18:40",
     season: "5 人高地段第一天，酒店门口接送，08:30-20:00；自备午餐，途中有小超市。",
-    images: ["assets/spots/iceland/landmannalaugar-1.jpg", "assets/spots/iceland/landmannalaugar-2.jpg", "assets/spots/iceland/landmannalaugar-3.jpg"],
+    images: ["assets/spots/iceland/landmannalaugar-1.webp", "assets/spots/iceland/landmannalaugar-2.webp", "assets/spots/iceland/landmannalaugar-3.webp"],
   };
   dailyVisuals["tongyan|10/07"] = {
     city: "雷克雅未克 / 斯奈山半岛",
     sunrise: "07:53",
     sunset: "18:36",
     season: "5 人斯奈山一日游，改到 Bus Stop #9 集合；08:00 前到，预计 19:00 回城。",
-    images: ["assets/spots/tourlink/snaefellsnes-aa-1.jpg", "assets/spots/tourlink/snaefellsnes-aa-2.jpg", "assets/spots/season/snaefellsnes-autumn.jpg"],
+    images: ["assets/spots/tourlink/snaefellsnes-aa-1.webp", "assets/spots/tourlink/snaefellsnes-aa-2.webp", "assets/spots/season/snaefellsnes-autumn.webp"],
   };
   dailyVisuals["tongyan|10/08"] = {
     city: "雷克雅未克 / 黄金圈",
     sunrise: "07:55",
     sunset: "18:33",
     season: "3 人黄金圈一日游，Bus Stop #13 集合，09:00-17:00；不含餐。",
-    images: ["assets/spots/gullfoss.jpg", "assets/spots/iceland/thingvellir-1.jpg", "assets/spots/iceland/strokkur-1.jpg"],
+    images: ["assets/spots/gullfoss.webp", "assets/spots/iceland/thingvellir-1.webp", "assets/spots/iceland/strokkur-1.webp"],
   };
   dailyVisuals["tongyan|10/09"] = {
     city: "凯夫拉维克 / 雷克雅未克",
     sunrise: "07:58",
     sunset: "18:29",
     season: "3 人温泉与雷克雅未克轻量收尾；当天不跑远，为次日离开冰岛保留机动时间。",
-    images: ["assets/spots/iceland/blue-lagoon-1.jpg", "assets/spots/iceland/reykjavik-hallgrimskirkja.jpg", "assets/spots/iceland/reykjavik-harpa.jpg"],
+    images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-hallgrimskirkja.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
   };
 
   dailyVisuals["tongyan|10/06"] = { ...dailyVisuals["tongyan|10/06"], city: "兰德曼卡高地", season: "5 人高地超级吉普，酒店门口接送。", images: dailyVisuals["jianhuang|10/02"].images };
   dailyVisuals["tongyan|10/07"].season = "5 人斯奈山半岛一日游，12 号站改 9 号站。";
   dailyVisuals["tongyan|10/08"] = { ...dailyVisuals["tongyan|10/08"], city: "黄金圈", season: "3 人黄金圈一日游，Troll 团。", images: dailyVisuals["jianhuang|10/03"].images };
-  dailyVisuals["tongyan|10/09"] = { ...dailyVisuals["tongyan|10/09"], season: "3 人温泉 + 雷市一日游，晚住机场附近。", images: ["assets/spots/iceland/blue-lagoon-1.jpg", "assets/spots/iceland/reykjavik-harpa.jpg"] };
+  dailyVisuals["tongyan|10/09"] = { ...dailyVisuals["tongyan|10/09"], season: "3 人温泉 + 雷市一日游，晚住机场附近。", images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-harpa.webp"] };
 
   const replacementPairs = [
     ["彤燕组", "彤彤"],
