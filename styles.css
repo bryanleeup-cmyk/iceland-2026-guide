@@ -403,8 +403,6 @@ main {
   grid-template-columns: minmax(150px, 210px) minmax(0, 1fr);
   gap: 14px;
   align-items: stretch;
-  content-visibility: auto;
-  contain-intrinsic-size: 260px 300px;
   overflow: hidden;
   border-radius: 8px;
   background: #fff;
@@ -442,6 +440,12 @@ main {
   object-fit: cover;
   user-select: none;
   -webkit-user-drag: none;
+}
+
+.daily-card__media img[data-src],
+.spot-card__image img[data-src],
+.route-day-detail__media img[data-src] {
+  background: #dce9ed;
 }
 
 .daily-card__body {
@@ -1657,8 +1661,6 @@ footer p {
 }
 
 .spot-card {
-  content-visibility: auto;
-  contain-intrinsic-size: 360px 560px;
   overflow: hidden;
   border: 1px solid rgba(217, 229, 233, 0.86);
   border-radius: 8px;

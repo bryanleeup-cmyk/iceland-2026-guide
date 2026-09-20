@@ -1126,6 +1126,45 @@ const fallbackDailyVisual = {
   images: ["assets/route-hero.webp"],
 };
 
+const deferredImagePlaceholder =
+  "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
+const deferredImageObserver = "IntersectionObserver" in window
+  ? new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const image = entry.target;
+          const source = image.dataset.src;
+          if (source) {
+            image.src = source;
+            image.removeAttribute("data-src");
+          }
+          observer.unobserve(image);
+        });
+      },
+      { rootMargin: "480px 0px" },
+    )
+  : null;
+
+function imageSourceAttrs(source, eager = false) {
+  if (eager) {
+    return `src="${source}" loading="eager" decoding="async" fetchpriority="high"`;
+  }
+  return `src="${deferredImagePlaceholder}" data-src="${source}" loading="lazy" decoding="async" fetchpriority="low"`;
+}
+
+function observeDeferredImages(root = document) {
+  const images = root.querySelectorAll("img[data-src]");
+  if (!deferredImageObserver) {
+    images.forEach((image) => {
+      image.src = image.dataset.src;
+      image.removeAttribute("data-src");
+    });
+    return;
+  }
+  images.forEach((image) => deferredImageObserver.observe(image));
+}
+
 const iconicImageRules = [
   {
     match: (key) => key === "jianhuang|09/26" || key === "niangniang|09/26",
@@ -1290,7 +1329,7 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
           .map(
             (image, index) => `
               <figure>
-                <img src="${image}" alt="${title}真实景色 ${index + 1}" loading="${priority && index === 0 ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority && index === 0 ? "high" : "low"}" draggable="false" />
+                <img ${imageSourceAttrs(image, priority && index === 0)} alt="${title}真实景色 ${index + 1}" draggable="false" />
               </figure>
             `,
           )
@@ -1604,9 +1643,10 @@ function renderRouteAtlas(dayId = activeRouteDayId) {
       </ol>
     </div>
     <div class="route-day-detail__media">
-      ${selectedDay.images.map((image, index) => `<figure><img src="${image}" alt="${selectedDay.title}景观缩影 ${index + 1}" loading="lazy" decoding="async" fetchpriority="${index === 0 ? "auto" : "low"}" /><figcaption>${index === 0 ? selectedDay.terrain : "当天路线相关景观"}</figcaption></figure>`).join("")}
+      ${selectedDay.images.map((image, index) => `<figure><img ${imageSourceAttrs(image)} alt="${selectedDay.title}景观缩影 ${index + 1}" /><figcaption>${index === 0 ? selectedDay.terrain : "当天路线相关景观"}</figcaption></figure>`).join("")}
     </div>
   `;
+  observeDeferredImages(routeAtlasDetailEl);
 }
 
 function getRole(roleId = activeRoleId) {
@@ -2066,7 +2106,7 @@ function renderSpots(active = "iceland-six") {
               .map(
                 (image, index, arr) => `
                   <figure class="spot-card__image">
-                    <img src="${image}" alt="${spot.title}真实照片 ${index + 1}" loading="${spotIndex === 0 && index === 0 ? "eager" : "lazy"}" decoding="async" fetchpriority="${spotIndex === 0 && index === 0 ? "high" : "low"}" />
+                    <img ${imageSourceAttrs(image, spotIndex === 0 && index === 0)} alt="${spot.title}真实照片 ${index + 1}" />
                     <figcaption>
                       <span>${spot.date} · ${spot.city}</span>
                       <b>${index + 1}/${arr.length}</b>
@@ -2094,6 +2134,7 @@ function renderSpots(active = "iceland-six") {
       `,
     )
     .join("") || `<p class="empty-state">这个视角暂无需要关注的景点卡。</p>`;
+  observeDeferredImages(spotGridEl);
 }
 
 function renderPersonTabs(activeId = data.personPlans[0].id) {
@@ -2302,6 +2343,8 @@ function applyRoleView(roleId = activeRoleId, { persist = true } = {}) {
     renderSpots("__none");
     renderPersonTabs(data.personPlans[0].id);
     renderPersonPanel(data.personPlans[0].id);
+    observeDeferredImages(roleDashboardEl);
+    observeDeferredImages(personPanelEl);
     return;
   }
 
@@ -2316,6 +2359,8 @@ function applyRoleView(roleId = activeRoleId, { persist = true } = {}) {
   renderPersonTabs(activeRoleId);
   renderPersonPanel(activeRoleId);
   applyFilter(role.groupId || "all");
+  observeDeferredImages(roleDashboardEl);
+  observeDeferredImages(personPanelEl);
 }
 
 renderGrid();
