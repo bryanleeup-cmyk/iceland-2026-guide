@@ -273,6 +273,16 @@ main {
   margin-bottom: 16px;
 }
 
+#roleDashboard {
+  transition: opacity 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#roleDashboard.is-entering {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
 .dashboard-head {
   border: 1px solid rgba(217, 229, 233, 0.88);
   border-left: 8px solid var(--accent);

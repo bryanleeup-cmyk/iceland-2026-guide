@@ -1389,6 +1389,7 @@ const routeAtlasLinesEl = document.querySelector("#routeAtlasLines");
 const routeAtlasStopsEl = document.querySelector("#routeAtlasStops");
 const routeAtlasDetailEl = document.querySelector("#routeAtlasDetail");
 const referenceTabIds = ["route", "cost", "tips", "packing"];
+let roleRenderToken = 0;
 
 const icelandRouteDays = [
   {
@@ -1706,6 +1707,7 @@ function getItineraryForRole(roleId) {
 function renderRoleDashboard(roleId = activeRoleId) {
   if (!roleId || !roleIds.includes(roleId)) {
     roleDashboardEl.innerHTML = "";
+    roleDashboardEl.classList.remove("is-entering");
     return;
   }
   const role = getRole(roleId);
@@ -1723,6 +1725,49 @@ function renderRoleDashboard(roleId = activeRoleId) {
       </div>
     </div>
   `;
+  roleDashboardEl.classList.remove("is-entering");
+  roleDashboardEl.classList.add("is-entering");
+  window.requestAnimationFrame(() => roleDashboardEl.classList.remove("is-entering"));
+}
+
+function isRenderTargetVisible(element) {
+  const section = element?.closest("section");
+  return Boolean(section && window.getComputedStyle(section).display !== "none");
+}
+
+function scheduleRoleSecondaryRender(roleId) {
+  const token = ++roleRenderToken;
+  const role = getRole(roleId);
+  const render = () => {
+    if (token !== roleRenderToken || roleId !== activeRoleId) return;
+
+    if (isRenderTargetVisible(coreGridEl)) renderCoreDays(roleId);
+    if (isRenderTargetVisible(stayListEl)) renderStayList(roleId);
+    if (isRenderTargetVisible(dayGridEl)) renderDays(roleId);
+    if (isRenderTargetVisible(flightGridEl)) renderFlights(roleId);
+    if (isRenderTargetVisible(spotFiltersEl)) renderSpotFilters("__role");
+    if (isRenderTargetVisible(personTabsEl)) renderPersonTabs(roleId);
+    if (isRenderTargetVisible(canvasEl)) applyFilter(role.groupId || "all");
+
+    const renderSpotsWhenIdle = () => {
+      if (token !== roleRenderToken || roleId !== activeRoleId) return;
+      if (isRenderTargetVisible(spotGridEl)) {
+        renderSpots(`role:${roleId}`);
+        observeDeferredImages(spotGridEl);
+      }
+      roleDashboardEl.removeAttribute("aria-busy");
+    };
+
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(renderSpotsWhenIdle, { timeout: 700 });
+    } else {
+      window.setTimeout(renderSpotsWhenIdle, 0);
+    }
+  };
+
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(render);
+  });
 }
 
 function renderGrid() {
@@ -2306,7 +2351,7 @@ function hideTooltip() {
 
 function applyRoleView(roleId = activeRoleId, { persist = true } = {}) {
   activeRoleId = roleIds.includes(roleId) ? roleId : null;
-  const role = activeRoleId ? getRole(activeRoleId) : null;
+  roleRenderToken += 1;
 
   document.body.dataset.role = activeRoleId || "none";
   if (persist) {
@@ -2317,6 +2362,7 @@ function applyRoleView(roleId = activeRoleId, { persist = true } = {}) {
   renderRoleDashboard(activeRoleId);
 
   if (!activeRoleId) {
+    roleDashboardEl.removeAttribute("aria-busy");
     document.querySelector(".role-dashboard")?.setAttribute("hidden", "");
     renderCoreDays(activeRoleId);
     renderStayList(activeRoleId);
@@ -2330,16 +2376,8 @@ function applyRoleView(roleId = activeRoleId, { persist = true } = {}) {
   }
 
   document.querySelector(".role-dashboard")?.removeAttribute("hidden");
-  renderCoreDays(activeRoleId);
-  renderStayList(activeRoleId);
-  renderDays(activeRoleId);
-  renderFlights(activeRoleId);
-
-  renderSpotFilters("__role");
-  renderSpots(`role:${activeRoleId}`);
-  renderPersonTabs(activeRoleId);
-  applyFilter(role.groupId || "all");
-  observeDeferredImages(roleDashboardEl);
+  roleDashboardEl.setAttribute("aria-busy", "true");
+  scheduleRoleSecondaryRender(activeRoleId);
 }
 
 renderGrid();
