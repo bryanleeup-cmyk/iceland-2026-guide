@@ -2364,14 +2364,6 @@ function applyRoleView(roleId = activeRoleId, { persist = true } = {}) {
   if (!activeRoleId) {
     roleDashboardEl.removeAttribute("aria-busy");
     document.querySelector(".role-dashboard")?.setAttribute("hidden", "");
-    renderCoreDays(activeRoleId);
-    renderStayList(activeRoleId);
-    renderDays(activeRoleId);
-    renderFlights(activeRoleId);
-    renderSpotFilters("__role");
-    renderSpots("__none");
-    renderPersonTabs(data.personPlans[0].id);
-    observeDeferredImages(roleDashboardEl);
     return;
   }
 
