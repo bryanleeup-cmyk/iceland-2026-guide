@@ -222,6 +222,10 @@
     name: "Paris Pershing–Porte Maillot 上车点",
     mapUrl: googleMaps("24 Boulevard Pershing, 75017 Paris, France"),
   };
+  const parisBusStopLink =
+    `<a href="${parisBusStop.mapUrl}" target="_blank" rel="noopener noreferrer">` +
+    "Paris Pershing–Porte Maillot 上车点（24 Boulevard Pershing, 75017 Paris）" +
+    "</a>";
 
   const tongtong = data.groups.find((group) => group.id === "tongyan");
   if (tongtong) {
@@ -259,7 +263,7 @@
     ];
     tongtongRole.focusDays = [
       ["10/02", "巴黎一日游 + 巴黎住宿", "08:10 抵达巴黎戴高乐机场 T1。先到 Ibis Clichy Centre Mairie 酒店寄存行李；上午吃早午餐。之后乘坐塞纳河游船，前往凯旋门和香榭丽舍，再参观卢浮宫；晚上看埃菲尔铁塔，结束后回酒店休息。"],
-      ["10/03", "雷克雅未克下午 4 点到（2 人）", "06:30 从 Paris Pershing–Porte Maillot 上车点（24 Boulevard Pershing, 75017 Paris）乘 BlaBlaCar Bus（€8.99）前往 Brussels Midi / Brussels South West（预计抵达 87 Rue de France, 1060 Brussels）。之后前往布鲁塞尔机场，13:50 起飞、15:10 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI555；落地后去林德城河酒店会合，晚上五人追极光。"],
+      ["10/03", "雷克雅未克下午 4 点到（2 人）", `06:30 从 ${parisBusStopLink} 乘 BlaBlaCar Bus（€8.99）前往 Brussels Midi / Brussels South West（预计抵达 87 Rue de France, 1060 Brussels）。之后前往布鲁塞尔机场，13:50 起飞、15:10 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI555；落地后去林德城河酒店会合，晚上五人追极光。`],
       ["10/04", "南岸两日游（7 人）", "Nice Travel 南岸两日游，08:30 前到 Bus Stop #13（Nice Travel）集合；团含南部住宿。餐食不含（有补给点）。"],
       ["10/05", "南岸两日游第 2 天（7 人）", "继续南岸两日游，完成蓝冰洞、冰河湖与钻石沙滩；含早餐，沿途有补给点。预计不晚于 21:00 回到雷克雅未克，回城后入住林德城河酒店。"],
       ["10/06", "兰德曼那劳卡高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐（途中有一个小超市）。"],
@@ -277,7 +281,7 @@
     tongtongPlan.role = "彤彤 + 龙龙：10/02 飞巴黎并住一晚；10/03 清晨坐大巴到布鲁塞尔后飞冰岛；10/04-10/10 的冰岛与布鲁塞尔行程按最新截图补齐。";
     tongtongPlan.days = [
       ["10/02", "巴黎一日游 + 巴黎住宿", "01:30 从深圳宝安机场 T3 起飞，08:10 抵达巴黎戴高乐机场 T1，航班海南航空 HU757。先到 Ibis Clichy Centre Mairie 酒店寄存行李；上午吃早午餐。之后乘坐塞纳河游船，前往凯旋门和香榭丽舍，再参观卢浮宫；晚上看埃菲尔铁塔，结束后回酒店休息。"],
-      ["10/03", "雷克雅未克下午 4 点到（2 人）", "06:30 从 Paris Pershing–Porte Maillot 上车点（24 Boulevard Pershing, 75017 Paris）乘 BlaBlaCar Bus（€8.99）前往 Brussels Midi / Brussels South West（预计抵达 87 Rue de France, 1060 Brussels）。之后前往布鲁塞尔机场，13:50 起飞、15:10 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI555；落地后去林德城河酒店会合，晚上五人追极光。"],
+      ["10/03", "雷克雅未克下午 4 点到（2 人）", `06:30 从 ${parisBusStopLink} 乘 BlaBlaCar Bus（€8.99）前往 Brussels Midi / Brussels South West（预计抵达 87 Rue de France, 1060 Brussels）。之后前往布鲁塞尔机场，13:50 起飞、15:10 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI555；落地后去林德城河酒店会合，晚上五人追极光。`],
       ["10/04", "南岸两日游（7 人）", "08:30 前到 Bus Stop #13（Nice Travel）集合；团含南部住宿。餐食不含（有补给点）。"],
       ["10/05", "南岸两日游第 2 天（7 人）", "完成蓝冰洞、冰河湖与钻石沙滩；含早餐，沿途有补给点。预计不晚于 21:00 回到雷克雅未克，回城后入住林德城河酒店。"],
       ["10/06", "兰德曼那劳卡高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐（途中有一个小超市）。"],
