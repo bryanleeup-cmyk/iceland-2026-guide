@@ -1279,7 +1279,7 @@ function getDailyStay(personId, date, title) {
   return null;
 }
 
-function renderDailyCard(personId, date, title, detail) {
+function renderDailyCard(personId, date, title, detail, { priority = false } = {}) {
   const visual = getDailyVisual(personId, date, title, detail);
   const images = visual.images || fallbackDailyVisual.images;
   const stay = getDailyStay(personId, date, title);
@@ -1290,7 +1290,7 @@ function renderDailyCard(personId, date, title, detail) {
           .map(
             (image, index) => `
               <figure>
-                <img src="${image}" alt="${title}真实景色 ${index + 1}" loading="lazy" decoding="async" fetchpriority="${index === 0 ? "auto" : "low"}" draggable="false" />
+                <img src="${image}" alt="${title}真实景色 ${index + 1}" loading="${priority && index === 0 ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority && index === 0 ? "high" : "low"}" draggable="false" />
               </figure>
             `,
           )
@@ -1679,7 +1679,7 @@ function renderRoleDashboard(roleId = activeRoleId) {
       </div>
       <div class="dashboard-days">
         ${days
-          .map(([date, title, detail]) => renderDailyCard(roleId, date, title, detail))
+          .map(([date, title, detail], index) => renderDailyCard(roleId, date, title, detail, { priority: index === 0 }))
           .join("")}
       </div>
     </div>
@@ -2059,14 +2059,14 @@ function renderSpots(active = "iceland-six") {
       : data.spots.filter((spot) => spot.segments.includes(active));
   spotGridEl.innerHTML = spots
     .map(
-      (spot) => `
+      (spot, spotIndex) => `
         <article class="spot-card">
           <div class="spot-gallery" aria-label="${spot.title}真实照片">
             ${(spot.images || [spot.image])
               .map(
                 (image, index, arr) => `
                   <figure class="spot-card__image">
-                    <img src="${image}" alt="${spot.title}真实照片 ${index + 1}" loading="lazy" decoding="async" fetchpriority="${index === 0 ? "auto" : "low"}" />
+                    <img src="${image}" alt="${spot.title}真实照片 ${index + 1}" loading="${spotIndex === 0 && index === 0 ? "eager" : "lazy"}" decoding="async" fetchpriority="${spotIndex === 0 && index === 0 ? "high" : "low"}" />
                     <figcaption>
                       <span>${spot.date} · ${spot.city}</span>
                       <b>${index + 1}/${arr.length}</b>
