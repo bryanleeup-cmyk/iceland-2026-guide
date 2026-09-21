@@ -3040,9 +3040,42 @@ footer {
   }
 }
 
-body[data-role="none"] main > section:not(.role-gate),
+body[data-role="none"] main > section:not(.role-gate):not(.travel-readiness),
 body:not([data-role="all"]) main > section.panel:not(.reference-panel):not(.route-atlas-panel):not(.booked-tours-panel):not(.lodging-expense-panel),
 body:not([data-role="all"]) .global-only,
 body:not([data-role="all"]) .role-detail-only {
   display: none !important;
+}
+
+.travel-readiness {
+  margin: 0 0 20px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  line-height: 1.65;
+  scroll-margin-top: 16px;
+}
+
+.travel-readiness h2 { margin: 0; font-size: 20px; }
+.travel-readiness p { margin: 10px 0; }
+.travel-readiness__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.travel-readiness button {
+  border: 1px solid #174e78;
+  border-radius: 6px;
+  padding: 10px 14px;
+  background: #174e78;
+  color: #fff;
+  cursor: pointer;
+}
+.travel-readiness button:disabled { opacity: .6; cursor: default; }
+.travel-readiness a { color: #174e78; text-decoration: underline; text-underline-offset: 3px; }
+.travel-readiness__note { color: #4e626b; font-size: 14px; }
+.travel-readiness summary { cursor: pointer; font-weight: 700; padding: 6px 0; }
+.travel-readiness :focus-visible { outline: 3px solid #2f80ed; outline-offset: 3px; }
+#itineraryStatus { color: #9b2c1c; font-weight: 700; }
+
+@media (max-width: 560px) {
+  .travel-readiness { padding: 16px; }
+  .travel-readiness__actions { gap: 10px 16px; }
 }

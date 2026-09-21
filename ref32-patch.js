@@ -505,3 +505,6 @@
   renderMobileTimeline();
   applyRoleView(activeRoleId || "jianhuang", { persist: false });
 })();
+
+window.travelDataReady = true;
+document.body?.setAttribute("data-itinerary-status", "ready");

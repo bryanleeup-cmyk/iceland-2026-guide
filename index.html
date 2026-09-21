@@ -4,19 +4,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#eef5f7" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'" />
     <meta name="description" content="2026 国庆葡萄牙、巴黎、布鲁塞尔、冰岛旅行攻略。彤彤 10/02 抵达巴黎、10/03 经布鲁塞尔飞冰岛；冰岛南岸 7 人同行，后续按每日行程分为 5 人和 3 人。" />
     <link rel="icon" href="data:," />
     <title>2026 国庆｜按角色看的冰岛行程</title>
     <link rel="preload" as="image" href="assets/route-hero.webp" type="image/webp" fetchpriority="high" />
-    <link rel="stylesheet" href="styles.css?v=navigation-20260921-1" />
+    <link rel="stylesheet" href="styles.css?v=travel-ready-20260921-1" />
+    <style>
+      body:not([data-itinerary-status="ready"]) main > section:not(.travel-readiness) { display: none !important; }
+      body[data-itinerary-status="ready"] #itineraryStatus { display: none; }
+    </style>
   </head>
-  <body>
+  <body data-itinerary-status="loading">
     <header class="hero">
       <div class="hero__shade"></div>
       <nav class="topbar" aria-label="页面导航">
         <a href="#roleGate">选择组合</a>
         <a href="#myDashboard">我的行程</a>
         <a href="#routeAtlas">冰岛路线</a>
+        <a href="#travelReady">离线与应急</a>
       </nav>
       <div class="hero__content">
         <p class="eyebrow">2026 国庆旅行同步表</p>
@@ -36,6 +44,30 @@
     </header>
 
     <main>
+      <section class="travel-readiness" id="travelReady" aria-labelledby="travelReadyTitle">
+        <h2 id="travelReadyTitle">出发前，保存一份到手机</h2>
+        <p id="itineraryStatus" role="alert">如果完整行程迟迟未显示，请打开下方文字备用版，或联网后刷新重试。</p>
+        <p id="offlineStatus" role="status" aria-live="polite">请联网打开一次，再保存离线行程；文字备用版可直接下载。</p>
+        <div class="travel-readiness__actions">
+          <button id="saveOffline" type="button" disabled>保存离线行程和照片</button>
+          <button id="updateOffline" type="button" hidden>使用新版本</button>
+          <a href="travel-backup.html" download="2026国庆-文字备用行程.html">下载文字备用版</a>
+          <a href="travel-backup.html" target="_blank" rel="noopener noreferrer">直接看文字版</a>
+        </div>
+        <p class="travel-readiness__note">离线文件只保存在当前设备和浏览器。保存后请开飞行模式试一次；无痕浏览、清理浏览器或系统回收存储可能移除缓存。地图、实时天气、路况和团方网站仍需联网。</p>
+        <details>
+          <summary>出发检查与紧急信息</summary>
+          <div id="travelEmergency">
+            <p><strong>紧急情况先拨 <a href="tel:112">112</a></strong>（冰岛及本次行程的欧盟国家）。在冰岛若 112 无法接通、断线或无法听清，可拨 <a href="tel:+3545990112">+354 599 0112</a>；备用号码按普通电话处理，不自动传送定位，请主动报告所在位置。<a href="https://www.112.is/en/important-information-regarding-calls-to-112" target="_blank" rel="noopener noreferrer">冰岛官方说明</a></p>
+            <p>每天出发前联网查看 <a href="https://en.vedur.is/alerts" target="_blank" rel="noopener noreferrer">天气预警</a>、<a href="https://umferdin.is/en" target="_blank" rel="noopener noreferrer">官方路况</a> 和 <a href="https://safetravel.is/travel-conditions/" target="_blank" rel="noopener noreferrer">旅行安全提示</a>。离线行程不包含实时预警，现场封闭与向导安排优先。</p>
+            <p>黑沙滩始终远离水边，不背对海浪；遵守警示灯、封闭线和现场人员指示，并注意崖壁落石。<a href="https://safetravel.is/travel-conditions/blackbeach-safety/" target="_blank" rel="noopener noreferrer">黑沙滩官方安全指引</a></p>
+          </div>
+          <p>所有航班和集合时间均按当地时间；临行以航空公司及团方最新通知为准。车票、酒店确认单和保险救援电话请另存手机“文件”，不要只依赖本网站。</p>
+          <p>赶海组 10/02 阿姆斯特丹大巴的公司、时刻和上下车点，以及部分住宿，仍需用订单核实。</p>
+          <p>这是公开分享网页，角色选择不提供隐私保护。请勿把护照、完整订单号、密码或个人紧急联系人上传到本站。</p>
+        </details>
+        <noscript><p>当前浏览器未启用脚本，请打开上方文字备用版查看全部组合行程。</p></noscript>
+      </section>
       <section class="role-gate" id="roleGate" aria-label="选择自己的旅行角色">
         <div class="section-head section-head--compact">
           <div>
@@ -276,7 +308,7 @@
             </article>
             <article class="route-geology-card">
               <svg viewBox="0 0 160 92" role="img" aria-label="黑沙滩与玄武岩海岸示意"><rect width="160" height="92" rx="7" fill="#b9dce1"/><path d="M0 35 C34 25 52 42 82 33 C115 24 135 40 160 29 V54 C130 65 110 51 81 61 C47 72 26 55 0 67Z" fill="#87bdc7"/><path d="M0 63 C30 52 55 72 83 62 C115 51 137 67 160 57 V92 H0Z" fill="#3e4848"/><path d="M91 60 L99 33 L110 15 L120 34 L132 46 L137 61" fill="#4b5856"/><path d="M0 78 C30 69 58 86 85 76 C112 66 138 82 160 71" fill="none" stroke="#d7b58b" stroke-width="3" opacity=".7"/></svg>
-              <h4>黑沙滩海岸</h4><p>南岸黑沙由火山玄武岩碎屑组成，海蚀柱和强浪共同塑造海岸线，靠近浪区要留足安全距离。</p>
+              <h4>黑沙滩海岸</h4><p>南岸黑沙由火山玄武岩碎屑组成。始终远离水边，不背对海浪；遵守警示灯、封闭线和现场人员指示，并注意崖壁落石。</p>
             </article>
           </div>
         </div>
@@ -456,7 +488,8 @@
       <a href="#lodging-expenses">住宿</a>
     </nav>
 
-    <script src="script.js?v=site-audit-20260921-1" defer></script>
-    <script src="ref32-patch.js?v=site-audit-20260921-1" defer></script>
+    <script src="offline.js?v=travel-ready-20260921-1" defer></script>
+    <script src="script.js?v=travel-ready-20260921-1" defer></script>
+    <script src="ref32-patch.js?v=travel-ready-20260921-1" defer></script>
   </body>
 </html>
