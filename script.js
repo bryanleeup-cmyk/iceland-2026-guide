@@ -1324,7 +1324,7 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
   const stay = getDailyStay(personId, date, title);
   return `
     <article class="daily-card">
-      <div class="daily-card__media" aria-label="${date} ${title} 真实照片，可左右滑动">
+      <div class="daily-card__media" tabindex="0" aria-label="${date} ${title} 真实照片，可左右滑动或使用方向键">
         ${images
           .map(
             (image, index) => `
@@ -1555,7 +1555,7 @@ const queryRole = new URLSearchParams(window.location.search).get("role");
 const hashRole = window.location.hash.replace("#", "");
 const roleParam = queryRole || hashRole;
 let activeRoleId = roleIds.includes(roleParam) ? roleParam : null;
-const shouldNormalizeRoleUrl = roleIds.includes(queryRole || "");
+const shouldNormalizeRoleUrl = roleIds.includes(roleParam);
 
 function asDate(value) {
   return new Date(value);
@@ -1582,7 +1582,7 @@ function renderRouteAtlas(dayId = activeRouteDayId) {
   const selectedDay = icelandRouteDays.find((day) => day.id === dayId) || icelandRouteDays[0];
   activeRouteDayId = selectedDay.id;
 
-  routeAtlasDaysEl.innerHTML = icelandRouteDays
+  if (!routeAtlasDaysEl.firstElementChild) routeAtlasDaysEl.innerHTML = icelandRouteDays
     .map(
       (day) => `
         <button class="route-atlas__day ${day.id === activeRouteDayId ? "is-active" : ""}" type="button" data-route-day="${day.id}" aria-pressed="${day.id === activeRouteDayId}">
@@ -1592,6 +1592,12 @@ function renderRouteAtlas(dayId = activeRouteDayId) {
       `,
     )
     .join("");
+
+  routeAtlasDaysEl.querySelectorAll("[data-route-day]").forEach((button) => {
+    const selected = button.dataset.routeDay === activeRouteDayId;
+    button.classList.toggle("is-active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
 
   routeAtlasLinesEl.innerHTML = icelandRouteDays
     .map(
@@ -1625,6 +1631,9 @@ function renderRouteAtlas(dayId = activeRouteDayId) {
     })
     .join("");
 
+  routeAtlasDetailEl.querySelectorAll("img[data-src]").forEach((image) => {
+    deferredImageObserver?.unobserve(image);
+  });
   routeAtlasDetailEl.innerHTML = `
     <div class="route-day-detail__copy">
       <div class="route-day-detail__eyebrow">${selectedDay.date} / ${selectedDay.title}</div>
@@ -1666,7 +1675,7 @@ function updateRoleUrl(roleId) {
   } else {
     url.searchParams.delete("role");
   }
-  url.hash = "";
+  if (roleIds.includes(url.hash.slice(1))) url.hash = "";
   window.history.replaceState({}, "", url);
 }
 
@@ -1678,7 +1687,7 @@ function setWindowPosition(el, start, end) {
 }
 
 function renderRoleChooser(roleId = activeRoleId) {
-  roleChooserEl.innerHTML = `
+  if (!roleChooserEl.firstElementChild) roleChooserEl.innerHTML = `
     <div class="role-cards" aria-label="选择角色">
       ${selectableRoles
         .map(
@@ -1697,6 +1706,12 @@ function renderRoleChooser(roleId = activeRoleId) {
         .join("")}
     </div>
   `;
+  roleChooserEl.querySelectorAll("[data-role]").forEach((button) => {
+    const selected = button.dataset.role === roleId;
+    button.classList.toggle("is-active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+    button.querySelector("strong").textContent = getRole(button.dataset.role).name;
+  });
 }
 
 function getItineraryForRole(roleId) {
@@ -1932,7 +1947,7 @@ function renderSpotFilters(active = "iceland-six") {
   spotFiltersEl.innerHTML = data.spotCategories
     .map(
       ([id, label]) => `
-        <button class="spot-filter ${id === active ? "is-active" : ""}" type="button" data-spot-filter="${id}" onclick="window.applySpotFilter('${id}')">
+        <button class="spot-filter ${id === active ? "is-active" : ""}" type="button" data-spot-filter="${id}">
           ${label}
         </button>
       `,
@@ -2390,10 +2405,51 @@ renderRouteAtlas();
 applyRoleView(activeRoleId, { persist: shouldNormalizeRoleUrl });
 
 roleChooserEl.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-role]");
-  if (!button) return;
+  const button = event.target.closest("button[data-role]");
+  if (!button || button.dataset.role === activeRoleId) return;
   applyRoleView(button.dataset.role);
 });
+
+function syncRoleFromUrl() {
+  const url = new URL(window.location.href);
+  const requestedRole = url.searchParams.get("role") || url.hash.slice(1);
+  const roleId = roleIds.includes(requestedRole) ? requestedRole : selectableRoles[0].id;
+  if (roleId !== activeRoleId) applyRoleView(roleId, { persist: false });
+  if (roleIds.includes(url.hash.slice(1))) updateRoleUrl(roleId);
+}
+
+window.addEventListener("popstate", syncRoleFromUrl);
+window.addEventListener("hashchange", syncRoleFromUrl);
+window.addEventListener("load", () => {
+  const target = document.getElementById(window.location.hash.slice(1));
+  if (target) target.scrollIntoView({ behavior: "instant" });
+}, { once: true });
+
+let galleryDrag = null;
+roleDashboardEl.addEventListener("pointerdown", (event) => {
+  const gallery = event.target.closest(".daily-card__media");
+  if (!gallery || event.pointerType !== "mouse" || event.button !== 0) return;
+  galleryDrag = { gallery, startX: event.clientX, scrollLeft: gallery.scrollLeft };
+  gallery.setPointerCapture(event.pointerId);
+});
+
+roleDashboardEl.addEventListener("pointermove", (event) => {
+  if (!galleryDrag) return;
+  const { gallery, startX, scrollLeft } = galleryDrag;
+  if (Math.abs(event.clientX - startX) < 4 && !gallery.classList.contains("is-dragging")) return;
+  gallery.classList.add("is-dragging");
+  gallery.scrollLeft = scrollLeft + startX - event.clientX;
+});
+
+function endGalleryDrag() {
+  if (!galleryDrag) return;
+  galleryDrag.gallery.classList.remove("is-dragging");
+  galleryDrag = null;
+}
+
+roleDashboardEl.addEventListener("pointerup", endGalleryDrag);
+roleDashboardEl.addEventListener("pointercancel", endGalleryDrag);
+roleDashboardEl.addEventListener("lostpointercapture", endGalleryDrag);
 
 roleDashboardEl.addEventListener(
   "click",
@@ -2406,8 +2462,8 @@ roleDashboardEl.addEventListener(
 );
 
 roleDashboardEl.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-role]");
-  if (!button) return;
+  const button = event.target.closest("button[data-role]");
+  if (!button || button.dataset.role === activeRoleId) return;
   applyRoleView(button.dataset.role);
 });
 
@@ -2443,22 +2499,26 @@ referenceGuideEl.addEventListener("click", (event) => {
   const expandButton = event.target.closest("[data-reference-expand]");
   if (expandButton) {
     renderReferenceGuide(expandButton.dataset.referenceExpand || "route", true);
+    referenceGuideEl.querySelector(".reference-tab.is-active")?.focus({ preventScroll: true });
     return;
   }
 
   const collapseButton = event.target.closest("[data-reference-collapse]");
   if (collapseButton) {
+    const activeTab = referenceGuideEl.querySelector(".reference-tab.is-active")?.dataset.referenceTab || "route";
     renderReferenceGuide("route", false);
+    referenceGuideEl.querySelector(`[data-reference-expand="${activeTab}"]`)?.focus({ preventScroll: true });
     return;
   }
 
   const tabButton = event.target.closest("[data-reference-tab]");
   if (!tabButton) return;
   renderReferenceGuide(tabButton.dataset.referenceTab, true);
+  referenceGuideEl.querySelector(".reference-tab.is-active")?.focus({ preventScroll: true });
 });
 
 routeAtlasDaysEl?.addEventListener("click", (event) => {
   const button = event.target.closest("[data-route-day]");
-  if (!button) return;
+  if (!button || button.dataset.routeDay === activeRouteDayId) return;
   renderRouteAtlas(button.dataset.routeDay);
 });

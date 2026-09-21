@@ -435,6 +435,11 @@ main {
   display: none;
 }
 
+.daily-card__media.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
 .daily-card__media figure {
   flex: 0 0 88%;
   min-height: 100%;
@@ -547,7 +552,7 @@ main {
 
 body:not([data-role="all"]) .global-only,
 body:not([data-role="all"]) .role-detail-only,
-body:not([data-role="all"]) main > section.panel:not(.reference-panel):not(.route-atlas-panel):not(.booked-tours-panel) {
+body:not([data-role="all"]) main > section.panel:not(.reference-panel):not(.route-atlas-panel):not(.booked-tours-panel):not(.lodging-expense-panel) {
   display: none;
 }
 
@@ -3036,7 +3041,7 @@ footer {
 }
 
 body[data-role="none"] main > section:not(.role-gate),
-body:not([data-role="all"]) main > section.panel:not(.reference-panel):not(.route-atlas-panel):not(.booked-tours-panel),
+body:not([data-role="all"]) main > section.panel:not(.reference-panel):not(.route-atlas-panel):not(.booked-tours-panel):not(.lodging-expense-panel),
 body:not([data-role="all"]) .global-only,
 body:not([data-role="all"]) .role-detail-only {
   display: none !important;

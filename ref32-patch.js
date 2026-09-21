@@ -211,7 +211,7 @@
   applyRoleView(activeRoleId || "jianhuang", { persist: false });
 })();
 
-/* Haigang shares Tongtong itinerary through 10/07. */
+/* Haigang shares Tongtong itinerary from 10/04 through 10/07. */
 (function applyTongtongUpdate() {
   const googleMaps = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   const parisHotel = {
@@ -295,10 +295,10 @@
 
   const haigangPlan = data.personPlans.find((person) => person.id === "haigang");
   if (haigangPlan && tongtongPlan) {
-    const sameIcelandDates = new Set(["10/03", "10/04", "10/05", "10/06", "10/07"]);
+    const sameIcelandDates = new Set(["10/04", "10/05", "10/06", "10/07"]);
     const tongtongIcelandDays = new Map(tongtongPlan.days.filter(([date]) => sameIcelandDates.has(date)).map((day) => [day[0], day]));
     haigangPlan.days = haigangPlan.days.map((day) => tongtongIcelandDays.get(day[0]) || day);
-    haigangPlan.role = "两个人：10/03 早到冰岛；10/03-10/07 行程与彤彤一致；10/08 晚飞阿姆斯特丹。";
+    haigangPlan.role = "两个人：10/03 从哥本哈根出发，07:40 到冰岛；10/04-10/07 行程与彤彤一致；10/08 晚飞阿姆斯特丹。";
   }
 
   data.staySchedule = data.staySchedule.filter((stay) => !(stay.audiences?.includes("tongyan") && stay.date === "10/08-10/10"));
@@ -458,10 +458,14 @@
     images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-hallgrimskirkja.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
   };
 
-  dailyVisuals["tongyan|10/06"] = { ...dailyVisuals["tongyan|10/06"], city: "兰德曼卡高地", season: "5 人高地超级吉普，酒店门口接送。", images: dailyVisuals["jianhuang|10/02"].images };
+  dailyVisuals["tongyan|10/06"] = { ...dailyVisuals["tongyan|10/06"], city: "兰德曼那劳卡高地", season: "5 人高地超级吉普，酒店门口接送。", images: dailyVisuals["jianhuang|10/02"].images };
   dailyVisuals["tongyan|10/07"].season = "5 人斯奈山半岛一日游，12 号站改 9 号站。";
   dailyVisuals["tongyan|10/08"] = { ...dailyVisuals["tongyan|10/08"], city: "黄金圈", season: "3 人黄金圈一日游，Troll 团。", images: dailyVisuals["jianhuang|10/03"].images };
   dailyVisuals["tongyan|10/09"] = { ...dailyVisuals["tongyan|10/09"], season: "3 人温泉 + 雷市一日游，晚住机场附近。", images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-harpa.webp"] };
+
+  ["10/04", "10/05", "10/06", "10/07"].forEach((date) => {
+    dailyVisuals[`haigang|${date}`] = { ...dailyVisuals[`tongyan|${date}`] };
+  });
 
   const replacementPairs = [
     ["彤燕组", "彤彤"],
