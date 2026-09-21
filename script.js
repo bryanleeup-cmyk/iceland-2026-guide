@@ -1705,6 +1705,9 @@ function getItineraryForRole(roleId) {
 }
 
 function renderRoleDashboard(roleId = activeRoleId) {
+  roleDashboardEl.querySelectorAll("img[data-src]").forEach((image) => {
+    deferredImageObserver?.unobserve(image);
+  });
   if (!roleId || !roleIds.includes(roleId)) {
     roleDashboardEl.innerHTML = "";
     roleDashboardEl.classList.remove("is-entering");
@@ -1728,6 +1731,7 @@ function renderRoleDashboard(roleId = activeRoleId) {
   roleDashboardEl.classList.remove("is-entering");
   roleDashboardEl.classList.add("is-entering");
   window.requestAnimationFrame(() => roleDashboardEl.classList.remove("is-entering"));
+  observeDeferredImages(roleDashboardEl);
 }
 
 function isRenderTargetVisible(element) {
