@@ -18,32 +18,32 @@
   }
 
   data.overlap.end = "2026-10-06T19:20:00";
-  data.overlap.label = "冰岛六人都在：10/03 15:10 后 - 10/06 19:20 前";
-  data.overlap.context = "这是唯一冰岛六人全部在的时间段。10/03 晚间休息，不安排追极光；10/04-10/05 六人一起走南岸两日 + 蓝冰洞小巴团，全程无人自驾；10/06 建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场，19:20 从凯夫拉维克机场离开冰岛。";
+  data.overlap.label = "冰岛同行窗口：10/03 15:10 后 - 10/06 19:20 前";
+  data.overlap.context = "这是冰岛共同停留的时间段。10/03 晚间休息，不安排追极光；10/04-10/05 共 7 人一起走南岸两日 + 蓝冰洞小巴团，全程无人自驾；10/06 建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场，19:20 从凯夫拉维克机场离开冰岛。";
 
-  data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；赶海组 10/08 离开；彤燕组 10/10 清晨离开";
+  data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；赶海组 10/08 离开；彤彤 10/09 转住机场附近，10/10 清晨离开冰岛";
   data.hotel.notes = data.hotel.notes.map((note) =>
     note.includes("建皇 10/06 08:00")
-      ? "建皇 10/06 19:20 从雷克雅未克凯夫拉维克机场起飞，白天可先做雷克雅未克城市轻量游或机场方向半日安排；傍晚提前去机场。"
+      ? "建皇 10/06 白天退房，自行乘公共交通前往 Sky Lagoon，13:00 入场；取回行李后提前去机场，19:20 从凯夫拉维克机场起飞。"
       : note,
   );
 
   const allRole = data.roleViews.find((role) => role.id === "all");
   if (allRole) {
-    allRole.facts[0] = ["共同窗口", "10/03 15:10-10/06 19:20", "六个人真正一起在冰岛"];
+    allRole.facts[0] = ["共同窗口", "10/03 15:10-10/06 19:20", "人数按每日行程为准"];
     allRole.focusDays[2] = ["10/05", "蓝冰洞第二天", "晚上回雷克雅未克，建皇准备次日晚航班。"];
-    allRole.focusDays[3] = ["10/06+", "建皇晚飞，四人继续", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场；赶海组 + 彤燕组优先补斯奈山、雷克雅内斯半岛或蓝湖。"];
+    allRole.focusDays[3] = ["10/06+", "5 人 → 3 人后续段", "10/06 高地超级吉普、10/07 斯奈山共 5 人；10/08 黄金圈、10/09 温泉与雷市共 3 人。建皇 10/06 13:00 Sky Lagoon，晚间飞米兰。"];
   }
 
   const role = data.roleViews.find((item) => item.id === "jianhuang");
   if (role) {
-    role.notes[0] = "重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 Kerlingarfjoll 高地徒步已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 六人南岸两日、10/06 已订 Sky Lagoon 温泉（13:00，无接送） + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。";
+    role.notes[0] = "重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 Kerlingarfjoll 高地徒步已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 7 人南岸两日、10/06 已订 Sky Lagoon 温泉（13:00，无接送） + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。";
     role.facts[3] = ["离开冰岛", "10/06 19:20", "13:00 Sky Lagoon；自行公共交通，预留机场交通时间"];
-    role.focusDays[7] = ["10/05", "蓝冰洞后回雷市", "晚上回雷克雅未克，次日白天留半日待定。"];
-    role.focusDays[8] = ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） + 晚飞米兰", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"];
-    role.focusDays[9] = ["10/07", "米兰转机到里斯本", "01:30 到米兰马尔彭萨，06:30 从 T2 飞里斯本，08:30 到里斯本；白天只做半日轻量城市步行，晚上飞哥本哈根并住 Cabinn Metro Hotel。"];
-    role.focusDays[10] = ["10/08", "哥本哈根转机一日游", "前一晚住 Cabinn Metro Hotel；19:05 飞北京，白天只走市区轻量线。"];
-    role.focusDays[0] = ["09/26", "辛特拉海岸 + 两张已购门票", "雷加莱拉庄园 14:30 固定入场；佩纳公园（仅花园、不含宫殿）无时段票，16:45 左右入园；辛特拉王宫改为可选外观停留，确保 20:30 回里斯本市区晚餐。"];
+    role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/05")] = ["10/05", "蓝冰洞后回雷市", "晚上回雷克雅未克；次日 13:00 Sky Lagoon，预留公共交通和取行李时间。"];
+    role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/06")] = ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） + 晚飞米兰", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"];
+    role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/07")] = ["10/07", "米兰转机到里斯本", "01:30 到米兰马尔彭萨，06:30 从 T2 飞里斯本，08:30 到里斯本；白天只做半日轻量城市步行，晚上飞哥本哈根并住 Cabinn Metro Hotel。"];
+    role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/08")] = ["10/08", "哥本哈根转机一日游", "前一晚住 Cabinn Metro Hotel；19:05 飞北京，白天只走市区轻量线。"];
+    role.focusDays[role.focusDays.findIndex((day) => day[0] === "09/26")] = ["09/26", "辛特拉海岸 + 两处已购门票", "雷加莱拉庄园 14:30 固定入场；佩纳公园（仅花园、不含宫殿）无时段票，16:45 左右入园；辛特拉王宫改为可选外观停留，确保 20:30 回里斯本市区晚餐。"];
   }
 
   const stayBeforeLeave = data.staySchedule.find((stay) => stay.date === "10/05-10/06");
@@ -58,18 +58,18 @@
   const day1006 = data.recommendedPlan.find((day) => day.date === "10/06 周二");
   if (day1006) {
     day1006.status = "建皇 19:20 从雷克雅未克凯夫拉维克机场飞米兰转里斯本";
-    day1006.plan = "建皇重新预订 Sky Lagoon 温泉，13:00 入场，¥1441.87/2人；无接送，自行乘公共交通前往，结束后取行李并前往凯夫拉维克机场，预留交通和值机时间。赶海组 + 彤燕组四个人开始包车继续冰岛路线。";
-    day1006.avoid = "建皇这天不再排远距离长线，避免误晚航班；四人包车也不要从机场直接冲太远，司机/向导路线要提前确认。";
+    day1006.plan = "建皇重新预订 Sky Lagoon 温泉，13:00 入场，¥1441.87/2人；无接送，自行乘公共交通前往，结束后取行李并前往凯夫拉维克机场，预留交通和值机时间。赶海组与彤彤等 5 人参加兰德曼那劳卡高地超级吉普，酒店门口接送，08:30-20:00，自备午餐。";
+    day1006.avoid = "建皇预留往返温泉、取行李和机场值机时间；5 人高地团自备午餐、防风防水衣物。";
     day1006.stay = "建皇白天从林德城河酒店退房，参加 Sky Lagoon 后去机场，10/07 清晨抵达里斯本；赶海组 + 彤燕组继续住林德城河酒店。";
   }
 
-  const routeTwo = data.coreDays.find((day) => day.date === "10/04-10/05");
+  const routeTwo = data.coreDays.find((day) => day.date === "10/05 周一");
   if (routeTwo) {
-    routeTwo.why = "蓝冰洞是 10 月到 4 月的季节性重点项目，跟专业冰川向导进入更稳妥；晚上回雷克雅未克，10/06 建皇白天还能保留半日机动时间。";
-    routeTwo.details[2] = ["晚上", "回林德城河酒店住 10/05 晚；建皇提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。"];
+    routeTwo.why = "蓝冰洞是 10 月到 4 月的季节性重点项目，跟专业冰川向导进入更稳妥；晚上回雷克雅未克，10/06 建皇 13:00 去 Sky Lagoon，晚上飞米兰。";
+    routeTwo.details[routeTwo.details.findIndex(([time]) => time === "晚上")] = ["晚上", "回林德城河酒店住 10/05 晚；建皇提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。"];
   }
   const routeAfter = data.coreDays.find((day) => day.date === "10/06-10/08");
-  if (routeAfter) routeAfter.details[0] = ["10/06", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行公共交通；结束后取行李并前往机场，19:20 飞米兰转里斯本；四个人按天气决定斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上回林德城河酒店。"];
+  if (routeAfter) routeAfter.details[0] = ["10/06", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行公共交通；结束后取行李并前往机场，19:20 飞米兰转里斯本；另外 5 人参加高地超级吉普，酒店门口接送，08:30-20:00，自备午餐；晚上回林德城河酒店。"];
 
   const plan = data.personPlans.find((person) => person.id === "jianhuang");
   if (plan) {
@@ -92,7 +92,7 @@
       "里斯本 → 波尔图",
       "早上和龙龙、娘娘一起坐约 3.5 小时大巴从里斯本到波尔图；12:00 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Meia-Nau%20Porto\" target=\"_blank\" rel=\"noreferrer\">Meia-Nau Porto</a> 午餐（3 人，姓名 Hector Pei；需前往 Porto 门店，迟到宽限 10 分钟）。下午玩老城河岸、路易一世大桥和杜罗河边。娘娘当晚飞往阿姆斯特丹；21:00 左右办理入住波尔图盖亚美居酒店（Mercure Porto Gaia Hotel）：标准双人床房（带加床），1 间 1 晚；订单入住 09/27、退房 09/28，建皇（两人）和龙龙共 3 人入住，实付款 ¥544.94。"
     );
-        replaceDay("10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>");
+        replaceDay("10/05", "已订：南岸两日团第二天 + 蓝冰洞（7 人）", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>");
     replaceDay("10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） → 米兰转机", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。退房后先确认行李寄存与取回安排，出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>");
     replaceDay("10/07", "米兰 → 里斯本半日 → 哥本哈根", "06:30 从米兰马尔彭萨机场 T2 起飞，08:30 落地里斯本机场 T1，航班易捷航空 U23873。白天只做里斯本半日轻量城市步行，市区收尾、吃饭、买伴手礼；18:15 从里斯本机场 T1 起飞，23:00 落地哥本哈根机场 T3。晚上入住 Cabinn Metro Hotel，地址 Arne Jacobsens Allé 2，电话 +4532465700。");
     replaceDay("10/08", "哥本哈根转机一日游 + 回北京", "10/07 23:00 已落地哥本哈根机场 T3；10/08 白天走新港、国王新广场、阿美琳堡王宫 / 小美人鱼轻量线，16:00 左右回机场更稳。19:05 从哥本哈根机场 T3 起飞，10/09 09:55 落地北京首都机场 T3。");
@@ -107,8 +107,8 @@
       transport: "Sky Lagoon 温泉；13:00 入场，无接送，自行乘公共交通；结束后预留取行李、机场交通和值机时间",
       city: "Sky Lagoon / 雷克雅未克 / 凯夫拉维克",
       title: "Sky Lagoon 温泉（已订 ¥1441.87/2人）",
-      image: "assets/spots/iceland/blue-lagoon-1.webp",
-      images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
+      image: "assets/spots/iceland/sky-lagoon-official.webp",
+      images: ["assets/spots/iceland/sky-lagoon-official.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
       bestTime: "13:00 到场入场；往返公共交通班次需提前查询",
       open: "已重新预订 Sky Lagoon 温泉，13:00 入场；不含接送，需自行乘公共交通。结束后取行李并前往机场，19:20 飞米兰。",
       sunset: "雷克雅未克 10/06 日落约 18:40",
@@ -149,7 +149,7 @@
     sunrise: "07:50",
     sunset: "18:40",
     season: "10 月初泡温泉很适合放松；13:00 入场，无接送，自行乘公共交通。结束后预留取行李、机场交通和值机时间。",
-    images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
+    images: ["assets/spots/iceland/sky-lagoon-official.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
   };
 
   getDailyStay = function getDailyStayRef32(personId, date, title) {
@@ -168,7 +168,7 @@
     const hotelStay = {
       label: "住宿",
       name: "林德城河酒店",
-      detail: "冰岛期间统一住这里；点开可跳转谷歌地图。",
+      detail: "当天住这里；点开可跳转谷歌地图。",
       url: data.hotel.mapUrl,
     };
     const hotelStayEarly = { ...hotelStay, label: "住宿（¥600.55/人/晚）" };
@@ -187,13 +187,13 @@
       if (date === "10/03") return hotelStayOct03;
       if (date === "10/05") return hotelStayOct05;
       if (date === "10/04") return tourStay;
-      if (date === "10/06") return { ...hotelStay, detail: "白天从酒店退房并安排好行李寄存；自行乘公共交通去 Sky Lagoon，13:00 入场。结束后取行李并前往凯夫拉维克机场，19:20 飞米兰。" };
+      if (date === "10/06") return { ...hotelStay, label: "出发前寄存 / 取行李", detail: "白天从酒店退房并安排好行李寄存；自行乘公共交通去 Sky Lagoon，13:00 入场。结束后取行李并前往凯夫拉维克机场，19:20 飞米兰。" };
       if (date === "10/07") return { label: "住宿（¥273.86/人/晚）", name: "Cabinn Metro Hotel", detail: "10/07 晚入住、10/08 退房；Arne Jacobsens Allé 2；电话 +4532465700。点开可跳转谷歌地图。", url: "https://www.google.com/maps/search/?api=1&query=Cabinn%20Metro%20Hotel%20Arne%20Jacobsens%20All%C3%A9%202%20Copenhagen" };
     }
     if (personId === "haigang") {
       if (["10/03", "10/05", "10/06", "10/07"].includes(date)) return hotelStay;
       if (date === "10/04") return tourStay;
-      if (date === "10/08") return { ...hotelStay, detail: "白天从林德城河酒店出发去雷克雅未克凯夫拉维克机场；晚上飞阿姆斯特丹。" };
+      if (date === "10/08") return { ...hotelStay, label: "出发前寄存 / 取行李", detail: "白天从林德城河酒店出发去雷克雅未克凯夫拉维克机场；晚上飞阿姆斯特丹。" };
     }
     if (personId === "tongyan") {
       if (["10/03", "10/05", "10/06", "10/07", "10/08", "10/09"].includes(date)) return hotelStay;
@@ -270,7 +270,7 @@
       ["10/07", "斯奈山半岛一日游（5 人）", "原 Bus Stop #12 改为 Bus Stop #9 集合；08:00 前到，预计 19:00 回城；不含餐（中途有餐厅）。"],
       ["10/08", "黄金圈一日游（3 人）", "Troll 团，Bus Stop #13 集合，09:00-17:00；不含餐。"],
       ["10/09", "温泉 + 雷市一日游（3 人）", "住宿在机场附近；安排温泉 + 雷克雅未克一日游。"],
-      ["10/10", "布鲁塞尔半日游（2 人）", "住宿为布鲁塞尔市中心 Hilton，安排市中心半日游。"],
+      ["10/10", "冰岛 → 布鲁塞尔半日游（2 人）", "07:35 从凯夫拉维克机场起飞，12:55 到布鲁塞尔机场，冰岛航空 FI554；入住布鲁塞尔市中心 Hilton，安排市中心半日游。"],
     ];
     tongtongRole.cta = "切到彤彤";
   }
@@ -288,7 +288,7 @@
       ["10/07", "斯奈山半岛一日游（5 人）", "原 Bus Stop #12 改为 Bus Stop #9 集合；08:00 前到，预计 19:00 回城；不含餐（中途有餐厅）。"],
       ["10/08", "黄金圈一日游（3 人）", "Bus Stop #13 随 Troll 团出发，09:00-17:00；不含餐。"],
       ["10/09", "温泉 + 雷市一日游（3 人）", "住机场附近；安排温泉 + 雷克雅未克一日游。"],
-      ["10/10", "布鲁塞尔半日游（2 人）", "住布鲁塞尔市中心 Hilton，安排市中心半日游。"],
+      ["10/10", "冰岛 → 布鲁塞尔半日游（2 人）", "07:35 从雷克雅未克凯夫拉维克机场起飞，12:55 抵达布鲁塞尔机场，冰岛航空 FI554。抵达后前往布鲁塞尔市中心 Hilton，安排市中心半日游。"],
       ["10/11", "布鲁塞尔 → 深圳", "11:40 从布鲁塞尔机场起飞，10/12 05:00 抵达深圳宝安机场 T3，航班海南航空 HU760。"],
     ];
   }
@@ -318,8 +318,8 @@
   }
   data.staySchedule.forEach((stay) => {
     if (stay.audiences?.includes("tongyan")) {
-      stay.people = stay.people.replaceAll("彤燕组", "彤彤").replaceAll("赶海组 + 彤彤", "赶海组 + 彤彤（共 3 人）");
-      stay.detail = stay.detail.replaceAll("彤燕组", "彤彤").replaceAll("彤燕", "彤彤").replaceAll("赶海组 + 彤彤四个人", "赶海组 + 彤彤三个人").replaceAll("四人", "三人");
+      stay.people = stay.people.replaceAll("彤燕组", "彤彤");
+      stay.detail = stay.detail.replaceAll("彤燕组", "彤彤").replaceAll("彤燕", "彤彤");
     }
   });
   const tongtongIcelandDates = new Set(["10/03-10/04", "10/04", "10/05-10/06", "10/06-10/08"]);
@@ -470,13 +470,6 @@
   const replacementPairs = [
     ["彤燕组", "彤彤"],
     ["彤燕", "彤彤"],
-    ["六个人", "五个人"],
-    ["六人", "五人"],
-    ["四人后续", "三人后续"],
-    ["赶海组 + 彤彤四个人", "赶海组 + 彤彤三个人"],
-    ["赶海组 + 彤彤四人", "赶海组 + 彤彤三人"],
-    ["和彤彤四个人", "和彤彤三个人"],
-    ["冰岛四人后续段", "冰岛三人后续段"],
   ];
   const rewrite = (value) => replacementPairs.reduce((text, [from, to]) => text.replaceAll(from, to), value);
   const rewriteStrings = (value, seen = new WeakSet()) => {
@@ -490,17 +483,22 @@
   };
   rewriteStrings(data);
 
+  data.roleViews.forEach((role) => {
+    const itinerary = data.personPlans.find((person) => person.id === role.id);
+    if (!itinerary) return;
+    role.focusDays = role.focusDays.map((day) => itinerary.days.find(([date]) => date === day[0]) || day);
+  });
+
   data.overlap.label = "冰岛同行窗口：10/03 15:10 后 - 10/06 19:20 前";
   data.overlap.context = "10/03 晚间休息，不安排追极光。同行人数以每日安排为准：10/04-10/05 为 7 人南岸两日 + 蓝冰洞；10/06-10/07 为 5 人高地与斯奈山段；10/08-10/09 为 3 人黄金圈与温泉段。建皇 10/06 19:20 从凯夫拉维克机场离开。";
   const allRoleAfterTongtongUpdate = data.roleViews.find((role) => role.id === "all");
   if (allRoleAfterTongtongUpdate) {
     allRoleAfterTongtongUpdate.facts[0] = ["同行窗口", "10/03 15:10-10/06 19:20", "人数按每日行程卡为准"];
-    allRoleAfterTongtongUpdate.focusDays[0] = ["10/04-10/05", "南岸两日 + 蓝冰洞（7 人）", "团含 10/04 南部住宿；10/05 晚回雷市。"];
+    allRoleAfterTongtongUpdate.focusDays[1] = ["10/04-10/05", "南岸两日 + 蓝冰洞（7 人）", "团含 10/04 南部住宿；10/05 晚回雷市。"];
     allRoleAfterTongtongUpdate.focusDays[3] = ["10/06+", "5 人 → 3 人后续段", "10/06 高地、10/07 斯奈山、10/08 黄金圈、10/09 温泉；人数按截图递减。"];
   }
-  data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；赶海组 10/08 离开；彤彤 10/10 清晨离开";
+  data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；赶海组 10/08 离开；彤彤 10/09 转住机场附近，10/10 清晨离开冰岛";
 
-  document.querySelector(".hotel-badge")?.replaceChildren("共同基地");
   renderRows();
   renderHighlights();
   renderHotel();
