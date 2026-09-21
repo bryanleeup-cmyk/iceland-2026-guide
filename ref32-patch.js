@@ -21,7 +21,7 @@
   data.overlap.label = "冰岛六人都在：10/03 15:10 后 - 10/06 19:20 前";
   data.overlap.context = "这是唯一冰岛六人全部在的时间段。10/03 晚间休息，不安排追极光；10/04-10/05 六人一起走南岸两日 + 蓝冰洞小巴团，全程无人自驾；10/06 建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场，19:20 从凯夫拉维克机场离开冰岛。";
 
-  data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；海港组 10/08 离开；彤燕组 10/10 清晨离开";
+  data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；赶海组 10/08 离开；彤燕组 10/10 清晨离开";
   data.hotel.notes = data.hotel.notes.map((note) =>
     note.includes("建皇 10/06 08:00")
       ? "建皇 10/06 19:20 从雷克雅未克凯夫拉维克机场起飞，白天可先做雷克雅未克城市轻量游或机场方向半日安排；傍晚提前去机场。"
@@ -32,7 +32,7 @@
   if (allRole) {
     allRole.facts[0] = ["共同窗口", "10/03 15:10-10/06 19:20", "六个人真正一起在冰岛"];
     allRole.focusDays[2] = ["10/05", "蓝冰洞第二天", "晚上回雷克雅未克，建皇准备次日晚航班。"];
-    allRole.focusDays[3] = ["10/06+", "建皇晚飞，四人继续", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场；海港组 + 彤燕组优先补斯奈山、雷克雅内斯半岛或蓝湖。"];
+    allRole.focusDays[3] = ["10/06+", "建皇晚飞，四人继续", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场；赶海组 + 彤燕组优先补斯奈山、雷克雅内斯半岛或蓝湖。"];
   }
 
   const role = data.roleViews.find((item) => item.id === "jianhuang");
@@ -48,8 +48,8 @@
 
   const stayBeforeLeave = data.staySchedule.find((stay) => stay.date === "10/05-10/06");
   if (stayBeforeLeave) stayBeforeLeave.detail = "预订成功：10/05 入住、10/06 退房，1 晚 / 1 间，标准双床 / 双人床房，金额 ¥988.61。南岸两日团结束后回到这里住，建皇 10/06 退房后安排好行李寄存，自行乘公共交通去 Sky Lagoon，13:00 入场；结束后取行李并前往机场，预留交通和值机时间。";
-  const fourStay = data.staySchedule.find((stay) => stay.date === "10/06-10/08" && stay.people.includes("海港组"));
-  if (fourStay) fourStay.detail = "建皇 10/06 白天退房、傍晚离开冰岛后，海港组 + 彤燕组继续住林德城河酒店；10/04 晚南岸团含住宿除外。金额、房间数和订单号不放公开页。";
+  const fourStay = data.staySchedule.find((stay) => stay.date === "10/06-10/08" && stay.people.includes("赶海组"));
+  if (fourStay) fourStay.detail = "建皇 10/06 白天退房、傍晚离开冰岛后，赶海组 + 彤燕组继续住林德城河酒店；10/04 晚南岸团含住宿除外。金额、房间数和订单号不放公开页。";
 
   const day1005 = data.recommendedPlan.find((day) => day.date === "10/05 周一");
   if (day1005) {
@@ -58,9 +58,9 @@
   const day1006 = data.recommendedPlan.find((day) => day.date === "10/06 周二");
   if (day1006) {
     day1006.status = "建皇 19:20 从雷克雅未克凯夫拉维克机场飞米兰转里斯本";
-    day1006.plan = "建皇重新预订 Sky Lagoon 温泉，13:00 入场，¥1441.87/2人；无接送，自行乘公共交通前往，结束后取行李并前往凯夫拉维克机场，预留交通和值机时间。海港组 + 彤燕组四个人开始包车继续冰岛路线。";
+    day1006.plan = "建皇重新预订 Sky Lagoon 温泉，13:00 入场，¥1441.87/2人；无接送，自行乘公共交通前往，结束后取行李并前往凯夫拉维克机场，预留交通和值机时间。赶海组 + 彤燕组四个人开始包车继续冰岛路线。";
     day1006.avoid = "建皇这天不再排远距离长线，避免误晚航班；四人包车也不要从机场直接冲太远，司机/向导路线要提前确认。";
-    day1006.stay = "建皇白天从林德城河酒店退房，参加 Sky Lagoon 后去机场，10/07 清晨抵达里斯本；海港组 + 彤燕组继续住林德城河酒店。";
+    day1006.stay = "建皇白天从林德城河酒店退房，参加 Sky Lagoon 后去机场，10/07 清晨抵达里斯本；赶海组 + 彤燕组继续住林德城河酒店。";
   }
 
   const routeTwo = data.coreDays.find((day) => day.date === "10/04-10/05");
@@ -318,8 +318,8 @@
   }
   data.staySchedule.forEach((stay) => {
     if (stay.audiences?.includes("tongyan")) {
-      stay.people = stay.people.replaceAll("彤燕组", "彤彤").replaceAll("海港组 + 彤彤", "海港组 + 彤彤（共 3 人）");
-      stay.detail = stay.detail.replaceAll("彤燕组", "彤彤").replaceAll("彤燕", "彤彤").replaceAll("海港组 + 彤彤四个人", "海港组 + 彤彤三个人").replaceAll("四人", "三人");
+      stay.people = stay.people.replaceAll("彤燕组", "彤彤").replaceAll("赶海组 + 彤彤", "赶海组 + 彤彤（共 3 人）");
+      stay.detail = stay.detail.replaceAll("彤燕组", "彤彤").replaceAll("彤燕", "彤彤").replaceAll("赶海组 + 彤彤四个人", "赶海组 + 彤彤三个人").replaceAll("四人", "三人");
     }
   });
   const tongtongIcelandDates = new Set(["10/03-10/04", "10/04", "10/05-10/06", "10/06-10/08"]);
@@ -473,8 +473,8 @@
     ["六个人", "五个人"],
     ["六人", "五人"],
     ["四人后续", "三人后续"],
-    ["海港组 + 彤彤四个人", "海港组 + 彤彤三个人"],
-    ["海港组 + 彤彤四人", "海港组 + 彤彤三人"],
+    ["赶海组 + 彤彤四个人", "赶海组 + 彤彤三个人"],
+    ["赶海组 + 彤彤四人", "赶海组 + 彤彤三人"],
     ["和彤彤四个人", "和彤彤三个人"],
     ["冰岛四人后续段", "冰岛三人后续段"],
   ];
@@ -498,7 +498,7 @@
     allRoleAfterTongtongUpdate.focusDays[0] = ["10/04-10/05", "南岸两日 + 蓝冰洞（7 人）", "团含 10/04 南部住宿；10/05 晚回雷市。"];
     allRoleAfterTongtongUpdate.focusDays[3] = ["10/06+", "5 人 → 3 人后续段", "10/06 高地、10/07 斯奈山、10/08 黄金圈、10/09 温泉；人数按截图递减。"];
   }
-  data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；海港组 10/08 离开；彤彤 10/10 清晨离开";
+  data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；赶海组 10/08 离开；彤彤 10/10 清晨离开";
 
   document.querySelector(".hotel-badge")?.replaceChildren("共同基地");
   renderRows();
