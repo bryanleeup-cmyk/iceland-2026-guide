@@ -16,7 +16,7 @@ const data = {
       },
       tags: ["2 人", "最早到冰岛", "10/06 晚飞米兰"],
       summary:
-        "最早到冰岛，可在朋友到达前先玩非核心路线。10/06 11:00 已订 Sky Lagoon 温泉团，预计 14:00 回城后前往机场，19:20 从雷克雅未克凯夫拉维克机场飞米兰转里斯本。",
+        "最早到冰岛，可在朋友到达前先玩非核心路线。10/06 已重新预订 Sky Lagoon 温泉（13:00 入场，¥1441.87/2人），不含接送，需自行乘公共交通前往；结束后预留取行李和机场交通时间，19:20 从雷克雅未克凯夫拉维克机场飞米兰转里斯本。",
       flights: {
         europeLongHaul: [
           "09/25 北京首都机场 T3 13:35 → 伦敦希思罗机场 T2 17:40｜TP8329",
@@ -34,7 +34,7 @@ const data = {
         ],
         afterIceland: [
           "09/28 巴黎短停：日落塞纳河游船 + 20:00 埃菲尔铁塔亮灯 / 闪灯",
-          "10/06 11:00-14:00 Sky Lagoon 温泉团，之后回城并前往机场",
+          "10/06 13:00 Sky Lagoon 温泉；无接送，自行公共交通，结束后取行李并前往机场",
           "10/07 里斯本半日城市步行",
           "10/07 晚住 Cabinn Metro Hotel，10/08 从哥本哈根机场飞北京",
         ],
@@ -124,7 +124,7 @@ const data = {
         ["10/03", "六人会合 + 追极光", "林德城河酒店会合，晚上报团。"],
         ["10/04", "南岸两日第一天", "Nice Travel 南岸两日团已订并支付定金；接送点和出发时间待确认。"],
         ["10/05", "蓝冰洞第二天", "晚上回雷克雅未克，建皇准备次日晚航班。"],
-        ["10/06+", "建皇晚飞，四人继续", "建皇上午去 Sky Lagoon，14:00 左右回城后前往机场；海港组 + 彤燕组优先补斯奈山、雷克雅内斯半岛或蓝湖。"],
+        ["10/06+", "建皇晚飞，四人继续", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场；海港组 + 彤燕组优先补斯奈山、雷克雅内斯半岛或蓝湖。"],
       ],
       cta: "查看全局",
     },
@@ -136,12 +136,12 @@ const data = {
       spotSegments: ["jianhuang-spots", "iceland-six"],
       accent: "#2F80ED",
       summary: "09/25-09/27 里斯本豪华四人间已订：建皇（两人）、龙龙、娘娘入住；9/26 四人走里斯本郊区海边一日游，9/27 一起去波尔图，娘娘当晚飞回阿姆斯特丹，建皇和龙龙住波尔图盖亚美居酒店。",
-      notes: ["重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 Kerlingarfjoll 高地徒步已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 六人南岸两日、10/06 已订 Sky Lagoon 温泉团 + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。", "10/03 建皇上午休息，约 10:00 与海港组会合、吃早午饭后参加黄金圈下午团；晚上六人追极光。", "娘娘 9/27 一起去波尔图，20:50 从波尔图飞阿姆斯特丹，9/28 00:25 落地，后面不进入冰岛主线。"],
+      notes: ["重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 Kerlingarfjoll 高地徒步已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 六人南岸两日、10/06 已订 Sky Lagoon 温泉（13:00，无接送） + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。", "10/03 建皇上午休息，约 10:00 与海港组会合、吃早午饭后参加黄金圈下午团；晚上六人追极光。", "娘娘 9/27 一起去波尔图，20:50 从波尔图飞阿姆斯特丹，9/28 00:25 落地，后面不进入冰岛主线。"],
       facts: [
         ["里斯本住宿", "09/25-09/27", "The Delight Hostel 豪华四人间已订（¥223.43/人/晚）"],
         ["到冰岛", "09/29 07:50", "你们最早到，可先玩提前段"],
         ["共同段", "10/04-10/05", "南岸两日 + 蓝冰洞"],
-        ["离开冰岛", "10/06 19:20", "11:00-14:00 Sky Lagoon，回市区后去机场"],
+        ["离开冰岛", "10/06 19:20", "13:00 Sky Lagoon；自行公共交通，预留机场交通时间"],
         ["回国转机", "10/08 哥本哈根", "哥本哈根轻量一日游"],
       ],
       focusDays: [
@@ -154,7 +154,7 @@ const data = {
         ["10/03", "已订：黄金圈下午团（¥691.31/人）", "建皇上午休息，等待海港组约 10:00 到达；一起吃早午饭后出发参加 Arctic Adventures 黄金圈下午团。晚上六人追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/04", "南岸两日已订", "Nice Travel 六人团定金已付；接送点和出发时间待确认。"],
         ["10/05", "蓝冰洞后回雷市", "晚上回雷克雅未克，次日白天留半日待定。"],
-        ["10/06", "已订：Sky Lagoon 温泉团（¥2135.58/2人） + 晚飞米兰", "11:00 参加 Sky Lagoon 温泉团，预计 14:00 回到雷克雅未克市区，简单逛逛后前往机场；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://cn.adventures.is/iceland/day-tours/natural-hot-springs-tours/sky-lagoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） + 晚飞米兰", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"],
         ["10/07", "米兰转机到里斯本", "01:30 到米兰马尔彭萨，06:30 从 T2 飞里斯本，08:30 到里斯本；白天只做半日轻量城市步行，晚上飞哥本哈根。"],
         ["10/08", "哥本哈根转机一日游", "前一晚住 Cabinn Metro Hotel；19:05 飞北京，白天只走市区轻量线。"],
       ],
@@ -239,7 +239,7 @@ const data = {
     end: "2026-10-06T19:20:00",
     label: "冰岛六人都在：10/03 15:10 后 - 10/06 19:20 前",
     context:
-      "这是唯一冰岛六人全部在的时间段。10/03 晚六个人报追极光团；10/04-10/05 六人一起走南岸两日 + 蓝冰洞小巴团，全程无人自驾；10/06 建皇上午去 Sky Lagoon，14:00 左右回城后前往机场，19:20 从凯夫拉维克机场离开冰岛。",
+      "这是唯一冰岛六人全部在的时间段。10/03 晚六个人报追极光团；10/04-10/05 六人一起走南岸两日 + 蓝冰洞小巴团，全程无人自驾；10/06 建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场，19:20 从凯夫拉维克机场离开冰岛。",
   },
   hotel: {
     name: "Fosshotel Lind（林德城河酒店）",
@@ -329,7 +329,7 @@ const data = {
       city: "雷克雅未克",
       name: "Fosshotel Lind（林德城河酒店）",
       status: "已订",
-      detail: "预订成功：10/05 入住、10/06 退房，1 晚 / 1 间，标准双床 / 双人床房，金额 ¥988.61。南岸两日团结束后回到这里住，建皇 10/06 退房后去 Sky Lagoon，14:00 左右回城，傍晚去机场。",
+      detail: "预订成功：10/05 入住、10/06 退房，1 晚 / 1 间，标准双床 / 双人床房，金额 ¥988.61。南岸两日团结束后回到这里住，建皇 10/06 退房后安排好行李寄存，自行乘公共交通去 Sky Lagoon，13:00 入场；结束后取行李并前往机场，预留交通和值机时间。",
       audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#174e78",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=Fosshotel%20Lind%20Raudararstigur%2018%20Reykjavik",
@@ -428,7 +428,7 @@ const data = {
       date: "10/06 周二",
       title: "建皇离开 / 四人继续",
       status: "建皇 19:20 从雷克雅未克凯夫拉维克机场飞米兰转里斯本",
-      plan: "建皇 11:00-14:00 参加已订 Sky Lagoon 温泉团，回雷克雅未克市区简单逛逛后前往凯夫拉维克机场。海港组 + 彤燕组四个人开始包车继续冰岛路线。",
+      plan: "建皇重新预订 Sky Lagoon 温泉，13:00 入场，¥1441.87/2人；无接送，自行乘公共交通前往，结束后取行李并前往凯夫拉维克机场，预留交通和值机时间。海港组 + 彤燕组四个人开始包车继续冰岛路线。",
       avoid: "建皇这天不再排远距离长线，避免误晚航班；四人包车也不要从机场直接冲太远，司机/向导路线要提前确认。",
       stay: "建皇白天从林德城河酒店退房，10/07 清晨抵达里斯本；海港组 + 彤燕组继续住林德城河酒店。",
       audiences: ["jianhuang", "haigang", "tongyan"],
@@ -536,7 +536,7 @@ const data = {
       why: "10/03 海港已经和建皇走黄金圈；六人段覆盖南岸、冰河湖和蓝冰洞，四人后续更适合补斯奈山半岛、雷克雅内斯半岛或蓝湖，不再重复东南长线。",
       checkpoints: ["斯奈山候选", "雷克雅内斯半岛备选", "蓝湖候选", "雷克雅未克轻量日", "10/08 海港飞阿姆斯特丹"],
       details: [
-        ["10/06", "建皇 11:00-14:00 去 Sky Lagoon，回城后傍晚飞米兰转里斯本；四个人按天气决定斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上回林德城河酒店。"],
+        ["10/06", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行公共交通；结束后取行李并前往机场，19:20 飞米兰转里斯本；四个人按天气决定斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上回林德城河酒店。"],
         ["10/07", "若天气稳定可走斯奈山半岛；若风雪或雨大，改雷克雅内斯半岛 / 蓝湖 / 市区。"],
         ["10/08", "海港 19:15 从雷克雅未克凯夫拉维克机场飞阿姆斯特丹，当天必须留足还车、行李和值机时间。"],
       ],
@@ -563,7 +563,7 @@ const data = {
         ["10/03", "已订：黄金圈下午团（¥691.31/人）", "建皇上午休息；海港组约 10:00 到达后一起吃早午饭，出发参加 Arctic Adventures 黄金圈下午团。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/04", "已订：六人南岸两日团第一天", "Nice Travel 六人团已订，定金 101,880 ISK 已付；团款总计 509,400 ISK，尾款 407,520 ISK 最晚于 09/27 前支付。接送点待确认；当天看塞里雅兰瀑布、斯科加瀑布、雷尼斯黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/06", "已订：Sky Lagoon 温泉团（¥2135.58/2人） → 米兰转机", "上午 11:00 去 Sky Lagoon 泡温泉，预计 14:00 回到雷克雅未克市区，简单逛逛后前往机场；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://cn.adventures.is/iceland/day-tours/natural-hot-springs-tours/sky-lagoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） → 米兰转机", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。退房后先确认行李寄存与取回安排，出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"],
         ["10/07", "米兰 → 里斯本半日 → 哥本哈根", "06:30 从米兰马尔彭萨机场 T2 起飞，08:30 落地里斯本机场 T1，航班易捷航空 U23873。白天只做里斯本半日轻量城市步行，市区收尾、吃饭、买伴手礼；18:15 从里斯本机场 T1 起飞，23:00 落地哥本哈根机场 T3。晚上入住 Cabinn Metro Hotel，地址 Arne Jacobsens Allé 2，电话 +4532465700。"],
         ["10/08", "哥本哈根转机一日游 + 回北京", "10/07 23:00 已落地哥本哈根机场 T3；10/08 白天走新港、国王新广场、阿美琳堡王宫 / 小美人鱼轻量线，16:00 左右回机场更稳。19:05 从哥本哈根机场 T3 起飞，10/09 09:55 落地北京首都机场 T3。"],
         ["10/09", "抵达北京 → 直接去上班", "周五 09:55 落地北京首都机场 T3；落地后直接去上班。"],
@@ -891,17 +891,17 @@ const data = {
       category: "iceland",
       segments: ["jianhuang-spots"],
       participant: "建皇组合 10/06 已订",
-      transport: "Sky Lagoon 温泉团；11:00 入场，预计 14:00 回雷克雅未克市区，之后前往凯夫拉维克机场",
+      transport: "Sky Lagoon 温泉；13:00 入场，无接送，自行乘公共交通；结束后预留取行李、机场交通和值机时间",
       date: "10/06",
       city: "Sky Lagoon / 雷克雅未克 / 凯夫拉维克",
-      title: "Sky Lagoon 温泉团（已订 ¥2135.58/2人）",
+      title: "Sky Lagoon 温泉（已订 ¥1441.87/2人）",
       image: "assets/spots/iceland/blue-lagoon-1.webp",
       images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
-      bestTime: "11:00-14:00 左右，按确认单",
-      open: "已订 Sky Lagoon 温泉团，11:00 入场，预计 14:00 回到雷克雅未克市区；之后简单逛逛并前往机场。",
+      bestTime: "13:00 到场入场；往返公共交通班次需提前查询",
+      open: "已重新预订 Sky Lagoon 温泉，13:00 入场；不含接送，需自行乘公共交通。结束后取行李并前往机场，19:20 飞米兰。",
       sunset: "雷克雅未克 10/06 日落约 18:40",
-      viewpoint: "Sky Lagoon 海水温泉、无边际池和海岸景观；回城后只安排轻量逛街。",
-      notes: ["10/06 已订 Sky Lagoon 温泉团，价格 ¥2135.58/2人。", "11:00 入场，预计 14:00 左右回到雷克雅未克市区。", "从酒店退房后确认行李寄存或直接带行李转移；傍晚提前去凯夫拉维克机场，19:20 飞米兰。", "<a href=\"https://cn.adventures.is/iceland/day-tours/natural-hot-springs-tours/sky-lagoon/\" target=\"_blank\" rel=\"noreferrer\">打开 Sky Lagoon 团页</a>"],
+      viewpoint: "Sky Lagoon 海水温泉、无边际池和海岸景观；结束后以取行李和机场交通为主。",
+      notes: ["10/06 已订 Sky Lagoon 温泉，价格 ¥1441.87/2人。", "13:00 到场入场，不含接送，需自行乘公共交通；提前查询往返班次，预留步行和换乘时间。", "从酒店退房后确认行李寄存或直接带行李转移；傍晚提前去凯夫拉维克机场，19:20 飞米兰。", "<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"],
     },
     {
       id: "copenhagen-layover",
@@ -1083,7 +1083,7 @@ const dailyVisuals = {
   "jianhuang|10/03": { city: "雷克雅未克 / 黄金圈", sunrise: "07:41", sunset: "18:50", season: "10 月初黄金圈白天风冷，下午光线适合看辛格维利尔、盖歇尔和黄金瀑布；建皇上午休息，晚上六人追极光。", images: ["assets/spots/gullfoss.webp", "assets/spots/iceland/thingvellir-1.webp", "assets/spots/iceland/strokkur-1.webp"] },
   "jianhuang|10/04": { city: "冰岛南岸", sunrise: "07:33", sunset: "18:38", season: "10 月初南岸瀑布水雾大，黑沙滩风浪也大，照片很出片但要离浪线远一点。", images: ["assets/spots/tourlink/nice-south-waterfall-1.webp", "assets/spots/reynisfjara.webp", "assets/spots/gallery/reynisfjara-seljalandsfoss.webp", "assets/spots/gallery/reynisfjara-skogafoss.webp"] },
   "jianhuang|10/05": { city: "冰岛南岸", sunrise: "07:36", sunset: "18:34", season: "10 月初蓝冰洞季刚开始，冰河湖和钻石沙滩的光线偏冷，很适合看冰川景观。", images: ["assets/spots/iceland/jokulsarlon-1.webp", "assets/spots/iceland/jokulsarlon-2.webp", "assets/spots/iceland/diamond-beach-1.webp"] },
-  "jianhuang|10/06": { city: "Sky Lagoon / 雷克雅未克 / 凯夫拉维克", sunrise: "07:50", sunset: "18:40", season: "10 月初泡温泉很适合放松；11:00 入场，14:00 左右回城，之后只安排轻量逛街和机场交通。", images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"] },
+  "jianhuang|10/06": { city: "Sky Lagoon / 雷克雅未克 / 凯夫拉维克", sunrise: "07:50", sunset: "18:40", season: "10 月初泡温泉很适合放松；13:00 入场，无接送，自行乘公共交通。结束后预留取行李、机场交通和值机时间。", images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"] },
   "jianhuang|10/07": { city: "里斯本", sunrise: "07:37", sunset: "19:10", season: "10 月初里斯本仍然明亮温暖，半日城市步行适合河边、观景台和蛋挞。", images: ["assets/spots/belem.webp", "assets/spots/gallery/belem-1.webp", "assets/spots/gallery/belem-2.webp"] },
   "jianhuang|10/08": { city: "哥本哈根", sunrise: "07:25", sunset: "18:28", season: "10 月初哥本哈根白天不长，适合新港、王宫和市中心轻量线。", images: ["assets/spots/copenhagen.webp"] },
   "jianhuang|10/09": { city: "北京", sunrise: "06:17", sunset: "17:45", season: "回到北京后只做恢复日，不再安排旅行强度。", images: ["assets/spots/beijing.webp"] },
@@ -1275,7 +1275,7 @@ function getDailyStay(personId, date, title) {
   const airportStay = {
     label: "住宿",
     name: "林德城河酒店",
-    detail: "白天从酒店退房，11:00-14:00 去 Sky Lagoon，回城后傍晚去凯夫拉维克机场，晚飞米兰。",
+    detail: "白天从酒店退房并安排好行李寄存；自行乘公共交通去 Sky Lagoon，13:00 入场。结束后取行李并前往凯夫拉维克机场，19:20 飞米兰。",
     url: data.hotel.mapUrl,
   };
   const copenhagenAirportStay = {
@@ -1536,15 +1536,15 @@ const icelandRouteDays = [
     title: "Sky Lagoon 温泉 + 飞往米兰",
     color: "#8a5f9e",
     route: "林德城河酒店 → Sky Lagoon → 雷克雅未克市区 → 凯夫拉未克机场 → 米兰",
-    roads: "市区往 Sky Lagoon 走 40 号路 / 417 号路一带；之后前往 KEF 机场搭乘晚班机。",
+    roads: "温泉订单不含接送，自行乘公共交通前往 Sky Lagoon；提前查询往返公交班次，预留步行、换乘与取行李时间，再转乘机场交通前往 KEF。",
     terrain: "海湾城市、黑色火山海岸和地热温泉；这是离开冰岛前的收尾日，不再安排远途景点。",
     stay: "当晚无冰岛住宿：19:20 从凯夫拉未克机场飞往米兰",
-    caution: "11:00-14:00 泡温泉，回城区简单逛一逛后直接去机场，预留国际航班交通时间。",
+    caution: "13:00 到 Sky Lagoon 入场，温泉 ¥1441.87/2人，不含接送。自行安排公共交通，并预留取行李、机场交通和值机时间；19:20 飞米兰。",
     images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp"],
     points: [
       [183, 452, "林德城河酒店", "退房 / 出发"],
-      [171, 435, "Sky Lagoon", "11:00-14:00"],
-      [183, 452, "雷克雅未克市区", "轻量逛街"],
+      [171, 435, "Sky Lagoon", "13:00 入场 / 无接送"],
+      [183, 452, "雷克雅未克市区", "取行李 / 换乘机场交通"],
       [120, 474, "凯夫拉未克机场", "19:20 飞米兰"],
     ],
   },
@@ -2318,7 +2318,7 @@ function setContext(filter) {
   contextEl.innerHTML = `
     <span class="context__chip">当前视角</span>
     <h3>全部三组</h3>
-    <p>先看三条时间条的交集：10/03 下午冰岛六人齐，10/03 晚追极光团，10/04-10/05 六人南岸两日 + 蓝冰洞小巴团，全程无人自驾，10/06 建皇上午去 Sky Lagoon，14:00 左右回城后晚上离开冰岛。</p>
+    <p>先看三条时间条的交集：10/03 下午冰岛六人齐，10/03 晚追极光团，10/04-10/05 六人南岸两日 + 蓝冰洞小巴团，全程无人自驾，10/06 建皇 13:00 到 Sky Lagoon 入场，无接送，自行公共交通，结束后取行李并前往机场，晚上离开冰岛。</p>
   `;
 }
 

@@ -4,14 +4,14 @@
     jianhuang.icelandWindow.end = "2026-10-06T19:20:00";
     jianhuang.icelandWindow.label = "09/29 07:50 → 10/06 19:20";
     jianhuang.tags = ["2 人", "最早到冰岛", "10/06 晚飞米兰"];
-    jianhuang.summary = "最早到冰岛，可在朋友到达前先玩非核心路线。10/06 11:00 已订 Sky Lagoon 温泉团，预计 14:00 回城后前往机场，19:20 从雷克雅未克凯夫拉维克机场飞米兰转里斯本。";
+    jianhuang.summary = "最早到冰岛，可在朋友到达前先玩非核心路线。10/06 已重新预订 Sky Lagoon 温泉（13:00 入场，¥1441.87/2人），不含接送，需自行乘公共交通前往；结束后预留取行李和机场交通时间，19:20 从雷克雅未克凯夫拉维克机场飞米兰转里斯本。";
     jianhuang.flights.icelandReturn = [
       "10/06 雷克雅未克凯夫拉维克机场 19:20 → 10/07 米兰马尔彭萨机场 01:30｜维兹航空马耳他 W46454",
       "10/07 米兰马尔彭萨机场 T2 06:30 → 里斯本机场 T1 08:30｜易捷航空 U23873",
     ];
     jianhuang.flights.afterIceland = [
       "09/28 巴黎短停：日落塞纳河游船 + 20:00 埃菲尔铁塔亮灯 / 闪灯",
-      "10/06 11:00-14:00 Sky Lagoon 温泉团，之后回城并前往机场",
+      "10/06 13:00 Sky Lagoon 温泉；无接送，自行公共交通，结束后取行李并前往机场",
       "10/07 里斯本半日城市步行",
       "10/07 晚住 Cabinn Metro Hotel，10/08 从哥本哈根机场飞北京",
     ];
@@ -19,7 +19,7 @@
 
   data.overlap.end = "2026-10-06T19:20:00";
   data.overlap.label = "冰岛六人都在：10/03 15:10 后 - 10/06 19:20 前";
-  data.overlap.context = "这是唯一冰岛六人全部在的时间段。10/03 晚六个人报追极光团；10/04-10/05 六人一起走南岸两日 + 蓝冰洞小巴团，全程无人自驾；10/06 建皇上午去 Sky Lagoon，14:00 左右回城后前往机场，19:20 从凯夫拉维克机场离开冰岛。";
+  data.overlap.context = "这是唯一冰岛六人全部在的时间段。10/03 晚六个人报追极光团；10/04-10/05 六人一起走南岸两日 + 蓝冰洞小巴团，全程无人自驾；10/06 建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场，19:20 从凯夫拉维克机场离开冰岛。";
 
   data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；海港组 10/08 离开；彤燕组 10/10 清晨离开";
   data.hotel.notes = data.hotel.notes.map((note) =>
@@ -32,22 +32,22 @@
   if (allRole) {
     allRole.facts[0] = ["共同窗口", "10/03 15:10-10/06 19:20", "六个人真正一起在冰岛"];
     allRole.focusDays[2] = ["10/05", "蓝冰洞第二天", "晚上回雷克雅未克，建皇准备次日晚航班。"];
-    allRole.focusDays[3] = ["10/06+", "建皇晚飞，四人继续", "建皇上午去 Sky Lagoon，14:00 左右回城后前往机场；海港组 + 彤燕组优先补斯奈山、雷克雅内斯半岛或蓝湖。"];
+    allRole.focusDays[3] = ["10/06+", "建皇晚飞，四人继续", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场；海港组 + 彤燕组优先补斯奈山、雷克雅内斯半岛或蓝湖。"];
   }
 
   const role = data.roleViews.find((item) => item.id === "jianhuang");
   if (role) {
-    role.notes[0] = "重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 Kerlingarfjoll 高地徒步已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 六人南岸两日、10/06 已订 Sky Lagoon 温泉团 + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。";
-    role.facts[3] = ["离开冰岛", "10/06 19:20", "11:00-14:00 Sky Lagoon，回城后去机场"];
+    role.notes[0] = "重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 Kerlingarfjoll 高地徒步已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 六人南岸两日、10/06 已订 Sky Lagoon 温泉（13:00，无接送） + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。";
+    role.facts[3] = ["离开冰岛", "10/06 19:20", "13:00 Sky Lagoon；自行公共交通，预留机场交通时间"];
     role.focusDays[7] = ["10/05", "蓝冰洞后回雷市", "晚上回雷克雅未克，次日白天留半日待定。"];
-    role.focusDays[8] = ["10/06", "已订：Sky Lagoon 温泉团（¥2135.58/2人） + 晚飞米兰", "11:00 参加 Sky Lagoon 温泉团，预计 14:00 回到雷克雅未克市区，简单逛逛后前往机场；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://cn.adventures.is/iceland/day-tours/natural-hot-springs-tours/sky-lagoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"];
+    role.focusDays[8] = ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） + 晚飞米兰", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"];
     role.focusDays[9] = ["10/07", "米兰转机到里斯本", "01:30 到米兰马尔彭萨，06:30 从 T2 飞里斯本，08:30 到里斯本；白天只做半日轻量城市步行，晚上飞哥本哈根并住 Cabinn Metro Hotel。"];
     role.focusDays[10] = ["10/08", "哥本哈根转机一日游", "前一晚住 Cabinn Metro Hotel；19:05 飞北京，白天只走市区轻量线。"];
     role.focusDays[0] = ["09/26", "辛特拉海岸 + 两张已购门票", "雷加莱拉庄园 14:30 固定入场；佩纳公园（仅花园、不含宫殿）无时段票，16:45 左右入园；辛特拉王宫改为可选外观停留，确保 20:30 回里斯本市区晚餐。"];
   }
 
   const stayBeforeLeave = data.staySchedule.find((stay) => stay.date === "10/05-10/06");
-  if (stayBeforeLeave) stayBeforeLeave.detail = "预订成功：10/05 入住、10/06 退房，1 晚 / 1 间，标准双床 / 双人床房，金额 ¥988.61。南岸两日团结束后回到这里住，建皇 10/06 退房后去 Sky Lagoon，14:00 左右回城，傍晚去机场。";
+  if (stayBeforeLeave) stayBeforeLeave.detail = "预订成功：10/05 入住、10/06 退房，1 晚 / 1 间，标准双床 / 双人床房，金额 ¥988.61。南岸两日团结束后回到这里住，建皇 10/06 退房后安排好行李寄存，自行乘公共交通去 Sky Lagoon，13:00 入场；结束后取行李并前往机场，预留交通和值机时间。";
   const fourStay = data.staySchedule.find((stay) => stay.date === "10/06-10/08" && stay.people.includes("海港组"));
   if (fourStay) fourStay.detail = "建皇 10/06 白天退房、傍晚离开冰岛后，海港组 + 彤燕组继续住林德城河酒店；10/04 晚南岸团含住宿除外。金额、房间数和订单号不放公开页。";
 
@@ -58,7 +58,7 @@
   const day1006 = data.recommendedPlan.find((day) => day.date === "10/06 周二");
   if (day1006) {
     day1006.status = "建皇 19:20 从雷克雅未克凯夫拉维克机场飞米兰转里斯本";
-    day1006.plan = "建皇 11:00-14:00 参加已订 Sky Lagoon 温泉团，回雷克雅未克市区简单逛逛后前往凯夫拉维克机场。海港组 + 彤燕组四个人开始包车继续冰岛路线。";
+    day1006.plan = "建皇重新预订 Sky Lagoon 温泉，13:00 入场，¥1441.87/2人；无接送，自行乘公共交通前往，结束后取行李并前往凯夫拉维克机场，预留交通和值机时间。海港组 + 彤燕组四个人开始包车继续冰岛路线。";
     day1006.avoid = "建皇这天不再排远距离长线，避免误晚航班；四人包车也不要从机场直接冲太远，司机/向导路线要提前确认。";
     day1006.stay = "建皇白天从林德城河酒店退房，参加 Sky Lagoon 后去机场，10/07 清晨抵达里斯本；海港组 + 彤燕组继续住林德城河酒店。";
   }
@@ -69,7 +69,7 @@
     routeTwo.details[2] = ["晚上", "回林德城河酒店住 10/05 晚；建皇提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。"];
   }
   const routeAfter = data.coreDays.find((day) => day.date === "10/06-10/08");
-  if (routeAfter) routeAfter.details[0] = ["10/06", "建皇 11:00-14:00 去 Sky Lagoon，回城后傍晚飞米兰转里斯本；四个人按天气决定斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上回林德城河酒店。"];
+  if (routeAfter) routeAfter.details[0] = ["10/06", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行公共交通；结束后取行李并前往机场，19:20 飞米兰转里斯本；四个人按天气决定斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上回林德城河酒店。"];
 
   const plan = data.personPlans.find((person) => person.id === "jianhuang");
   if (plan) {
@@ -93,7 +93,7 @@
       "早上和龙龙、娘娘一起坐约 3.5 小时大巴从里斯本到波尔图；12:00 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Meia-Nau%20Porto\" target=\"_blank\" rel=\"noreferrer\">Meia-Nau Porto</a> 午餐（3 人，姓名 Hector Pei；需前往 Porto 门店，迟到宽限 10 分钟）。下午玩老城河岸、路易一世大桥和杜罗河边。娘娘当晚飞往阿姆斯特丹；21:00 左右办理入住波尔图盖亚美居酒店（Mercure Porto Gaia Hotel）：标准双人床房（带加床），1 间 1 晚；订单入住 09/27、退房 09/28，建皇（两人）和龙龙共 3 人入住，实付款 ¥544.94。"
     );
         replaceDay("10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>");
-    replaceDay("10/06", "已订：Sky Lagoon 温泉团（¥2135.58/2人） → 米兰转机", "上午 11:00 去 Sky Lagoon 泡温泉，预计 14:00 回到雷克雅未克市区，简单逛逛后前往机场；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://cn.adventures.is/iceland/day-tours/natural-hot-springs-tours/sky-lagoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>");
+    replaceDay("10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） → 米兰转机", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。退房后先确认行李寄存与取回安排，出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>");
     replaceDay("10/07", "米兰 → 里斯本半日 → 哥本哈根", "06:30 从米兰马尔彭萨机场 T2 起飞，08:30 落地里斯本机场 T1，航班易捷航空 U23873。白天只做里斯本半日轻量城市步行，市区收尾、吃饭、买伴手礼；18:15 从里斯本机场 T1 起飞，23:00 落地哥本哈根机场 T3。晚上入住 Cabinn Metro Hotel，地址 Arne Jacobsens Allé 2，电话 +4532465700。");
     replaceDay("10/08", "哥本哈根转机一日游 + 回北京", "10/07 23:00 已落地哥本哈根机场 T3；10/08 白天走新港、国王新广场、阿美琳堡王宫 / 小美人鱼轻量线，16:00 左右回机场更稳。19:05 从哥本哈根机场 T3 起飞，10/09 09:55 落地北京首都机场 T3。");
   }
@@ -104,16 +104,16 @@
       id: "sky-lagoon-booked",
       category: "iceland",
       participant: "建皇组合 10/06 已订",
-      transport: "Sky Lagoon 温泉团；11:00 入场，预计 14:00 回雷克雅未克市区，之后前往凯夫拉维克机场",
+      transport: "Sky Lagoon 温泉；13:00 入场，无接送，自行乘公共交通；结束后预留取行李、机场交通和值机时间",
       city: "Sky Lagoon / 雷克雅未克 / 凯夫拉维克",
-      title: "Sky Lagoon 温泉团（已订 ¥2135.58/2人）",
+      title: "Sky Lagoon 温泉（已订 ¥1441.87/2人）",
       image: "assets/spots/iceland/blue-lagoon-1.webp",
       images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
-      bestTime: "11:00-14:00 左右，按确认单",
-      open: "已订 Sky Lagoon 温泉团，11:00 入场，预计 14:00 回到雷克雅未克市区；之后简单逛逛并前往机场。",
+      bestTime: "13:00 到场入场；往返公共交通班次需提前查询",
+      open: "已重新预订 Sky Lagoon 温泉，13:00 入场；不含接送，需自行乘公共交通。结束后取行李并前往机场，19:20 飞米兰。",
       sunset: "雷克雅未克 10/06 日落约 18:40",
-      viewpoint: "Sky Lagoon 海水温泉、无边际池和海岸景观；回城后只安排轻量逛街。",
-      notes: ["10/06 已订 Sky Lagoon 温泉团，价格 ¥2135.58/2人。", "11:00 入场，预计 14:00 左右回到雷克雅未克市区。", "从酒店退房后确认行李寄存或直接带行李转移；傍晚提前去凯夫拉维克机场，19:20 飞米兰。", "<a href=\"https://cn.adventures.is/iceland/day-tours/natural-hot-springs-tours/sky-lagoon/\" target=\"_blank\" rel=\"noreferrer\">打开 Sky Lagoon 团页</a>"],
+      viewpoint: "Sky Lagoon 海水温泉、无边际池和海岸景观；结束后以取行李和机场交通为主。",
+      notes: ["10/06 已订 Sky Lagoon 温泉，价格 ¥1441.87/2人。", "13:00 到场入场，不含接送，需自行乘公共交通；提前查询往返班次，预留步行和换乘时间。", "从酒店退房后确认行李寄存或直接带行李转移；傍晚提前去凯夫拉维克机场，19:20 飞米兰。", "<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"],
     });
   }
 
@@ -148,7 +148,7 @@
     city: "Sky Lagoon / 雷克雅未克 / 凯夫拉维克",
     sunrise: "07:50",
     sunset: "18:40",
-    season: "10 月初泡温泉很适合放松；11:00 入场，14:00 左右回城，之后只安排轻量逛街和机场交通。",
+    season: "10 月初泡温泉很适合放松；13:00 入场，无接送，自行乘公共交通。结束后预留取行李、机场交通和值机时间。",
     images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
   };
 
@@ -187,7 +187,7 @@
       if (date === "10/03") return hotelStayOct03;
       if (date === "10/05") return hotelStayOct05;
       if (date === "10/04") return tourStay;
-      if (date === "10/06") return { ...hotelStay, detail: "白天从酒店退房，11:00-14:00 去 Sky Lagoon，回城后傍晚去凯夫拉维克机场，晚飞米兰。" };
+      if (date === "10/06") return { ...hotelStay, detail: "白天从酒店退房并安排好行李寄存；自行乘公共交通去 Sky Lagoon，13:00 入场。结束后取行李并前往凯夫拉维克机场，19:20 飞米兰。" };
       if (date === "10/07") return { label: "住宿（¥273.86/人/晚）", name: "Cabinn Metro Hotel", detail: "10/07 晚入住、10/08 退房；Arne Jacobsens Allé 2；电话 +4532465700。点开可跳转谷歌地图。", url: "https://www.google.com/maps/search/?api=1&query=Cabinn%20Metro%20Hotel%20Arne%20Jacobsens%20All%C3%A9%202%20Copenhagen" };
     }
     if (personId === "haigang") {
