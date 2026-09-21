@@ -298,7 +298,7 @@
     const sameIcelandDates = new Set(["10/04", "10/05", "10/06", "10/07"]);
     const tongtongIcelandDays = new Map(tongtongPlan.days.filter(([date]) => sameIcelandDates.has(date)).map((day) => [day[0], day]));
     haigangPlan.days = haigangPlan.days.map((day) => tongtongIcelandDays.get(day[0]) || day);
-    haigangPlan.role = "两个人：10/03 从哥本哈根出发，07:40 到冰岛；10/04-10/07 行程与彤彤一致；10/08 晚飞阿姆斯特丹。";
+    haigangPlan.role = "两个人：09/30 北京经上海出发，10/01 抵达阿姆斯特丹；10/02 大巴到布鲁塞尔后飞哥本哈根，10/03 07:40 到冰岛；10/04-10/07 行程与彤彤一致；10/08 晚飞阿姆斯特丹，回程北京航班不变。";
   }
 
   data.staySchedule = data.staySchedule.filter((stay) => !(stay.audiences?.includes("tongyan") && stay.date === "10/08-10/10"));

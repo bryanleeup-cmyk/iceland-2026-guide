@@ -42,7 +42,7 @@ const data = {
     },
     {
       id: "haigang",
-      name: "1号出发布鲁塞尔：海港组",
+      name: "9月30日出发阿姆斯特丹：海港组",
       shortName: "海港组",
       color: "#F2994A",
       icelandWindow: {
@@ -52,15 +52,16 @@ const data = {
       },
       tags: ["2 人", "10/03 早上到", "10/09 阿姆斯特丹", "10/10 火车回布鲁塞尔"],
       summary:
-        "10/03 早上到冰岛，可以当天开始轻量活动。10/08 晚离开冰岛，10/09 阿姆斯特丹玩 1 天，10/10 火车回布鲁塞尔。",
+        "09/30 北京经上海出发，10/01 抵达阿姆斯特丹；10/02 坐大巴到布鲁塞尔后飞哥本哈根，10/03 07:40 到冰岛。10/08 晚离开冰岛，10/09 阿姆斯特丹玩 1 天，10/10 火车回布鲁塞尔。",
       flights: {
         europeLongHaul: [
-          "10/01 北京大兴机场 11:40 → 上海浦东机场 T2 13:55｜吉祥航空 HO1258",
-          "10/02 上海浦东机场 T2 01:35 → 布鲁塞尔机场 07:30｜吉祥航空 HO1659",
+          "09/30 北京首都机场 T2 19:30 → 上海浦东机场 T1 21:50｜东方航空 MU5164",
+          "10/01 上海浦东机场 T1 12:30 → 阿姆斯特丹史基浦机场 18:30｜东方航空 MU771",
           "10/11 布鲁塞尔机场 12:20 → 10/12 上海浦东机场 T2 05:20｜吉祥航空 HO1660",
           "10/12 上海浦东机场 T2 08:20 → 北京大兴机场 10:35｜吉祥航空 HO1257",
         ],
         icelandOutbound: [
+          "10/02 阿姆斯特丹 → 布鲁塞尔，大巴班次、时刻和上下车站待补；抵达后前往布鲁塞尔机场",
           "10/02 布鲁塞尔机场 15:15 → 哥本哈根机场 16:45｜SAS SK1594",
           "10/03 哥本哈根机场 06:20 → 雷克雅未克凯夫拉维克机场 07:40｜SAS SK2595",
         ],
@@ -166,7 +167,7 @@ const data = {
       groupId: "haigang",
       spotSegments: ["iceland-six", "four-after", "niangniang"],
       accent: "#F2994A",
-      summary: "10/03 早到冰岛，10/04-10/05 六人南岸两日；10/08 晚飞阿姆斯特丹，10/09 和娘娘汇合。",
+      summary: "09/30 北京经上海出发，10/01 抵达阿姆斯特丹；10/02 大巴到布鲁塞尔后飞哥本哈根，10/03 07:40 到冰岛；10/04-10/05 六人南岸两日，10/08 晚飞阿姆斯特丹，10/09 和娘娘汇合。",
       notes: ["重点看：10/03 早到冰岛后先寄存行李，约 10:00 和建皇会合、吃早午饭后参加已订黄金圈下午团，晚上追极光；10/04-10/05 六人南岸两日；10/08 雷克雅未克凯夫拉维克机场飞阿姆斯特丹。", "10/03 黄金圈结束后还要接晚上极光团，白天不要额外塞市区重行程。", "阿姆斯特丹段只看你们和娘娘相关内容即可。"],
       facts: [
         ["到冰岛", "10/03 07:40", "先到酒店寄存/入住"],
@@ -574,8 +575,9 @@ const data = {
       role: "两个人：10/03 早到冰岛；10/06 建皇晚飞后，和彤燕组四个人包车；10/08 晚飞阿姆斯特丹。",
       color: "#F2994A",
       days: [
-        ["10/01", "北京 → 上海中转", "11:40 从北京大兴机场起飞，13:55 落地上海浦东机场 T2；上海中转 11 小时 40 分，下一班 10/02 01:35 从上海浦东机场 T2 起飞去布鲁塞尔。核心是行李、吃饭和休息。"],
-        ["10/02", "上海 → 布鲁塞尔中转 → 哥本哈根", "01:35 从上海浦东机场 T2 起飞，07:30 落地布鲁塞尔机场；布鲁塞尔中转 7 小时 45 分，15:15 从布鲁塞尔机场起飞，16:45 落地哥本哈根机场。哥本哈根过夜中转 13 小时 35 分，下一班 10/03 06:20 起飞去冰岛。"],
+        ["09/30", "北京 → 上海跨夜中转", "19:30 从北京首都机场（PEK）T2 起飞，21:50 抵达上海浦东机场（PVG）T1，东方航空 MU5164，飞行 2 小时 20 分。上海跨夜中转 14 小时 40 分，下一班 10/01 12:30 飞阿姆斯特丹；北京至阿姆斯特丹联程行李直达。"],
+        ["10/01", "上海 → 阿姆斯特丹", "12:30 从上海浦东机场（PVG）T1 起飞，18:30 抵达阿姆斯特丹史基浦机场（AMS），东方航空 MU771，飞行 12 小时，时刻均为当地时间。抵达后休息，阿姆斯特丹当晚住宿待补；次日坐大巴去布鲁塞尔，衔接飞往哥本哈根的航班。"],
+        ["10/02", "阿姆斯特丹 → 大巴到布鲁塞尔 → 哥本哈根", "从阿姆斯特丹坐大巴前往布鲁塞尔，大巴班次、出发时间和上下车站待补；抵达后另行前往布鲁塞尔机场，预留转场与值机时间。15:15 从布鲁塞尔机场起飞，16:45 抵达哥本哈根机场，SAS SK1594。哥本哈根过夜中转 13 小时 35 分，下一班 10/03 06:20 起飞去冰岛。"],
         ["10/03", "哥本哈根 → 冰岛 + 已订黄金圈下午团", "06:20 从哥本哈根机场起飞，07:40 落地雷克雅未克凯夫拉维克机场；先去林德城河酒店寄存行李 / 入住，约 10:00 和建皇会合，一起吃早午饭后出发参加已订的黄金圈下午团；晚上六个人报追极光团。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/04", "已订：六人南岸两日团第一天", "Nice Travel 六人团已订并支付定金；接送点待确认。当天看瀑布、黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
@@ -1086,8 +1088,9 @@ const dailyVisuals = {
   "jianhuang|10/08": { city: "哥本哈根", sunrise: "07:25", sunset: "18:28", season: "10 月初哥本哈根白天不长，适合新港、王宫和市中心轻量线。", images: ["assets/spots/copenhagen.webp"] },
   "jianhuang|10/09": { city: "北京", sunrise: "06:17", sunset: "17:45", season: "回到北京后只做恢复日，不再安排旅行强度。", images: ["assets/spots/beijing.webp"] },
 
-  "haigang|10/01": { city: "上海", sunrise: "05:47", sunset: "17:40", season: "10 月初上海天黑较早，中转日以机场休息和补给为主。", images: ["assets/spots/shanghai.webp"] },
-  "haigang|10/02": { city: "布鲁塞尔 / 哥本哈根", sunrise: "07:13", sunset: "18:43", season: "欧洲 10 月初入秋，中转时间长，适合只看机场周边或市区轻量一瞥。", images: ["assets/spots/brussels.webp", "assets/spots/copenhagen.webp"] },
+  "haigang|09/30": { city: "上海", sunrise: "按当地", sunset: "按当地", season: "晚间抵达浦东机场 T1，跨夜中转以休息和补给为主，次日中午继续飞阿姆斯特丹。", images: ["assets/spots/shanghai.webp"] },
+  "haigang|10/01": { city: "阿姆斯特丹", sunrise: "按当地", sunset: "按当地", season: "傍晚抵达荷兰，入秋后注意保暖；当晚以休息为主，为次日大巴和航班衔接留足精力。", images: ["assets/spots/city/amsterdam-canal.webp"] },
+  "haigang|10/02": { city: "布鲁塞尔 / 哥本哈根", sunrise: "07:13", sunset: "18:43", season: "当天从阿姆斯特丹乘大巴到布鲁塞尔，再飞哥本哈根过夜；优先确保大巴、机场转场和航班衔接。", images: ["assets/spots/brussels.webp", "assets/spots/copenhagen.webp"] },
   "haigang|10/03": { city: "雷克雅未克 / 黄金圈", sunrise: "07:41", sunset: "18:50", season: "10 月初冰岛早晚冷；早上落地后先寄存行李，约 10:00 跟建皇组合会合、吃早午饭，下午看黄金圈，晚上还要追极光。", images: ["assets/spots/gullfoss.webp", "assets/spots/iceland/thingvellir-1.webp", "assets/spots/iceland/strokkur-1.webp"] },
   "haigang|10/04": { city: "冰岛南岸", sunrise: "07:33", sunset: "18:38", season: "南岸瀑布和黑沙滩在 10 月初很有戏剧感，防风防水最重要。", images: ["assets/spots/tourlink/nice-south-waterfall-1.webp", "assets/spots/reynisfjara.webp", "assets/spots/gallery/reynisfjara-seljalandsfoss.webp", "assets/spots/gallery/reynisfjara-skogafoss.webp"] },
   "haigang|10/05": { city: "冰岛南岸", sunrise: "07:36", sunset: "18:34", season: "蓝冰洞、冰河湖和钻石沙滩是这天的核心，光线偏冷，拍照很好看。", images: ["assets/spots/iceland/jokulsarlon-1.webp", "assets/spots/iceland/jokulsarlon-2.webp", "assets/spots/iceland/diamond-beach-1.webp"] },
@@ -1238,7 +1241,7 @@ function getDailyVisual(personId, date, title, detail) {
     ["哥本哈根", dailyVisuals["jianhuang|10/08"]],
     ["阿姆斯特丹", dailyVisuals["haigang|10/09"]],
     ["布鲁塞尔", dailyVisuals["haigang|10/10"]],
-    ["上海", dailyVisuals["haigang|10/01"]],
+    ["上海", dailyVisuals["haigang|09/30"]],
     ["深圳", dailyVisuals["tongyan|10/02"]],
   ];
   return keywordMap.find(([keyword]) => text.includes(keyword))?.[1] || fallbackDailyVisual;
