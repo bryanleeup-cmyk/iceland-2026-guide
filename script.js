@@ -121,7 +121,7 @@ const data = {
         ["住宿", "林德城河酒店", "冰岛统一基地；10/04 晚南岸团含住宿"],
       ],
       focusDays: [
-        ["10/03", "六人会合 + 追极光", "林德城河酒店会合，晚上报团。"],
+        ["10/03", "酒店会合与休息", "林德城河酒店会合，晚间休息，不安排追极光。"],
         ["10/04", "南岸两日第一天", "Nice Travel 南岸两日团已订并支付定金；接送点和出发时间待确认。"],
         ["10/05", "蓝冰洞第二天", "晚上回雷克雅未克，建皇准备次日晚航班。"],
         ["10/06+", "建皇晚飞，四人继续", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场；海港组 + 彤燕组优先补斯奈山、雷克雅内斯半岛或蓝湖。"],
@@ -136,7 +136,7 @@ const data = {
       spotSegments: ["jianhuang-spots", "iceland-six"],
       accent: "#2F80ED",
       summary: "09/25-09/27 里斯本豪华四人间已订：建皇（两人）、龙龙、娘娘入住；9/26 四人走里斯本郊区海边一日游，9/27 一起去波尔图，娘娘当晚飞回阿姆斯特丹，建皇和龙龙住波尔图盖亚美居酒店。",
-      notes: ["重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 Kerlingarfjoll 高地徒步已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 六人南岸两日、10/06 已订 Sky Lagoon 温泉（13:00，无接送） + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。", "10/03 建皇上午休息，约 10:00 与海港组会合、吃早午饭后参加黄金圈下午团；晚上六人追极光。", "娘娘 9/27 一起去波尔图，20:50 从波尔图飞阿姆斯特丹，9/28 00:25 落地，后面不进入冰岛主线。"],
+      notes: ["重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 Kerlingarfjoll 高地徒步已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 六人南岸两日、10/06 已订 Sky Lagoon 温泉（13:00，无接送） + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。", "10/03 建皇上午休息，约 10:00 与海港组会合、吃早午饭后参加黄金圈下午团；晚间休息，不安排追极光。", "娘娘 9/27 一起去波尔图，20:50 从波尔图飞阿姆斯特丹，9/28 00:25 落地，后面不进入冰岛主线。"],
       facts: [
         ["里斯本住宿", "09/25-09/27", "The Delight Hostel 豪华四人间已订（¥223.43/人/晚）"],
         ["到冰岛", "09/29 07:50", "你们最早到，可先玩提前段"],
@@ -151,7 +151,7 @@ const data = {
         ["09/30", "已订：Kerlingarfjoll 高地徒步团（¥2568.57/2人）", "已订 Kerlingarfjoll Hiking Tour，具体接送、集合时间和徒步路线以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/01", "已订：斯奈山半岛小团（¥1772.5/2人）", "已订 Arctic Adventures 斯奈山半岛小团，雷克雅未克接送，约 11 小时；具体出发时间和停靠顺序以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/02", "已订：兰德曼那劳卡高地超级吉普一日团（¥3260.37/2人）", "已订 Arctic Adventures 兰德曼那劳卡高地超级吉普一日团，雷克雅未克接送，具体出发时间、路线、温泉停留和返回时间以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/super-jeeps/landmannalaugar-safari/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/03", "已订：黄金圈下午团（¥691.31/人）", "建皇上午休息，等待海港组约 10:00 到达；一起吃早午饭后出发参加 Arctic Adventures 黄金圈下午团。晚上六人追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/03", "已订：黄金圈下午团（¥691.31/人）", "建皇上午休息，等待海港组约 10:00 到达；一起吃早午饭后出发参加 Arctic Adventures 黄金圈下午团。晚间休息，不安排追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/04", "南岸两日已订", "Nice Travel 六人团定金已付；接送点和出发时间待确认。"],
         ["10/05", "蓝冰洞后回雷市", "晚上回雷克雅未克，次日白天留半日待定。"],
         ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） + 晚飞米兰", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"],
@@ -168,14 +168,14 @@ const data = {
       spotSegments: ["iceland-six", "four-after", "niangniang"],
       accent: "#F2994A",
       summary: "09/30 北京经上海出发，10/01 抵达阿姆斯特丹；10/02 大巴到布鲁塞尔后飞哥本哈根，10/03 07:40 到冰岛；10/04-10/05 六人南岸两日，10/08 晚飞阿姆斯特丹，10/09 和娘娘汇合。",
-      notes: ["重点看：10/03 早到冰岛后先寄存行李，约 10:00 和建皇会合、吃早午饭后参加已订黄金圈下午团，晚上追极光；10/04-10/05 六人南岸两日；10/08 雷克雅未克凯夫拉维克机场飞阿姆斯特丹。", "10/03 黄金圈结束后还要接晚上极光团，白天不要额外塞市区重行程。", "阿姆斯特丹段只看你们和娘娘相关内容即可。"],
+      notes: ["重点看：10/03 早到冰岛后先寄存行李，约 10:00 和建皇会合、吃早午饭后参加已订黄金圈下午团，晚间休息，不安排追极光；10/04-10/05 六人南岸两日；10/08 雷克雅未克凯夫拉维克机场飞阿姆斯特丹。", "10/03 黄金圈下午团结束后回酒店休息，为次日南岸团做准备；当晚不安排追极光。", "阿姆斯特丹段只看你们和娘娘相关内容即可。"],
       facts: [
         ["到冰岛", "10/03 07:40", "先到酒店寄存/入住"],
         ["共同段", "10/04-10/05", "南岸两日 + 蓝冰洞"],
         ["离开冰岛", "10/08 19:15", "雷克雅未克凯夫拉维克机场飞阿姆斯特丹"],
       ],
       focusDays: [
-        ["10/03", "抵达冰岛 + 已订黄金圈下午团", "06:20 从哥本哈根飞雷克雅未克凯夫拉维克机场，07:40 落地；先去林德城河酒店寄存行李/入住，约 10:00 和建皇会合、一起吃早午饭后出发参加已订黄金圈下午团，晚上六个人追极光。"],
+        ["10/03", "抵达冰岛 + 已订黄金圈下午团", "06:20 从哥本哈根飞雷克雅未克凯夫拉维克机场，07:40 落地；先去林德城河酒店寄存行李/入住，约 10:00 和建皇会合、一起吃早午饭后出发参加已订黄金圈下午团，晚间休息，不安排追极光。"],
         ["10/04", "南岸两日已订", "Nice Travel 六人团定金已付；接送点和出发时间待确认。"],
         ["10/06", "四人继续", "建皇离开后，和彤燕组补线。"],
         ["10/08", "晚飞阿姆斯特丹", "白天轻量，留足还车/值机。"],
@@ -198,7 +198,7 @@ const data = {
         ["离开冰岛", "10/10 07:35", "前一晚住机场交通稳的位置"],
       ],
       focusDays: [
-        ["10/03", "到冰岛会合", "去林德城河酒店，晚上追极光。"],
+        ["10/03", "到冰岛会合", "去林德城河酒店会合，晚间休息，不安排追极光。"],
         ["10/04", "南岸两日已订", "Nice Travel 六人团定金已付；接送点和出发时间待确认。"],
         ["10/06", "四人继续", "建皇离开后，和海港组补线。"],
         ["10/09", "离开前轻量", "不要跑远，优先机场交通稳定。"],
@@ -239,7 +239,7 @@ const data = {
     end: "2026-10-06T19:20:00",
     label: "冰岛六人都在：10/03 15:10 后 - 10/06 19:20 前",
     context:
-      "这是唯一冰岛六人全部在的时间段。10/03 晚六个人报追极光团；10/04-10/05 六人一起走南岸两日 + 蓝冰洞小巴团，全程无人自驾；10/06 建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场，19:20 从凯夫拉维克机场离开冰岛。",
+      "这是唯一冰岛六人全部在的时间段。10/03 晚间休息，不安排追极光；10/04-10/05 六人一起走南岸两日 + 蓝冰洞小巴团，全程无人自驾；10/06 建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场，19:20 从凯夫拉维克机场离开冰岛。",
   },
   hotel: {
     name: "Fosshotel Lind（林德城河酒店）",
@@ -396,10 +396,10 @@ const data = {
   recommendedPlan: [
     {
       date: "10/03 周六",
-      title: "已订：黄金圈下午团（¥691.31/人） + 六人追极光",
+      title: "已订：黄金圈下午团（¥691.31/人）",
       status: "建皇上午休息；约 10:00 与海港组会合、吃早午饭后参加已订黄金圈下午团；彤燕组 15:10 到冰岛后六人齐",
-      plan: "建皇上午休息，海港组抵达并寄存行李后约 10:00 会合、一起吃早午饭，再按确认单参加黄金圈下午团；彤燕组落地后去林德城河酒店，晚上六个人追极光。",
-      avoid: "今天已经有黄金圈和夜间极光，别再叠加斯奈山半岛、冰河湖这种长距离路线；第二天南岸团出发时间以确认单为准。",
+      plan: "建皇上午休息，海港组抵达并寄存行李后约 10:00 会合、一起吃早午饭，再按确认单参加黄金圈下午团；彤燕组落地后去林德城河酒店，晚间休息，不安排追极光。",
+      avoid: "今天保留黄金圈下午团，晚上休息，不再叠加长距离路线；第二天南岸团出发时间以确认单为准。",
       stay: "住林德城河酒店；同时确认 10/04 南岸团接送点和行李限制。",
       audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#7bb8d8",
@@ -477,16 +477,16 @@ const data = {
   ],
   coreDays: [
     {
-      date: "10/03 周六夜",
-      title: "已订：黄金圈下午团（¥691.31/人） + 六人追极光团",
-      route: "上午休息 / 10:00 会合早午饭 → 黄金圈下午团 → 六人会合 → 追极光团",
-      why: "建皇上午休息，海港组抵达后约 10:00 会合、吃早午饭，再参加已订的黄金圈下午团；彤燕组 15:10 到冰岛后，冰岛六人正式齐，晚上再参加追极光团。",
-      checkpoints: ["10:00 会合 / 早午饭", "黄金圈下午团", "六人会合", "晚饭 / 补给", "追极光团"],
+      date: "10/03 周六",
+      title: "已订：黄金圈下午团（¥691.31/人）",
+      route: "上午休息 / 10:00 会合早午饭 → 黄金圈下午团 → 酒店会合与休息",
+      why: "建皇上午休息，海港组抵达后约 10:00 会合、吃早午饭，再参加已订的黄金圈下午团；彤燕组 15:10 到冰岛后，冰岛六人正式齐，晚间休息，不安排追极光。",
+      checkpoints: ["10:00 会合 / 早午饭", "黄金圈下午团", "六人会合", "晚饭 / 补给", "酒店休息"],
       details: [
         ["上午 / 下午", "建皇上午休息；海港组抵达、寄存行李后约 10:00 会合，一起吃早午饭后参加已订的黄金圈下午团，具体时间以确认单为准。"],
         ["15:10 后", "彤燕组落地冰岛，六个人正式齐；先到酒店放行李。"],
         ["晚饭前后", "确认第二天 Nice Travel 南岸团接送点、出发时间和行李规则。"],
-        ["21:00-01:00", "追极光团按旅行社通知出发；第二天早出发，今晚别熬太满。"],
+        ["晚间", "不安排追极光；回酒店休息，为次日南岸两日团做准备。"],
       ],
       sleep: "住林德城河酒店，10/03 15:00 后入住；大件行李提前问前台能否寄存到 10/05 晚回雷市。",
       audiences: ["jianhuang", "haigang", "tongyan"],
@@ -560,7 +560,7 @@ const data = {
         ["09/30", "已订：Kerlingarfjoll 高地徒步团（¥2568.57/2人）", "已订 Kerlingarfjoll Hiking Tour；具体接送、集合时间和徒步路线以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/01", "已订：斯奈山半岛小团（¥1772.5/2人）", "已订 Arctic Adventures 斯奈山半岛小团；具体接送、出发时间和停靠顺序以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/02", "已订：兰德曼那劳卡高地超级吉普一日团（¥3260.37/2人）", "已订 Arctic Adventures 兰德曼那劳卡高地超级吉普一日团，雷克雅未克接送，具体出发时间、路线、温泉停留和返回时间以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/super-jeeps/landmannalaugar-safari/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/03", "已订：黄金圈下午团（¥691.31/人）", "建皇上午休息；海港组约 10:00 到达后一起吃早午饭，出发参加 Arctic Adventures 黄金圈下午团。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/03", "已订：黄金圈下午团（¥691.31/人）", "建皇上午休息；海港组约 10:00 到达后一起吃早午饭，出发参加 Arctic Adventures 黄金圈下午团。晚间休息，不安排追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/04", "已订：六人南岸两日团第一天", "Nice Travel 六人团已订，定金 101,880 ISK 已付；团款总计 509,400 ISK，尾款 407,520 ISK 最晚于 09/27 前支付。接送点待确认；当天看塞里雅兰瀑布、斯科加瀑布、雷尼斯黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） → 米兰转机", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。退房后先确认行李寄存与取回安排，出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"],
@@ -578,7 +578,7 @@ const data = {
         ["09/30", "北京 → 上海跨夜中转", "19:30 从北京首都机场（PEK）T2 起飞，21:50 抵达上海浦东机场（PVG）T1，东方航空 MU5164，飞行 2 小时 20 分。上海跨夜中转 14 小时 40 分，下一班 10/01 12:30 飞阿姆斯特丹；北京至阿姆斯特丹联程行李直达。"],
         ["10/01", "上海 → 阿姆斯特丹", "12:30 从上海浦东机场（PVG）T1 起飞，18:30 抵达阿姆斯特丹史基浦机场（AMS），东方航空 MU771，飞行 12 小时，时刻均为当地时间。抵达后休息，阿姆斯特丹当晚住宿待补；次日坐大巴去布鲁塞尔，衔接飞往哥本哈根的航班。"],
         ["10/02", "阿姆斯特丹 → 大巴到布鲁塞尔 → 哥本哈根", "从阿姆斯特丹坐大巴前往布鲁塞尔，大巴班次、出发时间和上下车站待补；抵达后另行前往布鲁塞尔机场，预留转场与值机时间。15:15 从布鲁塞尔机场起飞，16:45 抵达哥本哈根机场，SAS SK1594。哥本哈根过夜中转 13 小时 35 分，下一班 10/03 06:20 起飞去冰岛。"],
-        ["10/03", "哥本哈根 → 冰岛 + 已订黄金圈下午团", "06:20 从哥本哈根机场起飞，07:40 落地雷克雅未克凯夫拉维克机场；先去林德城河酒店寄存行李 / 入住，约 10:00 和建皇会合，一起吃早午饭后出发参加已订的黄金圈下午团；晚上六个人报追极光团。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/03", "哥本哈根 → 冰岛 + 已订黄金圈下午团", "06:20 从哥本哈根机场起飞，07:40 落地雷克雅未克凯夫拉维克机场；先去林德城河酒店寄存行李 / 入住，约 10:00 和建皇会合，一起吃早午饭后出发参加已订的黄金圈下午团；晚间休息，不安排追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/04", "已订：六人南岸两日团第一天", "Nice Travel 六人团已订并支付定金；接送点待确认。当天看瀑布、黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/06", "四人包车开始", "建皇离开后，海港组 + 彤燕组四个人优先补斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上继续住林德城河酒店。"],
@@ -596,7 +596,7 @@ const data = {
       color: "#27AE60",
       days: [
         ["10/02", "深圳 → 上海中转", "17:10 从深圳宝安机场 T3 起飞，19:40 落地上海浦东机场；上海中转 6 小时 30 分，下一班 10/03 02:10 从上海浦东机场 T2 起飞去布鲁塞尔。"],
-        ["10/03", "上海 → 布鲁塞尔中转 → 冰岛 + 酒店会合", "02:10 从上海浦东机场 T2 起飞，08:10 落地布鲁塞尔机场；布鲁塞尔中转 5 小时 40 分，13:50 从布鲁塞尔机场起飞，15:10 落地雷克雅未克凯夫拉维克机场。落地后去林德城河酒店和大家会合，晚上六个人报追极光团。"],
+        ["10/03", "上海 → 布鲁塞尔中转 → 冰岛 + 酒店会合", "02:10 从上海浦东机场 T2 起飞，08:10 落地布鲁塞尔机场；布鲁塞尔中转 5 小时 40 分，13:50 从布鲁塞尔机场起飞，15:10 落地雷克雅未克凯夫拉维克机场。落地后去林德城河酒店和大家会合，晚间休息，不安排追极光。"],
         ["10/04", "已订：六人南岸两日团第一天", "Nice Travel 六人团已订并支付定金；接送点待确认。当天看瀑布、黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/05", "已订：南岸两日团第二天 + 蓝冰洞", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/06", "四人包车开始", "建皇离开后，和海港组一起优先补斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线；晚上继续住林德城河酒店。"],
@@ -802,23 +802,6 @@ const data = {
       ],
     },
     {
-      id: "aurora",
-      category: "iceland",
-      segments: ["iceland-six"],
-      participant: "冰岛六人想订",
-      transport: "六个人报追极光团；无人自驾",
-      date: "10/03 夜",
-      city: "雷克雅未克",
-      title: "六人追极光团",
-      image: "assets/spots/aurora.webp",
-      images: ["assets/spots/aurora.webp"],
-      bestTime: "21:00-01:00",
-      open: "极光无固定开放时间；看云量、太阳活动和旅行社当晚通知。",
-      sunset: "雷克雅未克 10/03 日落约 18:51，天黑后才适合追。",
-      viewpoint: "跟团去城市光害外，自己不要夜间乱开陌生路。",
-      notes: ["六个人第一晚报团，不自驾追极光。", "穿防风、防水、保暖鞋，带热饮。", "若取消，很多团可改期，订票时确认政策。"],
-    },
-    {
       id: "south-coast-two-day",
       category: "iceland",
       segments: ["iceland-six"],
@@ -850,7 +833,7 @@ const data = {
       open: "已订 Arctic Adventures 黄金圈下午团；建皇上午休息，约 10:00 与海港组会合，早午饭后出发。",
       sunset: "雷克雅未克 10/03 日落约 18:50",
       viewpoint: "辛格维利尔国家公园、盖歇尔间歇泉、黄金瀑布。",
-      notes: ["10/03 已订 Arctic Adventures 黄金圈下午团，价格 ¥691.31/人。", "建皇上午休息，等待海港组约 10:00 到达；一起吃早午饭后出发。", "晚上六人追极光，白天不要再安排其他重行程。", "<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">打开 Arctic Adventures 团页</a>"],
+      notes: ["10/03 已订 Arctic Adventures 黄金圈下午团，价格 ¥691.31/人。", "建皇上午休息，等待海港组约 10:00 到达；一起吃早午饭后出发。", "10/03 晚间休息，不安排追极光；为次日南岸两日团做准备。", "<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">打开 Arctic Adventures 团页</a>"],
     },
     {
       id: "snaefellsnes",
@@ -1080,7 +1063,7 @@ const dailyVisuals = {
   "jianhuang|09/30": { city: "Kerlingarfjoll 高地", sunrise: "07:31", sunset: "18:59", season: "Kerlingarfjoll 高地 9 月底天气变化很快，徒步必须以向导和当天安全判断为准。", images: ["assets/spots/iceland/landmannalaugar-1.webp", "assets/spots/iceland/landmannalaugar-2.webp", "assets/spots/iceland/landmannalaugar-3.webp"] },
   "jianhuang|10/01": { city: "斯奈山半岛", sunrise: "07:35", sunset: "18:57", season: "斯奈山 10 月初海风强、云层变化快，半岛瀑布、海岸线、黑教堂和教会山都适合阴天氛围。", images: ["assets/spots/tourlink/snaefellsnes-aa-1.webp", "assets/spots/tourlink/snaefellsnes-aa-2.webp", "assets/spots/tourlink/snaefellsnes-aa-3.webp"] },
   "jianhuang|10/02": { city: "雷克雅未克 / 兰德曼那劳卡高地", sunrise: "07:38", sunset: "18:54", season: "10 月初高地天气变化很快，彩色山、熔岩地貌和温泉区很美，但必须听专业团安排。", images: ["assets/spots/tourlink/landmannalaugar-aa-2.webp", "assets/spots/tourlink/landmannalaugar-aa-3.webp", "assets/spots/iceland/landmannalaugar-1.webp"] },
-  "jianhuang|10/03": { city: "雷克雅未克 / 黄金圈", sunrise: "07:41", sunset: "18:50", season: "10 月初黄金圈白天风冷，下午光线适合看辛格维利尔、盖歇尔和黄金瀑布；建皇上午休息，晚上六人追极光。", images: ["assets/spots/gullfoss.webp", "assets/spots/iceland/thingvellir-1.webp", "assets/spots/iceland/strokkur-1.webp"] },
+  "jianhuang|10/03": { city: "雷克雅未克 / 黄金圈", sunrise: "07:41", sunset: "18:50", season: "10 月初黄金圈白天风冷，下午光线适合看辛格维利尔、盖歇尔和黄金瀑布；建皇上午休息，晚间休息，不安排追极光。", images: ["assets/spots/gullfoss.webp", "assets/spots/iceland/thingvellir-1.webp", "assets/spots/iceland/strokkur-1.webp"] },
   "jianhuang|10/04": { city: "冰岛南岸", sunrise: "07:33", sunset: "18:38", season: "10 月初南岸瀑布水雾大，黑沙滩风浪也大，照片很出片但要离浪线远一点。", images: ["assets/spots/tourlink/nice-south-waterfall-1.webp", "assets/spots/reynisfjara.webp", "assets/spots/gallery/reynisfjara-seljalandsfoss.webp", "assets/spots/gallery/reynisfjara-skogafoss.webp"] },
   "jianhuang|10/05": { city: "冰岛南岸", sunrise: "07:36", sunset: "18:34", season: "10 月初蓝冰洞季刚开始，冰河湖和钻石沙滩的光线偏冷，很适合看冰川景观。", images: ["assets/spots/iceland/jokulsarlon-1.webp", "assets/spots/iceland/jokulsarlon-2.webp", "assets/spots/iceland/diamond-beach-1.webp"] },
   "jianhuang|10/06": { city: "Sky Lagoon / 雷克雅未克 / 凯夫拉维克", sunrise: "07:50", sunset: "18:40", season: "10 月初泡温泉很适合放松；13:00 入场，无接送，自行乘公共交通。结束后预留取行李、机场交通和值机时间。", images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"] },
@@ -1091,7 +1074,7 @@ const dailyVisuals = {
   "haigang|09/30": { city: "上海", sunrise: "按当地", sunset: "按当地", season: "晚间抵达浦东机场 T1，跨夜中转以休息和补给为主，次日中午继续飞阿姆斯特丹。", images: ["assets/spots/shanghai.webp"] },
   "haigang|10/01": { city: "阿姆斯特丹", sunrise: "按当地", sunset: "按当地", season: "傍晚抵达荷兰，入秋后注意保暖；当晚以休息为主，为次日大巴和航班衔接留足精力。", images: ["assets/spots/city/amsterdam-canal.webp"] },
   "haigang|10/02": { city: "布鲁塞尔 / 哥本哈根", sunrise: "07:13", sunset: "18:43", season: "当天从阿姆斯特丹乘大巴到布鲁塞尔，再飞哥本哈根过夜；优先确保大巴、机场转场和航班衔接。", images: ["assets/spots/brussels.webp", "assets/spots/copenhagen.webp"] },
-  "haigang|10/03": { city: "雷克雅未克 / 黄金圈", sunrise: "07:41", sunset: "18:50", season: "10 月初冰岛早晚冷；早上落地后先寄存行李，约 10:00 跟建皇组合会合、吃早午饭，下午看黄金圈，晚上还要追极光。", images: ["assets/spots/gullfoss.webp", "assets/spots/iceland/thingvellir-1.webp", "assets/spots/iceland/strokkur-1.webp"] },
+  "haigang|10/03": { city: "雷克雅未克 / 黄金圈", sunrise: "07:41", sunset: "18:50", season: "10 月初冰岛早晚冷；早上落地后先寄存行李，约 10:00 跟建皇组合会合、吃早午饭，下午看黄金圈，晚间休息，不安排追极光。", images: ["assets/spots/gullfoss.webp", "assets/spots/iceland/thingvellir-1.webp", "assets/spots/iceland/strokkur-1.webp"] },
   "haigang|10/04": { city: "冰岛南岸", sunrise: "07:33", sunset: "18:38", season: "南岸瀑布和黑沙滩在 10 月初很有戏剧感，防风防水最重要。", images: ["assets/spots/tourlink/nice-south-waterfall-1.webp", "assets/spots/reynisfjara.webp", "assets/spots/gallery/reynisfjara-seljalandsfoss.webp", "assets/spots/gallery/reynisfjara-skogafoss.webp"] },
   "haigang|10/05": { city: "冰岛南岸", sunrise: "07:36", sunset: "18:34", season: "蓝冰洞、冰河湖和钻石沙滩是这天的核心，光线偏冷，拍照很好看。", images: ["assets/spots/iceland/jokulsarlon-1.webp", "assets/spots/iceland/jokulsarlon-2.webp", "assets/spots/iceland/diamond-beach-1.webp"] },
   "haigang|10/06": { city: "雷克雅未克", sunrise: "07:50", sunset: "18:40", season: "建皇离开后，四人段适合按天气补斯奈山、雷克雅内斯半岛 / 蓝湖，或雷克雅未克周边轻量线。", images: ["assets/spots/iceland/reykjavik-hallgrimskirkja.webp", "assets/spots/iceland/reykjavik-harpa.webp", "assets/spots/iceland/reykjavik-coast.webp"] },
@@ -1102,7 +1085,7 @@ const dailyVisuals = {
   "haigang|10/11-10/12": { city: "布鲁塞尔 / 上海", sunrise: "07:58", sunset: "18:59", season: "返程两天只看转机和休息，欧洲段已进入明显秋天。", images: ["assets/spots/brussels.webp", "assets/spots/shanghai.webp"] },
 
   "tongyan|10/02": { city: "深圳 / 上海", sunrise: "06:16", sunset: "18:10", season: "出发日以机场节奏为主，深圳和上海都还偏暖。", images: ["assets/spots/shenzhen.webp", "assets/spots/shanghai.webp"] },
-  "tongyan|10/03": { city: "布鲁塞尔 / 雷克雅未克", sunrise: "07:41", sunset: "18:50", season: "这天跨到冰岛，落地后很快进入冷风和极光季节奏。", images: ["assets/spots/brussels.webp", "assets/spots/aurora.webp"] },
+  "tongyan|10/03": { city: "布鲁塞尔 / 雷克雅未克", sunrise: "07:41", sunset: "18:50", season: "抵达冰岛后先去酒店会合和保暖，晚上休息，为次日南岸团做准备。", images: ["assets/spots/brussels.webp", "assets/spots/iceland/reykjavik-harpa.webp"] },
   "tongyan|10/04": { city: "冰岛南岸", sunrise: "07:33", sunset: "18:38", season: "南岸 10 月初瀑布、黑沙滩和低云很有冰岛感。", images: ["assets/spots/tourlink/nice-south-waterfall-1.webp", "assets/spots/reynisfjara.webp", "assets/spots/gallery/reynisfjara-dyrholaey.webp", "assets/spots/gallery/reynisfjara-skogafoss.webp"] },
   "tongyan|10/05": { city: "冰岛南岸", sunrise: "07:36", sunset: "18:34", season: "冰河湖、钻石沙滩和蓝冰洞是冷色系景观，注意保暖和防滑。", images: ["assets/spots/iceland/jokulsarlon-1.webp", "assets/spots/iceland/jokulsarlon-2.webp", "assets/spots/iceland/diamond-beach-1.webp"] },
   "tongyan|10/06": { city: "雷克雅未克", sunrise: "07:50", sunset: "18:40", season: "四人段第一天适合看天气决定黄金圈、蓝湖或周边轻量线。", images: ["assets/spots/gullfoss.webp", "assets/spots/gallery/gullfoss-strokkur.webp"] },
@@ -1476,10 +1459,10 @@ const icelandRouteDays = [
   {
     id: "1003",
     date: "10/03",
-    title: "黄金圈下午团 + 六人追极光",
+    title: "黄金圈下午团",
     color: "#d29b32",
     route: "雷克雅未克 → Þingvellir → Geysir → Gullfoss → 雷克雅未克",
-    roads: "黄金圈主线走 36 号路、37 号路和 35 号路；下午团结束后回雷克雅未克，晚上再参加追极光团。",
+    roads: "黄金圈主线走 36 号路、37 号路和 35 号路；下午团结束后回雷克雅未克休息，当晚不安排追极光。",
     terrain: "裂谷断层、间歇泉地热区与宽阔瀑布峡谷，是冰岛最集中的地质景观组合。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
     caution: "建皇上午休息，约 10:00 和海港组会合吃早午饭；黄金圈下午团为已订项目。",
@@ -1489,7 +1472,7 @@ const icelandRouteDays = [
       [270, 399, "辛格维利尔", "裂谷"],
       [350, 402, "Geysir", "间歇泉"],
       [391, 428, "Gullfoss", "黄金瀑布"],
-      [183, 452, "雷克雅未克", "住宿 / 追极光"],
+      [183, 452, "雷克雅未克", "回酒店休息"],
     ],
   },
   {
@@ -2318,7 +2301,7 @@ function setContext(filter) {
   contextEl.innerHTML = `
     <span class="context__chip">当前视角</span>
     <h3>全部三组</h3>
-    <p>先看三条时间条的交集：10/03 下午冰岛六人齐，10/03 晚追极光团，10/04-10/05 六人南岸两日 + 蓝冰洞小巴团，全程无人自驾，10/06 建皇 13:00 到 Sky Lagoon 入场，无接送，自行公共交通，结束后取行李并前往机场，晚上离开冰岛。</p>
+    <p>先看三条时间条的交集：10/03 下午冰岛六人齐，10/03 晚间休息，不安排追极光，10/04-10/05 六人南岸两日 + 蓝冰洞小巴团，全程无人自驾，10/06 建皇 13:00 到 Sky Lagoon 入场，无接送，自行公共交通，结束后取行李并前往机场，晚上离开冰岛。</p>
   `;
 }
 
