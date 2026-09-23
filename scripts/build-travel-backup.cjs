@@ -25,7 +25,7 @@ vm.createContext(context);
 vm.runInContext(script.slice(0, script.indexOf(marker)), context, { timeout: 5000 });
 vm.runInContext(patch, context, { timeout: 5000 });
 const data = JSON.parse(vm.runInContext('JSON.stringify(data)', context));
-const roleIds = ['jianhuang', 'haigang', 'tongyan', 'niangniang', 'yueyue'];
+const roleIds = ['jianhuang', 'tongyan', 'yueyue', 'haigang', 'niangniang'];
 assert.equal(data.personPlans.length, roleIds.length, 'Expected all itineraries');
 assert(data.hotel.address && data.hotel.mapUrl, 'The known base hotel address is required');
 const escape = (text) => String(text).replace(/[&<>"']/g, (char) => ({

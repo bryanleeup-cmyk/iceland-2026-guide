@@ -1600,7 +1600,7 @@ const icelandRouteDays = [
 
 let activeRouteDayId = icelandRouteDays[0].id;
 let referenceExpanded = false;
-const selectableRoles = data.roleViews.filter((role) => role.id !== "all");
+const selectableRoles = ["jianhuang", "tongyan", "yueyue", "haigang", "niangniang"].map((id) => data.roleViews.find((role) => role.id === id));
 const roleIds = selectableRoles.map((role) => role.id);
 const queryRole = new URLSearchParams(window.location.search).get("role");
 const hashRole = window.location.hash.replace("#", "");
