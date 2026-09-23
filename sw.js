@@ -29,17 +29,18 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   const url = new URL(request.url);
+  url.hash = '';
   if (request.method !== 'GET' || url.origin !== self.location.origin) return;
   const isHome = request.mode === 'navigate' && (url.pathname === new URL(self.registration.scope).pathname || url.pathname === new URL(shell).pathname);
   if (isHome || coreUrls.has(url.href)) {
-    event.respondWith(caches.open(coreCache).then(async (cache) => (await cache.match(isHome ? shell : request)) || fetch(request)));
+    event.respondWith(caches.open(coreCache).then(async (cache) => (await cache.match(isHome ? shell : url.href)) || fetch(request)));
   } else if (mediaUrls.has(url.href)) {
     event.respondWith(caches.open(mediaCache).then(async (cache) => {
-      const existing = await cache.match(request);
+      const existing = await cache.match(url.href);
       if (existing) return existing;
       const response = await fetch(request);
       // A full cache must not break an image that the network delivered successfully.
-      if (response.ok) await cache.put(request, response.clone()).catch(() => {});
+      if (response.ok) await cache.put(url.href, response.clone()).catch(() => {});
       return response;
     }));
   }

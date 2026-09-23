@@ -18,8 +18,8 @@ function worker({ fetch: fetchResource = async () => new Response('network'), fa
   const stores = new Map();
   const calls = { installed: [], deleted: [], claimed: 0, skipped: 0, fetched: [] };
   const manifest = {
-    version: 'new', mediaVersion: 'photos', core: ['index.html', 'app.js?v=1'],
-    media: ['assets/photo.webp'], integrity: { 'index.html': digest('html'), 'app.js?v=1': digest('js') },
+    version: 'new', mediaVersion: 'photos', core: ['index.html', 'travel-backup.html', 'app.js?v=1'],
+    media: ['assets/photo.webp'], integrity: { 'index.html': digest('html'), 'travel-backup.html': digest('backup'), 'app.js?v=1': digest('js') },
   };
   const requestUrl = (request) => typeof request === 'string' ? request : request.url;
   const open = async (name) => {
@@ -161,6 +161,21 @@ test('offline role links load the cached shell and photos without using the netw
   }
   const photo = await app.dispatch('fetch', { request: new Request(absolute('assets/photo.webp')) });
   assert.equal(await photo.text(), 'saved photo');
+  assert.equal(app.calls.fetched.length, 0);
+});
+
+test('offline backup role anchors use the cached document while resource queries still match exactly', async () => {
+  const app = worker({ fetch: async () => { throw new Error('offline'); } });
+  app.stores.set('iceland-2026-guide-core-new', new Map([
+    [absolute('travel-backup.html'), new Response('saved backup')],
+    [absolute('app.js?v=1'), new Response('saved script')],
+  ]));
+  const backup = await app.dispatch('fetch', { request: { method: 'GET', mode: 'navigate', url: absolute('travel-backup.html#yueyue') } });
+  assert.equal(await backup.text(), 'saved backup');
+  const script = await app.dispatch('fetch', { request: new Request(absolute('app.js?v=1#fragment')) });
+  assert.equal(await script.text(), 'saved script');
+  const otherVersion = app.dispatch('fetch', { request: new Request(absolute('app.js?v=2')) });
+  assert.equal(otherVersion, undefined, 'a different query must not receive another version of the script');
   assert.equal(app.calls.fetched.length, 0);
 });
 
