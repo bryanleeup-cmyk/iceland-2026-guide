@@ -6,7 +6,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 
 const root = path.resolve(__dirname, '..');
-const updated = '2026-09-22';
+const updated = '2026-09-23';
 const script = fs.readFileSync(path.join(root, 'script.js'), 'utf8');
 const patch = fs.readFileSync(path.join(root, 'ref32-patch.js'), 'utf8');
 const emergency = fs.readFileSync(path.join(root, 'index.html'), 'utf8').match(/<div id="travelEmergency">([\s\S]*?)<\/div>/)?.[1]?.trim();
@@ -79,6 +79,12 @@ function visualNotesHtml(personId, date, title, detail) {
   return `<p class="meta">${escape(visual.city)} · 日出 ${escape(visual.sunrise)} / 日落 ${escape(visual.sunset)}（参考）</p><p>${richText(visual.season)}</p>`;
 }
 
+function meetingHtml(personId, date) {
+  const meeting = vm.runInContext(`getDailyMeeting(${JSON.stringify(personId)}, ${JSON.stringify(date)})`, context);
+  if (!meeting) return '';
+  return `<aside class="meeting" aria-label="${escape(date)} ${escape(meeting.label)}"><p><strong>${escape(meeting.label)} · ${escape(meeting.time)}（冰岛当地时间）</strong></p><p>${meeting.url ? link(meeting.url, `${meeting.place} · ${meeting.linkLabel || '打开地图'}`) : escape(meeting.place)}</p>${meeting.address ? `<p>${escape(meeting.address)}</p>` : ''}<p>${escape(meeting.note)}</p></aside>`;
+}
+
 const flightLabels = {
   europeLongHaul: '国际往返航班', icelandOutbound: '前往冰岛 / 接驳',
   icelandReturn: '离开冰岛', afterIceland: '衔接提醒',
@@ -125,6 +131,7 @@ const html = `<!doctype html>
 <style>
 :root{color-scheme:light;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172d3a;background:#f3f6f7;line-height:1.7}
 *{box-sizing:border-box}body{margin:0}main{max-width:880px;margin:0 auto;padding:32px 24px 64px}h1,h2,h3,h4{line-height:1.35;text-wrap:balance}h1{font-size:clamp(1.7rem,5vw,2.5rem)}h2{font-size:1.65rem}h3{font-size:1.2rem}h4{font-size:1rem;margin-bottom:.4rem}p{margin:.65rem 0}a{color:#12517a;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}a:focus-visible{outline:3px solid #cf5c25;outline-offset:4px;border-radius:2px}li{margin:.55rem 0}ul{padding-left:1.4rem}.intro,.day,.flights{padding:22px;border:1px solid #cad6dc;background:#fff;border-radius:12px}.notice{border-left:4px solid #b15821;padding-left:16px}.meta{color:#425864;font-size:.9rem}.index{display:flex;flex-wrap:wrap;gap:10px 20px;padding:14px 0}.index a{display:inline-block;padding:8px 0;min-height:44px}.group{margin-top:42px;scroll-margin-top:16px}.day,.flights{margin-top:16px}.date{font-weight:750;color:#345b70}.day h3{margin:.4rem 0 1rem}.stay{border-top:1px solid #dce3e7;padding-top:12px;margin-top:16px;color:#2c4756}.stay p{margin:.4rem 0}.return{margin:20px 0}.skip{position:absolute;left:16px;top:0;transform:translateY(-150%);padding:10px;background:#fff}.skip:focus{transform:translateY(0)}footer{margin-top:40px;border-top:1px solid #cad6dc;padding-top:16px;font-size:.9rem;color:#425864}
+.meeting{margin:14px 0;padding:10px 14px;background:#edf6f8;border-left:4px solid #257387;border-radius:6px}.meeting p{margin:.35rem 0}.meeting strong{font-size:1.1rem}
 @media(max-width:480px){main{padding:22px 14px 40px}.intro,.day,.flights{padding:17px}.group{margin-top:32px}}
 @media print{:root{background:#fff;color:#000;font-size:10pt}main{max-width:none;padding:0}.intro,.day,.flights{border-color:#aaa;border-radius:0;box-shadow:none}.day,.stay{break-inside:avoid}.group{break-before:page}h2,h3,h4{break-after:avoid}.index,.return,.skip{display:none}a{color:inherit}.meta,footer{color:#333}@page{margin:16mm}}
 </style>
@@ -150,7 +157,7 @@ ${plans.map(({ plan, role }) => `<section class="group" id="${plan.id}" aria-lab
 <h2 id="heading-${plan.id}">${escape(plan.name)}</h2>
 <p>${richText(plan.role)}</p>
 ${flightsHtml(plan, role)}
-${plan.days.map(([date, title, detail]) => `<article class="day"><p class="date">${escape(date)}</p><h3>${escape(title)}</h3>${visualNotesHtml(plan.id, date, title, detail)}<p>${richText(detail)}</p>${stayHtml(plan.id, date, title)}</article>`).join('\n')}
+${plan.days.map(([date, title, detail]) => `<article class="day"><p class="date">${escape(date)}</p><h3>${escape(title)}</h3>${meetingHtml(plan.id, date)}${visualNotesHtml(plan.id, date, title, detail)}<p>${richText(detail)}</p>${stayHtml(plan.id, date, title)}</article>`).join('\n')}
 <p class="return"><a href="#top">返回组合目录</a></p>
 </section>`).join('\n')}
 </div>

@@ -121,4 +121,4 @@ self.addEventListener('message', (event) => {
     }
   })());
 });
-// offline release 45779462c296
+// offline release 8afb7b248a2b

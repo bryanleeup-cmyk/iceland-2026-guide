@@ -545,6 +545,62 @@ main {
   color: #253743;
 }
 
+.daily-meeting {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border: 1px solid #aacbd2;
+  border-left: 4px solid #257387;
+  border-radius: 10px;
+  background: #edf6f8;
+  overflow-wrap: anywhere;
+}
+
+.daily-meeting__heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 14px;
+  color: #244b59;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.daily-meeting__heading strong {
+  margin: 0;
+  color: #153f50;
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+}
+
+.daily-meeting .daily-meeting__place {
+  margin: 6px 0 0;
+  color: #153f50;
+  font-weight: 850;
+}
+
+.daily-meeting__place a {
+  min-height: 44px;
+  align-items: center;
+  margin-left: 0;
+  color: #145580;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.daily-meeting .daily-meeting__address,
+.daily-meeting .daily-meeting__note {
+  margin-top: 4px;
+  color: #355563;
+  font-size: 13px;
+}
+
+.daily-meeting--pending {
+  border-color: #d8b681;
+  border-left-color: #a56a27;
+  background: #fff6e8;
+}
+
 .dashboard-next {
   justify-content: flex-start;
   margin-top: 12px;

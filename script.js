@@ -1,4 +1,4 @@
-const southCoastDinner = "20:30（当地时间）在 <a href=\"https://www.caruso.is/the-restaurant/?lang=en\" target=\"_blank\" rel=\"noreferrer\">Caruso 餐厅</a> 落座，已订时段 20:30–22:30；预订确认码：#9510503。南岸同行 7 人参加（娘娘不参加）。地址：Austurstræti 22，101 Reykjavík。南岸团原预计最晚约 21:00 回城，与晚餐可能冲突；请提前向团方确认回城及下车时间，如赶不上需联系餐厅调整。";
+const southCoastDinner = "20:30（当地时间）在 <a href=\"https://www.caruso.is/the-restaurant/?lang=en\" target=\"_blank\" rel=\"noreferrer\">Caruso 餐厅</a> 落座，已订时段 20:30–22:30；预订确认码：#9510503。南岸同行 7 人参加（娘娘不参加）。地址：Austurstræti 22，101 Reykjavík。南岸团预计约 21:00 回城（受天气和路况影响），与晚餐可能冲突；请提前向团方确认回城及下车时间，如赶不上需联系餐厅调整。";
 
 const data = {
   meta: {
@@ -124,7 +124,7 @@ const data = {
       ],
       focusDays: [
         ["10/03", "酒店会合与休息", "林德城河酒店会合，晚间休息，不安排追极光。"],
-        ["10/04", "南岸两日第一天", "Nice Travel 南岸两日团已订并支付定金；接送点和出发时间待确认。"],
+        ["10/04", "南岸两日第一天", "Nice Travel 南岸两日团已订并全额支付；08:30 在 Bus Stop #13（Rauðarárstígur）等车，接车窗口 08:30–09:00。"],
         ["10/05", "蓝冰洞第二天 + Caruso 已订晚餐", `晚上回雷克雅未克，建皇准备次日晚航班。 ${southCoastDinner}`],
         ["10/06+", "建皇晚飞，四人继续", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行乘公共交通，结束后取行李并前往机场；赶海组 + 彤燕组优先补斯奈山、雷克雅内斯半岛或蓝湖。"],
       ],
@@ -150,11 +150,11 @@ const data = {
         ["09/26", "里斯本郊区海边一日游", "建皇（两人）+ 龙龙 + 娘娘共 4 人，09:00 从里斯本市区出发；地狱之口、罗卡角、雷加莱拉庄园、辛特拉王宫、佩纳宫。"],
         ["09/27", "四人去波尔图", "建皇（两人）、龙龙、娘娘从里斯本到波尔图约 3.5 小时，下午玩波尔图；娘娘晚间飞阿姆斯特丹，建皇和龙龙入住波尔图盖亚美居酒店。"],
         ["09/28", "建皇飞巴黎转冰岛", "建皇 09:05 从波尔图机场出发，12:15 落地巴黎奥利机场，航班易捷航空 U24886；娘娘已在 09/27 晚飞回阿姆斯特丹。"],
-        ["09/30", "已订：Kerlingarfjoll 高地徒步团（¥2568.57/2人）", "已订 Kerlingarfjoll Hiking Tour，具体接送、集合时间和徒步路线以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/01", "已订：斯奈山半岛小团（¥1796/2人，¥898/人）", "已订 Arctic Adventures 斯奈山半岛小团，雷克雅未克接送，约 11 小时；具体出发时间和停靠顺序以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/02", "已订：兰德曼那劳卡高地超级吉普一日团（¥3260.37/2人）", "已订 Arctic Adventures 兰德曼那劳卡高地超级吉普一日团，雷克雅未克接送，具体出发时间、路线、温泉停留和返回时间以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/super-jeeps/landmannalaugar-safari/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/03", "已订：黄金圈下午团（¥691.31/人）", "建皇上午休息，等待赶海组约 10:00 到达；一起吃早午饭后出发参加 Arctic Adventures 黄金圈下午团。晚间休息，不安排追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/04", "南岸两日已订", "Nice Travel 7 人团定金已付；10/04 08:30 前到 Bus Stop #13（Nice Travel）集合。"],
+        ["09/30", "已订：Kerlingarfjoll 高地徒步团（¥2568.57/2人）", "已订 Kerlingarfjoll Hiking Tour，08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；徒步路线听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/01", "已订：斯奈山半岛小团（¥1796/2人，¥898/人）", "已订 Arctic Adventures 斯奈山半岛小团，雷克雅未克接送，约 11 小时；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；停靠顺序听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/02", "已订：兰德曼那劳卡高地超级吉普一日团（¥3260.37/2人）", "已订 Arctic Adventures 兰德曼那劳卡高地超级吉普一日团，雷克雅未克接送，08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车；路线、温泉停留和实际返回时间听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/super-jeeps/landmannalaugar-safari/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/03", "已订：黄金圈下午团（¥691.31/人）", "建皇上午休息，等待赶海组约 10:00 到达；12:00 一起到 Klettur Hótel（Mjölnisholt 12–14）等 Arctic Adventures 接车，接车可能等待最多 30 分钟。晚间休息，不安排追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/04", "南岸两日已订", "Nice Travel 7 人团已全额支付；10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00。"],
         ["10/05", "蓝冰洞后回雷市 + Caruso 已订晚餐", `晚上回雷克雅未克，次日白天留半日待定。 ${southCoastDinner}`],
         ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） + 晚飞米兰", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"],
         ["10/07", "米兰转机到里斯本", "01:30 到米兰马尔彭萨，06:30 从 T2 飞里斯本，08:30 到里斯本；白天只做半日轻量城市步行，晚上飞哥本哈根。"],
@@ -177,8 +177,8 @@ const data = {
         ["离开冰岛", "10/08 19:15", "雷克雅未克凯夫拉维克机场飞阿姆斯特丹"],
       ],
       focusDays: [
-        ["10/03", "抵达冰岛 + 已订黄金圈下午团", "06:20 从哥本哈根飞雷克雅未克凯夫拉维克机场，07:40 落地；先去林德城河酒店寄存行李/入住，约 10:00 和建皇会合、一起吃早午饭后出发参加已订黄金圈下午团，晚间休息，不安排追极光。"],
-        ["10/04", "南岸两日已订", "Nice Travel 7 人团定金已付；10/04 08:30 前到 Bus Stop #13（Nice Travel）集合。"],
+        ["10/03", "抵达冰岛 + 已订黄金圈下午团", "06:20 从哥本哈根飞雷克雅未克凯夫拉维克机场，07:40 落地；先去林德城河酒店寄存行李/入住，约 10:00 和建皇会合、吃早午饭，12:00 在 Klettur Hótel（Mjölnisholt 12–14）等黄金圈团接车，晚间休息，不安排追极光。"],
+        ["10/04", "南岸两日已订", "Nice Travel 7 人团已全额支付；10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00。"],
         ["10/06", "高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐。"],
         ["10/08", "晚飞阿姆斯特丹", "白天轻量，留足取行李、机场交通和值机时间。"],
         ["10/09", "阿姆汇合", "和娘娘本地玩一天。"],
@@ -201,7 +201,7 @@ const data = {
       ],
       focusDays: [
         ["10/03", "到冰岛会合", "去林德城河酒店会合，晚间休息，不安排追极光。"],
-        ["10/04", "南岸两日已订", "Nice Travel 7 人团定金已付；10/04 08:30 前到 Bus Stop #13（Nice Travel）集合。"],
+        ["10/04", "南岸两日已订", "Nice Travel 7 人团已全额支付；10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00。"],
         ["10/06", "四人继续", "建皇离开后，和赶海组补线。"],
         ["10/09", "离开前轻量", "不要跑远，优先机场交通稳定。"],
         ["10/10", "早班机", "07:35 从雷克雅未克凯夫拉维克机场飞布鲁塞尔。"],
@@ -258,7 +258,7 @@ const data = {
     notes: [
       "09/29-10/03 这段为 4 晚 1 间，订单金额 ¥4804.42；10/05-10/06 这段为 1 晚 1 间，订单金额 ¥988.61。",
       "10/03 建皇和赶海组先到，可先问前台寄存行李；彤燕组 15:10 落地后到酒店会合。",
-      "10/04-10/05 Nice Travel 7 人南岸两日团已订并支付定金；10/04 08:30 前到 Bus Stop #13（Nice Travel）集合。",
+      "10/04-10/05 Nice Travel 7 人南岸两日团已订并全额支付；10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00。",
       "10/04 晚南岸两日团通常团内含冰岛南部住宿和早餐，所以这晚不住林德城河酒店。",
       "建皇 10/06 白天退房，自行乘公共交通前往 Sky Lagoon，13:00 入场；取回行李后提前去机场，19:20 从凯夫拉维克机场起飞。",
       "订单号和酒店确认号不放在公开分享页，需要时看预订截图。"
@@ -320,7 +320,7 @@ const data = {
       city: "冰岛南部",
       name: "南岸两日团含住宿",
       status: "已订",
-      detail: "Nice Travel 7 人南岸两日 + 蓝冰洞团已订并支付定金，团含南部住宿一晚和早餐；具体酒店和早餐规则以最终确认单为准。",
+      detail: "Nice Travel 7 人南岸两日 + 蓝冰洞团已订并全额支付，团含南部住宿一晚和早餐；具体酒店和早餐规则以最终确认单为准。",
       audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#2f6f7e",
     },
@@ -401,16 +401,16 @@ const data = {
       title: "已订：黄金圈下午团（¥691.31/人）",
       status: "建皇上午休息；约 10:00 与赶海组会合、吃早午饭后参加已订黄金圈下午团；彤燕组 15:10 到冰岛后会合",
       plan: "建皇上午休息，赶海组抵达并寄存行李后约 10:00 会合、一起吃早午饭，再按确认单参加黄金圈下午团；彤燕组落地后去林德城河酒店，晚间休息，不安排追极光。",
-      avoid: "今天保留黄金圈下午团，晚上休息，不再叠加长距离路线；第二天 08:30 前到 Bus Stop #13（Nice Travel）集合。",
-      stay: "住林德城河酒店；10/04 08:30 前到 Bus Stop #13（Nice Travel）集合，提前确认行李限制。",
+      avoid: "今天保留黄金圈下午团，晚上休息，不再叠加长距离路线；第二天 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00。",
+      stay: "住林德城河酒店；10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00，提前确认行李限制。",
       audiences: ["jianhuang", "haigang", "tongyan"],
       accent: "#7bb8d8",
     },
     {
       date: "10/04 周日",
       title: "7 人南岸核心日 1",
-      status: "南岸两日团已订：10/04 08:30 前到 Bus Stop #13（Nice Travel）集合",
-      plan: "7 人团总价 509,400 ISK，定金 101,880 ISK 已付，尾款 407,520 ISK 最晚于 09/27 前支付；小巴沿南岸走塞里雅兰瀑布、斯科加瀑布、雷尼斯黑沙滩，继续向东到杰古沙龙冰河湖一带。",
+      status: "南岸两日团已订：10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00",
+      plan: "7 人团总价 509,400 ISK，已全额支付；小巴沿南岸走塞里雅兰瀑布、斯科加瀑布、雷尼斯黑沙滩，继续向东到杰古沙龙冰河湖一带。",
       avoid: "今天不要再排黄金圈或市区项目；只带 1 件手提行李，大件行李留在雷克雅未克寄存或酒店协调。",
       stay: "住南岸团含住宿（含早餐）；取消/改订林德城河酒店 10/04 这一晚。",
       audiences: ["jianhuang", "haigang", "tongyan"],
@@ -485,9 +485,9 @@ const data = {
       why: "建皇上午休息，赶海组抵达后约 10:00 会合、吃早午饭，再参加已订的黄金圈下午团；彤燕组 15:10 到冰岛后，大家在冰岛会合，晚间休息，不安排追极光。",
       checkpoints: ["10:00 会合 / 早午饭", "黄金圈下午团", "酒店会合", "晚饭 / 补给", "酒店休息"],
       details: [
-        ["上午 / 下午", "建皇上午休息；赶海组抵达、寄存行李后约 10:00 会合，一起吃早午饭后参加已订的黄金圈下午团，具体时间以确认单为准。"],
+        ["上午 / 下午", "建皇上午休息；赶海组抵达、寄存行李后约 10:00 会合，一起吃早午饭后参加已订的黄金圈下午团，12:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟。"],
         ["15:10 后", "彤燕组落地冰岛，大家会合；先到酒店放行李。"],
-        ["晚饭前后", "第二天 08:30 前到 Bus Stop #13（Nice Travel）集合，提前确认行李规则。"],
+        ["晚饭前后", "第二天 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00，提前确认行李规则。"],
         ["晚间", "不安排追极光；回酒店休息，为次日南岸两日团做准备。"],
       ],
       sleep: "住林德城河酒店，10/03 15:00 后入住；大件行李提前问前台能否寄存到 10/05 晚回雷市。",
@@ -501,7 +501,7 @@ const data = {
       why: "把 7 人同行的南岸、冰河湖和蓝冰洞集中在 10/04-10/05；小巴接送，不需要大家自驾和找路。",
       checkpoints: ["08:30 前 Bus Stop #13", "雷克雅未克出发", "塞里雅兰瀑布", "斯科加瀑布", "雷尼斯黑沙滩", "冰河湖区域"],
       details: [
-        ["08:30 前", "到 Bus Stop #13（Nice Travel）集合；提前确认可携带行李。"],
+        ["08:30", "在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00；提前确认可携带行李。"],
         ["出发后", "雷克雅未克出发，小巴交通，司机/本地向导全程带队。"],
         ["上午", "看 Seljalandsfoss 塞里雅兰瀑布：天气和步道允许时可从瀑布后方看水帘。"],
         ["中午前后", "看 Skógafoss 斯科加瀑布：高崖落差大，水汽重，防水外套和防水鞋很重要。"],
@@ -520,7 +520,7 @@ const data = {
       why: "蓝冰洞是 10 月到 4 月的季节性重点项目，跟专业冰川向导进入更稳妥；晚上回雷克雅未克，10/06 建皇 13:00 去 Sky Lagoon，晚上飞米兰。",
       checkpoints: ["高帮登山鞋", "头盔 + 冰爪", "超级吉普", "蓝冰洞至少约 30 分钟", "钻石沙滩", "晚回雷克雅未克"],
       details: [
-        ["早餐后", "从南部住宿出发，带好相机、手套和防水外层；穿超过脚踝的结实登山鞋。"],
+        ["集合待确认", "10/04 晚向导说明时确认次晨集合时间和位置；从南部住宿出发，带好相机、手套和防水外层，穿超过脚踝的结实登山鞋。"],
         ["白天", "导游提供头盔和冰爪，换乘超级吉普进入瓦特纳冰川可进入区域。"],
         ["冰洞体验", "向导按当天能见度和安全条件选择最佳蓝冰洞；在冰洞内看蓝色冰层、冰壁纹理和天然冰洞形态。"],
         ["冰河湖", "看杰古沙龙冰河湖的浮冰、冰川边缘和低光环境；附近钻石沙滩可看被海浪推上海滩的透明冰块。"],
@@ -551,19 +551,19 @@ const data = {
     {
       id: "jianhuang",
       name: "建皇",
-      role: "建皇组合：09/25-09/27 与龙龙、娘娘住里斯本豪华四人间；9/26 四人走里斯本郊区海边一日游，9/27 一起去波尔图；10/04-10/05 Nice Travel 7 人南岸两日团已订并支付定金。",
+      role: "建皇组合：09/25-09/27 与龙龙、娘娘住里斯本豪华四人间；9/26 四人走里斯本郊区海边一日游，9/27 一起去波尔图；10/04-10/05 Nice Travel 7 人南岸两日团已订并全额支付。",
       color: "#2F80ED",
       days: [
         ["09/25", "北京 → 伦敦中转 → 里斯本", "13:35 从北京首都机场 T3 起飞，17:40 落地伦敦希思罗机场 T2；伦敦中转 1 小时 05 分，18:45 从伦敦希思罗机场 T2 起飞，21:35 落地里斯本机场 T1。落地后入住已订的 The Delight Hostel 豪华四人间：建皇（两人）、龙龙、娘娘共 4 人入住。"],
         ["09/26", "里斯本郊区海边一日游", "建皇（两人）、龙龙和娘娘四人报名这个专业路线：09:00 从里斯本市区出发，10:00 地狱之口，10:50 罗卡角，12:00 雷加莱拉庄园，14:30 辛特拉王宫，16:00 佩纳宫。主打大西洋海岸、欧亚大陆最西端、雷加莱拉庄园创始之井和两座宫殿；当天不再叠加里斯本市区重行程。"],
         ["09/27", "里斯本 → 波尔图", "早上和龙龙、娘娘一起坐约 3.5 小时大巴从里斯本到波尔图；下午玩老城河岸、路易一世大桥、杜罗河边。娘娘当晚飞阿姆斯特丹；建皇（两人）和龙龙晚上入住波尔图盖亚美居酒店，实付 ¥544.94。"],
         ["09/28", "波尔图 → 巴黎跨夜中转", "09:05 从波尔图弗朗西斯科卡内罗机场起飞，12:15 落地巴黎奥利机场 T1，航班易捷航空 U24886；巴黎跨夜中转 17 小时 45 分，第二天 06:00 从巴黎戴高乐机场 T2D 起飞去冰岛。注意这是换机场中转，奥利机场离市区更近，但仍要预留去戴高乐机场附近住宿或清晨去戴高乐机场的交通时间；娘娘已在 09/27 晚从波尔图飞回阿姆斯特丹。"],
-        ["09/29", "巴黎 → 冰岛 + 史费拉浮潜（已订 ¥2585.04/2人）", "06:00 从巴黎戴高乐机场 T2D 起飞，07:50 落地雷克雅未克凯夫拉维克机场，航班易捷航空 U24629；飞行 3 小时 50 分。落地后进雷克雅未克市区放行李/换保暖衣物，再去辛格维利尔国家公园参加 12:00 那班史费拉裂缝浮潜，建议 11:45 前到集合点；约 17:00 结束返回，晚上雷克雅未克市区吃饭和轻量 CityWalk。<a href=\"https://cn.adventures.is/iceland/day-tours/snorkeling-and-diving/into-the-blue/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["09/30", "已订：Kerlingarfjoll 高地徒步团（¥2568.57/2人）", "已订 Kerlingarfjoll Hiking Tour；具体接送、集合时间和徒步路线以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/01", "已订：斯奈山半岛小团（¥1796/2人，¥898/人）", "已订 Arctic Adventures 斯奈山半岛小团；具体接送、出发时间和停靠顺序以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/02", "已订：兰德曼那劳卡高地超级吉普一日团（¥3260.37/2人）", "已订 Arctic Adventures 兰德曼那劳卡高地超级吉普一日团，雷克雅未克接送，具体出发时间、路线、温泉停留和返回时间以确认单为准。<a href=\"https://cn.adventures.is/iceland/day-tours/super-jeeps/landmannalaugar-safari/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/03", "已订：黄金圈下午团（¥691.31/人）", "建皇上午休息；赶海组约 10:00 到达后一起吃早午饭，出发参加 Arctic Adventures 黄金圈下午团。晚间休息，不安排追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/04", "已订：南岸两日团第一天（7 人）", "Nice Travel 7 人团已订，定金 101,880 ISK 已付；团款总计 509,400 ISK，尾款 407,520 ISK 最晚于 09/27 前支付。10/04 08:30 前到 Bus Stop #13（Nice Travel）集合；当天看塞里雅兰瀑布、斯科加瀑布、雷尼斯黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["09/29", "巴黎 → 冰岛 + 史费拉浮潜（已订 ¥2585.04/2人）", "06:00 从巴黎戴高乐机场 T2D 起飞，07:50 落地雷克雅未克凯夫拉维克机场，航班易捷航空 U24629；飞行 3 小时 50 分。落地后进雷克雅未克市区放行李/换保暖衣物；12:00 在 Klettur Hótel（Mjölnisholt 12–14）等候 Arctic Adventures 接车，接车可能需要 30 分钟。浮潜订单包含雷市接送，无需自行前往辛格维利尔国家公园；实际回城时间听向导安排，晚上雷克雅未克市区吃饭和轻量 CityWalk。<a href=\"https://cn.adventures.is/iceland/day-tours/snorkeling-and-diving/into-the-blue/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["09/30", "已订：Kerlingarfjoll 高地徒步团（¥2568.57/2人）", "已订 Kerlingarfjoll Hiking Tour；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；徒步路线听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/01", "已订：斯奈山半岛小团（¥1796/2人，¥898/人）", "已订 Arctic Adventures 斯奈山半岛小团；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；停靠顺序听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/02", "已订：兰德曼那劳卡高地超级吉普一日团（¥3260.37/2人）", "已订 Arctic Adventures 兰德曼那劳卡高地超级吉普一日团，雷克雅未克接送，08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车；路线、温泉停留和实际返回时间听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/super-jeeps/landmannalaugar-safari/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/03", "已订：黄金圈下午团（¥691.31/人）", "建皇上午休息；赶海组约 10:00 到达后一起吃早午饭，12:00 到 Klettur Hótel（Mjölnisholt 12–14）等 Arctic Adventures 接车，接车可能等待最多 30 分钟。晚间休息，不安排追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/04", "已订：南岸两日团第一天（7 人）", "Nice Travel 7 人团已订并全额支付；团款总计 509,400 ISK。10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00；当天看塞里雅兰瀑布、斯科加瀑布、雷尼斯黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/05", "已订：南岸两日团第二天 + 蓝冰洞（7 人） + Caruso 已订晚餐", `继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href="https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/" target="_blank" rel="noreferrer">查看团页</a> ${southCoastDinner}`],
         ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） → 米兰转机", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。退房后先确认行李寄存与取回安排，出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"],
         ["10/07", "米兰 → 里斯本半日 → 哥本哈根", "06:30 从米兰马尔彭萨机场 T2 起飞，08:30 落地里斯本机场 T1，航班易捷航空 U23873。白天只做里斯本半日轻量城市步行，市区收尾、吃饭、买伴手礼；18:15 从里斯本机场 T1 起飞，23:00 落地哥本哈根机场 T3。晚上入住 Cabinn Metro Hotel，地址 Arne Jacobsens Allé 2，电话 +4532465700。"],
@@ -580,8 +580,8 @@ const data = {
         ["09/30", "北京 → 上海跨夜中转", "19:30 从北京首都机场（PEK）T2 起飞，21:50 抵达上海浦东机场（PVG）T1，东方航空 MU5164，飞行 2 小时 20 分。上海跨夜中转 14 小时 40 分，下一班 10/01 12:30 飞阿姆斯特丹；北京至阿姆斯特丹联程行李直达。"],
         ["10/01", "上海 → 阿姆斯特丹", "12:30 从上海浦东机场（PVG）T1 起飞，18:30 抵达阿姆斯特丹史基浦机场（AMS），东方航空 MU771，飞行 12 小时，时刻均为当地时间。抵达后休息，阿姆斯特丹当晚住宿待补；次日坐大巴去布鲁塞尔，衔接飞往哥本哈根的航班。"],
         ["10/02", "阿姆斯特丹 → 大巴到布鲁塞尔 → 哥本哈根", "从阿姆斯特丹坐大巴前往布鲁塞尔，大巴班次、出发时间和上下车站待补；抵达后另行前往布鲁塞尔机场，预留转场与值机时间。15:15 从布鲁塞尔机场起飞，16:45 抵达哥本哈根机场，SAS SK1594。哥本哈根过夜中转 13 小时 35 分，下一班 10/03 06:20 起飞去冰岛。"],
-        ["10/03", "哥本哈根 → 冰岛 + 已订黄金圈下午团", "06:20 从哥本哈根机场起飞，07:40 落地雷克雅未克凯夫拉维克机场；先去林德城河酒店寄存行李 / 入住，约 10:00 和建皇会合，一起吃早午饭后出发参加已订的黄金圈下午团；晚间休息，不安排追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
-        ["10/04", "已订：南岸两日团第一天（7 人）", "Nice Travel 7 人团已订并支付定金；10/04 08:30 前到 Bus Stop #13（Nice Travel）集合。当天看瀑布、黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/03", "哥本哈根 → 冰岛 + 已订黄金圈下午团", "06:20 从哥本哈根机场起飞，07:40 落地雷克雅未克凯夫拉维克机场；先去林德城河酒店寄存行李 / 入住，约 10:00 和建皇会合、吃早午饭，12:00 到 Klettur Hótel（Mjölnisholt 12–14）等 Arctic Adventures 接车，接车可能等待最多 30 分钟；晚间休息，不安排追极光。<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/04", "已订：南岸两日团第一天（7 人）", "Nice Travel 7 人团已订并全额支付；10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00。当天看瀑布、黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/05", "已订：南岸两日团第二天 + 蓝冰洞（7 人） + Caruso 已订晚餐", `继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店。<a href="https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/" target="_blank" rel="noreferrer">查看团页</a> ${southCoastDinner}`],
         ["10/06", "兰德曼那劳卡高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐，晚上继续住林德城河酒店。"],
         ["10/07", "四人冰岛加玩", "天气稳定可走斯奈山半岛；天气差就走雷克雅内斯半岛 / 蓝湖 / 市区备选；晚上继续住林德城河酒店。"],
@@ -599,7 +599,7 @@ const data = {
       days: [
         ["10/02", "深圳 → 上海中转", "17:10 从深圳宝安机场 T3 起飞，19:40 落地上海浦东机场；上海中转 6 小时 30 分，下一班 10/03 02:10 从上海浦东机场 T2 起飞去布鲁塞尔。"],
         ["10/03", "上海 → 布鲁塞尔中转 → 冰岛 + 酒店会合", "02:10 从上海浦东机场 T2 起飞，08:10 落地布鲁塞尔机场；布鲁塞尔中转 5 小时 40 分，13:50 从布鲁塞尔机场起飞，15:10 落地雷克雅未克凯夫拉维克机场。落地后去林德城河酒店和大家会合，晚间休息，不安排追极光。"],
-        ["10/04", "已订：南岸两日团第一天（7 人）", "Nice Travel 7 人团已订并支付定金；10/04 08:30 前到 Bus Stop #13（Nice Travel）集合。当天看瀑布、黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
+        ["10/04", "已订：南岸两日团第一天（7 人）", "Nice Travel 7 人团已订并全额支付；10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00。当天看瀑布、黑沙滩，晚上住团含南部住宿。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/05", "已订：南岸两日团第二天 + 蓝冰洞（7 人） + Caruso 已订晚餐", `继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回林德城河酒店。<a href="https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/" target="_blank" rel="noreferrer">查看团页</a> ${southCoastDinner}`],
         ["10/06", "兰德曼那劳卡高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐，晚上继续住林德城河酒店。"],
         ["10/07", "四人冰岛加玩", "天气稳定可走斯奈山半岛；天气差就走雷克雅内斯半岛 / 蓝湖 / 市区备选；晚上继续住林德城河酒店。"],
@@ -727,14 +727,14 @@ const data = {
       category: "iceland",
       segments: ["jianhuang-spots"],
       participant: "建皇组合 10/01 已订",
-      transport: "Arctic Adventures 斯奈山半岛小团；雷克雅未克接送，约 11 小时，以确认单为准",
+      transport: "Arctic Adventures 斯奈山半岛小团；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，约 11 小时",
       date: "10/01",
       city: "斯奈山半岛",
       title: "斯奈山半岛小团（已订 ¥1796/2人，¥898/人）",
       image: "assets/spots/tourlink/snaefellsnes-aa-1.webp",
       images: ["assets/spots/tourlink/snaefellsnes-aa-1.webp", "assets/spots/tourlink/snaefellsnes-aa-2.webp", "assets/spots/tourlink/snaefellsnes-aa-3.webp"],
-      bestTime: "全天，按确认单",
-      open: "已订斯奈山半岛一日团；具体接送点、出发时间和停靠顺序以旅行社确认单为准。",
+      bestTime: "08:00 在 Klettur Hótel 接车",
+      open: "已订斯奈山半岛一日团；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；停靠顺序听向导安排。",
       sunset: "斯奈山 10/01 日出约 07:35 / 日落约 18:57",
       viewpoint: "教会山、黑教堂、海岸线、渔村和黑沙滩；按当天路线和天气调整。",
       notes: ["10/01 已订 Arctic Adventures 斯奈山半岛小团。", "车程长，建议带午餐、零食、水和晕车药。", "10 月风大路滑，穿防风防水外套和防水鞋。", "<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">打开 Arctic Adventures 团页</a>"],
@@ -744,14 +744,14 @@ const data = {
       category: "iceland",
       segments: ["jianhuang-spots"],
       participant: "建皇组合 10/02 已订",
-      transport: "Arctic Adventures 超级吉普团；雷克雅未克接送，具体出发和返回以确认单为准",
+      transport: "Arctic Adventures 超级吉普团；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，实际返回听向导安排",
       date: "10/02",
       city: "冰岛高地",
       title: "兰德曼那劳卡高地超级吉普一日团（已订 ¥3260.37/2人）",
       image: "assets/spots/tourlink/landmannalaugar-aa-2.webp",
       images: ["assets/spots/tourlink/landmannalaugar-aa-2.webp", "assets/spots/tourlink/landmannalaugar-aa-3.webp", "assets/spots/iceland/landmannalaugar-1.webp"],
-      bestTime: "全天，按确认单",
-      open: "已订兰德曼那劳卡高地超级吉普一日团；具体接送点、出发时间、路线、温泉停留和返回时间以确认单为准。",
+      bestTime: "08:00 在 Klettur Hótel 接车",
+      open: "已订兰德曼那劳卡高地超级吉普一日团；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车；路线、温泉停留和实际返回时间听向导安排。",
       sunset: "雷克雅未克 10/02 日出约 07:38 / 日落约 18:54",
       viewpoint: "高地彩色山、熔岩地貌和温泉区；徒步安排以向导和当天安全条件为准。",
       notes: [
@@ -765,14 +765,14 @@ const data = {
       category: "iceland",
       segments: ["jianhuang-spots"],
       participant: "建皇组合 09/30 已订",
-      transport: "Arctic Adventures Kerlingarfjoll 高地徒步团；具体接送以确认单为准",
+      transport: "Arctic Adventures Kerlingarfjoll 高地徒步团；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车",
       date: "09/30",
       city: "Kerlingarfjoll 高地",
       title: "Kerlingarfjoll 高地徒步团（已订 ¥2568.57/2人）",
       image: "assets/spots/tourlink/kerlingarfjoll-official-1.webp",
       images: ["assets/spots/tourlink/kerlingarfjoll-official-1.webp", "assets/spots/tourlink/kerlingarfjoll-official-2.webp", "assets/spots/tourlink/kerlingarfjoll-official-3.webp"],
-      bestTime: "全天，按确认单",
-      open: "已订 Kerlingarfjoll 高地徒步团；具体集合点、接送、路线和返回时间以旅行社确认单为准。",
+      bestTime: "08:00 在 Klettur Hótel 接车",
+      open: "已订 Kerlingarfjoll 高地徒步团；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；路线和返回时间听向导安排。",
       sunset: "Kerlingarfjoll 09/30 日出约 07:31 / 日落约 18:59",
       viewpoint: "高地地热区、山谷与徒步路线；当天严格按向导和天气安全要求行动。",
       notes: [
@@ -786,20 +786,20 @@ const data = {
       category: "iceland",
       segments: ["jianhuang-spots"],
       participant: "建皇组合 09/29 已订",
-      transport: "Arctic Adventures 史费拉浮潜团；选择 12:00 场次，自行到辛格维利尔国家公园集合",
+      transport: "Arctic Adventures 史费拉浮潜团；12:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，包含雷市接送",
       date: "09/29",
       city: "辛格维利尔国家公园",
       title: "史费拉裂缝浮潜 + 雷克雅未克市区（已订 ¥2585.04/2人）",
       image: "assets/spots/tourlink/silfra-snorkel-1.webp",
       images: ["assets/spots/tourlink/silfra-snorkel-1.webp", "assets/spots/tourlink/silfra-snorkel-2.webp", "assets/spots/tourlink/silfra-snorkel-3.webp", "assets/spots/iceland/reykjavik-harpa.webp"],
-      bestTime: "12:00 场次，建议 11:45 前到集合点；约 17:00 结束",
-      open: "团页写全年运营，含专业向导、史费拉入场费、浮潜装备、干衣装备、热可可和导游拍照；具体集合点、交通和结束时间以确认单为准。",
+      bestTime: "12:00 在 Klettur Hótel 等车；接车可能需要 30 分钟，返回时间听向导安排",
+      open: "团页写全年运营，含专业向导、史费拉入场费、浮潜装备、干衣装备、热可可和导游拍照；订单含雷市接送，12:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，结束时间听向导安排。",
       sunset: "雷克雅未克 09/29 日出约 07:29 / 日落约 19:04",
       viewpoint: "史费拉裂缝是在北美板块和欧亚板块之间浮潜，水非常清澈；回城后只安排雷克雅未克市区轻量散步。",
       notes: [
-        "落地当天先放行李、吃东西、换保暖衣物，再去 12:00 浮潜场次。",
+        "落地当天先放行李、吃东西、换保暖衣物，12:00 在 Klettur Hótel（Mjölnisholt 12–14）接车；上车点与住宿的 Fosshotel Lind 不同。",
         "穿贴身保暖内层和厚袜子，干衣里面也会冷；不要戴隐形眼镜以外不适合进水的物品。",
-        "17:00 左右结束后回雷克雅未克市区，晚上只做吃饭、补给和早睡。",
+        "实际回城时间听向导安排，晚上只做吃饭、补给和早睡。",
         "<a href=\"https://cn.adventures.is/iceland/day-tours/snorkeling-and-diving/into-the-blue/\" target=\"_blank\" rel=\"noreferrer\">打开 Arctic Adventures 团页</a>",
       ],
     },
@@ -807,35 +807,35 @@ const data = {
       id: "south-coast-two-day",
       category: "iceland",
       segments: ["iceland-six"],
-      participant: "南岸 7 人 10/04-10/05 已订，定金已付",
+      participant: "南岸 7 人 10/04-10/05 已订，已全额支付",
       transport: "两日小巴团；雷克雅未克接送；蓝冰洞段换乘超级吉普",
       date: "10/04-10/05",
       city: "冰岛南岸",
       title: "南岸两日 + 蓝冰洞",
       image: "assets/spots/tourlink/nice-south-waterfall-1.webp",
       images: ["assets/spots/tourlink/nice-south-waterfall-1.webp", "assets/spots/reynisfjara.webp", "assets/spots/gallery/reynisfjara-seljalandsfoss.webp", "assets/spots/gallery/reynisfjara-skogafoss.webp", "assets/spots/iceland/jokulsarlon-1.webp", "assets/spots/iceland/diamond-beach-1.webp"],
-      bestTime: "10/04 出发；10/05 晚回雷克雅未克，以确认单为准",
-      open: "Nice Travel 团页：南岸两日、蓝冰洞、杰古沙龙冰河湖、黑沙滩和瀑布；具体接送、住宿和行李规则以最终确认单为准。",
+      bestTime: "10/04 08:30 在 Bus Stop #13 等车，接车窗口 08:30–09:00；10/05 早晨集合听向导前一晚通知",
+      open: "Nice Travel 团页：南岸两日、蓝冰洞、杰古沙龙冰河湖、黑沙滩和瀑布；10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等车，接车窗口 08:30–09:00；具体住宿和行李规则以最终确认单为准。",
       sunset: "雷克雅未克 10/04 日落约 18:47，10/05 约 18:44",
       viewpoint: "塞里雅兰瀑布后方、斯科加瀑布正面水雾、雷尼斯黑沙滩玄武岩柱、杰古沙龙冰河湖湖边和钻石沙滩。",
-      notes: ["7 人团已订：总价 509,400 ISK，定金 101,880 ISK 已付，尾款 407,520 ISK 最晚于 09/27 前支付。", "10/04 08:30 前到 Bus Stop #13（Nice Travel）集合；住宿、早餐和行李规则以 Nice Travel 确认单为准。", "黑沙滩不要靠近浪线；蓝冰洞必须听冰川向导指挥。", "<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">打开 Nice Travel 团页</a>"],
+      notes: ["7 人团已订：总价 509,400 ISK，已全额支付。", "10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00；住宿、早餐和行李规则以 Nice Travel 确认单为准。", "黑沙滩不要靠近浪线；蓝冰洞必须听冰川向导指挥。", "<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">打开 Nice Travel 团页</a>"],
     },
     {
       id: "golden-circle",
       category: "iceland",
       segments: ["jianhuang-spots", "four-after"],
       participant: "建皇组合 + 赶海组 10/03 已订",
-      transport: "Arctic Adventures 黄金圈下午团；约 10:00 与赶海组会合，早午饭后出发，具体时间以确认单为准",
+      transport: "Arctic Adventures 黄金圈下午团；12:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能等待最多 30 分钟",
       date: "10/03",
       city: "雷克雅未克 / 黄金圈",
       title: "已订：黄金圈下午团（¥691.31/人）",
       image: "assets/spots/gullfoss.webp",
       images: ["assets/spots/gullfoss.webp", "assets/spots/iceland/thingvellir-1.webp", "assets/spots/iceland/strokkur-1.webp"],
-      bestTime: "下午，具体时间以确认单为准",
-      open: "已订 Arctic Adventures 黄金圈下午团；建皇上午休息，约 10:00 与赶海组会合，早午饭后出发。",
+      bestTime: "12:00 在 Klettur Hótel 等车；接车可能等待最多 30 分钟",
+      open: "已订 Arctic Adventures 黄金圈下午团；建皇上午休息，约 10:00 与赶海组会合、吃早午饭，12:00 在 Klettur Hótel（Mjölnisholt 12–14）等车。",
       sunset: "雷克雅未克 10/03 日落约 18:50",
       viewpoint: "辛格维利尔国家公园、盖歇尔间歇泉、黄金瀑布。",
-      notes: ["10/03 已订 Arctic Adventures 黄金圈下午团，价格 ¥691.31/人。", "建皇上午休息，等待赶海组约 10:00 到达；一起吃早午饭后出发。", "10/03 晚间休息，不安排追极光；为次日南岸两日团做准备。", "<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">打开 Arctic Adventures 团页</a>"],
+      notes: ["10/03 已订 Arctic Adventures 黄金圈下午团，价格 ¥691.31/人。", "建皇上午休息，等待赶海组约 10:00 到达；12:00 在 Klettur Hótel（Mjölnisholt 12–14）等车，接车可能等待最多 30 分钟。", "10/03 晚间休息，不安排追极光；为次日南岸两日团做准备。", "<a href=\"https://cn.adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noreferrer\">打开 Arctic Adventures 团页</a>"],
     },
     {
       id: "snaefellsnes",
@@ -1114,7 +1114,7 @@ data.personPlans.push({
     ["09/30", "深圳 → 上海跨夜中转", "21:30 从深圳宝安机场 T3 起飞，23:55 抵达上海，航班东方航空 MU5360。次日 13:15 从上海浦东机场 T1 飞哥本哈根；本段到达机场、跨夜休息与行李衔接以机票为准。"],
     ["10/01", "上海 → 哥本哈根 + 酒店入住", "13:15 从上海浦东机场 T1 起飞，19:00 抵达哥本哈根机场，航班东方航空 MU707。入住 Cabinn Metro Hotel，地址 Arne Jacobsens Allé 2；当晚以入住、吃饭和休息为主。"],
     ["10/02", "哥本哈根自由活动", "继续住 Cabinn Metro Hotel。白天可按体力轻量逛新港、国王新广场和阿美琳堡周边；具体游览未预订，按当天情况安排。次日晚飞冰岛，提前整理行李并确认机场交通。"],
-    ["10/03", "哥本哈根 → 冰岛深夜抵达", "从 Cabinn Metro Hotel 退房，白天轻量活动并安排好行李寄存。22:35 从哥本哈根凯斯楚普机场 T2 起飞，23:50 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI217；时刻均为当地时间。随后前往林德城河酒店，与彤彤同住该酒店；进城可能已是 10/04 凌晨，提前确认深夜机场交通和 10/03 房晚的晚到登记。抵达后休息，不安排追极光；次日 08:30 前到 Bus Stop #13（Nice Travel）集合。"],
+    ["10/03", "哥本哈根 → 冰岛深夜抵达", "从 Cabinn Metro Hotel 退房，白天轻量活动并安排好行李寄存。22:35 从哥本哈根凯斯楚普机场 T2 起飞，23:50 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI217；时刻均为当地时间。随后前往林德城河酒店，与彤彤同住该酒店；进城可能已是 10/04 凌晨，提前确认深夜机场交通和 10/03 房晚的晚到登记。抵达后休息，不安排追极光；次日 08:30 在 Bus Stop #13（Rauðarárstígur）等 Nice Travel 接车，接车窗口 08:30–09:00。"],
     ["10/10", "冰岛 → 弗罗茨瓦夫跨夜中转", "从林德城河酒店退房，白天轻量安排并预留机场交通和值机时间。18:50 从雷克雅未克凯夫拉维克机场起飞，10/11 00:40 抵达弗罗茨瓦夫哥白尼机场，航班 W61898。下一班 10/11 06:00 起飞，中转 5 小时 20 分；提前核对行李是否直挂、是否需要重新值机，以及夜间候机安排。"],
     ["10/11-10/12", "弗罗茨瓦夫 → 阿姆斯特丹 → 广州", "10/11 00:40 抵达弗罗茨瓦夫后跨夜中转；06:00 从哥白尼机场起飞，07:45 抵达阿姆斯特丹史基浦机场，航班荷兰皇家航空 KL1336。中转 5 小时 35 分，13:20 从史基浦机场起飞，10/12 06:40 抵达广州，航班南方航空 CZ308；预留行李衔接和值机时间，抵达广州后返家休息。"],
   ],
@@ -1370,6 +1370,53 @@ function getDailyStay(personId, date, title) {
   return null;
 }
 
+// Collection details checked against the booked vouchers, in Iceland local time.
+const kletturPickup = {
+  place: "Klettur Hótel",
+  address: "Mjölnisholt 12–14，Reykjavík",
+  url: "https://www.google.com/maps/search/?api=1&query=Klettur%20Hotel%20Mjolnisholt%2012-14%20Reykjavik",
+  note: "Arctic Adventures 接车；请在接车开始时到位，等车可能需要 30 分钟。这里是上车点，与住宿的 Fosshotel Lind 不同。",
+};
+const dailyMeetings = [
+  { ...kletturPickup, roles: ["jianhuang"], date: "09/29", time: "12:00", label: "接车", note: "Arctic Adventures 浮潜团含雷市接送。12:00 在这里等车，接车可能需要 30 分钟；无需自行前往史费拉。上车点与住宿的 Fosshotel Lind 不同。" },
+  { ...kletturPickup, roles: ["jianhuang"], date: "09/30", time: "08:00", label: "接车" },
+  { ...kletturPickup, roles: ["jianhuang"], date: "10/01", time: "08:00", label: "接车" },
+  { ...kletturPickup, roles: ["jianhuang"], date: "10/02", time: "08:00", label: "接车", note: "Arctic Adventures 高地超级吉普团；08:00 在这里等车。上车点与住宿的 Fosshotel Lind 不同；实际路线和返回时间听向导安排。" },
+  { ...kletturPickup, roles: ["jianhuang", "haigang"], date: "10/03", time: "12:00", label: "接车" },
+  {
+    roles: ["jianhuang", "haigang", "tongyan", "yueyue"], date: "10/04", time: "08:30", label: "到站等车",
+    place: "Bus Stop #13 · Rauðarárstígur", address: "雷克雅未克旅游巴士 13 号站",
+    url: "https://www.google.com/maps/search/?api=1&query=Bus%20Stop%2013%20Raudararstigur%20Reykjavik",
+    note: "Nice Travel 南岸团；08:30 已在站点等候，接车窗口 08:30–09:00。到 13 号站上车，不在 Fosshotel Lind 酒店门口等；不要等到 09:00 才到。",
+  },
+  {
+    roles: ["jianhuang", "haigang", "tongyan", "yueyue"], date: "10/05", time: "待向导确认", label: "次晨集合", pending: true,
+    place: "南岸团住宿处，具体位置待向导通知",
+    note: "10/04 晚向导说明时，确认次晨集合时间和位置。预计约 21:00 回雷市，受天气路况影响；与 20:30 Caruso 订位有冲突，需提前协调。",
+  },
+  {
+    roles: ["jianhuang"], date: "10/06", time: "13:00", label: "到场入场", place: "Sky Lagoon",
+    url: "https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit",
+    linkLabel: "查看公共交通路线",
+    note: "订单不含接送，自行乘公共交通前往。提前查好公交班次，预留取行李和机场交通时间；19:20 从凯夫拉维克机场起飞。",
+  },
+];
+
+function getDailyMeeting(personId, date) {
+  return dailyMeetings.find((meeting) => meeting.date === date && meeting.roles.includes(personId));
+}
+
+function renderDailyMeeting(personId, date) {
+  const meeting = getDailyMeeting(personId, date);
+  if (!meeting) return "";
+  return `<aside class="daily-meeting${meeting.pending ? " daily-meeting--pending" : ""}" aria-label="${date} ${meeting.label}">
+    <div class="daily-meeting__heading"><span>${meeting.label} · 冰岛当地时间</span><strong>${meeting.time}</strong></div>
+    <p class="daily-meeting__place">${meeting.url ? `<a href="${meeting.url}" target="_blank" rel="noopener noreferrer">${meeting.place} · ${meeting.linkLabel || "打开地图"} ↗</a>` : meeting.place}</p>
+    ${meeting.address ? `<p class="daily-meeting__address">${meeting.address}</p>` : ""}
+    <p class="daily-meeting__note">${meeting.note}</p>
+  </aside>`;
+}
+
 function renderDailyCard(personId, date, title, detail, { priority = false } = {}) {
   const visual = getDailyVisual(personId, date, title, detail);
   const images = visual.images || fallbackDailyVisual.images;
@@ -1396,6 +1443,7 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
           </div>
         </div>
         <strong>${title}</strong>
+        ${renderDailyMeeting(personId, date)}
         <p class="daily-card__season">${visual.city}：${visual.season}</p>
         <p>${detail}</p>
         ${
@@ -1453,7 +1501,7 @@ const icelandRouteDays = [
     roads: "机场与市区走 41 号路；去 Þingvellir 走 36 号路。浮潜结束后返回雷克雅未克。",
     terrain: "北美板块与欧亚板块之间的裂谷水道，清澈冷泉、黑色火山岩和苔原草地。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
-    caution: "浮潜团按 12:00 场次；落地后先放行李、换保暖衣物，集合时间以确认单为准。",
+    caution: "浮潜团含雷市接送；12:00 在 Klettur Hótel（Mjölnisholt 12–14）等车，接车可能需要 30 分钟。落地后先放行李、换保暖衣物。",
     images: ["assets/spots/tourlink/silfra-snorkel-1.webp", "assets/spots/tourlink/silfra-snorkel-2.webp"],
     points: [
       [120, 474, "凯夫拉未克机场", "机场"],
@@ -1472,7 +1520,7 @@ const icelandRouteDays = [
     roads: "跟团车从雷克雅未克出发，沿 1 号路与 F35 / 高地道路前往 Kerlingarfjöll；道路是否开放由团方和天气决定。",
     terrain: "彩色流纹岩山、地热蒸汽、黑色砾石和无植被高地，是真正的内陆高地景观。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
-    caution: "不自驾进入高地；徒步路线、接送点和是否可进入以确认单为准。",
+    caution: "08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车；不自驾进入高地，徒步路线和是否可进入听向导安排。",
     images: ["assets/spots/tourlink/kerlingarfjoll-official-1.webp", "assets/spots/tourlink/kerlingarfjoll-official-2.webp"],
     points: [
       [183, 452, "雷克雅未克", "出发 / 住宿"],
@@ -1491,7 +1539,7 @@ const icelandRouteDays = [
     roads: "1 号路向北，经 Borgarnes 转 54 号路环行斯奈山半岛，再从西侧返回雷克雅未克。",
     terrain: "海蚀悬崖、黑沙滩、熔岩原、黑教堂与教会山，西部海岸线风力强。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
-    caution: "全天小团车程长，海岸步道按风况开放；停靠顺序以 Arctic Adventures 确认单为准。",
+    caution: "08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车；全天小团车程长，海岸步道按风况开放，停靠顺序听向导安排。",
     images: ["assets/spots/season/snaefellsnes-autumn.webp", "assets/spots/tourlink/snaefellsnes-aa-1.webp"],
     points: [
       [183, 452, "雷克雅未克", "出发 / 住宿"],
@@ -1512,7 +1560,7 @@ const icelandRouteDays = [
     roads: "跟团超级吉普进入 F225 / F208 高地道路；路线会根据河流、风雪和道路状态调整。",
     terrain: "彩色山脉、黑色熔岩原、温泉溪流与火山口地貌，属于冰岛内陆高原。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
-    caution: "高地道路不适合普通车辆；徒步时长、温泉停留与实际回城时间以团方确认单为准。",
+    caution: "08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车；高地道路不适合普通车辆，徒步时长、温泉停留与实际回城时间听向导安排。",
     images: ["assets/spots/tourlink/landmannalaugar-aa-1.webp", "assets/spots/iceland/landmannalaugar-3.webp"],
     points: [
       [183, 452, "雷克雅未克", "出发 / 住宿"],
@@ -1531,7 +1579,7 @@ const icelandRouteDays = [
     roads: "黄金圈主线走 36 号路、37 号路和 35 号路；下午团结束后回雷克雅未克休息，当晚不安排追极光。",
     terrain: "裂谷断层、间歇泉地热区与宽阔瀑布峡谷，是冰岛最集中的地质景观组合。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
-    caution: "建皇上午休息，约 10:00 和赶海组会合吃早午饭；黄金圈下午团为已订项目。",
+    caution: "建皇上午休息，约 10:00 和赶海组会合吃早午饭；12:00 在 Klettur Hótel（Mjölnisholt 12–14）接车参加已订黄金圈下午团。",
     images: ["assets/spots/tourlink/whale-golden-thingvellir.webp", "assets/spots/gallery/gullfoss-strokkur.webp"],
     points: [
       [183, 452, "雷克雅未克", "早午饭 / 出发"],
@@ -1550,7 +1598,7 @@ const icelandRouteDays = [
     roads: "沿 1 号环岛公路向东，瀑布与黑沙滩均在南岸主线附近；当天不自驾。",
     terrain: "冰川融水瀑布、海岸玄武岩、黑沙滩和海蚀柱，风浪大时远离浪线。",
     stay: "Nice Travel 南岸两日团含住宿（具体酒店以确认单为准）",
-    caution: "10/04 晚为团含住宿和早餐，住宿城市及接送点不要自行假设，以确认单为准。",
+    caution: "10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等车，接车窗口 08:30–09:00；当晚为团含住宿，次日含早餐，具体酒店听团方安排。",
     images: ["assets/spots/tourlink/nice-south-waterfall-1.webp", "assets/spots/gallery/reynisfjara-seljalandsfoss.webp"],
     points: [
       [183, 452, "雷克雅未克", "出发"],
@@ -1569,7 +1617,7 @@ const icelandRouteDays = [
     roads: "沿 1 号环岛公路继续向东到瓦特纳冰川国家公园一带，下午沿 1 号路回雷克雅未克。",
     terrain: "冰川舌、蓝冰洞、冰河湖浮冰和黑沙钻石海滩；冰洞进入必须听向导安排。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
-    caution: `蓝冰洞的集合位置、入洞时间与是否包含 Skaftafell 以最终确认单为准。 ${southCoastDinner}`,
+    caution: `10/05 次晨集合时间和具体位置，10/04 晚向导说明时确认；蓝冰洞入洞时间与路线以向导安排为准。 ${southCoastDinner}`,
     images: ["assets/spots/iceland/jokulsarlon-1.webp", "assets/spots/iceland/diamond-beach-1.webp"],
     points: [
       [548, 492, "南部住宿", "出发"],
