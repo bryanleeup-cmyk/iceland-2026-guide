@@ -1422,6 +1422,71 @@ function renderDailyMeeting(personId, date) {
   </aside>`;
 }
 
+function splitDailyDetail(detail) {
+  const parts = [];
+  let current = "";
+  let bracketDepth = 0;
+  // Keep links intact, including punctuation in their labels and URLs.
+  for (const token of detail.split(/(<a\b[^>]*>[\s\S]*?<\/a>)/gi)) {
+    if (/^<a\b/i.test(token)) {
+      current += token;
+      continue;
+    }
+    for (const char of token) {
+      current += char;
+      if ("（([{【".includes(char)) bracketDepth += 1;
+      else if ("）)]}】".includes(char)) bracketDepth = Math.max(0, bracketDepth - 1);
+      else if (bracketDepth === 0 && "。！？；".includes(char)) {
+        if (current.trim()) parts.push(current.trim());
+        current = "";
+      }
+    }
+  }
+  if (current.trim()) parts.push(current.trim());
+  return parts;
+}
+
+function highlightDailyTimes(value) {
+  return value
+    .split(/(<[^>]+>)/g)
+    .map((part) => {
+      if (part.startsWith("<")) return part;
+      return part.replace(/(^|[^\d])([01]?\d|2[0-3]):([0-5]\d)(?!\d)/g, "$1<b class=\"daily-detail__time\">$2:$3</b>");
+    })
+    .join("");
+}
+
+function getDailyDetailSections(personId, date, detail) {
+  const fallback = [{ items: splitDailyDetail(detail) }];
+  if (date !== "09/26" || !["jianhuang", "niangniang"].includes(personId)) return fallback;
+  const markers = [
+    ["上午 · 海岸线", ""],
+    ["午餐 · 二选一", personId === "jianhuang" ? "午餐按当天情况二选一：" : "午餐有两个已订备选，按当天情况二选一：", "choices"],
+    ["雷加莱拉庄园 · 固定入场", personId === "jianhuang" ? "两种方案均以" : "14:30 凭已购"],
+    ["佩纳公园 · 花园票", personId === "jianhuang" ? "16:10 左右离开，" : "16:45 左右进入"],
+    ["辛特拉王宫 · 可选外观", personId === "jianhuang" ? "原先的辛特拉王宫" : "辛特拉王宫改为", "optional"],
+    ["返程 · 已订晚餐", personId === "jianhuang" ? "18:10 后返回" : "18:10 后回里斯本"],
+  ];
+  const positions = markers.map(([, marker]) => detail.indexOf(marker));
+  // If the authored itinerary changes, fall back to lossless paragraphs.
+  if (positions.some((position, index) => position < 0 || (index > 0 && position <= positions[index - 1]))) return fallback;
+  return markers.map(([label, , kind], index) => {
+    const text = detail.slice(positions[index], positions[index + 1] ?? detail.length);
+    if (kind !== "choices") return { label, kind, items: splitDailyDetail(text) };
+    const endOfIntro = text.indexOf("：") + 1;
+    const options = text.slice(endOfIntro);
+    return { label, kind, intro: text.slice(0, endOfIntro), items: personId === "niangniang" ? options.split(/(?=或 12:30)/) : splitDailyDetail(options) };
+  });
+}
+
+function renderDailyDetail(personId, date, detail) {
+  return `<div class="daily-detail">${getDailyDetailSections(personId, date, detail).map((section) => `<div class="daily-detail__section${section.kind ? ` daily-detail__section--${section.kind}` : ""}">
+${section.label ? `<h4 class="daily-detail__label">${section.label}</h4>` : ""}
+${section.intro ? `<p class="daily-detail__intro">${highlightDailyTimes(section.intro)}</p>` : ""}
+    <ul class="daily-detail__items">${section.items.map((part) => `<li${section.kind === "choices" ? ' class="daily-detail__option"' : ""}>${highlightDailyTimes(part)}</li>`).join("")}</ul>
+  </div>`).join("")}</div>`;
+}
+
 function renderDailyCard(personId, date, title, detail, { priority = false } = {}) {
   const visual = getDailyVisual(personId, date, title, detail);
   const images = visual.images || fallbackDailyVisual.images;
@@ -1447,10 +1512,9 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
             <span>日落 ${visual.sunset}</span>
           </div>
         </div>
-        <strong>${title}</strong>
+        <h3 class="daily-card__title">${title}</h3>
         ${renderDailyMeeting(personId, date)}
-        <p class="daily-card__season">${visual.city}：${visual.season}</p>
-        <p>${detail}</p>
+        ${renderDailyDetail(personId, date, detail)}
         ${
           stay
             ? `<p class="daily-card__stayline">
@@ -1462,6 +1526,7 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
               </p>`
             : ""
         }
+        <p class="daily-card__season"><span class="daily-card__season-label">天气与风景</span>${visual.city}：${visual.season}</p>
       </div>
     </article>
   `;

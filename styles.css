@@ -422,6 +422,7 @@ main {
 .daily-card__media {
   display: flex;
   min-width: 0;
+  max-height: 440px;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: x mandatory;
@@ -505,6 +506,13 @@ main {
   line-height: 1.28;
 }
 
+.daily-card__title {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
 .daily-card p {
   margin-bottom: 0;
   color: var(--muted);
@@ -515,20 +523,95 @@ main {
   margin-top: 8px;
 }
 
-.daily-card__season {
-  color: #516d77;
-  font-weight: 800;
+.daily-detail {
+  color: #334a56;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.daily-detail__section + .daily-detail__section {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.daily-detail__label {
+  margin: 0 0 6px;
+  color: #435e6b;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.daily-detail__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.daily-detail__items li + li {
+  margin-top: 8px;
+}
+
+.daily-detail__time {
+  color: #233e4b;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.daily-card .daily-detail__intro {
+  margin: 0 0 8px;
+  color: inherit;
+  line-height: inherit;
+}
+
+.daily-detail__section--choices .daily-detail__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 12px;
+}
+
+.daily-detail__items .daily-detail__option {
+  margin: 0;
+  padding: 10px 12px;
+  border-left: 2px solid #bdcdd3;
+  background: #f5f8f9;
+}
+
+.daily-card .daily-card__season {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  color: #60717a;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.daily-card__season-label {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 700;
 }
 
 .daily-card a {
-  display: inline-flex;
-  margin-left: 6px;
+  display: inline;
+  margin-left: 0;
   color: #145aa8;
   font-weight: 900;
   text-decoration: none;
 }
 
+.daily-detail a {
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-color: #a3bdd5;
+  text-underline-offset: 3px;
+}
+
 .daily-card__stayline {
+  margin-top: 12px;
   color: #49656f;
   font-size: 14px;
   font-weight: 850;
@@ -580,6 +663,7 @@ main {
 }
 
 .daily-meeting__place a {
+  display: inline-flex;
   min-height: 44px;
   align-items: center;
   margin-left: 0;
@@ -2609,6 +2693,10 @@ footer {
 
   .daily-card {
     grid-template-columns: 1fr;
+  }
+
+  .daily-card__media {
+    max-height: none;
   }
 
   .daily-card__media figure {
