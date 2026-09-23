@@ -31,7 +31,7 @@
   const allRole = data.roleViews.find((role) => role.id === "all");
   if (allRole) {
     allRole.facts[0] = ["共同窗口", "10/03 15:10-10/06 19:20", "人数按每日行程为准"];
-    allRole.focusDays[2] = ["10/05", "蓝冰洞第二天", "晚上回雷克雅未克，建皇准备次日晚航班。"];
+    allRole.focusDays[2] = ["10/05", "蓝冰洞第二天 + Caruso 已订晚餐", `晚上回雷克雅未克，建皇准备次日晚航班。 ${southCoastDinner}`];
     allRole.focusDays[3] = ["10/06+", "5 人 → 3 人后续段", "10/06 高地超级吉普、10/07 斯奈山共 5 人；10/08 黄金圈、10/09 温泉与雷市共 3 人。建皇 10/06 13:00 Sky Lagoon，晚间飞米兰。"];
   }
 
@@ -39,7 +39,7 @@
   if (role) {
     role.notes[0] = "重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 Kerlingarfjoll 高地徒步已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 7 人南岸两日、10/06 已订 Sky Lagoon 温泉（13:00，无接送） + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。";
     role.facts[3] = ["离开冰岛", "10/06 19:20", "13:00 Sky Lagoon；自行公共交通，预留机场交通时间"];
-    role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/05")] = ["10/05", "蓝冰洞后回雷市", "晚上回雷克雅未克；次日 13:00 Sky Lagoon，预留公共交通和取行李时间。"];
+    role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/05")] = ["10/05", "蓝冰洞后回雷市 + Caruso 已订晚餐", `晚上回雷克雅未克；次日 13:00 Sky Lagoon，预留公共交通和取行李时间。 ${southCoastDinner}`];
     role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/06")] = ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） + 晚飞米兰", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"];
     role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/07")] = ["10/07", "米兰转机到里斯本", "01:30 到米兰马尔彭萨，06:30 从 T2 飞里斯本，08:30 到里斯本；白天只做半日轻量城市步行，晚上飞哥本哈根并住 Cabinn Metro Hotel。"];
     role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/08")] = ["10/08", "哥本哈根转机一日游", "前一晚住 Cabinn Metro Hotel；19:05 飞北京，白天只走市区轻量线。"];
@@ -66,7 +66,7 @@
   const routeTwo = data.coreDays.find((day) => day.date === "10/05 周一");
   if (routeTwo) {
     routeTwo.why = "蓝冰洞是 10 月到 4 月的季节性重点项目，跟专业冰川向导进入更稳妥；晚上回雷克雅未克，10/06 建皇 13:00 去 Sky Lagoon，晚上飞米兰。";
-    routeTwo.details[routeTwo.details.findIndex(([time]) => time === "晚上")] = ["晚上", "回林德城河酒店住 10/05 晚；建皇提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。"];
+    routeTwo.details[routeTwo.details.findIndex(([time]) => time === "晚上")] = ["晚上", `${southCoastDinner} 回林德城河酒店住 10/05 晚；建皇提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。`];
   }
   const routeAfter = data.coreDays.find((day) => day.date === "10/06-10/08");
   if (routeAfter) routeAfter.details[0] = ["10/06", "建皇 13:00 到 Sky Lagoon 入场，无接送，自行公共交通；结束后取行李并前往机场，19:20 飞米兰转里斯本；另外 5 人参加高地超级吉普，酒店门口接送，08:30-20:00，自备午餐；晚上回林德城河酒店。"];
@@ -92,7 +92,7 @@
       "里斯本 → 波尔图",
       "早上和龙龙、娘娘一起坐约 3.5 小时大巴从里斯本到波尔图；12:00 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Meia-Nau%20Porto\" target=\"_blank\" rel=\"noreferrer\">Meia-Nau Porto</a> 午餐（3 人，姓名 Hector Pei；需前往 Porto 门店，迟到宽限 10 分钟）。下午玩老城河岸、路易一世大桥和杜罗河边。娘娘当晚飞往阿姆斯特丹；21:00 左右办理入住波尔图盖亚美居酒店（Mercure Porto Gaia Hotel）：标准双人床房（带加床），1 间 1 晚；订单入住 09/27、退房 09/28，建皇（两人）和龙龙共 3 人入住，实付款 ¥544.94。"
     );
-        replaceDay("10/05", "已订：南岸两日团第二天 + 蓝冰洞（7 人）", "继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>");
+        replaceDay("10/05", "已订：南岸两日团第二天 + 蓝冰洞（7 人） + Caruso 已订晚餐", `继续已订的 Nice Travel 南岸两日团：看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，晚上回雷克雅未克；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href="https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/" target="_blank" rel="noreferrer">查看团页</a> ${southCoastDinner}`);
     replaceDay("10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） → 米兰转机", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。退房后先确认行李寄存与取回安排，出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>");
     replaceDay("10/07", "米兰 → 里斯本半日 → 哥本哈根", "06:30 从米兰马尔彭萨机场 T2 起飞，08:30 落地里斯本机场 T1，航班易捷航空 U23873。白天只做里斯本半日轻量城市步行，市区收尾、吃饭、买伴手礼；18:15 从里斯本机场 T1 起飞，23:00 落地哥本哈根机场 T3。晚上入住 Cabinn Metro Hotel，地址 Arne Jacobsens Allé 2，电话 +4532465700。");
     replaceDay("10/08", "哥本哈根转机一日游 + 回北京", "10/07 23:00 已落地哥本哈根机场 T3；10/08 白天走新港、国王新广场、阿美琳堡王宫 / 小美人鱼轻量线，16:00 左右回机场更稳。19:05 从哥本哈根机场 T3 起飞，10/09 09:55 落地北京首都机场 T3。");
@@ -265,7 +265,7 @@
       ["10/02", "巴黎一日游 + 巴黎住宿", "08:10 抵达巴黎戴高乐机场 T1。先到 Ibis Clichy Centre Mairie 酒店寄存行李；上午吃早午餐。之后乘坐塞纳河游船，前往凯旋门和香榭丽舍，再参观卢浮宫；晚上看埃菲尔铁塔，结束后回酒店休息。"],
       ["10/03", "雷克雅未克下午 4 点到（2 人）", `06:30 从 ${parisBusStopLink} 乘 BlaBlaCar Bus（€8.99）前往 Brussels Midi / Brussels South West（预计抵达 87 Rue de France, 1060 Brussels）。之后前往布鲁塞尔机场，13:50 起飞、15:10 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI555；落地后去林德城河酒店会合，晚间休息，不安排追极光。`],
       ["10/04", "南岸两日游（7 人）", "Nice Travel 南岸两日游，08:30 前到 Bus Stop #13（Nice Travel）集合；团含南部住宿。餐食不含（有补给点）。"],
-      ["10/05", "南岸两日游第 2 天（7 人）", "继续南岸两日游，完成蓝冰洞、冰河湖与钻石沙滩；含早餐，沿途有补给点。预计不晚于 21:00 回到雷克雅未克，回城后入住林德城河酒店。"],
+      ["10/05", "南岸两日游第 2 天（7 人） + Caruso 已订晚餐", `继续南岸两日游，完成蓝冰洞、冰河湖与钻石沙滩；含早餐，沿途有补给点。预计不晚于 21:00 回到雷克雅未克，回城后入住林德城河酒店。 ${southCoastDinner}`],
       ["10/06", "兰德曼那劳卡高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐（途中有一个小超市）。"],
       ["10/07", "斯奈山半岛一日游（5 人）", "原 Bus Stop #12 改为 Bus Stop #9 集合；08:00 前到，预计 19:00 回城；不含餐（中途有餐厅）。"],
       ["10/08", "黄金圈一日游（3 人）", "Troll 团，Bus Stop #13 集合，09:00-17:00；不含餐。"],
@@ -283,7 +283,7 @@
       ["10/02", "巴黎一日游 + 巴黎住宿", "01:30 从深圳宝安机场 T3 起飞，08:10 抵达巴黎戴高乐机场 T1，航班海南航空 HU757。先到 Ibis Clichy Centre Mairie 酒店寄存行李；上午吃早午餐。之后乘坐塞纳河游船，前往凯旋门和香榭丽舍，再参观卢浮宫；晚上看埃菲尔铁塔，结束后回酒店休息。"],
       ["10/03", "雷克雅未克下午 4 点到（2 人）", `06:30 从 ${parisBusStopLink} 乘 BlaBlaCar Bus（€8.99）前往 Brussels Midi / Brussels South West（预计抵达 87 Rue de France, 1060 Brussels）。之后前往布鲁塞尔机场，13:50 起飞、15:10 抵达雷克雅未克凯夫拉维克机场，航班冰岛航空 FI555；落地后去林德城河酒店会合，晚间休息，不安排追极光。`],
       ["10/04", "南岸两日游（7 人）", "08:30 前到 Bus Stop #13（Nice Travel）集合；团含南部住宿。餐食不含（有补给点）。"],
-      ["10/05", "南岸两日游第 2 天（7 人）", "完成蓝冰洞、冰河湖与钻石沙滩；含早餐，沿途有补给点。预计不晚于 21:00 回到雷克雅未克，回城后入住林德城河酒店。"],
+      ["10/05", "南岸两日游第 2 天（7 人） + Caruso 已订晚餐", `完成蓝冰洞、冰河湖与钻石沙滩；含早餐，沿途有补给点。预计不晚于 21:00 回到雷克雅未克，回城后入住林德城河酒店。 ${southCoastDinner}`],
       ["10/06", "兰德曼那劳卡高地超级吉普（5 人）", "酒店门口接送，08:30-20:00；自备午餐（途中有一个小超市）。"],
       ["10/07", "斯奈山半岛一日游（5 人）", "原 Bus Stop #12 改为 Bus Stop #9 集合；08:00 前到，预计 19:00 回城；不含餐（中途有餐厅）。"],
       ["10/08", "黄金圈一日游（3 人）", "Bus Stop #13 随 Troll 团出发，09:00-17:00；不含餐。"],
@@ -494,7 +494,7 @@
   const allRoleAfterTongtongUpdate = data.roleViews.find((role) => role.id === "all");
   if (allRoleAfterTongtongUpdate) {
     allRoleAfterTongtongUpdate.facts[0] = ["同行窗口", "10/03 15:10-10/06 19:20", "人数按每日行程卡为准"];
-    allRoleAfterTongtongUpdate.focusDays[1] = ["10/04-10/05", "南岸两日 + 蓝冰洞（7 人）", "团含 10/04 南部住宿；10/05 晚回雷市。"];
+    allRoleAfterTongtongUpdate.focusDays[1] = ["10/04-10/05", "南岸两日 + 蓝冰洞（7 人）", `团含 10/04 南部住宿；10/05 晚回雷市。 ${southCoastDinner}`];
     allRoleAfterTongtongUpdate.focusDays[3] = ["10/06+", "5 人 → 3 人后续段", "10/06 高地、10/07 斯奈山、10/08 黄金圈、10/09 温泉；人数按截图递减。"];
   }
   data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；赶海组 10/08 离开；彤彤 10/09 转住机场附近，10/10 清晨离开冰岛";
