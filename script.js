@@ -1,4 +1,4 @@
-const southCoastDinner = "约 20:30（当地时间）在 <a href=\"https://www.caruso.is/the-restaurant/?lang=en\" target=\"_blank\" rel=\"noreferrer\">Caruso 餐厅</a> 落座，已订桌，南岸同行 7 人参加（娘娘不参加）。地址：Austurstraeti 22，101 Reykjavik。南岸团原预计最晚约 21:00 回城，与晚餐可能冲突；请提前向团方确认回城及下车时间，如赶不上需联系餐厅调整。";
+const southCoastDinner = "20:30（当地时间）在 <a href=\"https://www.caruso.is/the-restaurant/?lang=en\" target=\"_blank\" rel=\"noreferrer\">Caruso 餐厅</a> 落座，已订时段 20:30–22:30；预订确认码：#9510503。南岸同行 7 人参加（娘娘不参加）。地址：Austurstræti 22，101 Reykjavík。南岸团原预计最晚约 21:00 回城，与晚餐可能冲突；请提前向团方确认回城及下车时间，如赶不上需联系餐厅调整。";
 
 const data = {
   meta: {
