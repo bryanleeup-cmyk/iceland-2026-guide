@@ -25,8 +25,8 @@ vm.createContext(context);
 vm.runInContext(script.slice(0, script.indexOf(marker)), context, { timeout: 5000 });
 vm.runInContext(patch, context, { timeout: 5000 });
 const data = JSON.parse(vm.runInContext('JSON.stringify(data)', context));
-const roleIds = ['jianhuang', 'haigang', 'tongyan', 'niangniang'];
-assert.equal(data.personPlans.length, roleIds.length, 'Expected all four itineraries');
+const roleIds = ['jianhuang', 'haigang', 'tongyan', 'niangniang', 'yueyue'];
+assert.equal(data.personPlans.length, roleIds.length, 'Expected all itineraries');
 assert(data.hotel.address && data.hotel.mapUrl, 'The known base hotel address is required');
 const escape = (text) => String(text).replace(/[&<>"']/g, (char) => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
@@ -132,7 +132,7 @@ const html = `<!doctype html>
 <h1>欧洲与冰岛行程<br>离线文字备份</h1>
 <p class="meta">更新时间：<time datetime="${updated}">${updated}</time> · 数据版本 ${fingerprint}</p>
 <div class="intro">
-<p><strong>保存此 HTML 文件后，即使主站暂时打不开，也能阅读全部四组行程、航班与已知住宿信息。</strong></p>
+<p><strong>保存此 HTML 文件后，即使主站暂时打不开，也能阅读全部行程、航班与已知住宿信息。</strong></p>
 <p>本文件无需图片、字体下载或 JavaScript。可用浏览器打开，也可通过浏览器打印或另存为 PDF。</p>
 <p class="notice">所有时刻均为当地时间。地图、团页等外部链接需要联网；本备份不会自动更新，出发前及行程变更后请重新下载。尚未确认的班次、站点和酒店保留“待补”，以最新车票、航班和预订确认单为准。</p>
 <h2>紧急信息</h2>

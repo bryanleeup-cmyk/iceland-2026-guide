@@ -506,5 +506,84 @@
   applyRoleView(activeRoleId || "jianhuang", { persist: false });
 })();
 
+(function applyYueyueUpdate() {
+  const sharedDates = new Set(["10/04", "10/05", "10/06", "10/07", "10/08", "10/09"]);
+  const tongtong = data.personPlans.find((person) => person.id === "tongyan");
+  const yueyue = data.personPlans.find((person) => person.id === "yueyue");
+  yueyue.days.splice(4, 0, ...tongtong.days.filter(([date]) => sharedDates.has(date)).map((day) => [...day]));
+  data.roleViews.find((role) => role.id === "yueyue").focusDays = yueyue.days.map((day) => [...day]);
+
+  const cabinnStay = {
+    label: "住宿", name: "Cabinn Metro Hotel",
+    detail: "10/01、10/02 晚住这里，10/03 退房；地址 Arne Jacobsens Allé 2，Copenhagen。价格、房型以月月自己的订单为准。",
+    url: "https://www.google.com/maps/search/?api=1&query=Cabinn%20Metro%20Hotel%20Arne%20Jacobsens%20All%C3%A9%202%20Copenhagen",
+  };
+  const arrivalStay = {
+    label: "住宿 / 深夜入住", name: "林德城河酒店（Fosshotel Lind）",
+    detail: "按与彤彤相同的住宿安排，保留 10/03 房晚；23:50 落地后进城可能已过午夜，提前联系酒店确认晚到登记，次日 08:30 前到 Bus Stop #13 集合。",
+    url: data.hotel.mapUrl,
+  };
+  data.staySchedule.push(
+    { date: "10/01-10/03", nights: "2 晚", people: "月月（1 人）", city: "哥本哈根", name: cabinnStay.name, status: "已确认酒店", detail: cabinnStay.detail, audiences: ["yueyue"], accent: "#B46B39", mapUrl: cabinnStay.url },
+    { date: "10/03-10/04", nights: "1 晚", people: "月月（1 人）", city: "雷克雅未克", name: arrivalStay.name, status: "与彤彤同酒店", detail: arrivalStay.detail, audiences: ["yueyue"], accent: "#B46B39", mapUrl: arrivalStay.url },
+  );
+  data.staySchedule.forEach((stay) => {
+    if (["10/04-10/05", "10/05-10/09", "10/09"].includes(stay.date) && stay.audiences.includes("tongyan")) {
+      stay.audiences.push("yueyue");
+    }
+  });
+  const previousGetDailyStay = getDailyStay;
+  getDailyStay = function getDailyStayYueyue(personId, date, title) {
+    if (personId !== "yueyue") return previousGetDailyStay(personId, date, title);
+    if (["10/01", "10/02"].includes(date)) return cabinnStay;
+    if (date === "10/03") return arrivalStay;
+    if (sharedDates.has(date)) return previousGetDailyStay("tongyan", date, title);
+    if (date === "10/10") return { ...previousGetDailyStay("tongyan", "10/09", title), label: "出发前离店", detail: "10/09 晚住机场附近；10/10 白天退房后前往凯夫拉维克机场，18:50 飞弗罗茨瓦夫。" };
+    return null;
+  };
+
+  sharedDates.forEach((date) => {
+    const visual = dailyVisuals[`tongyan|${date}`];
+    dailyVisuals[`yueyue|${date}`] = { ...visual, images: [...visual.images] };
+  });
+  const transitVisuals = [
+    ["09/30", "深圳 / 上海", "出发日以机场与跨夜休息为主，核对上海到达机场及次日浦东出发的衔接。", ["assets/spots/city/shenzhen-civic-center.webp", "assets/spots/city/shanghai-bund-promenade.webp"]],
+    ["10/01", "上海 / 哥本哈根", "哥本哈根入秋后早晚偏凉；19:00 抵达后前往酒店休息。", ["assets/spots/city/shanghai-lujiazui-bund.webp", "assets/spots/city/copenhagen-nyhavn.webp"]],
+    ["10/02", "哥本哈根", "市区自由活动，以轻量步行、用餐和休息为主，按天气与体力调整。", ["assets/spots/city/copenhagen-nyhavn.webp", "assets/spots/city/copenhagen-amalienborg.webp", "assets/spots/city/copenhagen-little-mermaid.webp"]],
+    ["10/03", "哥本哈根 / 凯夫拉维克 / 雷克雅未克", "23:50 抵达冰岛，深夜以保暖、机场交通和酒店入住为先，为次日南岸团留出休息时间。", ["assets/spots/city/copenhagen-nyhavn.webp", "assets/spots/iceland/reykjavik-harpa.webp"]],
+    ["10/10", "凯夫拉维克 / 弗罗茨瓦夫", "18:50 离开冰岛，随后跨夜中转；白天不安排远途项目。", ["assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"]],
+    ["10/11-10/12", "弗罗茨瓦夫 / 阿姆斯特丹 / 广州", "两次中转后返回广州，照片为中转城市阿姆斯特丹；当天以航班衔接和休息为主。", ["assets/spots/city/amsterdam-canal.webp"]],
+  ];
+  transitVisuals.forEach(([date, city, season, images]) => {
+    dailyVisuals[`yueyue|${date}`] = { city, sunrise: "按当地", sunset: "按当地", season, images };
+  });
+
+  data.recommendedPlan.forEach((day) => {
+    if (sharedDates.has(day.date.slice(0, 5)) && day.audiences.includes("tongyan")) day.audiences.push("yueyue");
+  });
+  data.coreDays.forEach((day) => {
+    if (["10/04 周日", "10/05 周一", "10/06-10/08"].includes(day.date)) day.audiences.push("yueyue");
+  });
+  const arrivalDay = data.recommendedPlan.find((day) => day.date.startsWith("10/03"));
+  arrivalDay.status += "；月月 23:50 抵达凯夫拉维克机场";
+  arrivalDay.plan += " 月月深夜抵达后前往酒店，提前确认机场交通与晚到登记。";
+  const arrivalCore = data.coreDays.find((day) => day.date.startsWith("10/03"));
+  arrivalCore.details.push(["23:50 后", "月月抵达凯夫拉维克机场，进城可能已过午夜；提前联系林德城河酒店保留 10/03 房晚并确认晚到登记。"]);
+
+  data.overlap.start = "2026-10-03T23:50:00";
+  data.overlap.label = "冰岛同行窗口：10/03 23:50 后 - 10/06 19:20 前";
+  data.overlap.context = "月月 10/03 23:50 抵达冰岛后，冰岛同行人员全部到齐；当晚休息，不安排追极光。10/04-10/05 为 7 人南岸两日 + 蓝冰洞，10/06-10/07 为 5 人高地与斯奈山段，10/08-10/09 为 3 人黄金圈与温泉段，月月已包含在上述人数内。建皇 10/06 19:20 离开；彤彤 10/10 07:35 飞布鲁塞尔，月月当天 18:50 飞弗罗茨瓦夫。";
+  data.roleViews.find((role) => role.id === "all").facts[0] = ["同行窗口", "10/03 23:50-10/06 19:20", "月月深夜到，次日同行；人数不变"];
+  data.hotel.dates = "雷克雅未克以林德城河酒店为基地；10/04 晚住南岸团含住宿，彤彤与月月 10/09 晚住机场附近";
+  data.hotel.checkout += "；月月与彤彤同住至 10/09 转机场附近，10/10 18:50 离开冰岛";
+  data.hotel.notes.push("月月 10/03 23:50 落地，进城可能已过午夜；提前联系酒店确认 10/03 房晚的晚到登记。");
+
+  renderRows();
+  renderHighlights();
+  renderHotel();
+  renderMobileTimeline();
+  applyRoleView(activeRoleId || "jianhuang", { persist: false });
+})();
+
 window.travelDataReady = true;
 document.body?.setAttribute("data-itinerary-status", "ready");

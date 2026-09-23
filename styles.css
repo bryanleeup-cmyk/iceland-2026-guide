@@ -228,7 +228,7 @@ main {
 
 .role-cards {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -846,7 +846,7 @@ footer p {
 }
 
 .timeline__shared::after {
-  content: "三拨人重合";
+  content: "同行重合";
   position: absolute;
   top: 18px;
   left: 12px;

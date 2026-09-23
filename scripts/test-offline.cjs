@@ -155,7 +155,7 @@ test('offline role links load the cached shell and photos without using the netw
   const app = worker({ fetch: async () => { throw new Error('offline'); } });
   app.stores.set('iceland-2026-guide-core-new', new Map([[absolute('index.html'), new Response('saved itinerary')]]));
   app.stores.set('iceland-2026-guide-media-photos', new Map([[absolute('assets/photo.webp'), new Response('saved photo')]]));
-  for (const suffix of ['?role=haigang', 'index.html?role=tongyan']) {
+  for (const suffix of ['?role=haigang', 'index.html?role=tongyan', '?role=yueyue']) {
     const response = await app.dispatch('fetch', { request: { method: 'GET', mode: 'navigate', url: absolute(suffix) } });
     assert.equal(await response.text(), 'saved itinerary');
   }
