@@ -134,6 +134,13 @@ test('core install verifies every resource and failed installs do not activate o
   assert.ok(app.stores.has('iceland-2026-guide-core-old'));
 });
 
+test('successful core install activates the new itinerary without a manual update click', async () => {
+  const app = worker();
+  await app.dispatch('install');
+  assert.equal(app.calls.installed.length, app.manifest.core.length);
+  assert.equal(app.calls.skipped, 1);
+});
+
 test('storage quota failure does not break a successful online image response', async () => {
   const app = worker({ failWrites: true });
   const response = await app.dispatch('fetch', { request: new Request(absolute('assets/photo.webp')) });

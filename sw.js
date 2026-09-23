@@ -13,9 +13,11 @@ let saveTask;
 
 self.addEventListener('install', (event) => {
   // Verify release bytes as well as completeness before activating a new itinerary.
-  event.waitUntil(caches.open(coreCache).then((cache) =>
-    cache.addAll(coreRequests()),
-  ));
+  event.waitUntil((async () => {
+    const cache = await caches.open(coreCache);
+    await cache.addAll(coreRequests());
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener('activate', (event) => {
