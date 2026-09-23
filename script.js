@@ -1375,19 +1375,23 @@ const kletturPickup = {
   place: "Klettur Hótel",
   address: "Mjölnisholt 12–14，Reykjavík",
   url: "https://www.google.com/maps/search/?api=1&query=Klettur%20Hotel%20Mjolnisholt%2012-14%20Reykjavik",
-  note: "Arctic Adventures 接车；请在接车开始时到位，等车可能需要 30 分钟。这里是上车点，与住宿的 Fosshotel Lind 不同。",
+  note: "Arctic Adventures 接车；请在上方时间前到 Klettur 酒店门外显眼处候车，带好电子票并主动核对团名。接车可持续 30 分钟，不代表可以晚到；这里不是住宿的 Fosshotel Lind。超时未接到车请联系 +354 562 7000。出发前复核团方最新接车通知。",
 };
 const dailyMeetings = [
-  { ...kletturPickup, roles: ["jianhuang"], date: "09/29", time: "12:00", label: "接车", note: "Arctic Adventures 浮潜团含雷市接送。12:00 在这里等车，接车可能需要 30 分钟；无需自行前往史费拉。上车点与住宿的 Fosshotel Lind 不同。" },
+  { ...kletturPickup, roles: ["jianhuang"], date: "09/29", time: "12:00", label: "接车", note: `${kletturPickup.note} 浮潜订单含雷市接送，无需自行前往史费拉。` },
   { ...kletturPickup, roles: ["jianhuang"], date: "09/30", time: "08:00", label: "接车" },
   { ...kletturPickup, roles: ["jianhuang"], date: "10/01", time: "08:00", label: "接车" },
-  { ...kletturPickup, roles: ["jianhuang"], date: "10/02", time: "08:00", label: "接车", note: "Arctic Adventures 高地超级吉普团；08:00 在这里等车。上车点与住宿的 Fosshotel Lind 不同；实际路线和返回时间听向导安排。" },
+  { ...kletturPickup, roles: ["jianhuang"], date: "10/02", time: "08:00", label: "接车", note: `${kletturPickup.note} 高地超级吉普的实际路线和返回时间听向导安排。` },
   { ...kletturPickup, roles: ["jianhuang", "haigang"], date: "10/03", time: "12:00", label: "接车" },
   {
     roles: ["jianhuang", "haigang", "tongyan", "yueyue"], date: "10/04", time: "08:30", label: "到站等车",
-    place: "Bus Stop #13 · Rauðarárstígur", address: "雷克雅未克旅游巴士 13 号站",
-    url: "https://www.google.com/maps/search/?api=1&query=Bus%20Stop%2013%20Raudararstigur%20Reykjavik",
-    note: "Nice Travel 南岸团；08:30 已在站点等候，接车窗口 08:30–09:00。到 13 号站上车，不在 Fosshotel Lind 酒店门口等；不要等到 09:00 才到。",
+    place: "Bus Stop #13 · Rauðarárstígur", address: "认“13 Rauðarárstígur”蓝底、红／粉色巴士图案的旅游接车站牌（不是公交 13 路）",
+    url: "https://www.google.com/maps/search/?api=1&query=64.142658%2C-21.913866",
+    links: [
+      { url: "https://nicetravel.is/bus-stops/bus-stop-13-raudararstigur/", label: "Nice 官方站点说明" },
+      { url: "https://busstop.is/assets/images/busstops/13_a.jpg", label: "查看官方站牌照片" },
+    ],
+    note: "Nice Travel 南岸团；08:30 前到站，接车窗口 08:30–09:00，不要等到 09:00 才到。导航用于找到所在街段，现场认 13 号站牌；不在 Fosshotel Lind 酒店门口等。带好电子票，主动核对团名；超时未接到车请联系 +354 419 0100。以团方最新通知为准。",
   },
   {
     roles: ["jianhuang", "haigang", "tongyan", "yueyue"], date: "10/05", time: "待向导确认", label: "次晨集合", pending: true,
@@ -1395,10 +1399,10 @@ const dailyMeetings = [
     note: "10/04 晚向导说明时，确认次晨集合时间和位置。预计约 21:00 回雷市，受天气路况影响；与 20:30 Caruso 订位有冲突，需提前协调。",
   },
   {
-    roles: ["jianhuang"], date: "10/06", time: "13:00", label: "到场入场", place: "Sky Lagoon",
+    roles: ["jianhuang"], date: "10/06", time: "13:00", label: "到场入场", place: "Sky Lagoon", address: "Vesturvör 44–48，Kópavogur",
     url: "https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit",
     linkLabel: "查看公共交通路线",
-    note: "订单不含接送，自行乘公共交通前往。提前查好公交班次，预留取行李和机场交通时间；19:20 从凯夫拉维克机场起飞。",
+    note: "13:00 是温泉预约入场时间；订单不含接送，不在酒店等车。自行乘公共交通前往，出发当天查往返班次，预留步行、换乘、取行李和机场交通时间；19:20 从凯夫拉维克机场起飞。",
   },
 ];
 
@@ -1414,6 +1418,7 @@ function renderDailyMeeting(personId, date) {
     <p class="daily-meeting__place">${meeting.url ? `<a href="${meeting.url}" target="_blank" rel="noopener noreferrer">${meeting.place} · ${meeting.linkLabel || "打开地图"} ↗</a>` : meeting.place}</p>
     ${meeting.address ? `<p class="daily-meeting__address">${meeting.address}</p>` : ""}
     <p class="daily-meeting__note">${meeting.note}</p>
+    ${meeting.links ? `<p class="daily-meeting__note">${meeting.links.map((link) => `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label} ↗</a>`).join(" · ")}</p>` : ""}
   </aside>`;
 }
 
