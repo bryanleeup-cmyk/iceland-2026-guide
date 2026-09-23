@@ -12,6 +12,7 @@ const workerSource = fs.readFileSync(path.join(root, 'sw.js'), 'utf8');
 const scope = 'https://example.test/trip/';
 const absolute = (name) => new URL(name, scope).href;
 const digest = (bytes) => `sha256-${crypto.createHash('sha256').update(bytes).digest('base64')}`;
+const normalizedWorker = (source) => source.replace(/\n\/\/ offline release [a-f0-9]{12}\n?$/, '\n');
 
 function worker({ fetch: fetchResource = async () => new Response('network'), failInstall = false, failWrites = false } = {}) {
   const handlers = {};
@@ -79,12 +80,13 @@ test('generated offline manifest matches every current core file and image', () 
   assert.deepEqual(manifest.media, media, rebuild);
   const hash = crypto.createHash('sha256');
   const mediaHash = crypto.createHash('sha256');
-  for (const name of [...core, ...media, 'sw.js']) {
+  for (const name of [...core, ...media]) {
     const contents = fs.readFileSync(path.join(root, name.split('?')[0]));
     hash.update(name).update(contents);
     if (core.includes(name)) assert.equal(manifest.integrity[name], digest(contents), `${name}: ${rebuild}`);
     if (media.includes(name)) mediaHash.update(name).update(contents);
   }
+  hash.update('sw.js').update(normalizedWorker(fs.readFileSync(path.join(root, 'sw.js'), 'utf8')));
   assert.equal(manifest.version, hash.digest('hex').slice(0, 12), rebuild);
   assert.equal(manifest.mediaVersion, mediaHash.digest('hex').slice(0, 12), rebuild);
 });
@@ -98,7 +100,7 @@ test('build pins core bytes and preserves photo version across itinerary-only up
   fs.writeFileSync(path.join(fixture, 'scripts/build-travel-backup.cjs'), "require('node:fs').writeFileSync('travel-backup.html', 'backup');");
   fs.writeFileSync(path.join(fixture, 'index.html'), '<script src="app.js?v=1"></script>');
   fs.writeFileSync(path.join(fixture, 'app.js'), 'first itinerary');
-  fs.writeFileSync(path.join(fixture, 'sw.js'), 'worker');
+  fs.writeFileSync(path.join(fixture, 'sw.js'), 'worker\n');
   fs.writeFileSync(path.join(fixture, 'assets/photo.webp'), 'photo');
   const build = () => {
     execFileSync(process.execPath, [path.join(fixture, 'scripts/build-offline.cjs')], { cwd: fixture });
@@ -108,10 +110,13 @@ test('build pins core bytes and preserves photo version across itinerary-only up
   };
   const first = build();
   assert.deepEqual(build(), first, 'repeated builds are deterministic');
+  const firstWorker = fs.readFileSync(path.join(fixture, 'sw.js'), 'utf8');
+  assert.match(firstWorker, /offline release [a-f0-9]{12}/);
   assert.equal(first.integrity['app.js?v=1'], digest('first itinerary'));
   fs.writeFileSync(path.join(fixture, 'app.js'), 'updated itinerary');
   const changedText = build();
   assert.notEqual(changedText.version, first.version);
+  assert.notEqual(fs.readFileSync(path.join(fixture, 'sw.js'), 'utf8'), firstWorker, 'content changes publish new worker bytes');
   assert.equal(changedText.mediaVersion, first.mediaVersion);
   assert.equal(changedText.integrity['app.js?v=1'], digest('updated itinerary'));
   fs.writeFileSync(path.join(fixture, 'assets/photo.webp'), 'updated photo');
