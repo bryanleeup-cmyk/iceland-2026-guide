@@ -1417,7 +1417,7 @@ function renderDailyMeeting(personId, date) {
     <div class="daily-meeting__heading"><span>${meeting.label} · 冰岛当地时间</span><strong>${meeting.time}</strong></div>
     <p class="daily-meeting__place">${meeting.url ? `<a href="${meeting.url}" target="_blank" rel="noopener noreferrer">${meeting.place} · ${meeting.linkLabel || "打开地图"} ↗</a>` : meeting.place}</p>
     ${meeting.address ? `<p class="daily-meeting__address">${meeting.address}</p>` : ""}
-    <p class="daily-meeting__note">${meeting.note}</p>
+    <div class="daily-meeting__note"><ul>${splitDailyDetail(meeting.note).map((part) => `<li>${highlightDailyTimes(part)}</li>`).join("")}</ul></div>
     ${meeting.links ? `<p class="daily-meeting__note">${meeting.links.map((link) => `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label} ↗</a>`).join(" · ")}</p>` : ""}
   </aside>`;
 }
@@ -1483,8 +1483,22 @@ function renderDailyDetail(personId, date, detail) {
   return `<div class="daily-detail">${getDailyDetailSections(personId, date, detail).map((section) => `<div class="daily-detail__section${section.kind ? ` daily-detail__section--${section.kind}` : ""}">
 ${section.label ? `<h4 class="daily-detail__label">${section.label}</h4>` : ""}
 ${section.intro ? `<p class="daily-detail__intro">${highlightDailyTimes(section.intro)}</p>` : ""}
-    <ul class="daily-detail__items">${section.items.map((part) => `<li${section.kind === "choices" ? ' class="daily-detail__option"' : ""}>${highlightDailyTimes(part)}</li>`).join("")}</ul>
+    <ul class="daily-detail__items">${section.items.map((part) => `<li${section.kind === "choices" ? ' class="daily-detail__option"' : /^<a\b[^>]*>[^<]*<\/a>$/.test(part.trim()) ? ' class="daily-detail__action"' : ""}>${highlightDailyTimes(part)}</li>`).join("")}</ul>
   </div>`).join("")}</div>`;
+}
+
+function dailyCardId(personId, date) {
+  return `day-${personId}-${date.replaceAll("/", "-")}`;
+}
+
+function renderDailyJump(personId, days) {
+  return `<nav class="daily-jump" aria-label="日程日期定位">
+    <label for="dailyJump">跳到日期</label>
+    <select id="dailyJump">
+      <option value="">选择日期 · ${days.length} 条</option>
+      ${days.map(([date, title]) => `<option value="${dailyCardId(personId, date)}">${date} · ${escapeHtml(title)}</option>`).join("")}
+    </select>
+  </nav>`;
 }
 
 function renderDailyCard(personId, date, title, detail, { priority = false } = {}) {
@@ -1492,19 +1506,8 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
   const images = visual.images || fallbackDailyVisual.images;
   const stay = getDailyStay(personId, date, title);
   return `
-    <article class="daily-card">
-      <div class="daily-card__media" tabindex="0" aria-label="${date} ${title} 真实照片，可左右滑动或使用方向键">
-        ${images
-          .map(
-            (image, index) => `
-              <figure>
-                <img ${imageSourceAttrs(image, priority && index === 0)} alt="${title}真实景色 ${index + 1}" draggable="false" />
-              </figure>
-            `,
-          )
-          .join("")}
-      </div>
-      <div class="daily-card__body">
+    <article class="daily-card" id="${dailyCardId(personId, date)}" tabindex="-1">
+      <header class="daily-card__header">
         <div class="daily-card__top">
           <time>${date}</time>
           <div class="daily-card__sun">
@@ -1513,6 +1516,20 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
           </div>
         </div>
         <h3 class="daily-card__title">${title}</h3>
+      </header>
+      <div class="daily-card__media" tabindex="0" aria-label="${date} ${title} 真实照片，可左右滑动或使用方向键">
+        ${images
+          .map(
+            (image, index) => `
+              <figure>
+                <img ${imageSourceAttrs(image, priority && index === 0)} alt="${title}真实景色 ${index + 1}" draggable="false" />
+                <figcaption class="daily-card__photo-count">${index + 1} / ${images.length} · 左右滑动</figcaption>
+              </figure>
+            `,
+          )
+          .join("")}
+      </div>
+      <div class="daily-card__body">
         ${renderDailyMeeting(personId, date)}
         ${renderDailyDetail(personId, date, detail)}
         ${
@@ -1906,6 +1923,7 @@ function renderRoleDashboard(roleId = activeRoleId) {
       <div class="dashboard-plan__title">
         <strong>${role.name}完整日程</strong>
       </div>
+      ${renderDailyJump(roleId, days)}
       <div class="dashboard-days">
         ${days
           .map(([date, title, detail], index) => renderDailyCard(roleId, date, title, detail, { priority: index === 0 }))
@@ -2594,6 +2612,15 @@ window.addEventListener("load", () => {
   const target = document.getElementById(window.location.hash.slice(1));
   if (target) target.scrollIntoView({ behavior: "instant" });
 }, { once: true });
+
+roleDashboardEl.addEventListener("change", (event) => {
+  if (event.target.id !== "dailyJump" || !event.target.value) return;
+  const target = document.getElementById(event.target.value);
+  if (!target || !roleDashboardEl.contains(target)) return;
+  target.focus({ preventScroll: true });
+  target.scrollIntoView({ behavior: "instant", block: "start" });
+  event.target.value = "";
+});
 
 let galleryDrag = null;
 roleDashboardEl.addEventListener("pointerdown", (event) => {

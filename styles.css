@@ -370,6 +370,39 @@ main {
   background: linear-gradient(180deg, #ffffff, rgba(246, 250, 250, 0.96));
 }
 
+.daily-jump {
+  display: grid;
+  grid-template-columns: auto minmax(0, 420px);
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(188, 208, 215, 0.9);
+  border-radius: 10px;
+  background: #f7fafb;
+}
+
+.daily-jump label {
+  color: #355563;
+  font-size: 13px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.daily-jump select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid #aac4cb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #fff;
+  color: #20323a;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+}
+
 .dashboard-plan__title {
   display: flex;
   align-items: baseline;
@@ -410,8 +443,11 @@ main {
 
 .daily-card {
   display: grid;
+  scroll-margin-top: 18px;
   grid-template-columns: minmax(150px, 210px) minmax(0, 1fr);
-  gap: 14px;
+  grid-template-rows: auto 1fr;
+  column-gap: 14px;
+  row-gap: 0;
   align-items: stretch;
   overflow: hidden;
   border-radius: 8px;
@@ -420,6 +456,8 @@ main {
 }
 
 .daily-card__media {
+  grid-column: 1;
+  grid-row: 1 / span 2;
   display: flex;
   min-width: 0;
   max-height: 440px;
@@ -442,10 +480,26 @@ main {
 }
 
 .daily-card__media figure {
+  position: relative;
   flex: 0 0 88%;
   min-height: 100%;
   margin: 0;
   scroll-snap-align: start;
+}
+
+.daily-card__photo-count {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  margin: 0;
+  border-radius: 999px;
+  padding: 4px 7px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #29434d;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+  pointer-events: none;
 }
 
 .daily-card__media img {
@@ -465,8 +519,17 @@ main {
 }
 
 .daily-card__body {
-  padding: 14px 14px 14px 0;
+  grid-column: 2;
+  grid-row: 2;
+  padding: 0 14px 14px 0;
   min-width: 0;
+}
+
+.daily-card__header {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  padding: 14px 14px 10px 0;
 }
 
 .daily-card__top {
@@ -676,7 +739,18 @@ main {
 .daily-meeting .daily-meeting__note {
   margin-top: 4px;
   color: #355563;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.daily-meeting__note ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.daily-meeting__note li + li {
+  margin-top: 6px;
 }
 
 .daily-meeting--pending {
@@ -2679,37 +2753,117 @@ footer {
   }
 
   .role-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
   }
 
   .role-card {
-    min-height: 70px;
+    min-height: 54px;
+    padding: 12px 10px;
   }
 
-  .dashboard-days article {
+  .role-card strong {
+    font-size: 16px;
+  }
+
+  .dashboard-plan {
+    padding: 0;
+  }
+
+  .dashboard-plan__title {
+    margin: 0;
+    padding: 16px 16px 12px;
+  }
+
+  .daily-jump {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 8px;
+    margin: 0 0 12px;
+    padding: 8px 10px;
+    border-width: 1px 0;
+    border-radius: 0;
+    background: #f7fafb;
+    box-shadow: 0 3px 5px rgba(25, 51, 64, 0.04);
+  }
+
+  .daily-jump select {
+    font-size: 16px;
+  }
+
+  .dashboard-days {
+    gap: 16px;
+  }
+
+  .dashboard-days > article:not(.daily-card) {
     grid-template-columns: 1fr;
     gap: 4px;
   }
 
   .daily-card {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    scroll-margin-top: 76px;
+  }
+
+  .daily-card__header {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 16px 16px 10px;
+  }
+
+  .daily-card__top time {
+    font-size: 18px;
   }
 
   .daily-card__media {
+    grid-column: 1;
+    grid-row: 2;
+    height: clamp(140px, 43vw, 210px);
     max-height: none;
   }
 
   .daily-card__media figure {
     flex-basis: 86%;
-    aspect-ratio: 16 / 10;
+    height: 100%;
+    min-height: 0;
   }
 
   .daily-card__media img {
-    min-height: 190px;
+    min-height: 0;
   }
 
   .daily-card__body {
-    padding: 14px;
+    grid-column: 1;
+    grid-row: 3;
+    padding: 16px;
+  }
+
+  .daily-card__body > .daily-meeting:first-child {
+    margin-top: 0;
+  }
+
+  .daily-meeting {
+    padding: 12px;
+  }
+
+  .daily-card__stayline a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    max-width: 100%;
+  }
+
+  .daily-detail__action a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 6px 12px;
+    border: 1px solid #bdcdd3;
+    border-radius: 8px;
+    background: #f7fafb;
   }
 
   .reference-bridge ul {
@@ -3065,7 +3219,7 @@ footer {
   }
 
   footer {
-    padding-bottom: 72px;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
   }
 }
 

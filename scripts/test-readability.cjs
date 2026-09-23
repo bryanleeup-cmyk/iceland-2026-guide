@@ -23,6 +23,8 @@ const context = {
 vm.createContext(context);
 vm.runInContext(scriptSource.slice(0, dataBoundary), context, { timeout: 5000 });
 vm.runInContext(patchSource, context, { timeout: 5000 });
+vm.runInContext(scriptSource.slice(dataBoundary, scriptSource.indexOf('const timelineStart =')), context);
+vm.runInContext(scriptSource.slice(scriptSource.indexOf('function escapeHtml('), scriptSource.indexOf('function routePoints(')), context);
 
 const finalData = JSON.parse(vm.runInContext('JSON.stringify(data)', context));
 const roleIds = ['jianhuang', 'tongyan', 'yueyue', 'haigang', 'niangniang'];
@@ -183,4 +185,35 @@ test('daily meeting times remain the confirmed source values', () => {
       ['10/06', '13:00'],
     ],
   );
+});
+
+test('every date jump matches a unique rendered day in the original order', () => {
+  const allTargets = [];
+  for (const person of finalData.personPlans) {
+    const navigation = vm.runInContext(`renderDailyJump(${JSON.stringify(person.id)}, ${JSON.stringify(person.days)})`, context);
+    const targets = [...navigation.matchAll(/<option value="([^"]+)"/g)].map((match) => match[1]);
+    const renderedTargets = person.days.map(([date, title, detail]) => {
+      const html = vm.runInContext(`renderDailyCard(${JSON.stringify(person.id)}, ${JSON.stringify(date)}, ${JSON.stringify(title)}, ${JSON.stringify(detail)})`, context);
+      assert.ok(html.includes(`>${date}</time>`));
+      assert.ok(html.includes(`>${title}</h3>`));
+      return html.match(/<article class="daily-card" id="([^"]+)"/)[1];
+    });
+    assert.deepEqual(targets, renderedTargets, `${person.id}: missing or reordered date`);
+    allTargets.push(...targets);
+  }
+  assert.equal(allTargets.length, 56);
+  assert.equal(new Set(allTargets).size, 56, 'Jump destinations must be unique');
+});
+
+test('meeting note formatting preserves every instruction and time qualifier', () => {
+  for (const person of finalData.personPlans) {
+    for (const [date] of person.days) {
+      const args = `${JSON.stringify(person.id)}, ${JSON.stringify(date)}`;
+      const meeting = vm.runInContext(`getDailyMeeting(${args})`, context);
+      if (!meeting) continue;
+      const html = vm.runInContext(`renderDailyMeeting(${args})`, context);
+      const notes = [...html.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((match) => match[1].replace(/<b class="daily-detail__time">([^<]*)<\/b>/g, '$1'));
+      assertLosslessSegments(notes, meeting.note, `${person.id} ${date} meeting note`);
+    }
+  }
 });
