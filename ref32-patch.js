@@ -511,6 +511,8 @@
   const tongtong = data.personPlans.find((person) => person.id === "tongyan");
   const yueyue = data.personPlans.find((person) => person.id === "yueyue");
   yueyue.days.splice(4, 0, ...tongtong.days.filter(([date]) => sharedDates.has(date)).map((day) => [...day]));
+  const yueyueLateDay = yueyue.days.find(([date]) => date === "10/09");
+  if (yueyueLateDay) yueyueLateDay[2] = "安排温泉与雷克雅未克轻量一日游；10/09 晚入住林德城河酒店，10/10 白天退房后前往凯夫拉维克机场。";
   data.roleViews.find((role) => role.id === "yueyue").focusDays = yueyue.days.map((day) => [...day]);
 
   const cabinnStay = {
@@ -523,12 +525,18 @@
     detail: "按与彤彤相同的住宿安排，保留 10/03 房晚；23:50 落地后进城可能已过午夜，提前联系酒店确认晚到登记，次日 08:30 前到 Bus Stop #13 集合。",
     url: data.hotel.mapUrl,
   };
+  const yueyueLateStay = {
+    label: "住宿", name: "林德城河酒店（Fosshotel Lind）",
+    detail: "10/09 晚入住这里；10/10 白天从酒店退房后前往凯夫拉维克机场，18:50 飞弗罗茨瓦夫。",
+    url: data.hotel.mapUrl,
+  };
   data.staySchedule.push(
     { date: "10/01-10/03", nights: "2 晚", people: "月月（1 人）", city: "哥本哈根", name: cabinnStay.name, status: "已确认酒店", detail: cabinnStay.detail, audiences: ["yueyue"], accent: "#B46B39", mapUrl: cabinnStay.url },
     { date: "10/03-10/04", nights: "1 晚", people: "月月（1 人）", city: "雷克雅未克", name: arrivalStay.name, status: "与彤彤同酒店", detail: arrivalStay.detail, audiences: ["yueyue"], accent: "#B46B39", mapUrl: arrivalStay.url },
+    { date: "10/09-10/10", nights: "1 晚", people: "月月（1 人）", city: "雷克雅未克", name: yueyueLateStay.name, status: "已确认酒店", detail: yueyueLateStay.detail, audiences: ["yueyue"], accent: "#B46B39", mapUrl: yueyueLateStay.url },
   );
   data.staySchedule.forEach((stay) => {
-    if (["10/04-10/05", "10/05-10/09", "10/09"].includes(stay.date) && stay.audiences.includes("tongyan")) {
+    if (["10/04-10/05", "10/05-10/09"].includes(stay.date) && stay.audiences.includes("tongyan")) {
       stay.audiences.push("yueyue");
     }
   });
@@ -537,8 +545,9 @@
     if (personId !== "yueyue") return previousGetDailyStay(personId, date, title);
     if (["10/01", "10/02"].includes(date)) return cabinnStay;
     if (date === "10/03") return arrivalStay;
-    if (sharedDates.has(date)) return previousGetDailyStay("tongyan", date, title);
-    if (date === "10/10") return { ...previousGetDailyStay("tongyan", "10/09", title), label: "出发前离店", detail: "10/09 晚住机场附近；10/10 白天退房后前往凯夫拉维克机场，18:50 飞弗罗茨瓦夫。" };
+    if (["10/04", "10/05", "10/06", "10/07", "10/08"].includes(date)) return previousGetDailyStay("tongyan", date, title);
+    if (date === "10/09") return yueyueLateStay;
+    if (date === "10/10") return { ...yueyueLateStay, label: "出发前离店", detail: "10/09 晚住林德城河酒店；10/10 白天退房后前往凯夫拉维克机场，18:50 飞弗罗茨瓦夫。" };
     return null;
   };
 
@@ -546,6 +555,10 @@
     const visual = dailyVisuals[`tongyan|${date}`];
     dailyVisuals[`yueyue|${date}`] = { ...visual, images: [...visual.images] };
   });
+  dailyVisuals["yueyue|10/09"] = {
+    ...dailyVisuals["yueyue|10/09"],
+    season: "10/09 晚入住林德城河酒店；10/10 白天退房后前往机场，18:50 离开冰岛。",
+  };
   const transitVisuals = [
     ["09/30", "深圳 / 上海", "出发日以机场与跨夜休息为主，核对上海到达机场及次日浦东出发的衔接。", ["assets/spots/city/shenzhen-civic-center.webp", "assets/spots/city/shanghai-bund-promenade.webp"]],
     ["10/01", "上海 / 哥本哈根", "哥本哈根入秋后早晚偏凉；19:00 抵达后前往酒店休息。", ["assets/spots/city/shanghai-lujiazui-bund.webp", "assets/spots/city/copenhagen-nyhavn.webp"]],
@@ -574,8 +587,8 @@
   data.overlap.label = "冰岛同行窗口：10/03 23:50 后 - 10/06 19:20 前";
   data.overlap.context = "月月 10/03 23:50 抵达冰岛后，冰岛同行人员全部到齐；当晚休息，不安排追极光。10/04-10/05 为 7 人南岸两日 + 蓝冰洞，10/06-10/07 为 5 人高地与斯奈山段，10/08-10/09 为 3 人黄金圈与温泉段，月月已包含在上述人数内。建皇 10/06 19:20 离开；彤彤 10/10 07:35 飞布鲁塞尔，月月当天 18:50 飞弗罗茨瓦夫。";
   data.roleViews.find((role) => role.id === "all").facts[0] = ["同行窗口", "10/03 23:50-10/06 19:20", "月月深夜到，次日同行；人数不变"];
-  data.hotel.dates = "雷克雅未克以林德城河酒店为基地；10/04 晚住南岸团含住宿，彤彤与月月 10/09 晚住机场附近";
-  data.hotel.checkout += "；月月与彤彤同住至 10/09 转机场附近，10/10 18:50 离开冰岛";
+  data.hotel.dates = "雷克雅未克以林德城河酒店为基地；10/04 晚住南岸团含住宿，彤彤 10/09 晚转住机场附近，月月 10/09 晚回林德城河酒店";
+  data.hotel.checkout += "；月月 10/10 白天从林德城河酒店退房，18:50 离开冰岛";
   data.hotel.notes.push("月月 10/03 23:50 落地，进城可能已过午夜；提前联系酒店确认 10/03 房晚的晚到登记。");
 
   renderRows();

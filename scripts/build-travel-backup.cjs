@@ -107,6 +107,11 @@ const plans = roleIds.map((id) => {
   plan.days.forEach((day) => assert(day.length === 3 && day.every((part) => typeof part === 'string' && part.trim()), `Incomplete day: ${id}`));
   return { plan, role };
 });
+for (const date of ['10/09', '10/10']) {
+  const stay = vm.runInContext(`getDailyStay('yueyue', ${JSON.stringify(date)}, '')`, context);
+  assert.equal(stay?.name, '林德城河酒店（Fosshotel Lind）', `Unexpected Yueyue stay: ${date}`);
+  assert.equal(stay?.url, data.hotel.mapUrl, `Unexpected Yueyue map: ${date}`);
+}
 const fingerprint = crypto.createHash('sha256').update(script).update(patch).digest('hex').slice(0, 12);
 const html = `<!doctype html>
 <html lang="zh-CN">
