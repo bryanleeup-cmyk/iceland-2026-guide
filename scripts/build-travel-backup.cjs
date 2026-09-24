@@ -87,7 +87,7 @@ function visualNotesHtml(personId, date, title, detail) {
 function meetingHtml(personId, date) {
   const meeting = vm.runInContext(`getDailyMeeting(${JSON.stringify(personId)}, ${JSON.stringify(date)})`, context);
   if (!meeting) return '';
-  return `<aside class="meeting" aria-label="${escape(date)} ${escape(meeting.label)}"><p><strong>${escape(meeting.label)} · ${escape(meeting.time)}（冰岛当地时间）</strong></p><p>${meeting.url ? link(meeting.url, `${meeting.place} · ${meeting.linkLabel || '打开地图'}`) : escape(meeting.place)}</p>${meeting.address ? `<p>${escape(meeting.address)}</p>` : ''}<p>${escape(meeting.note)}</p>${meeting.links ? `<p>${meeting.links.map((item) => link(item.url, item.label)).join(' · ')}</p>` : ''}</aside>`;
+  return `<aside class="meeting" aria-label="${escape(date)} ${escape(meeting.label)}"><p><strong>${escape(meeting.label)} · ${escape(meeting.time)}（${escape(meeting.localTime || '冰岛当地时间')}）</strong></p><p>${meeting.url ? link(meeting.url, `${meeting.place} · ${meeting.linkLabel || '打开地图'}`) : escape(meeting.place)}</p>${meeting.address ? `<p>${escape(meeting.address)}</p>` : ''}<p>${escape(meeting.note)}</p>${meeting.links ? `<p>${meeting.links.map((item) => link(item.url, item.label)).join(' · ')}</p>` : ''}</aside>`;
 }
 
 function detailHtml(personId, date, detail) {

@@ -177,6 +177,7 @@ test('daily meeting times remain the confirmed source values', () => {
   assert.deepEqual(
     meetings.map(({ date, time }) => [date, time]),
     [
+      ['09/27', '08:00'],
       ['09/29', '12:00'],
       ['09/30', '08:00'],
       ['10/01', '08:00'],
@@ -187,6 +188,27 @@ test('daily meeting times remain the confirmed source values', () => {
       ['10/06', '13:00'],
     ],
   );
+});
+
+test('Lisbon bus voucher survives overrides with the correct local time and separate Longlong ticket', () => {
+  for (const personId of ['jianhuang', 'niangniang']) {
+    const detail = details(personId, '09/27');
+    for (const fact of ['FlixBus 1000', '07:45', '08:00', '39D', '11:15', '3 小时 15 分', 'Av. Dom João II, 1990-233 Lisboa', 'R. de Bonjóia, 691, 4300 Porto', '龙龙单独购票且乘同一班大巴', '12:00 已订']) {
+      assert.ok(detail.includes(fact), `${personId}: missing ${fact}`);
+    }
+    assert.doesNotMatch(detail, /3\.5 小时/);
+    const urls = hrefs(detail).map((url) => new URL(url).searchParams.get('query'));
+    assert.ok(urls.some((query) => query.includes('Oriente') && query.includes('Dom João II')));
+    assert.ok(urls.some((query) => query.includes('Campanhã') && query.includes('Bonjóia 691')));
+    const meeting = vm.runInContext(`renderDailyMeeting('${personId}', '09/27')`, context);
+    assert.match(meeting, /大巴发车 · 葡萄牙当地时间/);
+    assert.doesNotMatch(meeting, /冰岛当地时间/);
+    assert.equal(getSections(personId, '09/27', detail).length, 3);
+  }
+  assert.match(details('niangniang', '09/27'), /20:50 从波尔图/);
+  assert.match(details('jianhuang', '09/27'), /Mercure Porto Gaia Hotel/);
+  const backup = fs.readFileSync(path.join(root, 'travel-backup.html'), 'utf8');
+  assert.equal((backup.match(/大巴发车 · 08:00（葡萄牙当地时间）/g) || []).length, 2);
 });
 
 test('every date jump matches a unique rendered day in the original order', () => {
