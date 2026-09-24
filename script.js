@@ -2644,6 +2644,20 @@ renderReferenceGuide(
 renderRouteAtlas();
 observeDeferredImages(document.querySelector("#routeAtlasMap"));
 
+// The override bundle normally finalizes the page after merging the latest itinerary data.
+// If a weak connection drops that optional bundle, keep the base itinerary readable instead
+// of leaving the loading shell visible forever.
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.travelDataReady) return;
+  renderRows();
+  renderHighlights();
+  renderHotel();
+  renderMobileTimeline();
+  applyRoleView(activeRoleId, { persist: shouldNormalizeRoleUrl });
+  window.travelDataReady = true;
+  document.body?.setAttribute("data-itinerary-status", "ready");
+}, { once: true });
+
 roleChooserEl.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-role]");
   if (!button || button.dataset.role === activeRoleId) return;
