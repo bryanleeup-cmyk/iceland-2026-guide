@@ -2636,18 +2636,13 @@ function applyRoleView(roleId = activeRoleId, { persist = true } = {}) {
 }
 
 renderGrid();
-renderRows();
-renderHighlights();
-renderHotel();
 const requestedReferenceTab = new URLSearchParams(window.location.search).get("ref");
 renderReferenceGuide(
   referenceTabIds.includes(requestedReferenceTab) ? requestedReferenceTab : "route",
   referenceTabIds.includes(requestedReferenceTab),
 );
-renderMobileTimeline();
 renderRouteAtlas();
 observeDeferredImages(document.querySelector("#routeAtlasMap"));
-applyRoleView(activeRoleId, { persist: shouldNormalizeRoleUrl });
 
 roleChooserEl.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-role]");

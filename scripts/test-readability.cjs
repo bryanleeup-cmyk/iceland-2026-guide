@@ -272,6 +272,14 @@ test('meeting note formatting preserves every instruction and time qualifier', (
   }
 });
 
+test('data patches render the final page once after all overrides are merged', () => {
+  const patchSource = fs.readFileSync(path.join(root, 'ref32-patch.js'), 'utf8');
+  for (const name of ['renderRows', 'renderHighlights', 'renderHotel', 'renderMobileTimeline', 'applyRoleView']) {
+    const calls = patchSource.match(new RegExp(`^\\s*${name}\\(.*\\);$`, 'gm')) || [];
+    assert.equal(calls.length, 1, `${name} should run once after patching`);
+  }
+});
+
 test('Paris luggage booking keeps its cross-midnight window distinct from the airport departure', () => {
   const detail = details('jianhuang', '09/28');
   for (const fact of ['2026/09/28 13:00–09/29 04:00', 'M+ 型 18 号柜', '预约 ID 243232', '€16.90', '82 Rue du Faubourg Saint-Martin, 75010 Paris', '当晚不订酒店', '约 02:00 为计划出发时间']) {

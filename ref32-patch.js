@@ -205,11 +205,6 @@
     return null;
   };
 
-  renderRows();
-  renderHighlights();
-  renderHotel();
-  renderMobileTimeline();
-  applyRoleView(activeRoleId || "jianhuang", { persist: false });
 })();
 
 /* Haigang shares Tongtong itinerary from 10/04 through 10/07. */
@@ -515,11 +510,6 @@
   }
   data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；赶海组 10/08 离开；彤彤 10/09 转住机场附近，10/10 清晨离开冰岛";
 
-  renderRows();
-  renderHighlights();
-  renderHotel();
-  renderMobileTimeline();
-  applyRoleView(activeRoleId || "jianhuang", { persist: false });
 })();
 
 (function applyYueyueUpdate() {
@@ -614,13 +604,14 @@
   data.hotel.dates = "雷克雅未克以林德城河酒店为基地；10/04 晚住南岸团含住宿，彤彤 10/09 晚转住机场附近，月月 10/09 晚回林德城河酒店";
   data.hotel.checkout += "；月月 10/10 白天从林德城河酒店退房，18:50 离开冰岛";
   data.hotel.notes.push("月月 10/03 23:50 落地，进城可能已过午夜；提前联系酒店确认 10/03 房晚的晚到登记。");
-
-  renderRows();
-  renderHighlights();
-  renderHotel();
-  renderMobileTimeline();
-  applyRoleView(activeRoleId || "jianhuang", { persist: false });
 })();
+
+renderRows();
+renderHighlights();
+renderHotel();
+renderMobileTimeline();
+applyRoleView(activeRoleId || "jianhuang", { persist: false });
+if (typeof shouldNormalizeRoleUrl !== "undefined" && shouldNormalizeRoleUrl) updateRoleUrl(activeRoleId);
 
 window.travelDataReady = true;
 document.body?.setAttribute("data-itinerary-status", "ready");
