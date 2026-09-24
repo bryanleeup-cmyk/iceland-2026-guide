@@ -6,6 +6,17 @@
   let saving = false;
   let reloading = false;
   let controlled = Boolean(navigator.serviceWorker?.controller);
+  let updatePromise;
+  let lastUpdateCheck = 0;
+
+  function checkForUpdate() {
+    if (!registration || !navigator.onLine) return updatePromise;
+    const now = Date.now();
+    if (updatePromise || now - lastUpdateCheck < 30000) return updatePromise;
+    lastUpdateCheck = now;
+    updatePromise = registration.update().catch(() => {}).finally(() => { updatePromise = null; });
+    return updatePromise;
+  }
 
   function checkItinerary() {
     document.querySelector('#itineraryStatus').hidden = Boolean(window.travelDataReady);
@@ -115,8 +126,13 @@
       offlineReady();
     }
   });
-  window.addEventListener('online', showStatus);
+  window.addEventListener('online', () => { showStatus(); checkForUpdate(); });
   window.addEventListener('offline', showStatus);
+  window.addEventListener('pageshow', checkForUpdate);
+  window.addEventListener('focus', checkForUpdate);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') checkForUpdate();
+  });
 
   navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' }).then(async (reg) => {
     registration = reg;
@@ -145,7 +161,7 @@
       clearTimeout(readyTimeout);
     }
     offlineReady();
-    reg.update().catch(() => {});
+    checkForUpdate();
   }).catch(() => {
     status.textContent = '离线功能暂未就绪，请联网重试；也可先下载文字备用版。';
   });
