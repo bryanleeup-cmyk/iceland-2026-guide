@@ -9,6 +9,8 @@ const root = path.resolve(__dirname, '..');
 const updated = '2026-09-24';
 const script = fs.readFileSync(path.join(root, 'script.js'), 'utf8');
 const patch = fs.readFileSync(path.join(root, 'ref32-patch.js'), 'utf8');
+const weatherSnapshot = fs.readFileSync(path.join(root, 'weather-snapshot.js'), 'utf8');
+const weather = fs.readFileSync(path.join(root, 'weather.js'), 'utf8');
 const emergency = fs.readFileSync(path.join(root, 'index.html'), 'utf8').match(/<div id="travelEmergency">([\s\S]*?)<\/div>/)?.[1]?.trim();
 assert(emergency, 'The official emergency information is required');
 const marker = 'function renderDailyCard(';
@@ -22,6 +24,8 @@ const context = {
   renderMobileTimeline() {}, applyRoleView() {},
 };
 vm.createContext(context);
+vm.runInContext(weatherSnapshot, context, { timeout: 5000 });
+vm.runInContext(weather, context, { timeout: 5000 });
 vm.runInContext(script.slice(0, script.indexOf(marker)), context, { timeout: 5000 });
 vm.runInContext(patch, context, { timeout: 5000 });
 const data = JSON.parse(vm.runInContext('JSON.stringify(data)', context));
@@ -76,7 +80,8 @@ function stayHtml(personId, date, title) {
 function visualNotesHtml(personId, date, title, detail) {
   const visual = vm.runInContext(`getDailyVisual(${JSON.stringify(personId)}, ${JSON.stringify(date)}, ${JSON.stringify(title)}, ${JSON.stringify(detail)})`, context);
   assert(visual && visual.city && visual.season, `Missing daily notes: ${personId} ${date}`);
-  return `<p class="meta">${escape(visual.city)} · 日出 ${escape(visual.sunrise)} / 日落 ${escape(visual.sunset)}（参考）</p><p>${richText(visual.season)}</p>`;
+  const forecast = vm.runInContext(`renderDailyWeather(${JSON.stringify(personId)}, ${JSON.stringify(date)}, ${JSON.stringify(visual)})`, context);
+  return `<p class="meta">${escape(visual.city)} · 日出 ${escape(visual.sunrise)} / 日落 ${escape(visual.sunset)}（参考）</p>${forecast}`;
 }
 
 function meetingHtml(personId, date) {
@@ -123,7 +128,7 @@ for (const date of ['10/09', '10/10']) {
   assert.equal(stay?.name, '林德城河酒店（Fosshotel Lind）', `Unexpected Yueyue stay: ${date}`);
   assert.equal(stay?.url, data.hotel.mapUrl, `Unexpected Yueyue map: ${date}`);
 }
-const fingerprint = crypto.createHash('sha256').update(script).update(patch).digest('hex').slice(0, 12);
+const fingerprint = crypto.createHash('sha256').update(script).update(patch).update(weatherSnapshot).update(weather).digest('hex').slice(0, 12);
 const html = `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -137,6 +142,7 @@ const html = `<!doctype html>
 :root{color-scheme:light;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172d3a;background:#f3f6f7;line-height:1.7}
 *{box-sizing:border-box}body{margin:0}main{max-width:880px;margin:0 auto;padding:32px 24px 64px}h1,h2,h3,h4{line-height:1.35;text-wrap:balance}h1{font-size:clamp(1.7rem,5vw,2.5rem)}h2{font-size:1.65rem}h3{font-size:1.2rem}h4{font-size:1rem;margin-bottom:.4rem}p{margin:.65rem 0}a{color:#12517a;text-decoration:underline;text-underline-offset:.2em;overflow-wrap:anywhere}a:focus-visible{outline:3px solid #cf5c25;outline-offset:4px;border-radius:2px}li{margin:.55rem 0}ul{padding-left:1.4rem}.intro,.day,.flights{padding:22px;border:1px solid #cad6dc;background:#fff;border-radius:12px}.notice{border-left:4px solid #b15821;padding-left:16px}.meta{color:#425864;font-size:.9rem}.index{display:flex;flex-wrap:wrap;gap:10px 20px;padding:14px 0}.index a{display:inline-block;padding:8px 0;min-height:44px}.group{margin-top:42px;scroll-margin-top:16px}.day,.flights{margin-top:16px}.date{font-weight:750;color:#345b70}.day h3{margin:.4rem 0 1rem}.stay{border-top:1px solid #dce3e7;padding-top:12px;margin-top:16px;color:#2c4756}.stay p{margin:.4rem 0}.return{margin:20px 0}.skip{position:absolute;left:16px;top:0;transform:translateY(-150%);padding:10px;background:#fff}.skip:focus{transform:translateY(0)}footer{margin-top:40px;border-top:1px solid #cad6dc;padding-top:16px;font-size:.9rem;color:#425864}
 .meeting{margin:14px 0;padding:10px 14px;background:#edf6f8;border-left:4px solid #257387;border-radius:6px}.meeting p{margin:.35rem 0}.meeting strong{font-size:1.1rem}
+.daily-weather{margin-top:18px;padding:14px;border:1px solid #cad6dc;border-radius:8px;background:#f5f9fa;font-size:.9rem;overflow-wrap:anywhere}.daily-weather h4,.daily-weather h5{margin:0 0 6px;font-size:1rem}.daily-weather p{margin:6px 0}.daily-weather__day,.daily-weather__aurora,.daily-card__season{border-top:1px solid #cad6dc;margin-top:14px;padding-top:12px}.daily-weather__places{list-style:none;padding:0}.daily-weather__metrics{display:flex;flex-wrap:wrap;gap:2px 12px}.daily-weather__note{font-size:.85rem;color:#425864}.daily-weather__links{display:flex;flex-wrap:wrap;gap:4px 16px}.daily-weather__links a{display:inline-flex;align-items:center;min-height:44px}.daily-weather__sources summary{padding:10px 0;min-height:44px;cursor:pointer}.daily-card__season-label{display:block;font-weight:bold}
 .daily-detail__section+.daily-detail__section{margin-top:16px;padding-top:12px;border-top:1px solid #dce3e7}.daily-detail__label{margin:0 0 6px;font-size:.9rem;color:#435e6b}.daily-detail__items{margin:0;padding:0;list-style:none}.daily-detail__items li{margin:0}.daily-detail__items li+li{margin-top:8px}.daily-detail__time{font-variant-numeric:tabular-nums;white-space:nowrap}.daily-detail__section--choices .daily-detail__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}.daily-detail__items .daily-detail__option{margin:0;padding:10px 12px;border-left:2px solid #bdcdd3;background:#f5f8f9}
 @media(max-width:480px){main{padding:22px 14px 40px}.intro,.day,.flights{padding:17px}.group{margin-top:32px}}
 @media print{:root{background:#fff;color:#000;font-size:10pt}main{max-width:none;padding:0}.intro,.day,.flights{border-color:#aaa;border-radius:0;box-shadow:none}.day,.stay{break-inside:avoid}.group{break-before:page}h2,h3,h4{break-after:avoid}.index,.return,.skip{display:none}a{color:inherit}.meta,footer{color:#333}@page{margin:16mm}}

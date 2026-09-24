@@ -21,6 +21,8 @@ const context = {
   applyRoleView() {},
 };
 vm.createContext(context);
+vm.runInContext(fs.readFileSync(path.join(root, 'weather-snapshot.js'), 'utf8'), context);
+vm.runInContext(fs.readFileSync(path.join(root, 'weather.js'), 'utf8'), context);
 vm.runInContext(scriptSource.slice(0, dataBoundary), context, { timeout: 5000 });
 vm.runInContext(patchSource, context, { timeout: 5000 });
 vm.runInContext(scriptSource.slice(dataBoundary, scriptSource.indexOf('const timelineStart =')), context);

@@ -1562,7 +1562,7 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
               </p>`
             : ""
         }
-        <p class="daily-card__season"><span class="daily-card__season-label">天气与风景</span>${visual.city}：${visual.season}</p>
+        ${typeof renderDailyWeather === "function" ? renderDailyWeather(personId, date, visual) : `<p class="daily-card__season"><span class="daily-card__season-label">天气与风景 · 预报未加载</span>${visual.city}：${visual.season}</p>`}
       </div>
     </article>
   `;
