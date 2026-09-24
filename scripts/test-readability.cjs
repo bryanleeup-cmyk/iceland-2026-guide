@@ -278,7 +278,7 @@ test('Paris luggage booking keeps its cross-midnight window distinct from the ai
     assert.ok(detail.includes(fact), `Missing Paris booking fact: ${fact}`);
   }
   assert.match(detail, /04:00 是寄存截止时间，不是计划取件时间/);
-  assert.equal(getSections('jianhuang', '09/28', detail).length, 8);
+  assert.equal(getSections('jianhuang', '09/28', detail).length, 9);
   const stored = vm.runInContext("getDailyStay('jianhuang', '09/28', '')", context);
   assert.match(stored.label, /不住酒店/);
   assert.match(new URL(stored.url).searchParams.get('query'), /82 Rue du Faubourg Saint-Martin 75010 Paris/);
@@ -290,21 +290,33 @@ test('Paris luggage booking keeps its cross-midnight window distinct from the ai
   assert.match(backup, /预约 ID 243232/);
 });
 
-test('Paris 09/28 keeps the Montmartre sunset and confirmed Al Caratello dinner', () => {
+test('Paris 09/28 orders the afternoon cruise before sunset and Eiffel after the booked dinner', () => {
   const detail = details('jianhuang', '09/28');
-  for (const fact of ['约 19:00（巴黎当地时间）抵达', '蒙马特高地', '20:30（巴黎当地时间）', 'Al Caratello', '建皇组合 2 人', 'TheFork 预约已确认', '5 Rue Audran, 75018 Paris', '20:30–22:00']) {
+  for (const fact of ['下午（巴黎当地时间）乘坐塞纳河游船', '约 19:00（巴黎当地时间）抵达', '蒙马特高地', '20:30（巴黎当地时间）', 'Al Caratello', '建皇组合 2 人', 'TheFork 预约已确认', '5 Rue Audran, 75018 Paris', '20:30–22:00', '晚餐后前往埃菲尔铁塔']) {
     assert.ok(detail.includes(fact), `Missing Paris dinner fact: ${fact}`);
   }
-  assert.match(detail, /日落塞纳河游船及 20:00 埃菲尔铁塔.*时间待重新确认/);
+  assert.match(detail, /14:30[\s\S]*下午（巴黎当地时间）乘坐塞纳河游船[\s\S]*约 19:00[\s\S]*20:30（巴黎当地时间）[\s\S]*晚餐后前往埃菲尔铁塔[\s\S]*半夜返回同一门店取行李/);
+  assert.doesNotMatch(detail, /原日落塞纳河游船|时间待重新确认|20:00 埃菲尔铁塔/);
   assert.match(detail, /当晚不订酒店/);
   assert.match(detail, /半夜返回同一门店取行李，再直接去戴高乐机场；约 02:00 为计划出发时间/);
   const sections = getSections('jianhuang', '09/28', detail);
-  assert.deepEqual(sections.slice(3, 6).map((section) => section.label), [
+  assert.deepEqual(sections.slice(3, 7).map((section) => section.label), [
+    '下午 · 午餐后塞纳河游船',
     '日落 · 约 19:00 蒙马特高地',
     '晚餐 · 20:30 已订 Al Caratello',
-    '原游船与铁塔 · 时间待重新确认',
+    '夜景 · 晚餐后埃菲尔铁塔',
   ]);
   const backup = fs.readFileSync(path.join(root, 'travel-backup.html'), 'utf8');
   assert.match(backup, /Al Caratello/);
   assert.match(backup, /5 Rue Audran, 75018 Paris/);
+  for (const surface of [backup, fs.readFileSync(path.join(root, 'index.html'), 'utf8'), JSON.stringify(finalData)]) {
+    assert.doesNotMatch(surface, /原日落塞纳河游船|原游船与铁塔保留|时间待重新确认|原 19:50–20:10 铁塔/);
+    assert.match(surface, /下午乘坐塞纳河游船|下午（巴黎当地时间）乘坐塞纳河游船/);
+    assert.match(surface, /晚餐后前往埃菲尔铁塔/);
+  }
+  const cruise = finalData.spots.find((spot) => spot.id === 'paris-cruise');
+  const tower = finalData.spots.find((spot) => spot.id === 'eiffel-night');
+  assert.equal(cruise.title, '下午塞纳河游船');
+  assert.match(cruise.bestTime, /14:30 午餐后/);
+  assert.match(tower.bestTime, /Al Caratello 晚餐后/);
 });

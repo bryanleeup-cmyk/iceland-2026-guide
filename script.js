@@ -53,7 +53,7 @@ const data = {
           "10/07 米兰马尔彭萨机场 T2 06:30 → 里斯本机场 T1 08:30｜易捷航空 U23873",
         ],
         afterIceland: [
-          "09/28 奥利机场落地后直达 LOCK & enjoy! 巴黎东站店寄存；先到 Carré Pain de Mie 吃虾排三明治，再赴 14:30 Bouillon Julien 已订午餐（2 人）；约 19:00 抵达蒙马特高地看日落，20:30 在 Al Caratello 已订晚餐（2 人，5 Rue Audran, 75018 Paris；桌位至 22:00）；原日落塞纳河游船及 20:00 埃菲尔铁塔安排有冲突，保留项目、时间待重新确认；当晚不订酒店；半夜取行李，09/29 约 02:00 从寄存点出发去戴高乐机场 T2D",
+          "09/28 奥利机场落地后直达 LOCK & enjoy! 巴黎东站店寄存；先到 Carré Pain de Mie 吃虾排三明治，再赴 14:30 Bouillon Julien 已订午餐（2 人）；午餐后下午乘坐塞纳河游船，预留前往蒙马特的交通时间；约 19:00 抵达蒙马特高地看日落，20:30 在 Al Caratello 已订晚餐（2 人，5 Rue Audran, 75018 Paris；桌位至 22:00）；晚餐后前往埃菲尔铁塔看夜景 / 闪灯，预留返回寄存点取行李的时间；当晚不订酒店；半夜取行李，09/29 约 02:00 从寄存点出发去戴高乐机场 T2D",
           "10/06 13:00 Sky Lagoon 温泉；无接送，自行公共交通，结束后取行李并前往机场",
           "10/07 里斯本半日城市步行",
           "10/07 晚住 Cabinn Metro Hotel，10/08 从哥本哈根机场飞北京",
@@ -576,7 +576,7 @@ const data = {
         ["09/25", "北京 → 伦敦中转 → 里斯本", "13:35 从北京首都机场 T3 起飞，17:40 落地伦敦希思罗机场 T2；伦敦中转 1 小时 05 分，18:45 从伦敦希思罗机场 T2 起飞，21:35 落地里斯本机场 T1。落地后入住已订的 The Delight Hostel 豪华四人间：建皇（两人）、龙龙、娘娘共 4 人入住。"],
         ["09/26", "里斯本郊区海边一日游", "建皇（两人）、龙龙和娘娘四人报名这个专业路线：09:00 从里斯本市区出发，10:00 地狱之口，10:50 罗卡角，12:00 雷加莱拉庄园，14:30 辛特拉王宫，16:00 佩纳宫。主打大西洋海岸、欧亚大陆最西端、雷加莱拉庄园创始之井和两座宫殿；当天不再叠加里斯本市区重行程。"],
         ["09/27", "里斯本 → 波尔图 + Brasão 已订晚餐", lisbonPortoBusDetail + "下午玩老城河岸、路易一世大桥、杜罗河边。" + portoDinner + "娘娘乘荷兰泛航航空 HV6004，09/27 20:50 从波尔图起飞，09/28 00:25（次日凌晨）到阿姆斯特丹，均为当地时间；建皇（两人）和龙龙晚上入住波尔图盖亚美居酒店，实付 ¥544.94。"],
-        ["09/28", "波尔图 → 巴黎：蒙马特日落 + Al Caratello 已订晚餐", `09:05 从波尔图弗朗西斯科卡内罗机场起飞，12:15 落地巴黎奥利机场 T1，航班易捷航空 U24886；巴黎跨夜中转 17 小时 45 分，第二天 06:00 从巴黎戴高乐机场 T2D 起飞去冰岛；娘娘已在 09/27 晚从波尔图飞回阿姆斯特丹。落地后从奥利机场直接前往 <a href="${parisLuggage.url}" target="_blank" rel="noopener noreferrer">${parisLuggage.name} · 打开门店地图</a> 寄存行李。${parisLuggage.detail} 13:00 是预约开始时间，不是必须抵达门店的时间；从机场取行李后按实际交通情况前往。<a href="https://www.google.com/maps/dir/?api=1&origin=Paris%20Orly%20Airport%20Terminal%201&destination=82%20Rue%20du%20Faubourg%20Saint-Martin%2075010%20Paris&travelmode=transit" target="_blank" rel="noopener noreferrer">奥利机场 → 寄存点公共交通导航</a>。寄存好行李后先去 <a href="https://www.google.com/maps/search/?api=1&query=Carr%C3%A9%20Pain%20de%20Mie%205%20Rue%20Rambuteau%2075004%20Paris" target="_blank" rel="noopener noreferrer">Carré Pain de Mie · 餐厅地图</a> 吃虾排三明治；地址：5 Rue Rambuteau, 75004 Paris（玛黑区），到店时间按落地和寄存进度安排。14:30（巴黎当地时间）在 <a href="https://www.google.com/maps/search/?api=1&query=Bouillon%20Julien%2016%20rue%20du%20Faubourg%20Saint%20Denis%2075010%20Paris" target="_blank" rel="noopener noreferrer">Bouillon Julien · 餐厅地图</a> 用餐，已订 2 人；预订姓名：hector pei。地址：16 rue du Faubourg Saint Denis, 75010 Paris；到店出示手机保存的原始预约凭证。12:15 落地后还需取行李、进城、寄存及两店转场，时间较紧；请预留 14:30 预约到店时间。约 19:00（巴黎当地时间）抵达 <a href="https://www.google.com/maps/search/?api=1&query=Montmartre%20Paris" target="_blank" rel="noopener noreferrer">蒙马特高地 · 地图</a>，看完日落后前往晚餐；当天日落参考约 19:36。20:30（巴黎当地时间）在 <a href="https://www.google.com/maps/search/?api=1&query=Al%20Caratello%205%20Rue%20Audran%2075018%20Paris" target="_blank" rel="noopener noreferrer">Al Caratello · 餐厅地图</a> 用晚餐，建皇组合 2 人，TheFork 预约已确认。地址：5 Rue Audran, 75018 Paris；订桌时段 20:30–22:00，共 1 小时 30 分钟。<a href="https://www.google.com/maps/dir/?api=1&destination=Al%20Caratello%205%20Rue%20Audran%2075018%20Paris&travelmode=walking" target="_blank" rel="noopener noreferrer">从当前位置步行前往餐厅</a>。到店出示手机保存的原始预约凭证。原日落塞纳河游船及 20:00 埃菲尔铁塔亮灯 / 闪灯安排与蒙马特日落、20:30 晚餐存在时间冲突；两个项目保留，时间待重新确认，请先确保按时抵达已订餐厅。当晚不订酒店。半夜返回同一门店取行李，再直接去戴高乐机场；约 02:00 为计划出发时间，需提前落实夜间交通，预留取件、路程和机场值机安检时间。<a href="https://www.google.com/maps/dir/?api=1&origin=82%20Rue%20du%20Faubourg%20Saint-Martin%2075010%20Paris&destination=Charles%20de%20Gaulle%20Airport%20Terminal%202D&travelmode=driving" target="_blank" rel="noopener noreferrer">寄存点 → 戴高乐 T2D 乘车路线</a>。门店法国客服电话：+33 1 87 21 88 44；<a href="https://lockandenjoy.com/en/paris-chooselockers/gare-de-lest/" target="_blank" rel="noopener noreferrer">寄存门店官网</a>。`],
+        ["09/28", "波尔图 → 巴黎：下午游船、蒙马特日落 + 晚餐后铁塔", `09:05 从波尔图弗朗西斯科卡内罗机场起飞，12:15 落地巴黎奥利机场 T1，航班易捷航空 U24886；巴黎跨夜中转 17 小时 45 分，第二天 06:00 从巴黎戴高乐机场 T2D 起飞去冰岛；娘娘已在 09/27 晚从波尔图飞回阿姆斯特丹。落地后从奥利机场直接前往 <a href="${parisLuggage.url}" target="_blank" rel="noopener noreferrer">${parisLuggage.name} · 打开门店地图</a> 寄存行李。${parisLuggage.detail} 13:00 是预约开始时间，不是必须抵达门店的时间；从机场取行李后按实际交通情况前往。<a href="https://www.google.com/maps/dir/?api=1&origin=Paris%20Orly%20Airport%20Terminal%201&destination=82%20Rue%20du%20Faubourg%20Saint-Martin%2075010%20Paris&travelmode=transit" target="_blank" rel="noopener noreferrer">奥利机场 → 寄存点公共交通导航</a>。寄存好行李后先去 <a href="https://www.google.com/maps/search/?api=1&query=Carr%C3%A9%20Pain%20de%20Mie%205%20Rue%20Rambuteau%2075004%20Paris" target="_blank" rel="noopener noreferrer">Carré Pain de Mie · 餐厅地图</a> 吃虾排三明治；地址：5 Rue Rambuteau, 75004 Paris（玛黑区），到店时间按落地和寄存进度安排。14:30（巴黎当地时间）在 <a href="https://www.google.com/maps/search/?api=1&query=Bouillon%20Julien%2016%20rue%20du%20Faubourg%20Saint%20Denis%2075010%20Paris" target="_blank" rel="noopener noreferrer">Bouillon Julien · 餐厅地图</a> 用餐，已订 2 人；预订姓名：hector pei。地址：16 rue du Faubourg Saint Denis, 75010 Paris；到店出示手机保存的原始预约凭证。12:15 落地后还需取行李、进城、寄存及两店转场，时间较紧；请预留 14:30 预约到店时间。下午（巴黎当地时间）乘坐塞纳河游船，安排在 14:30 Bouillon Julien 午餐后；具体班次与登船码头以船票 / 运营方当天安排为准，预留前往蒙马特的交通时间。约 19:00（巴黎当地时间）抵达 <a href="https://www.google.com/maps/search/?api=1&query=Montmartre%20Paris" target="_blank" rel="noopener noreferrer">蒙马特高地 · 地图</a>，看完日落后前往晚餐；当天日落参考约 19:36。20:30（巴黎当地时间）在 <a href="https://www.google.com/maps/search/?api=1&query=Al%20Caratello%205%20Rue%20Audran%2075018%20Paris" target="_blank" rel="noopener noreferrer">Al Caratello · 餐厅地图</a> 用晚餐，建皇组合 2 人，TheFork 预约已确认。地址：5 Rue Audran, 75018 Paris；订桌时段 20:30–22:00，共 1 小时 30 分钟。<a href="https://www.google.com/maps/dir/?api=1&destination=Al%20Caratello%205%20Rue%20Audran%2075018%20Paris&travelmode=walking" target="_blank" rel="noopener noreferrer">从当前位置步行前往餐厅</a>。到店出示手机保存的原始预约凭证。晚餐后前往埃菲尔铁塔看夜景 / 闪灯；具体抵达时间按用餐和交通情况安排，预留返回寄存点取行李及去机场的时间。当晚不订酒店。半夜返回同一门店取行李，再直接去戴高乐机场；约 02:00 为计划出发时间，需提前落实夜间交通，预留取件、路程和机场值机安检时间。<a href="https://www.google.com/maps/dir/?api=1&origin=82%20Rue%20du%20Faubourg%20Saint-Martin%2075010%20Paris&destination=Charles%20de%20Gaulle%20Airport%20Terminal%202D&travelmode=driving" target="_blank" rel="noopener noreferrer">寄存点 → 戴高乐 T2D 乘车路线</a>。门店法国客服电话：+33 1 87 21 88 44；<a href="https://lockandenjoy.com/en/paris-chooselockers/gare-de-lest/" target="_blank" rel="noopener noreferrer">寄存门店官网</a>。`],
         ["09/29", "巴黎 → 冰岛 + 史费拉浮潜（已订 ¥2585.04/2人）", "凌晨从 LOCK & enjoy! 巴黎东站店取回行李，计划约 02:00 从寄存点出发去戴高乐机场 T2D；前一晚不住酒店，寄存订单截至当天 04:00，需在出发去机场前完成取件。06:00 从巴黎戴高乐机场 T2D 起飞，07:50 落地雷克雅未克凯夫拉维克机场，航班易捷航空 U24629；飞行 3 小时 50 分。落地后进雷克雅未克市区放行李/换保暖衣物；12:00 在 Klettur Hótel（Mjölnisholt 12–14）等候 Arctic Adventures 接车，接车可能需要 30 分钟。浮潜订单包含雷市接送，无需自行前往辛格维利尔国家公园；实际回城时间听向导安排，晚上雷克雅未克市区吃饭和轻量 CityWalk。<a href=\"https://cn.adventures.is/iceland/day-tours/snorkeling-and-diving/into-the-blue/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["09/30", "已订：Kerlingarfjoll 高地徒步团（¥2568.57/2人）", "已订 Kerlingarfjoll Hiking Tour；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；徒步路线听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/01", "已订：斯奈山半岛小团（¥1796/2人，¥898/人）", "已订 Arctic Adventures 斯奈山半岛小团；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；停靠顺序听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
@@ -715,31 +715,31 @@ const data = {
       transport: "奥利机场落地后直达已订的 LOCK & enjoy! 巴黎东站店寄存，再进城游玩",
       date: "09/28",
       city: "巴黎",
-      title: "日落塞纳河游船",
+      title: "下午塞纳河游船",
       image: "assets/spots/paris-cruise.webp",
       images: ["assets/spots/paris-cruise.webp", "assets/spots/gallery/paris-cruise-1.webp"],
-      bestTime: "时间待重新确认；约 19:00 蒙马特、20:30 已订晚餐优先",
+      bestTime: "14:30 午餐后，下午乘船；预留前往约 19:00 蒙马特日落的交通时间",
       open: "Bateaux Mouches 当前高季 10:00-22:00，每 30 分钟一班，船程约 1 小时。",
       sunset: "巴黎 09/28 日落约 19:36；当天计划在蒙马特看日落",
       viewpoint: "优先坐露天上层右侧，接近 Eiffel Tower 和 Alexandre III 时最好拍。",
-      notes: ["已订 LOCK & enjoy! 巴黎东站店（82 Rue du Faubourg Saint-Martin）寄存：09/28 13:00–09/29 04:00，M+ 型 18 号柜，€16.90；当晚不住酒店，半夜取件后约 02:00 出发去戴高乐机场。", "原 18:30–19:45 游船时段与约 19:00 蒙马特高地看日落冲突；保留游船项目，时间待重新确认。", "20:30 在 Al Caratello（5 Rue Audran, 75018 Paris）已订 2 人晚餐，桌位至 22:00；重新安排游船及铁塔时，请预留转场时间并确保按时到店。"],
+      notes: ["已订 LOCK & enjoy! 巴黎东站店（82 Rue du Faubourg Saint-Martin）寄存：09/28 13:00–09/29 04:00，M+ 型 18 号柜，€16.90；当晚不住酒店，半夜取件后约 02:00 出发去戴高乐机场。", "14:30 Bouillon Julien 午餐后，下午乘坐塞纳河游船；具体班次与登船码头以船票 / 运营方当天安排为准。", "游船后约 19:00 到蒙马特高地看日落；20:30 在 Al Caratello（5 Rue Audran, 75018 Paris）已订 2 人晚餐，桌位至 22:00；晚餐后再去埃菲尔铁塔。"],
     },
     {
       id: "eiffel-night",
       category: "paris",
       segments: ["jianhuang-spots"],
       participant: "建皇",
-      transport: "巴黎夜景项目保留，参观时间待重新确认；需预留往返蒙马特与餐厅的交通时间",
+      transport: "Al Caratello 晚餐后前往埃菲尔铁塔；预留交通及返回寄存点取行李的时间",
       date: "09/28",
       city: "巴黎",
       title: "亮灯埃菲尔铁塔",
       image: "assets/spots/eiffel.webp",
       images: ["assets/spots/eiffel.webp", "assets/spots/gallery/eiffel-1.webp", "assets/spots/gallery/eiffel-2.webp", "assets/spots/gallery/eiffel-3.webp"],
-      bestTime: "时间待重新确认；不要影响 20:30 Al Caratello 晚餐",
+      bestTime: "20:30 Al Caratello 晚餐后；具体抵达时间按用餐和交通情况安排",
       open: "官方说明：铁塔夜幕后亮灯，整点开始闪灯 5 分钟，持续到闭塔。",
-      sunset: "巴黎 09/28 日落约 19:36；原 20:00 铁塔安排需重新确认时间。",
+      sunset: "巴黎 09/28 日落约 19:36，在蒙马特看日落；晚餐后到铁塔看夜景。",
       viewpoint: "Trocadéro 平台第一选择；人多就退到 Pont d'Iéna 桥侧。",
-      notes: ["夜间灯光有版权限制，自己朋友圈一般没问题，商业发布要注意。", "约 19:00 抵达蒙马特高地看日落，20:30 在 Al Caratello 已订 2 人晚餐（桌位至 22:00）；原 19:50–20:10 铁塔安排有冲突，项目保留、时间待重新确认。", "当晚不订酒店；半夜回 LOCK & enjoy! 巴黎东站店取行李，09/29 约 02:00 从寄存点出发去戴高乐机场 T2D，06:00 起飞去冰岛。", "地铁/打车预留堵车和安检时间。"],
+      notes: ["夜间灯光有版权限制，自己朋友圈一般没问题，商业发布要注意。", "约 19:00 抵达蒙马特高地看日落，20:30 在 Al Caratello 已订 2 人晚餐（桌位至 22:00）；晚餐后前往埃菲尔铁塔看夜景 / 闪灯。", "当晚不订酒店；半夜回 LOCK & enjoy! 巴黎东站店取行李，09/29 约 02:00 从寄存点出发去戴高乐机场 T2D，06:00 起飞去冰岛。", "地铁/打车预留堵车和安检时间。"],
     },
     {
       id: "snaefellsnes-booked",
@@ -1143,7 +1143,7 @@ const dailyVisuals = {
   "jianhuang|09/25": { city: "里斯本", sunrise: "07:26", sunset: "19:29", season: "9 月底里斯本傍晚温和，落地后适合只看老城夜色和休息。", images: ["assets/spots/belem.webp", "assets/spots/gallery/belem-1.webp"] },
   "jianhuang|09/26": { city: "里斯本周边", sunrise: "07:27", sunset: "19:27", season: "辛特拉山里偏凉，罗卡角海风大；9 月底海边光线很适合拍悬崖、海岸、庄园和宫殿。", images: ["assets/spots/portugal/cabo-da-roca-sunset.webp", "assets/spots/portugal/boca-do-inferno.webp", "assets/spots/portugal/regaleira-initiation-well.webp", "assets/spots/portugal/sintra-national-palace.webp", "assets/spots/portugal/pena-palace-exterior.webp"] },
   "jianhuang|09/27": { city: "波尔图", sunrise: "07:26", sunset: "19:23", season: "9 月底波尔图日落在杜罗河边最舒服，傍晚看大桥和老城灯光。", images: ["assets/spots/porto.webp", "assets/spots/gallery/porto-1.webp"] },
-  "jianhuang|09/28": { city: "巴黎", sunrise: "07:45", sunset: "19:36", season: "9 月底巴黎入秋，约 19:00 到蒙马特高地看日落；日落后前往 20:30 已订的 Al Caratello 晚餐，晚间留意保暖。", images: ["assets/spots/eiffel.webp", "assets/spots/gallery/eiffel-1.webp", "assets/spots/gallery/eiffel-2.webp", "assets/spots/gallery/eiffel-3.webp", "assets/spots/paris-cruise.webp"] },
+  "jianhuang|09/28": { city: "巴黎", sunrise: "07:45", sunset: "19:36", season: "9 月底巴黎入秋，午餐后下午游船，约 19:00 到蒙马特高地看日落；20:30 Al Caratello 已订晚餐后去埃菲尔铁塔，晚间留意保暖。", images: ["assets/spots/eiffel.webp", "assets/spots/gallery/eiffel-1.webp", "assets/spots/gallery/eiffel-2.webp", "assets/spots/gallery/eiffel-3.webp", "assets/spots/paris-cruise.webp"] },
   "jianhuang|09/29": { city: "雷克雅未克 / 史费拉", sunrise: "07:29", sunset: "19:04", season: "刚到冰岛，9 月底白天还有足够光线；史费拉水温很低，浮潜后只适合雷克雅未克市区轻量吃饭和散步。", images: ["assets/spots/tourlink/silfra-snorkel-1.webp", "assets/spots/tourlink/silfra-snorkel-2.webp", "assets/spots/tourlink/silfra-snorkel-3.webp", "assets/spots/iceland/reykjavik-harpa.webp"] },
   "jianhuang|09/30": { city: "Kerlingarfjoll 高地", sunrise: "07:31", sunset: "18:59", season: "Kerlingarfjoll 高地 9 月底天气变化很快，徒步必须以向导和当天安全判断为准。", images: ["assets/spots/tourlink/kerlingarfjoll-official-1.webp", "assets/spots/tourlink/kerlingarfjoll-official-2.webp", "assets/spots/tourlink/kerlingarfjoll-official-3.webp"] },
   "jianhuang|10/01": { city: "斯奈山半岛", sunrise: "07:35", sunset: "18:57", season: "斯奈山 10 月初海风强、云层变化快，半岛瀑布、海岸线、黑教堂和教会山都适合阴天氛围。", images: ["assets/spots/tourlink/snaefellsnes-aa-1.webp", "assets/spots/tourlink/snaefellsnes-aa-2.webp", "assets/spots/tourlink/snaefellsnes-aa-3.webp"] },
@@ -1506,10 +1506,10 @@ function getDailyDetailSections(personId, date, detail) {
     return starts.map((start, index) => ({ label: labels[index], items: splitDailyDetail(detail.slice(start, starts[index + 1])) }));
   }
   if (personId === "jianhuang" && date === "09/28") {
-    const markers = ["落地后从奥利机场直接前往", "寄存好行李后先去", "约 19:00（巴黎当地时间）抵达", "20:30（巴黎当地时间）在", "原日落塞纳河游船", "半夜返回同一门店取行李", "门店法国客服电话："];
+    const markers = ["落地后从奥利机场直接前往", "寄存好行李后先去", "下午（巴黎当地时间）乘坐", "约 19:00（巴黎当地时间）抵达", "20:30（巴黎当地时间）在", "晚餐后前往埃菲尔铁塔", "半夜返回同一门店取行李", "门店法国客服电话："];
     const starts = [0, ...markers.map((marker) => detail.indexOf(marker))];
     if (starts.some((start, index) => index > 0 && start <= starts[index - 1])) return fallback;
-    const labels = ["航班 · 抵达巴黎", "寄存 · 已订订单与导航", "餐饮 · 三明治 + 14:30 已订午餐", "日落 · 约 19:00 蒙马特高地", "晚餐 · 20:30 已订 Al Caratello", "原游船与铁塔 · 时间待重新确认", "跨夜交通 · 取件后去机场", "门店联系"];
+    const labels = ["航班 · 抵达巴黎", "寄存 · 已订订单与导航", "餐饮 · 三明治 + 14:30 已订午餐", "下午 · 午餐后塞纳河游船", "日落 · 约 19:00 蒙马特高地", "晚餐 · 20:30 已订 Al Caratello", "夜景 · 晚餐后埃菲尔铁塔", "跨夜交通 · 取件后去机场", "门店联系"];
     return starts.map((start, index) => ({
       label: labels[index],
       items: splitDailyDetail(detail.slice(start, starts[index + 1])),
