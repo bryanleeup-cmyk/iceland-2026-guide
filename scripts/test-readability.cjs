@@ -248,7 +248,7 @@ test('Paris luggage booking keeps its cross-midnight window distinct from the ai
     assert.ok(detail.includes(fact), `Missing Paris booking fact: ${fact}`);
   }
   assert.match(detail, /04:00 是寄存截止时间，不是计划取件时间/);
-  assert.equal(getSections('jianhuang', '09/28', detail).length, 5);
+  assert.equal(getSections('jianhuang', '09/28', detail).length, 6);
   const stored = vm.runInContext("getDailyStay('jianhuang', '09/28', '')", context);
   assert.match(stored.label, /不住酒店/);
   assert.match(new URL(stored.url).searchParams.get('query'), /82 Rue du Faubourg Saint-Martin 75010 Paris/);

@@ -51,7 +51,7 @@ const data = {
           "10/07 米兰马尔彭萨机场 T2 06:30 → 里斯本机场 T1 08:30｜易捷航空 U23873",
         ],
         afterIceland: [
-          "09/28 奥利机场落地后直达 LOCK & enjoy! 巴黎东站店寄存；日落塞纳河游船 + 20:00 埃菲尔铁塔亮灯 / 闪灯，晚间继续在巴黎游玩，不订酒店；半夜取行李，09/29 约 02:00 从寄存点出发去戴高乐机场 T2D",
+          "09/28 奥利机场落地后直达 LOCK & enjoy! 巴黎东站店寄存；先到 Carré Pain de Mie 吃虾排三明治，再赴 14:30 Bouillon Julien 已订午餐（2 人）；日落塞纳河游船 + 20:00 埃菲尔铁塔亮灯 / 闪灯，晚间继续在巴黎游玩，不订酒店；半夜取行李，09/29 约 02:00 从寄存点出发去戴高乐机场 T2D",
           "10/06 13:00 Sky Lagoon 温泉；无接送，自行公共交通，结束后取行李并前往机场",
           "10/07 里斯本半日城市步行",
           "10/07 晚住 Cabinn Metro Hotel，10/08 从哥本哈根机场飞北京",
@@ -574,7 +574,7 @@ const data = {
         ["09/25", "北京 → 伦敦中转 → 里斯本", "13:35 从北京首都机场 T3 起飞，17:40 落地伦敦希思罗机场 T2；伦敦中转 1 小时 05 分，18:45 从伦敦希思罗机场 T2 起飞，21:35 落地里斯本机场 T1。落地后入住已订的 The Delight Hostel 豪华四人间：建皇（两人）、龙龙、娘娘共 4 人入住。"],
         ["09/26", "里斯本郊区海边一日游", "建皇（两人）、龙龙和娘娘四人报名这个专业路线：09:00 从里斯本市区出发，10:00 地狱之口，10:50 罗卡角，12:00 雷加莱拉庄园，14:30 辛特拉王宫，16:00 佩纳宫。主打大西洋海岸、欧亚大陆最西端、雷加莱拉庄园创始之井和两座宫殿；当天不再叠加里斯本市区重行程。"],
         ["09/27", "里斯本 → 波尔图", lisbonPortoBusDetail + "下午玩老城河岸、路易一世大桥、杜罗河边。娘娘当晚飞阿姆斯特丹；建皇（两人）和龙龙晚上入住波尔图盖亚美居酒店，实付 ¥544.94。"],
-        ["09/28", "波尔图 → 巴黎夜游 + 已订寄存（不住酒店）", `09:05 从波尔图弗朗西斯科卡内罗机场起飞，12:15 落地巴黎奥利机场 T1，航班易捷航空 U24886；巴黎跨夜中转 17 小时 45 分，第二天 06:00 从巴黎戴高乐机场 T2D 起飞去冰岛；娘娘已在 09/27 晚从波尔图飞回阿姆斯特丹。落地后从奥利机场直接前往 <a href="${parisLuggage.url}" target="_blank" rel="noopener noreferrer">${parisLuggage.name} · 打开门店地图</a> 寄存行李。${parisLuggage.detail} 13:00 是预约开始时间，不是必须抵达门店的时间；从机场取行李后按实际交通情况前往。<a href="https://www.google.com/maps/dir/?api=1&origin=Paris%20Orly%20Airport%20Terminal%201&destination=82%20Rue%20du%20Faubourg%20Saint-Martin%2075010%20Paris&travelmode=transit" target="_blank" rel="noopener noreferrer">奥利机场 → 寄存点公共交通导航</a>。寄存后在巴黎游玩，保留日落塞纳河游船、20:00 埃菲尔铁塔亮灯 / 闪灯安排；当晚不订酒店。半夜返回同一门店取行李，再直接去戴高乐机场；约 02:00 为计划出发时间，需提前落实夜间交通，预留取件、路程和机场值机安检时间。<a href="https://www.google.com/maps/dir/?api=1&origin=82%20Rue%20du%20Faubourg%20Saint-Martin%2075010%20Paris&destination=Charles%20de%20Gaulle%20Airport%20Terminal%202D&travelmode=driving" target="_blank" rel="noopener noreferrer">寄存点 → 戴高乐 T2D 乘车路线</a>。门店法国客服电话：+33 1 87 21 88 44；<a href="https://lockandenjoy.com/en/paris-chooselockers/gare-de-lest/" target="_blank" rel="noopener noreferrer">寄存门店官网</a>。`],
+        ["09/28", "波尔图 → 巴黎夜游 + 已订寄存（不住酒店）", `09:05 从波尔图弗朗西斯科卡内罗机场起飞，12:15 落地巴黎奥利机场 T1，航班易捷航空 U24886；巴黎跨夜中转 17 小时 45 分，第二天 06:00 从巴黎戴高乐机场 T2D 起飞去冰岛；娘娘已在 09/27 晚从波尔图飞回阿姆斯特丹。落地后从奥利机场直接前往 <a href="${parisLuggage.url}" target="_blank" rel="noopener noreferrer">${parisLuggage.name} · 打开门店地图</a> 寄存行李。${parisLuggage.detail} 13:00 是预约开始时间，不是必须抵达门店的时间；从机场取行李后按实际交通情况前往。<a href="https://www.google.com/maps/dir/?api=1&origin=Paris%20Orly%20Airport%20Terminal%201&destination=82%20Rue%20du%20Faubourg%20Saint-Martin%2075010%20Paris&travelmode=transit" target="_blank" rel="noopener noreferrer">奥利机场 → 寄存点公共交通导航</a>。寄存好行李后先去 <a href="https://www.google.com/maps/search/?api=1&query=Carr%C3%A9%20Pain%20de%20Mie%205%20Rue%20Rambuteau%2075004%20Paris" target="_blank" rel="noopener noreferrer">Carré Pain de Mie · 餐厅地图</a> 吃虾排三明治；地址：5 Rue Rambuteau, 75004 Paris（玛黑区），到店时间按落地和寄存进度安排。14:30（巴黎当地时间）在 <a href="https://www.google.com/maps/search/?api=1&query=Bouillon%20Julien%2016%20rue%20du%20Faubourg%20Saint%20Denis%2075010%20Paris" target="_blank" rel="noopener noreferrer">Bouillon Julien · 餐厅地图</a> 用餐，已订 2 人；预订姓名：hector pei。地址：16 rue du Faubourg Saint Denis, 75010 Paris；到店出示手机保存的原始预约凭证。12:15 落地后还需取行李、进城、寄存及两店转场，时间较紧；请预留 14:30 预约到店时间。寄存后在巴黎游玩，保留日落塞纳河游船、20:00 埃菲尔铁塔亮灯 / 闪灯安排；当晚不订酒店。半夜返回同一门店取行李，再直接去戴高乐机场；约 02:00 为计划出发时间，需提前落实夜间交通，预留取件、路程和机场值机安检时间。<a href="https://www.google.com/maps/dir/?api=1&origin=82%20Rue%20du%20Faubourg%20Saint-Martin%2075010%20Paris&destination=Charles%20de%20Gaulle%20Airport%20Terminal%202D&travelmode=driving" target="_blank" rel="noopener noreferrer">寄存点 → 戴高乐 T2D 乘车路线</a>。门店法国客服电话：+33 1 87 21 88 44；<a href="https://lockandenjoy.com/en/paris-chooselockers/gare-de-lest/" target="_blank" rel="noopener noreferrer">寄存门店官网</a>。`],
         ["09/29", "巴黎 → 冰岛 + 史费拉浮潜（已订 ¥2585.04/2人）", "凌晨从 LOCK & enjoy! 巴黎东站店取回行李，计划约 02:00 从寄存点出发去戴高乐机场 T2D；前一晚不住酒店，寄存订单截至当天 04:00，需在出发去机场前完成取件。06:00 从巴黎戴高乐机场 T2D 起飞，07:50 落地雷克雅未克凯夫拉维克机场，航班易捷航空 U24629；飞行 3 小时 50 分。落地后进雷克雅未克市区放行李/换保暖衣物；12:00 在 Klettur Hótel（Mjölnisholt 12–14）等候 Arctic Adventures 接车，接车可能需要 30 分钟。浮潜订单包含雷市接送，无需自行前往辛格维利尔国家公园；实际回城时间听向导安排，晚上雷克雅未克市区吃饭和轻量 CityWalk。<a href=\"https://cn.adventures.is/iceland/day-tours/snorkeling-and-diving/into-the-blue/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["09/30", "已订：Kerlingarfjoll 高地徒步团（¥2568.57/2人）", "已订 Kerlingarfjoll Hiking Tour；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；徒步路线听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["10/01", "已订：斯奈山半岛小团（¥1796/2人，¥898/人）", "已订 Arctic Adventures 斯奈山半岛小团；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；停靠顺序听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
@@ -1484,10 +1484,10 @@ function getDailyDetailSections(personId, date, detail) {
     return starts.map((start, index) => ({ label: labels[index], items: splitDailyDetail(detail.slice(start, starts[index + 1])) }));
   }
   if (personId === "jianhuang" && date === "09/28") {
-    const markers = ["落地后从奥利机场直接前往", "寄存后在巴黎游玩", "半夜返回同一门店取行李", "门店法国客服电话："];
+    const markers = ["落地后从奥利机场直接前往", "寄存好行李后先去", "寄存后在巴黎游玩", "半夜返回同一门店取行李", "门店法国客服电话："];
     const starts = [0, ...markers.map((marker) => detail.indexOf(marker))];
     if (starts.some((start, index) => index > 0 && start <= starts[index - 1])) return fallback;
-    const labels = ["航班 · 抵达巴黎", "寄存 · 已订订单与导航", "白天与晚间 · 巴黎游玩", "跨夜交通 · 取件后去机场", "门店联系"];
+    const labels = ["航班 · 抵达巴黎", "寄存 · 已订订单与导航", "餐饮 · 三明治 + 14:30 已订午餐", "白天与晚间 · 巴黎游玩", "跨夜交通 · 取件后去机场", "门店联系"];
     return starts.map((start, index) => ({
       label: labels[index],
       items: splitDailyDetail(detail.slice(start, starts[index + 1])),
