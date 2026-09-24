@@ -1208,7 +1208,7 @@ const deferredImageObserver = "IntersectionObserver" in window
           const image = entry.target;
           const source = image.dataset.src;
           if (source) {
-            image.src = source;
+            image.setAttribute(image.localName === "image" ? "href" : "src", source);
             image.removeAttribute("data-src");
           }
           observer.unobserve(image);
@@ -1226,10 +1226,10 @@ function imageSourceAttrs(source, eager = false) {
 }
 
 function observeDeferredImages(root = document) {
-  const images = root.querySelectorAll("img[data-src]");
+  const images = root.querySelectorAll("img[data-src], image[data-src]");
   if (!deferredImageObserver) {
     images.forEach((image) => {
-      image.src = image.dataset.src;
+      image.setAttribute(image.localName === "image" ? "href" : "src", image.dataset.src);
       image.removeAttribute("data-src");
     });
     return;
@@ -1561,13 +1561,13 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
         </div>
         <h3 class="daily-card__title">${title}</h3>
       </header>
-      <div class="daily-card__media" tabindex="0" aria-label="${date} ${title} 真实照片，可左右滑动或使用方向键">
+      <div class="daily-card__media" tabindex="0" aria-label="${date} ${title} 真实照片${images.length > 1 ? "，可左右滑动或使用方向键" : ""}">
         ${images
           .map(
             (image, index) => `
               <figure>
                 <img ${imageSourceAttrs(image, priority && index === 0)} alt="${title}真实景色 ${index + 1}" draggable="false" />
-                <figcaption class="daily-card__photo-count">${index + 1} / ${images.length} · 左右滑动</figcaption>
+                <figcaption class="daily-card__photo-count">${index + 1} / ${images.length}${images.length > 1 ? " · 左右滑动" : ""}</figcaption>
               </figure>
             `,
           )
@@ -1853,7 +1853,7 @@ function renderRouteAtlas(dayId = activeRouteDayId) {
       const isSelected = stop.dayIds.includes(activeRouteDayId);
       const isStay = stop.kind.includes("住宿");
       return `
-        <g class="route-map__stop ${isSelected ? "is-selected" : "is-muted"} ${isStay ? "is-stay" : ""}" tabindex="0" role="img" aria-label="${escapeHtml(stop.label)}：${escapeHtml(stop.kind)}">
+        <g class="route-map__stop ${isSelected ? "is-selected" : "is-muted"} ${isStay ? "is-stay" : ""}" role="img" aria-label="${escapeHtml(stop.label)}：${escapeHtml(stop.kind)}">
           <circle cx="${stop.x}" cy="${stop.y}" r="${isStay ? 9 : 7}" fill="${isStay ? "#fff" : selectedDay.color}" />
           <circle class="route-map__stop-core" cx="${stop.x}" cy="${stop.y}" r="${isStay ? 4 : 3}" fill="${isStay ? selectedDay.color : "#fff"}" />
           ${isSelected ? `<text x="${stop.x + 12}" y="${stop.y - 10}">${escapeHtml(stop.label)}</text>` : ""}
@@ -2634,6 +2634,7 @@ renderReferenceGuide(
 );
 renderMobileTimeline();
 renderRouteAtlas();
+observeDeferredImages(document.querySelector("#routeAtlasMap"));
 applyRoleView(activeRoleId, { persist: shouldNormalizeRoleUrl });
 
 roleChooserEl.addEventListener("click", (event) => {

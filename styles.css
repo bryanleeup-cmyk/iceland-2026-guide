@@ -1588,7 +1588,6 @@ footer p {
 .route-map__route.is-muted { opacity: 0.18; }
 
 .route-map__stop {
-  cursor: pointer;
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
