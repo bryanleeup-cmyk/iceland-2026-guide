@@ -24,21 +24,30 @@
     status.textContent = "正在查询天气与极光，当前行程可继续阅读…";
     try {
       const result = await refreshTravelWeather();
-      // Re-render the active dashboard so the compact header summary and full details stay in sync.
-      const currentRole = activeRoleId;
-      const scrollY = window.scrollY;
-      const expandedCards = new Set(
-        [...document.querySelectorAll("#roleDashboard details.daily-weather[open]")]
-          .map((element) => `${element.dataset.weatherRole}|${element.dataset.weatherDate}`),
-      );
-      applyRoleView(currentRole, { persist: false });
-      requestAnimationFrame(() => {
-        document.querySelectorAll("#roleDashboard details.daily-weather").forEach((element) => {
-          if (expandedCards.has(`${element.dataset.weatherRole}|${element.dataset.weatherDate}`)) element.open = true;
-        });
-        window.scrollTo(0, scrollY);
-      });
       const updated = result.updated.length;
+      // Only rebuild when a provider returned newer data; this keeps open details and scroll
+      // position untouched on an all-failed refresh. When rebuilding, restore open cards after
+      // the dashboard's deferred render has settled so mobile reading does not jump or collapse.
+      if (updated) {
+        const currentRole = activeRoleId;
+        const scrollY = window.scrollY;
+        const expandedCards = new Set(
+          [...document.querySelectorAll("#roleDashboard details.daily-weather[open]")]
+            .map((element) => `${element.dataset.weatherRole}|${element.dataset.weatherDate}`),
+        );
+        applyRoleView(currentRole, { persist: false });
+        const restoreDashboardState = () => {
+          document.querySelectorAll("#roleDashboard details.daily-weather").forEach((element) => {
+            if (expandedCards.has(`${element.dataset.weatherRole}|${element.dataset.weatherDate}`)) element.open = true;
+          });
+          window.scrollTo(0, scrollY);
+        };
+        requestAnimationFrame(() => {
+          restoreDashboardState();
+          window.setTimeout(restoreDashboardState, 0);
+          window.setTimeout(restoreDashboardState, 120);
+        });
+      }
       const summary = updated === 2 ? "天气与极光已更新" : updated === 1
         ? `${result.updated[0] === "weather" ? "天气" : "极光"}已更新，${result.failed[0] === "weather" ? "天气" : "极光"}暂未更新，保留上次数据`
         : "刷新未成功，已保留上次数据；请联网重试";

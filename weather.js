@@ -148,7 +148,7 @@ function weatherDateLabel(iso, snapshot) {
 function renderWeatherSummary(personId, date, snapshot) {
   const dates = weatherCardDates(personId, date);
   if (!snapshot) return '<span class="weather-summary__row">天气数据暂不可用 · 点开查看</span>';
-  if (dates.length > 1) return `<span class="weather-summary__row">${dates[0].slice(5).replace("-", "/")}–${dates.at(-1).slice(5).replace("-", "/")} · ${dates.length} 天逐日天气</span>`;
+  if (dates.length > 1) return `<span class="weather-summary__row">${dates[0].slice(5).replace("-", "/")}–${dates[dates.length - 1].slice(5).replace("-", "/")} · ${dates.length} 天逐日天气</span>`;
   const iso = dates[0];
   const rows = weatherPlaceIds(personId, iso).map((id) => {
     const day = snapshot.places[id]?.daily[iso];
