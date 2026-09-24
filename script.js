@@ -1154,8 +1154,8 @@ const dailyVisuals = {
   "jianhuang|10/08": { city: "哥本哈根", sunrise: "07:25", sunset: "18:28", season: "10 月初哥本哈根白天不长，适合新港、王宫和市中心轻量线。", images: ["assets/spots/copenhagen.webp"] },
   "jianhuang|10/09": { city: "北京", sunrise: "06:17", sunset: "17:45", season: "回到北京后只做恢复日，不再安排旅行强度。", images: ["assets/spots/beijing.webp"] },
 
-  "haigang|09/30": { city: "上海", sunrise: "按当地", sunset: "按当地", season: "晚间抵达浦东机场 T1，跨夜中转以休息和补给为主，次日中午继续飞阿姆斯特丹。", images: ["assets/spots/shanghai.webp"] },
-  "haigang|10/01": { city: "阿姆斯特丹", sunrise: "按当地", sunset: "按当地", season: "傍晚抵达荷兰，入秋后注意保暖；当晚以休息为主，为次日大巴和航班衔接留足精力。", images: ["assets/spots/city/amsterdam-canal.webp"] },
+  "haigang|09/30": { city: "北京 / 上海", sunrise: "北京 06:09 · 上海 05:46", sunset: "北京 17:59 · 上海 17:41", season: "晚间抵达浦东机场 T1，跨夜中转以休息和补给为主，次日中午继续飞阿姆斯特丹。", images: ["assets/spots/shanghai.webp"] },
+  "haigang|10/01": { city: "上海 / 阿姆斯特丹", sunrise: "上海 05:47 · 阿姆斯特丹 07:41", sunset: "上海 17:39 · 阿姆斯特丹 19:17", season: "傍晚抵达荷兰，入秋后注意保暖；当晚以休息为主，为次日大巴和航班衔接留足精力。", images: ["assets/spots/city/amsterdam-canal.webp"] },
   "haigang|10/02": { city: "布鲁塞尔 / 哥本哈根", sunrise: "07:13", sunset: "18:43", season: "当天从阿姆斯特丹乘大巴到布鲁塞尔，再飞哥本哈根过夜；优先确保大巴、机场转场和航班衔接。", images: ["assets/spots/brussels.webp", "assets/spots/copenhagen.webp"] },
   "haigang|10/03": { city: "雷克雅未克 / 黄金圈", sunrise: "07:41", sunset: "18:50", season: "10 月初冰岛早晚冷；早上落地后先寄存行李，约 10:00 跟建皇组合会合、吃早午饭，下午看黄金圈，晚间休息，不安排追极光。", images: ["assets/spots/gullfoss.webp", "assets/spots/iceland/thingvellir-1.webp", "assets/spots/iceland/strokkur-1.webp"] },
   "haigang|10/04": { city: "冰岛南岸", sunrise: "07:33", sunset: "18:38", season: "南岸瀑布和黑沙滩在 10 月初很有戏剧感，防风防水最重要。", images: ["assets/spots/tourlink/nice-south-waterfall-1.webp", "assets/spots/reynisfjara.webp", "assets/spots/gallery/reynisfjara-seljalandsfoss.webp", "assets/spots/gallery/reynisfjara-skogafoss.webp"] },
@@ -1176,7 +1176,8 @@ const dailyVisuals = {
   "tongyan|10/08": { city: "雷克雅未克", sunrise: "07:55", sunset: "18:33", season: "送赶海组离开后，适合蓝湖、机场附近或市区慢一点。", images: ["assets/spots/aurora.webp", "assets/spots/gullfoss.webp"] },
   "tongyan|10/09": { city: "雷克雅未克", sunrise: "07:58", sunset: "18:29", season: "早班机前一天不要跑远，留给蓝湖、补给和机场附近住宿。", images: ["assets/spots/aurora.webp", "assets/spots/gullfoss.webp"] },
   "tongyan|10/10": { city: "布鲁塞尔", sunrise: "07:56", sunset: "19:01", season: "从冰岛回到欧洲大陆，布鲁塞尔秋天适合轻量城市收尾。", images: ["assets/spots/brussels.webp"] },
-  "tongyan|10/11-10/12": { city: "布鲁塞尔 / 北京 / 深圳", sunrise: "07:58", sunset: "18:59", season: "返程日只看航班和中转，别再安排城市项目。", images: ["assets/spots/brussels.webp", "assets/spots/shenzhen.webp"] },
+  "tongyan|10/11": { city: "布鲁塞尔 → 深圳", sunrise: "10/11 布鲁塞尔 07:58 · 10/12 深圳 06:18", sunset: "10/11 布鲁塞尔 18:58 · 10/12 深圳 18:01", season: "返程日只看航班和中转，别再安排城市项目。", images: ["assets/spots/brussels.webp", "assets/spots/shenzhen.webp"] },
+  "tongyan|10/11-10/12": { city: "布鲁塞尔 / 北京 / 深圳", sunrise: "10/11 布鲁塞尔 07:58 · 10/12 深圳 06:18", sunset: "10/11 布鲁塞尔 18:58 · 10/12 深圳 18:01", season: "返程日只看航班和中转，别再安排城市项目。", images: ["assets/spots/brussels.webp", "assets/spots/shenzhen.webp"] },
 
   "niangniang|09/25": { city: "里斯本", sunrise: "07:26", sunset: "19:29", season: "9 月底从阿姆斯特丹飞到里斯本，晚上只适合入住和吃饭。", images: ["assets/spots/belem.webp", "assets/spots/sintra-pena.webp"] },
   "niangniang|09/26": { city: "里斯本周边", sunrise: "07:27", sunset: "19:27", season: "辛特拉和罗卡角是葡萄牙海边秋日感最强的一天。", images: ["assets/spots/portugal/cabo-da-roca-sunset.webp", "assets/spots/portugal/boca-do-inferno.webp", "assets/spots/portugal/regaleira-initiation-well.webp", "assets/spots/portugal/sintra-national-palace.webp", "assets/spots/portugal/pena-palace-exterior.webp"] },

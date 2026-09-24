@@ -564,12 +564,20 @@
     ["09/30", "深圳 / 上海", "出发日以机场与跨夜休息为主，核对上海到达机场及次日浦东出发的衔接。", ["assets/spots/city/shenzhen-civic-center.webp", "assets/spots/city/shanghai-bund-promenade.webp"]],
     ["10/01", "上海 / 哥本哈根", "哥本哈根入秋后早晚偏凉；19:00 抵达后前往酒店休息。", ["assets/spots/city/shanghai-lujiazui-bund.webp", "assets/spots/city/copenhagen-nyhavn.webp"]],
     ["10/02", "哥本哈根", "市区自由活动，以轻量步行、用餐和休息为主，按天气与体力调整。", ["assets/spots/city/copenhagen-nyhavn.webp", "assets/spots/city/copenhagen-amalienborg.webp", "assets/spots/city/copenhagen-little-mermaid.webp"]],
-    ["10/03", "哥本哈根 / 凯夫拉维克 / 雷克雅未克", "23:50 抵达冰岛，深夜以保暖、机场交通和酒店入住为先，为次日南岸团留出休息时间。", ["assets/spots/city/copenhagen-nyhavn.webp", "assets/spots/iceland/reykjavik-harpa.webp"]],
-    ["10/10", "凯夫拉维克 / 弗罗茨瓦夫", "18:50 离开冰岛，随后跨夜中转；白天不安排远途项目。", ["assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"]],
-    ["10/11-10/12", "弗罗茨瓦夫 / 阿姆斯特丹 / 广州", "两次中转后返回广州，照片为中转城市阿姆斯特丹；当天以航班衔接和休息为主。", ["assets/spots/city/amsterdam-canal.webp"]],
+    ["10/03", "哥本哈根 / 凯夫拉维克", "23:50 抵达冰岛，深夜以保暖、机场交通和酒店入住为先，为次日南岸团留出休息时间。", ["assets/spots/city/copenhagen-nyhavn.webp", "assets/spots/iceland/reykjavik-harpa.webp"]],
+    ["10/10", "雷克雅未克 / 凯夫拉维克", "18:50 从雷克雅未克出发前往凯夫拉维克机场，随后跨夜中转；白天不安排远途项目。", ["assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"]],
+    ["10/11-10/12", "弗罗茨瓦夫 / 阿姆斯特丹 / 广州", "10/11 先在弗罗茨瓦夫、阿姆斯特丹中转，10/12 抵达广州；当天以航班衔接和休息为主。", ["assets/spots/city/amsterdam-canal.webp"]],
   ];
   transitVisuals.forEach(([date, city, season, images]) => {
-    dailyVisuals[`yueyue|${date}`] = { city, sunrise: "按当地", sunset: "按当地", season, images };
+    const sunlight = {
+      "09/30": ["深圳 / 上海", "深圳 06:14 · 上海 05:46", "深圳 18:12 · 上海 17:41"],
+      "10/01": ["上海 / 哥本哈根", "上海 05:47 · 哥本哈根 07:12", "上海 17:39 · 哥本哈根 18:45"],
+      "10/02": ["哥本哈根", "07:14", "18:42"],
+      "10/03": ["哥本哈根 / 凯夫拉维克", "哥本哈根 07:16 · 凯夫拉维克 07:44", "哥本哈根 18:40 · 凯夫拉维克 18:52"],
+      "10/10": ["雷克雅未克 / 凯夫拉维克", "雷克雅未克 08:02 · 凯夫拉维克 08:05", "雷克雅未克 18:25 · 凯夫拉维克 18:28"],
+      "10/11-10/12": ["弗罗茨瓦夫 / 阿姆斯特丹 / 广州", "10/11 弗罗茨瓦夫 07:08 · 阿姆斯特丹 07:58；10/12 广州 06:18", "10/11 弗罗茨瓦夫 18:07 · 阿姆斯特丹 18:54；10/12 广州 18:01"],
+    }[date];
+    dailyVisuals[`yueyue|${date}`] = { city: sunlight?.[0] || city, sunrise: sunlight?.[1] || "按当地", sunset: sunlight?.[2] || "按当地", season, images };
   });
 
   data.recommendedPlan.forEach((day) => {

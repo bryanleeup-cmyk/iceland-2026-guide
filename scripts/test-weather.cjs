@@ -39,6 +39,21 @@ test('every final daily card has dated weather and keeps its scenery note', () =
   assert.equal(nights, 26);
 });
 
+test('every final daily card has concrete local sunrise and sunset times', () => {
+  const placeholders = [];
+  for (const person of data.personPlans) {
+    for (const [date, title, detail] of person.days) {
+      const visual = call('getDailyVisual', person.id, date, title, detail);
+      if (visual.sunrise === '按当地' || visual.sunset === '按当地') placeholders.push(`${person.id} ${date}`);
+    }
+  }
+  assert.deepEqual(placeholders, []);
+  assert.match(call('getDailyVisual', 'yueyue', '09/30', '', '').sunrise, /深圳 06:14.*上海 05:46/);
+  assert.match(call('getDailyVisual', 'yueyue', '10/03', '', '').sunset, /哥本哈根 18:40.*凯夫拉维克 18:52/);
+  assert.match(call('getDailyVisual', 'tongyan', '10/11', '', '').sunrise, /10\/11 布鲁塞尔 07:58.*10\/12 深圳 06:18/);
+  assert.match(call('renderDailyWeather', 'yueyue', '09/30', call('getDailyVisual', 'yueyue', '09/30', '', '')), /sunrise-sunset\.org/);
+});
+
 test('highlands, cross-border dates and return arrivals use the actual destinations', () => {
   assert.deepEqual(plain(call('weatherPlaceIds', 'jianhuang', '2026-09-30')), ['kerlingarfjoll']);
   assert.deepEqual(plain(call('weatherPlaceIds', 'jianhuang', '2026-10-02')), ['landmannalaugar']);
