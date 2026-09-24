@@ -170,17 +170,6 @@ function renderWeatherSummary(personId, date, snapshot) {
   return `${rows}${aurora}`;
 }
 
-function renderDailyWeatherCompact(personId, date) {
-  const snapshot = getWeatherSnapshot();
-  const content = snapshot
-    ? renderWeatherSummary(personId, date, snapshot)
-    : '<span class="weather-summary__row">天气待更新 · 点上方按钮刷新</span>';
-  return `<div class="daily-weather-compact" aria-label="${weatherEscape(date)} 天气摘要">
-    <span class="daily-weather-compact__label">天气</span>
-    <span class="daily-weather-compact__content">${content}</span>
-  </div>`;
-}
-
 function renderAuroraWeather(personId, iso, snapshot) {
   const night = getAuroraNight(personId, iso);
   if (!night) return "";

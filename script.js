@@ -1549,7 +1549,6 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
             <span>日出 ${visual.sunrise}</span>
             <span>日落 ${visual.sunset}</span>
           </div>
-          ${typeof renderDailyWeatherCompact === "function" ? renderDailyWeatherCompact(personId, date) : ""}
         </div>
         <h3 class="daily-card__title">${title}</h3>
       </header>

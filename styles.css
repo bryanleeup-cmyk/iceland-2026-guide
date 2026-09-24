@@ -541,35 +541,6 @@ main {
   margin-bottom: 8px;
 }
 
-.daily-weather-compact {
-  display: flex;
-  flex: 1 1 260px;
-  min-width: 0;
-  align-items: flex-start;
-  gap: 7px;
-  border-left: 1px solid var(--line);
-  padding-left: 9px;
-  color: #294551;
-}
-
-.daily-weather-compact__label {
-  flex: 0 0 auto;
-  color: #526b77;
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1.7;
-}
-
-.daily-weather-compact__content {
-  min-width: 0;
-  flex: 1 1 auto;
-}
-
-.daily-weather-compact .weather-summary__row,
-.daily-weather-compact .weather-summary__aurora {
-  font-size: 12px;
-}
-
 .daily-card__top time {
   color: var(--ink);
   font-size: 15px;
@@ -2976,14 +2947,6 @@ footer {
 
   .daily-card__top time {
     font-size: 18px;
-  }
-
-  .daily-weather-compact {
-    flex-basis: 100%;
-    border-top: 1px solid var(--line);
-    border-left: 0;
-    padding-top: 7px;
-    padding-left: 0;
   }
 
   .daily-card__media {
