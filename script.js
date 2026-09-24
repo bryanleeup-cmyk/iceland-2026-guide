@@ -2643,6 +2643,7 @@ renderReferenceGuide(
 );
 renderRouteAtlas();
 observeDeferredImages(document.querySelector("#routeAtlasMap"));
+if (shouldNormalizeRoleUrl) updateRoleUrl(activeRoleId);
 
 roleChooserEl.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-role]");
@@ -2720,15 +2721,23 @@ document.querySelectorAll(".filter").forEach((button) => {
   button.addEventListener("click", () => applyFilter(button.dataset.filter));
 });
 
-document.querySelectorAll(".bar").forEach((bar) => {
-  bar.addEventListener("mouseenter", (event) => showTooltip(bar.dataset.group, event));
-  bar.addEventListener("mousemove", moveTooltip);
-  bar.addEventListener("mouseleave", hideTooltip);
-  bar.addEventListener("click", (event) => {
-    applyFilter(bar.dataset.group);
-    showTooltip(bar.dataset.group, event);
-    window.setTimeout(hideTooltip, 2200);
-  });
+rowsEl.addEventListener("pointerover", (event) => {
+  const bar = event.target.closest(".bar");
+  if (bar && event.pointerType === "mouse") showTooltip(bar.dataset.group, event);
+});
+rowsEl.addEventListener("pointermove", (event) => {
+  if (event.target.closest(".bar") && event.pointerType === "mouse") moveTooltip(event);
+});
+rowsEl.addEventListener("pointerout", (event) => {
+  const bar = event.target.closest(".bar");
+  if (bar && !bar.contains(event.relatedTarget)) hideTooltip();
+});
+rowsEl.addEventListener("click", (event) => {
+  const bar = event.target.closest(".bar");
+  if (!bar) return;
+  applyFilter(bar.dataset.group);
+  showTooltip(bar.dataset.group, event);
+  window.setTimeout(hideTooltip, 2200);
 });
 
 personTabsEl.addEventListener("click", (event) => {

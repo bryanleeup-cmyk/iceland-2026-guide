@@ -272,12 +272,22 @@ test('meeting note formatting preserves every instruction and time qualifier', (
   }
 });
 
-test('data patches render the final page once after all overrides are merged', () => {
-  const patchSource = fs.readFileSync(path.join(root, 'ref32-patch.js'), 'utf8');
+test('initial rendering sees all final role, booking, and hotel data', () => {
+  const renderCalls = [];
+  const patchContext = { window: {}, document: { querySelector: () => null }, activeRoleId: null };
+  vm.createContext(patchContext);
   for (const name of ['renderRows', 'renderHighlights', 'renderHotel', 'renderMobileTimeline', 'applyRoleView']) {
-    const calls = patchSource.match(new RegExp(`^\\s*${name}\\(.*\\);$`, 'gm')) || [];
-    assert.equal(calls.length, 1, `${name} should run once after patching`);
+    patchContext[name] = () => {
+      const snapshot = JSON.parse(vm.runInContext('JSON.stringify(data)', patchContext));
+      assert.deepEqual(snapshot, finalData, `${name} rendered an incomplete itinerary`);
+      const stay = vm.runInContext("getDailyStay('yueyue', '10/09', '')", patchContext);
+      assert.match(stay.name, /Fosshotel Lind/);
+      renderCalls.push(name);
+    };
   }
+  vm.runInContext(scriptSource.slice(0, dataBoundary), patchContext);
+  vm.runInContext(patchSource, patchContext);
+  assert.deepEqual(renderCalls, ['renderRows', 'renderHighlights', 'renderHotel', 'renderMobileTimeline', 'applyRoleView']);
 });
 
 test('Paris luggage booking keeps its cross-midnight window distinct from the airport departure', () => {

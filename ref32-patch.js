@@ -204,7 +204,6 @@
     if (personId === "niangniang" && ["09/25", "09/26"].includes(date)) return lisbonStay;
     return null;
   };
-
 })();
 
 /* Haigang shares Tongtong itinerary from 10/04 through 10/07. */
@@ -509,7 +508,6 @@
     allRoleAfterTongtongUpdate.focusDays[3] = ["10/06+", "5 人 → 3 人后续段", "10/06 高地、10/07 斯奈山、10/08 黄金圈、10/09 温泉；人数按截图递减。"];
   }
   data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；赶海组 10/08 离开；彤彤 10/09 转住机场附近，10/10 清晨离开冰岛";
-
 })();
 
 (function applyYueyueUpdate() {
@@ -611,7 +609,6 @@ renderHighlights();
 renderHotel();
 renderMobileTimeline();
 applyRoleView(activeRoleId || "jianhuang", { persist: false });
-if (typeof shouldNormalizeRoleUrl !== "undefined" && shouldNormalizeRoleUrl) updateRoleUrl(activeRoleId);
 
 window.travelDataReady = true;
 document.body?.setAttribute("data-itinerary-status", "ready");
