@@ -6,13 +6,13 @@
     status.textContent = "暂时无法刷新，已保存的预报仍可查看。";
     return;
   }
-  const stamp = (value) => value.slice(5, 16).replace("T", " ");
+  const stamp = (value) => weatherBeijingTime(value).slice(5);
   const times = () => {
     const snapshot = getWeatherSnapshot();
     if (!snapshot) return "暂无已保存的预报";
     const weather = stamp(weatherQueryTime(snapshot, "weather"));
     const aurora = stamp(weatherQueryTime(snapshot, "aurora"));
-    return weather === aurora ? `查询 ${weather} UTC` : `天气 ${weather} · 极光 ${aurora} UTC`;
+    return weather === aurora ? `查询 ${weather} 北京时间` : `天气 ${weather} 北京时间 · 极光 ${aurora} 北京时间`;
   };
   button.disabled = false;
   status.textContent = `${times()} · 点击更新全部组合`;

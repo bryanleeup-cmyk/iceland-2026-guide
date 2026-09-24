@@ -139,6 +139,24 @@ function weatherQueryTime(snapshot, source) {
   return snapshot[`${source}RetrievedAt`] || snapshot.retrievedAt;
 }
 
+function weatherBeijingTime(value) {
+  const timestamp = Date.parse(value);
+  if (!Number.isFinite(timestamp)) return String(value).slice(0, 16).replace("T", " ");
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(new Date(timestamp)).reduce((result, part) => {
+    if (part.type !== "literal") result[part.type] = part.value;
+    return result;
+  }, {});
+  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}`;
+}
+
 function weatherDateLabel(iso, snapshot) {
   const queryDate = weatherQueryTime(snapshot, "weather").slice(0, 10);
   const age = (Date.parse(iso) - Date.parse(queryDate)) / 86400000;
@@ -188,7 +206,7 @@ function renderAuroraWeather(personId, iso, snapshot) {
     ${cloudText ? `<p>${weatherEscape(cloudText)}</p>` : ""}
     <p><strong>短期夜间 Kp：</strong>${kp ? `21:00–00:00 为 ${kp[0]}；00:00–03:00 为 ${kp[1]}（0–9）。` : "尚未覆盖此夜，临近约 3 天再查。"}</p>
     <p><strong>长期展望 · 各日最大 Kp</strong><br>${weatherEscape(longKp)}</p>
-    <p class="daily-weather__note">按 UTC 自然日，非整晚指数或肉眼可见概率。长期展望变动较大。</p>
+    <p class="daily-weather__note">极光日期口径按 UTC 自然日（查询时间按北京时间显示），非整晚指数或肉眼可见概率。长期展望变动较大。</p>
     ${night.note ? `<p class="daily-weather__note">${weatherEscape(night.note)}</p>` : ""}
     <div class="daily-weather__links">${weatherLink("https://en.vedur.is/weather/forecasts/aurora/", "查冰岛官方云图与极光 ↗")}</div>
   </div>`;
@@ -198,8 +216,8 @@ function renderDailyWeather(personId, date, visual, { expanded = false } = {}) {
   const snapshot = getWeatherSnapshot();
   const scenery = `<p class="daily-card__season"><span class="daily-card__season-label">风景与季节参考</span>${weatherEscape(visual.city)}：${weatherEscape(visual.season)}</p>`;
   if (!snapshot) return `<details class="daily-weather"${expanded ? " open" : ""}><summary>天气数据暂不可用 · 查看风景</summary><p>预报快照暂不可用，请联网查看 ${weatherLink("https://open-meteo.com/", "天气来源")}。</p>${scenery}</details>`;
-  const retrieved = weatherQueryTime(snapshot, "weather").slice(0, 16).replace("T", " ");
-  const auroraRetrieved = weatherQueryTime(snapshot, "aurora").slice(0, 16).replace("T", " ");
+  const retrieved = weatherBeijingTime(weatherQueryTime(snapshot, "weather"));
+  const auroraRetrieved = weatherBeijingTime(weatherQueryTime(snapshot, "aurora"));
   const dates = weatherCardDates(personId, date);
   const days = dates.map((iso) => {
     const rows = weatherPlaceIds(personId, iso).map((id) => {
@@ -214,14 +232,14 @@ function renderDailyWeather(personId, date, visual, { expanded = false } = {}) {
   const sources = [...new Set(dates.flatMap((iso) => weatherPlaceIds(personId, iso)))].map((id) => snapshot.places[id]).filter(Boolean);
   const sourceUrls = [...new Set(sources.map((place) => place.sourceUrl))];
   const hasAurora = dates.some((iso) => getAuroraNight(personId, iso));
-  const issued = snapshot.aurora.longRange.issuedAt.slice(0, 16).replace("T", " ");
+  const issued = weatherBeijingTime(snapshot.aurora.longRange.issuedAt);
   return `<details class="daily-weather" data-weather-role="${weatherEscape(personId)}" data-weather-date="${weatherEscape(date)}"${expanded ? " open" : ""}>
     <summary aria-label="${weatherEscape(date)} 天气与风景，展开详情"><span class="weather-summary__label">天气${dates.length === 1 && weatherDateLabel(dates[0], snapshot).includes("远期") ? " · 远期" : ""}<span class="weather-summary__hint">详情</span></span><span class="weather-summary__content">${renderWeatherSummary(personId, date, snapshot)}</span></summary>
     <div class="daily-weather__details">
-      <p class="daily-weather__note">天气查询：${weatherEscape(retrieved)} UTC${hasAurora ? `<br>极光查询：${weatherEscape(auroraRetrieved)} UTC` : ""}。保存的预报，不自动刷新；可点页面上方“刷新天气与极光”。</p>
+      <p class="daily-weather__note">天气查询：${weatherEscape(retrieved)} 北京时间${hasAurora ? `<br>极光查询：${weatherEscape(auroraRetrieved)} 北京时间` : ""}。保存的预报，不自动刷新；可点页面上方“刷新天气与极光”。</p>
       ${days}
       <p class="daily-weather__note">当地日期 · 全天最低–最高温 · 含雨雪的最高降水概率。超过 7 天仅看趋势。</p>
-      <details class="daily-weather__sources"><summary>预报说明、来源与最新查询</summary><p>降水概率不是下雨时长；“暂未发布”不代表晴天或零降水。路线取代表地点，沿途可能不同。</p><p>日出日落：${weatherLink("https://sunrise-sunset.org/", "Sunrise-Sunset.org")}，按各地点当地时区计算；天气数据：${weatherLink("https://open-meteo.com/", "Open-Meteo")}（${weatherLink("https://creativecommons.org/licenses/by/4.0/", "CC BY 4.0")}）；以下为多地点原始数据，联网查询最新预报，日期范围可能与保存的快照不同。</p><div class="daily-weather__links">${sourceUrls.map((url, index) => weatherLink(url, `天气原始数据${sourceUrls.length > 1 ? ` ${index + 1}` : ""}`)).join("")}${sources.some((place) => place.timezone === "Atlantic/Reykjavik") ? weatherLink("https://en.vedur.is/weather/forecasts/areas/", "冰岛官方天气") : ""}</div>${hasAurora ? `<p>极光需要黑暗、云隙和实时活动。Kp 低也可能看到，Kp 高也可能被云遮住；总云量只是模型参考，不是极光可见概率。冰岛夜间时间为 UTC+0，21:00–次日 03:00 是本页统计窗口，不是已订活动时间。</p><p>NOAA 长期展望于 ${weatherEscape(issued)} UTC 发布。</p><div class="daily-weather__links">${weatherLink(snapshot.aurora.longRange.sourceUrl, "NOAA 长期原文")}${weatherLink(snapshot.aurora.shortRange.sourceUrl, "NOAA 短期数据")}</div>` : ""}</details>
+      <details class="daily-weather__sources"><summary>预报说明、来源与最新查询</summary><p>降水概率不是下雨时长；“暂未发布”不代表晴天或零降水。路线取代表地点，沿途可能不同。</p><p>日出日落：${weatherLink("https://sunrise-sunset.org/", "Sunrise-Sunset.org")}，按各地点当地时区计算；天气数据：${weatherLink("https://open-meteo.com/", "Open-Meteo")}（${weatherLink("https://creativecommons.org/licenses/by/4.0/", "CC BY 4.0")}）；以下为多地点原始数据，联网查询最新预报，日期范围可能与保存的快照不同。</p><div class="daily-weather__links">${sourceUrls.map((url, index) => weatherLink(url, `天气原始数据${sourceUrls.length > 1 ? ` ${index + 1}` : ""}`)).join("")}${sources.some((place) => place.timezone === "Atlantic/Reykjavik") ? weatherLink("https://en.vedur.is/weather/forecasts/areas/", "冰岛官方天气") : ""}</div>${hasAurora ? `<p>极光需要黑暗、云隙和实时活动。Kp 低也可能看到，Kp 高也可能被云遮住；总云量只是模型参考，不是极光可见概率。冰岛夜间时间为 UTC+0，21:00–次日 03:00 是本页统计窗口，不是已订活动时间。</p><p>NOAA 长期展望于 ${weatherEscape(issued)} 北京时间发布。</p><div class="daily-weather__links">${weatherLink(snapshot.aurora.longRange.sourceUrl, "NOAA 长期原文")}${weatherLink(snapshot.aurora.shortRange.sourceUrl, "NOAA 短期数据")}</div>` : ""}</details>
       ${scenery}
     </div>
   </details>`.replace(/^[ \t]+$/gm, "");

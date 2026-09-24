@@ -105,10 +105,18 @@ test('long-term Kp clearly identifies daily maxima, both UTC dates, and uncertai
   const html = call('renderDailyWeather', 'jianhuang', '10/05', visual);
   assert.match(html, /10\/05：Kp 4\/9；10\/06：Kp 4\/9/);
   assert.match(html, /各日最大 Kp/);
-  assert.match(html, /2026-09-21 03:17 UTC/);
+  assert.match(html, /2026-09-21 11:17 北京时间/);
   assert.match(html, /非整晚指数或肉眼可见概率/);
   assert.match(html, /目前不能确定/);
   assert.match(call('renderDailyWeather', 'jianhuang', '10/03', visual), /10\/03 没有追极光行程/);
+});
+
+test('weather metadata uses Beijing time regardless of the device timezone', () => {
+  assert.equal(call('weatherBeijingTime', '2026-09-24T02:36:31.735Z'), '2026-09-24 10:36');
+  assert.equal(call('weatherBeijingTime', '2026-09-23T16:00:00Z'), '2026-09-24 00:00');
+  const html = call('renderDailyWeather', 'jianhuang', '10/05', visual);
+  assert.match(html, /天气查询：2026-09-24 10:36 北京时间/);
+  assert.doesNotMatch(html, /天气查询：2026-09-24 02:36 UTC/);
 });
 
 test('missing weather remains unknown while actual zero codes and probabilities survive', () => {
@@ -144,4 +152,77 @@ test('backup includes all forecasts without script or network dependencies', () 
   assert.doesNotMatch(html, /<(?:script|img|iframe|link)\b/i);
   const manifest = vm.runInNewContext(`${read('offline-assets.js')}\nself.TRAVEL_OFFLINE_MANIFEST`, { self: {} });
   for (const name of ['weather.js', 'weather-snapshot.js']) assert(manifest.core.some((file) => file.split('?')[0] === name));
+});
+
+function weatherControls(initial, result, refreshed = initial) {
+  let current = initial;
+  let onClick;
+  const status = { textContent: '' };
+  const button = {
+    disabled: true,
+    setAttribute() {}, removeAttribute() {},
+    addEventListener(event, callback) { if (event === 'click') onClick = callback; },
+  };
+  const controls = vm.createContext({
+    document: {
+      querySelector: (selector) => selector === '#refreshWeather' ? button : status,
+      querySelectorAll: () => [],
+    },
+    window: { scrollY: 0, scrollTo() {}, setTimeout: (callback) => callback() },
+    requestAnimationFrame: (callback) => callback(),
+    activeRoleId: 'yueyue', applyRoleView() {},
+    getTravelWeatherSnapshot: () => current,
+    async refreshTravelWeather() {
+      if (result instanceof Error) throw result;
+      current = refreshed;
+      return result;
+    },
+  });
+  for (const name of ['weather.js', 'weather-controls.js']) vm.runInContext(read(name), controls);
+  return { status, button, click: () => onClick() };
+}
+
+test('weather refresh status initially converts UTC to Beijing time', () => {
+  const controls = weatherControls({ retrievedAt: '2026-09-24T06:04:00Z' });
+  assert.match(controls.status.textContent, /查询 09-24 14:04 北京时间/);
+  assert.doesNotMatch(controls.status.textContent, /UTC/);
+  assert.equal(controls.button.disabled, false);
+});
+
+test('successful weather refresh uses Beijing time across midnight', async () => {
+  const controls = weatherControls(
+    { retrievedAt: '2026-09-24T06:04:00Z' },
+    { updated: ['weather', 'aurora'], failed: [], persisted: true },
+    { retrievedAt: '2026-09-24T16:04:00Z' },
+  );
+  await controls.click();
+  assert.match(controls.status.textContent, /天气与极光已更新。查询 09-25 00:04 北京时间/);
+  assert.doesNotMatch(controls.status.textContent, /UTC/);
+  assert.equal(controls.button.disabled, false);
+});
+
+test('partial weather refresh labels both independent query times as Beijing time', async () => {
+  for (const updated of ['weather', 'aurora']) {
+    const failed = updated === 'weather' ? 'aurora' : 'weather';
+    const controls = weatherControls(
+      { retrievedAt: '2026-09-24T06:04:00Z' },
+      { updated: [updated], failed: [failed], persisted: true },
+      { retrievedAt: '2026-09-24T16:04:00Z', [`${updated}RetrievedAt`]: '2026-09-24T16:04:00Z', [`${failed}RetrievedAt`]: '2026-09-24T06:04:00Z' },
+    );
+    await controls.click();
+    assert.match(controls.status.textContent, /暂未更新，保留上次数据/);
+    assert(controls.status.textContent.includes(`天气 ${updated === 'weather' ? '09-25 00:04' : '09-24 14:04'} 北京时间`));
+    assert(controls.status.textContent.includes(`极光 ${updated === 'aurora' ? '09-25 00:04' : '09-24 14:04'} 北京时间`));
+    assert.doesNotMatch(controls.status.textContent, /UTC/);
+  }
+});
+
+test('failed and rejected weather refreshes retain the saved Beijing query time', async () => {
+  for (const result of [{ updated: [], failed: ['weather', 'aurora'], persisted: false }, new Error('offline')]) {
+    const controls = weatherControls({ retrievedAt: '2026-09-24T06:04:00Z' }, result);
+    await controls.click();
+    assert.match(controls.status.textContent, /刷新未成功，已保留上次数据；请联网重试。查询 09-24 14:04 北京时间/);
+    assert.doesNotMatch(controls.status.textContent, /UTC/);
+    assert.equal(controls.button.disabled, false);
+  }
 });
