@@ -568,7 +568,7 @@
     ["10/01", "上海 / 哥本哈根", "哥本哈根入秋后早晚偏凉；19:00 抵达后前往酒店休息。", ["assets/spots/city/shanghai-lujiazui-bund.webp", "assets/spots/city/copenhagen-nyhavn.webp"]],
     ["10/02", "哥本哈根", "市区自由活动，以轻量步行、用餐和休息为主，按天气与体力调整。", ["assets/spots/city/copenhagen-nyhavn.webp", "assets/spots/city/copenhagen-amalienborg.webp", "assets/spots/city/copenhagen-little-mermaid.webp"]],
     ["10/03", "哥本哈根 / 凯夫拉维克", "23:50 抵达冰岛，深夜以保暖、机场交通和酒店入住为先，为次日南岸团留出休息时间。", ["assets/spots/city/copenhagen-nyhavn.webp", "assets/spots/iceland/reykjavik-harpa.webp"]],
-    ["10/10", "雷克雅未克 / 凯夫拉维克", "18:50 从雷克雅未克出发前往凯夫拉维克机场，随后跨夜中转；白天不安排远途项目。", ["assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"]],
+    ["10/10", "雷克雅未克 / 凯夫拉维克", "18:50 从凯夫拉维克机场起飞；提前从市区出发，预留机场交通和值机时间。", ["assets/spots/iceland/reykjavik-coast.webp", "assets/spots/iceland/reykjavik-harpa.webp"]],
     ["10/11-10/12", "弗罗茨瓦夫 / 阿姆斯特丹 / 广州", "10/11 先在弗罗茨瓦夫、阿姆斯特丹中转，10/12 抵达广州；当天以航班衔接和休息为主。", ["assets/spots/city/amsterdam-canal.webp"]],
   ];
   transitVisuals.forEach(([date, city, season, images]) => {
