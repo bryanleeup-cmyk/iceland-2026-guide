@@ -248,7 +248,7 @@ test('Paris luggage booking keeps its cross-midnight window distinct from the ai
     assert.ok(detail.includes(fact), `Missing Paris booking fact: ${fact}`);
   }
   assert.match(detail, /04:00 是寄存截止时间，不是计划取件时间/);
-  assert.equal(getSections('jianhuang', '09/28', detail).length, 6);
+  assert.equal(getSections('jianhuang', '09/28', detail).length, 8);
   const stored = vm.runInContext("getDailyStay('jianhuang', '09/28', '')", context);
   assert.match(stored.label, /不住酒店/);
   assert.match(new URL(stored.url).searchParams.get('query'), /82 Rue du Faubourg Saint-Martin 75010 Paris/);
@@ -258,4 +258,23 @@ test('Paris luggage booking keeps its cross-midnight window distinct from the ai
   const backup = fs.readFileSync(path.join(root, 'travel-backup.html'), 'utf8');
   assert.match(backup, /2026\/09\/28[\s\S]*13:00[\s\S]*09\/29[\s\S]*04:00/);
   assert.match(backup, /预约 ID 243232/);
+});
+
+test('Paris 09/28 keeps the Montmartre sunset and confirmed Al Caratello dinner', () => {
+  const detail = details('jianhuang', '09/28');
+  for (const fact of ['约 19:00（巴黎当地时间）抵达', '蒙马特高地', '20:30（巴黎当地时间）', 'Al Caratello', '建皇组合 2 人', 'TheFork 预约已确认', '5 Rue Audran, 75018 Paris', '20:30–22:00']) {
+    assert.ok(detail.includes(fact), `Missing Paris dinner fact: ${fact}`);
+  }
+  assert.match(detail, /日落塞纳河游船及 20:00 埃菲尔铁塔.*时间待重新确认/);
+  assert.match(detail, /当晚不订酒店/);
+  assert.match(detail, /半夜返回同一门店取行李，再直接去戴高乐机场；约 02:00 为计划出发时间/);
+  const sections = getSections('jianhuang', '09/28', detail);
+  assert.deepEqual(sections.slice(3, 6).map((section) => section.label), [
+    '日落 · 约 19:00 蒙马特高地',
+    '晚餐 · 20:30 已订 Al Caratello',
+    '原游船与铁塔 · 时间待重新确认',
+  ]);
+  const backup = fs.readFileSync(path.join(root, 'travel-backup.html'), 'utf8');
+  assert.match(backup, /Al Caratello/);
+  assert.match(backup, /5 Rue Audran, 75018 Paris/);
 });
