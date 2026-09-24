@@ -6,7 +6,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 
 const root = path.resolve(__dirname, '..');
-const updated = '2026-09-23';
+const updated = '2026-09-24';
 const script = fs.readFileSync(path.join(root, 'script.js'), 'utf8');
 const patch = fs.readFileSync(path.join(root, 'ref32-patch.js'), 'utf8');
 const emergency = fs.readFileSync(path.join(root, 'index.html'), 'utf8').match(/<div id="travelEmergency">([\s\S]*?)<\/div>/)?.[1]?.trim();

@@ -217,3 +217,21 @@ test('meeting note formatting preserves every instruction and time qualifier', (
     }
   }
 });
+
+test('Paris luggage booking keeps its cross-midnight window distinct from the airport departure', () => {
+  const detail = details('jianhuang', '09/28');
+  for (const fact of ['2026/09/28 13:00–09/29 04:00', 'M+ 型 18 号柜', '预约 ID 243232', '€16.90', '82 Rue du Faubourg Saint-Martin, 75010 Paris', '当晚不订酒店', '约 02:00 为计划出发时间']) {
+    assert.ok(detail.includes(fact), `Missing Paris booking fact: ${fact}`);
+  }
+  assert.match(detail, /04:00 是寄存截止时间，不是计划取件时间/);
+  assert.equal(getSections('jianhuang', '09/28', detail).length, 5);
+  const stored = vm.runInContext("getDailyStay('jianhuang', '09/28', '')", context);
+  assert.match(stored.label, /不住酒店/);
+  assert.match(new URL(stored.url).searchParams.get('query'), /82 Rue du Faubourg Saint-Martin 75010 Paris/);
+  assert.match(details('jianhuang', '09/29'), /06:00 从巴黎戴高乐机场 T2D 起飞，07:50[\s\S]*U24629/);
+  assert.match(details('tongyan', '10/02'), /Ibis Clichy Centre Mairie/);
+  assert.doesNotMatch(JSON.stringify(finalData), /转机前夜住宿|建议住戴高乐机场附近|20:10 后马上去巴黎戴高乐机场附近休息/);
+  const backup = fs.readFileSync(path.join(root, 'travel-backup.html'), 'utf8');
+  assert.match(backup, /2026\/09\/28[\s\S]*13:00[\s\S]*09\/29[\s\S]*04:00/);
+  assert.match(backup, /预约 ID 243232/);
+});

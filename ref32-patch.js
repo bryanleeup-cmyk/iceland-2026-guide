@@ -10,7 +10,7 @@
       "10/07 米兰马尔彭萨机场 T2 06:30 → 里斯本机场 T1 08:30｜易捷航空 U23873",
     ];
     jianhuang.flights.afterIceland = [
-      "09/28 巴黎短停：日落塞纳河游船 + 20:00 埃菲尔铁塔亮灯 / 闪灯",
+      "09/28 奥利机场落地后直达 LOCK & enjoy! 巴黎东站店寄存；日落塞纳河游船 + 20:00 埃菲尔铁塔亮灯 / 闪灯，晚间继续在巴黎游玩，不订酒店；半夜取行李，09/29 约 02:00 从寄存点出发去戴高乐机场 T2D",
       "10/06 13:00 Sky Lagoon 温泉；无接送，自行公共交通，结束后取行李并前往机场",
       "10/07 里斯本半日城市步行",
       "10/07 晚住 Cabinn Metro Hotel，10/08 从哥本哈根机场飞北京",
@@ -183,6 +183,7 @@
     if (personId === "jianhuang") {
       if (["09/25", "09/26"].includes(date)) return lisbonStay;
       if (date === "09/27") return portoStay;
+      if (date === "09/28") return parisLuggage;
       if (["09/29", "09/30", "10/01", "10/02"].includes(date)) return hotelStayEarly;
       if (date === "10/03") return hotelStayOct03;
       if (date === "10/05") return hotelStayOct05;
