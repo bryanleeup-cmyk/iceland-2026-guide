@@ -1,0 +1,54 @@
+(() => {
+  const button = document.querySelector("#refreshWeather");
+  const status = document.querySelector("#weatherRefreshStatus");
+  if (!button || !status) return;
+  if (typeof refreshTravelWeather !== "function") {
+    status.textContent = "暂时无法刷新，已保存的预报仍可查看。";
+    return;
+  }
+  const stamp = (value) => value.slice(5, 16).replace("T", " ");
+  const times = () => {
+    const snapshot = getWeatherSnapshot();
+    if (!snapshot) return "暂无已保存的预报";
+    const weather = stamp(weatherQueryTime(snapshot, "weather"));
+    const aurora = stamp(weatherQueryTime(snapshot, "aurora"));
+    return weather === aurora ? `查询 ${weather} UTC` : `天气 ${weather} · 极光 ${aurora} UTC`;
+  };
+  button.disabled = false;
+  status.textContent = `${times()} · 点击更新全部组合`;
+  button.addEventListener("click", async () => {
+    if (button.disabled) return;
+    button.disabled = true;
+    button.setAttribute("aria-busy", "true");
+    button.textContent = "正在刷新…";
+    status.textContent = "正在查询天气与极光，当前行程可继续阅读…";
+    try {
+      const result = await refreshTravelWeather();
+      // Re-render the active dashboard so the compact header summary and full details stay in sync.
+      const currentRole = activeRoleId;
+      const scrollY = window.scrollY;
+      const expandedCards = new Set(
+        [...document.querySelectorAll("#roleDashboard details.daily-weather[open]")]
+          .map((element) => `${element.dataset.weatherRole}|${element.dataset.weatherDate}`),
+      );
+      applyRoleView(currentRole, { persist: false });
+      requestAnimationFrame(() => {
+        document.querySelectorAll("#roleDashboard details.daily-weather").forEach((element) => {
+          if (expandedCards.has(`${element.dataset.weatherRole}|${element.dataset.weatherDate}`)) element.open = true;
+        });
+        window.scrollTo(0, scrollY);
+      });
+      const updated = result.updated.length;
+      const summary = updated === 2 ? "天气与极光已更新" : updated === 1
+        ? `${result.updated[0] === "weather" ? "天气" : "极光"}已更新，${result.failed[0] === "weather" ? "天气" : "极光"}暂未更新，保留上次数据`
+        : "刷新未成功，已保留上次数据；请联网重试";
+      status.textContent = `${summary}。${times()}${updated && !result.persisted ? "；本次仅在当前页面可用，未能存入浏览器" : ""}`;
+    } catch {
+      status.textContent = `刷新未成功，已保留上次数据；请联网重试。${times()}`;
+    } finally {
+      button.disabled = false;
+      button.removeAttribute("aria-busy");
+      button.textContent = "刷新天气与极光";
+    }
+  });
+})();

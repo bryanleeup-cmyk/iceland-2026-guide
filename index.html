@@ -6,12 +6,12 @@
     <meta name="theme-color" content="#eef5f7" />
     <meta name="referrer" content="no-referrer" />
     <meta name="robots" content="noindex, nofollow" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.open-meteo.com https://services.swpc.noaa.gov; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'" />
     <meta name="description" content="2026 国庆葡萄牙、巴黎、布鲁塞尔、哥本哈根、冰岛旅行攻略。彤彤 10/03 经布鲁塞尔飞冰岛，月月同日经哥本哈根夜间抵达；冰岛南岸 7 人同行，后续按每日行程分为 5 人和 3 人。" />
     <link rel="icon" href="data:," />
     <title>2026 国庆｜按角色看的冰岛行程</title>
     <link rel="preload" as="image" href="assets/route-hero.webp" type="image/webp" fetchpriority="high" />
-    <link rel="stylesheet" href="styles.css?v=weather-20260924-1" />
+    <link rel="stylesheet" href="styles.css?v=weather-live-20260924-1" />
     <style>
       body:not([data-itinerary-status="ready"]) main > section:not(.travel-readiness) { display: none !important; }
       body[data-itinerary-status="ready"] #itineraryStatus { display: none; }
@@ -78,6 +78,10 @@
       </section>
 
       <section class="role-dashboard" id="myDashboard" aria-label="我的旅行重点">
+        <div class="weather-toolbar">
+          <button id="refreshWeather" type="button" disabled>刷新天气与极光</button>
+          <p id="weatherRefreshStatus" role="status" aria-live="polite">天气数据加载中…</p>
+        </div>
         <div id="roleDashboard"></div>
       </section>
 
@@ -498,8 +502,10 @@
 
     <script src="offline.js?v=travel-ready-20260921-1" defer></script>
     <script src="weather-snapshot.js?v=weather-20260924-1" defer></script>
-    <script src="weather.js?v=weather-20260924-1" defer></script>
-    <script src="script.js?v=weather-20260924-1" defer></script>
+    <script src="weather-live.js?v=weather-live-20260924-1" defer></script>
+    <script src="weather.js?v=weather-live-20260924-1" defer></script>
+    <script src="script.js?v=weather-live-20260924-1" defer></script>
     <script src="ref32-patch.js?v=paris-luggage-20260924-1" defer></script>
+    <script src="weather-controls.js?v=weather-live-20260924-1" defer></script>
   </body>
 </html>

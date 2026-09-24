@@ -71,13 +71,15 @@ test('night clouds require the complete local window across midnight; null is ne
   assert.equal(call('getNightCloud', snapshot, 'reykjavik', '2026-10-09'), null);
 });
 
-test('short-range Kp never uses observed/estimated values or a partial night', () => {
+test('short-range Kp uses estimated or predicted values, never observed or a partial night', () => {
   const fixture = { aurora: { shortRange: { values: [
     { time_tag: '2026-09-30T21:00:00', kp: 2, observed: 'predicted' },
     { time_tag: '2026-10-01 00:00:00Z', kp: 3, observed: 'predicted' },
   ] } } };
   assert.deepEqual(plain(call('getNightKp', fixture, '2026-09-30')), [2, 3]);
   fixture.aurora.shortRange.values[1].observed = 'estimated';
+  assert.deepEqual(plain(call('getNightKp', fixture, '2026-09-30')), [2, 3]);
+  fixture.aurora.shortRange.values[1].observed = 'observed';
   assert.equal(call('getNightKp', fixture, '2026-09-30'), null);
   fixture.aurora.shortRange.values.pop();
   assert.equal(call('getNightKp', fixture, '2026-09-30'), null);

@@ -80,7 +80,7 @@ function stayHtml(personId, date, title) {
 function visualNotesHtml(personId, date, title, detail) {
   const visual = vm.runInContext(`getDailyVisual(${JSON.stringify(personId)}, ${JSON.stringify(date)}, ${JSON.stringify(title)}, ${JSON.stringify(detail)})`, context);
   assert(visual && visual.city && visual.season, `Missing daily notes: ${personId} ${date}`);
-  const forecast = vm.runInContext(`renderDailyWeather(${JSON.stringify(personId)}, ${JSON.stringify(date)}, ${JSON.stringify(visual)})`, context);
+  const forecast = vm.runInContext(`renderDailyWeather(${JSON.stringify(personId)}, ${JSON.stringify(date)}, ${JSON.stringify(visual)}, { expanded: true })`, context).replace('可点页面上方“刷新天气与极光”', '本文件为导出时的预报；最新天气请回到主站刷新');
   return `<p class="meta">${escape(visual.city)} · 日出 ${escape(visual.sunrise)} / 日落 ${escape(visual.sunset)}（参考）</p>${forecast}`;
 }
 

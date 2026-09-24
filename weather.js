@@ -105,9 +105,80 @@ function getNightCloud(snapshot, placeId, iso) {
 
 function getNightKp(snapshot, iso) {
   const hours = [`${iso}T21:00:00`, `${nextWeatherDate(iso)}T00:00:00`];
-  const rows = hours.map((hour) => snapshot.aurora.shortRange.values.find((row) => row.time_tag.replace(" ", "T").replace(/Z$/, "") === hour && row.observed === "predicted"));
+  const rows = hours.map((hour) => snapshot.aurora.shortRange.values.find((row) => row.time_tag.replace(" ", "T").replace(/Z$/, "") === hour && ["estimated", "predicted"].includes(row.observed)));
   if (!rows.every((row) => row && Number.isFinite(row.kp))) return null;
   return rows.map((row) => row.kp);
+}
+
+function getWeatherSnapshot() {
+  if (typeof getTravelWeatherSnapshot === "function") return getTravelWeatherSnapshot();
+  return typeof travelWeatherSnapshot === "undefined" ? null : travelWeatherSnapshot;
+}
+
+function weatherShortDescription(code) {
+  if (code === 0 || code === 1) return "晴";
+  if (code === 2) return "多云";
+  if (code === 3) return "阴";
+  if ([45, 48].includes(code)) return "雾";
+  if ([71, 73, 75, 77, 85, 86].includes(code)) return "雪";
+  if ([95, 96, 99].includes(code)) return "雷";
+  if (Number.isFinite(code)) return "雨";
+  return "待定";
+}
+
+const weatherPlaceShortNames = {
+  beijing: "北京", shanghai: "上海", shenzhen: "深圳", guangzhou: "广州", lisbon: "里斯本",
+  cabo: "罗卡角", sintra: "辛特拉", porto: "波尔图", paris: "巴黎", brussels: "布鲁塞尔",
+  amsterdam: "阿姆斯特丹", copenhagen: "哥本哈根", wroclaw: "弗罗茨瓦夫", reykjavik: "雷市",
+  keflavik: "KEF 机场", thingvellir: "辛格维利尔", gullfoss: "黄金瀑布", kerlingarfjoll: "Kerlingarfjöll",
+  landmannalaugar: "兰德曼高地", grundarfjordur: "教会山区域", arnarstapi: "阿尔纳斯塔皮",
+  skogafoss: "斯科加瀑布", vik: "维克区域", jokulsarlon: "冰河湖", skyLagoon: "Sky Lagoon",
+};
+
+function weatherQueryTime(snapshot, source) {
+  return snapshot[`${source}RetrievedAt`] || snapshot.retrievedAt;
+}
+
+function weatherDateLabel(iso, snapshot) {
+  const queryDate = weatherQueryTime(snapshot, "weather").slice(0, 10);
+  const age = (Date.parse(iso) - Date.parse(queryDate)) / 86400000;
+  return age < 0 ? "历史日期 · 本次不提供实况" : age > 7 ? "远期趋势" : "天气预报";
+}
+
+function renderWeatherSummary(personId, date, snapshot) {
+  const dates = weatherCardDates(personId, date);
+  if (!snapshot) return '<span class="weather-summary__row">天气数据暂不可用 · 点开查看</span>';
+  if (dates.length > 1) return `<span class="weather-summary__row">${dates[0].slice(5).replace("-", "/")}–${dates.at(-1).slice(5).replace("-", "/")} · ${dates.length} 天逐日天气</span>`;
+  const iso = dates[0];
+  const rows = weatherPlaceIds(personId, iso).map((id) => {
+    const day = snapshot.places[id]?.daily[iso];
+    const temperature = Number.isFinite(day?.min) && Number.isFinite(day?.max) ? `${day.min.toFixed(1)}–${day.max.toFixed(1)}°C` : "温度待报";
+    const rain = Number.isFinite(day?.rain) ? `降水 ${day.rain}%` : "降水待报";
+    return `<span class="weather-summary__row"><span class="weather-summary__place">${weatherEscape(weatherPlaceShortNames[id])}</span><span>${weatherShortDescription(day?.code)}</span><b>${temperature}</b><span>${rain}</span></span>`;
+  }).join("");
+  const night = getAuroraNight(personId, iso);
+  let aurora = "";
+  if (night) {
+    const shortKp = getNightKp(snapshot, iso);
+    const kp = snapshot.aurora.longRange.days[iso];
+    const nextKp = snapshot.aurora.longRange.days[nextWeatherDate(iso)];
+    const kpText = shortKp ? `夜间 Kp ${shortKp.join(" / ")}` : `长期日最大 Kp ${Number.isFinite(kp) ? kp : "—"}${nextKp !== kp ? ` / 次日 ${Number.isFinite(nextKp) ? nextKp : "—"}` : ""}`;
+    const cloud = getNightCloud(snapshot, night.placeId, iso);
+    const clouds = cloud ? `云 ${cloud.mean}%` : night.placeId ? "云量待报" : "云量待确认";
+    aurora = `<span class="weather-summary__aurora">极光 · ${weatherEscape(kpText)} · ${clouds}<span>肉眼可见待定</span></span>`;
+  }
+  return `${rows}${aurora}`;
+}
+
+function renderDailyWeatherCompact(personId, date) {
+  const snapshot = getWeatherSnapshot();
+  const content = snapshot
+    ? renderWeatherSummary(personId, date, snapshot)
+    : '<span class="weather-summary__row">天气待更新 · 点上方按钮刷新</span>';
+  return `<div class="daily-weather-compact" aria-label="${weatherEscape(date)} 天气摘要">
+    <span class="daily-weather-compact__label">天气</span>
+    <span class="daily-weather-compact__content">${content}</span>
+  </div>`;
 }
 
 function renderAuroraWeather(personId, iso, snapshot) {
@@ -134,14 +205,14 @@ function renderAuroraWeather(personId, iso, snapshot) {
   </div>`;
 }
 
-function renderDailyWeather(personId, date, visual) {
-  const snapshot = typeof travelWeatherSnapshot === "undefined" ? null : travelWeatherSnapshot;
+function renderDailyWeather(personId, date, visual, { expanded = false } = {}) {
+  const snapshot = getWeatherSnapshot();
   const scenery = `<p class="daily-card__season"><span class="daily-card__season-label">风景与季节参考</span>${weatherEscape(visual.city)}：${weatherEscape(visual.season)}</p>`;
-  if (!snapshot) return `<section class="daily-weather" aria-label="天气与风景"><h4>天气与风景</h4><p>预报快照暂不可用，请联网查看 ${weatherLink("https://open-meteo.com/", "天气来源")}。</p>${scenery}</section>`;
-  const retrieved = snapshot.retrievedAt.slice(0, 16).replace("T", " ");
+  if (!snapshot) return `<details class="daily-weather"${expanded ? " open" : ""}><summary>天气数据暂不可用 · 查看风景</summary><p>预报快照暂不可用，请联网查看 ${weatherLink("https://open-meteo.com/", "天气来源")}。</p>${scenery}</details>`;
+  const retrieved = weatherQueryTime(snapshot, "weather").slice(0, 16).replace("T", " ");
+  const auroraRetrieved = weatherQueryTime(snapshot, "aurora").slice(0, 16).replace("T", " ");
   const dates = weatherCardDates(personId, date);
   const days = dates.map((iso) => {
-    const age = Math.round((Date.parse(`${iso}T00:00:00Z`) - Date.parse(`${snapshot.retrievedAt.slice(0, 10)}T00:00:00Z`)) / 86400000);
     const rows = weatherPlaceIds(personId, iso).map((id) => {
       const place = snapshot.places[id];
       const day = place?.daily[iso];
@@ -149,18 +220,20 @@ function renderDailyWeather(personId, date, visual) {
       const rain = Number.isFinite(day?.rain) ? `降水概率 ${day.rain}%` : "降水概率暂未发布";
       return `<li><strong>${weatherEscape(place?.name || id)}</strong><div class="daily-weather__metrics"><span>${weatherDescription(day?.code)}</span><b>${temperature}</b><span>${rain}</span></div></li>`;
     }).join("");
-    return `<div class="daily-weather__day"><h5>${iso.slice(5).replace("-", "/")} · ${age > 7 ? "远期天气趋势" : "天气预报"}</h5><ul class="daily-weather__places">${rows}</ul>${renderAuroraWeather(personId, iso, snapshot)}</div>`;
+    return `<div class="daily-weather__day"><h5>${iso.slice(5).replace("-", "/")} · ${weatherDateLabel(iso, snapshot)}</h5><ul class="daily-weather__places">${rows}</ul>${renderAuroraWeather(personId, iso, snapshot)}</div>`;
   }).join("");
   const sources = [...new Set(dates.flatMap((iso) => weatherPlaceIds(personId, iso)))].map((id) => snapshot.places[id]).filter(Boolean);
   const sourceUrls = [...new Set(sources.map((place) => place.sourceUrl))];
   const hasAurora = dates.some((iso) => getAuroraNight(personId, iso));
   const issued = snapshot.aurora.longRange.issuedAt.slice(0, 16).replace("T", " ");
-  return `<section class="daily-weather" aria-label="天气与风景">
-    <h4>天气与风景</h4>
-    <p class="daily-weather__note">${weatherEscape(retrieved)} UTC 查询<br>保存的预报，不自动刷新；出发前请联网复查。</p>
-    ${days}
-    <p class="daily-weather__note">当地日期 · 全天最低–最高温 · 含雨雪的最高降水概率。超过 7 天仅看趋势。</p>
-    <details class="daily-weather__sources"><summary>预报说明、来源与最新查询</summary><p>降水概率不是下雨时长；“暂未发布”不代表晴天或零降水。路线取代表地点，沿途可能不同。</p><p>天气数据：${weatherLink("https://open-meteo.com/", "Open-Meteo")}（${weatherLink("https://creativecommons.org/licenses/by/4.0/", "CC BY 4.0")}）；以下为多地点原始数据，联网查询最新预报，日期范围可能与保存的快照不同。</p><div class="daily-weather__links">${sourceUrls.map((url, index) => weatherLink(url, `天气原始数据${sourceUrls.length > 1 ? ` ${index + 1}` : ""}`)).join("")}${sources.some((place) => place.timezone === "Atlantic/Reykjavik") ? weatherLink("https://en.vedur.is/weather/forecasts/areas/", "冰岛官方天气") : ""}</div>${hasAurora ? `<p>极光需要黑暗、云隙和实时活动。Kp 低也可能看到，Kp 高也可能被云遮住；总云量只是模型参考，不是极光可见概率。冰岛夜间时间为 UTC+0，21:00–次日 03:00 是本页统计窗口，不是已订活动时间。</p><p>NOAA 长期展望于 ${weatherEscape(issued)} UTC 发布。</p><div class="daily-weather__links">${weatherLink(snapshot.aurora.longRange.sourceUrl, "NOAA 长期原文")}${weatherLink(snapshot.aurora.shortRange.sourceUrl, "NOAA 短期数据")}</div>` : ""}</details>
-    ${scenery}
-  </section>`.replace(/^[ \t]+$/gm, "");
+  return `<details class="daily-weather" data-weather-role="${weatherEscape(personId)}" data-weather-date="${weatherEscape(date)}"${expanded ? " open" : ""}>
+    <summary aria-label="${weatherEscape(date)} 天气与风景，展开详情"><span class="weather-summary__label">天气${dates.length === 1 && weatherDateLabel(dates[0], snapshot).includes("远期") ? " · 远期" : ""}<span class="weather-summary__hint">详情</span></span><span class="weather-summary__content">${renderWeatherSummary(personId, date, snapshot)}</span></summary>
+    <div class="daily-weather__details">
+      <p class="daily-weather__note">天气查询：${weatherEscape(retrieved)} UTC${hasAurora ? `<br>极光查询：${weatherEscape(auroraRetrieved)} UTC` : ""}。保存的预报，不自动刷新；可点页面上方“刷新天气与极光”。</p>
+      ${days}
+      <p class="daily-weather__note">当地日期 · 全天最低–最高温 · 含雨雪的最高降水概率。超过 7 天仅看趋势。</p>
+      <details class="daily-weather__sources"><summary>预报说明、来源与最新查询</summary><p>降水概率不是下雨时长；“暂未发布”不代表晴天或零降水。路线取代表地点，沿途可能不同。</p><p>天气数据：${weatherLink("https://open-meteo.com/", "Open-Meteo")}（${weatherLink("https://creativecommons.org/licenses/by/4.0/", "CC BY 4.0")}）；以下为多地点原始数据，联网查询最新预报，日期范围可能与保存的快照不同。</p><div class="daily-weather__links">${sourceUrls.map((url, index) => weatherLink(url, `天气原始数据${sourceUrls.length > 1 ? ` ${index + 1}` : ""}`)).join("")}${sources.some((place) => place.timezone === "Atlantic/Reykjavik") ? weatherLink("https://en.vedur.is/weather/forecasts/areas/", "冰岛官方天气") : ""}</div>${hasAurora ? `<p>极光需要黑暗、云隙和实时活动。Kp 低也可能看到，Kp 高也可能被云遮住；总云量只是模型参考，不是极光可见概率。冰岛夜间时间为 UTC+0，21:00–次日 03:00 是本页统计窗口，不是已订活动时间。</p><p>NOAA 长期展望于 ${weatherEscape(issued)} UTC 发布。</p><div class="daily-weather__links">${weatherLink(snapshot.aurora.longRange.sourceUrl, "NOAA 长期原文")}${weatherLink(snapshot.aurora.shortRange.sourceUrl, "NOAA 短期数据")}</div>` : ""}</details>
+      ${scenery}
+    </div>
+  </details>`.replace(/^[ \t]+$/gm, "");
 }

@@ -1533,6 +1533,7 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
             <span>日出 ${visual.sunrise}</span>
             <span>日落 ${visual.sunset}</span>
           </div>
+          ${typeof renderDailyWeatherCompact === "function" ? renderDailyWeatherCompact(personId, date) : ""}
         </div>
         <h3 class="daily-card__title">${title}</h3>
       </header>
@@ -1551,6 +1552,7 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
       <div class="daily-card__body">
         ${renderDailyMeeting(personId, date)}
         ${renderDailyDetail(personId, date, detail)}
+        ${typeof renderDailyWeather === "function" ? renderDailyWeather(personId, date, visual) : `<p class="daily-card__season"><span class="daily-card__season-label">天气与风景 · 预报未加载</span>${visual.city}：${visual.season}</p>`}
         ${
           stay
             ? `<p class="daily-card__stayline">
@@ -1562,7 +1564,6 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
               </p>`
             : ""
         }
-        ${typeof renderDailyWeather === "function" ? renderDailyWeather(personId, date, visual) : `<p class="daily-card__season"><span class="daily-card__season-label">天气与风景 · 预报未加载</span>${visual.city}：${visual.season}</p>`}
       </div>
     </article>
   `;
