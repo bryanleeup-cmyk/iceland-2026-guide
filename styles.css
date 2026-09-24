@@ -633,6 +633,12 @@ main {
   line-height: inherit;
 }
 
+.daily-detail__section--official .daily-detail__intro {
+  color: #435e6b;
+  font-size: 13px;
+  font-weight: 750;
+}
+
 .daily-detail__section--choices .daily-detail__items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));

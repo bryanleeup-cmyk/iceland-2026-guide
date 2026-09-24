@@ -484,6 +484,21 @@
   };
   rewriteStrings(data);
 
+  // Official route references supplement the confirmed bookings; they do not replace them.
+  const officialTourDetails = {
+    "09/29": "官网返程：含雷市接送约 5.5 小时；按订单 12:00 接车推算约 17:30 回雷克雅未克，仅供安排晚间活动参考。官网没有固定返程钟点，接人和路况可能延误。官网参考顺序：1. 雷克雅未克接车，前往 Þingvellir 辛格维利尔国家公园；2. 穿保温干式潜水服，听安全说明；3. 步行约 150 米到入水点；4. 穿行 Silfra 史费拉裂缝，水中约 30–35 分钟；5. 在 Silfra Lagoon 出水，步行约 350 米回停车区；6. 热巧克力、饼干，结束后乘车返回雷克雅未克；官网核对说明：英文官网区分现场活动约 3 小时和含雷市接送约 5.5 小时；本订单属于后者。现场自驾集合说明不适用于你们，仍在 Klettur Hótel 等车。核对日期：2026/09/24（北京时间）；<a href=\"https://adventures.is/iceland/day-tours/snorkeling-and-diving/into-the-blue/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
+    "09/30": "官网返程：雷市出发全程约 11.5 小时；按订单 08:00 接车推算约 19:30 回雷克雅未克。官网没有固定返程钟点，天气、道路和步道可能造成延误。官网参考顺序：1. 雷克雅未克接车；2. Gullfoss Café，官网约 10:15–10:30 接从这里参团的客人（不是你们的上车点，也不是保证游览黄金瀑布的时刻）；3. Ásgarður 山谷 Highland Base，休息和伸展；4. Hveradalir 地热谷，从停车场徒步下谷并探索约 2 小时；5. 离开高地，送回雷克雅未克原接车点；官网核对说明：按英文官网详细行程整理；天气、道路及步道状况可能调整路线，不自行进入封闭区域。核对日期：2026/09/24（北京时间）；<a href=\"https://adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
+    "10/01": "官网返程：全程约 11 小时；按订单 08:00 接车推算约 19:00 回雷克雅未克。官网没有固定返程钟点，接齐乘客最多需 30 分钟，实际可能延误。官网参考顺序：1. 雷克雅未克接车 → Berserkjahraun 熔岩原；2. Kirkjufell 教会山及瀑布景观；3. Djúpalónssandur 黑卵石海滩；4. Ingjaldshólskirkja 红顶教堂；5. Arnarstapi 渔村、Miðgjá 石桥与海岸线；6. Búðakirkja 黑教堂；7. Ytri-Tunga 海豹海滩；8. Borgarnes 短停（可买冰岛热狗）→ 返回雷克雅未克；官网核对说明：中英文官网叙述顺序有差别，此处按当前英文 Itinerary 的先后顺序整理。实际停靠和顺序由向导按天气与安全状况调整，不保证遇到海豹。核对日期：2026/09/24（北京时间）；<a href=\"https://adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
+    "10/02": "官网返程：官网预计约 19:00 返回雷克雅未克，全程约 11 小时。08:00 起接车，接齐乘客最多需 30 分钟，天气和道路可能延误。官网参考顺序：1. 雷克雅未克接车 → Hjálparfoss 哈加帕瀑布；2. Sigöldufoss 瀑布（通纳河上约 10 米高的瀑布）；3. Landmannalaugar 兰德曼纳劳卡彩色高地，可泡天然温泉；4. Ljótipollur 火山口湖；5. Hekla 海克拉火山附近 → 返回雷克雅未克；官网核对说明：官网中文页将 Sigöldufoss 译作“眼泪谷瀑布群”；按官方拉丁名识别，不把它当作 Sigöldugljúfur 峡谷。路线、温泉停留及返程以天气、道路和向导安排为准。核对日期：2026/09/24（北京时间）；<a href=\"https://cn.adventures.is/iceland/day-tours/super-jeeps/landmannalaugar-safari/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
+    "10/03": "官网返程：官网写明约 18:00 返回雷克雅未克，全程约 6 小时；天气可能造成延误。12:00 开始接车，接齐乘客最多需 30 分钟。官网参考顺序：1. 雷克雅未克接车 → Þingvellir 辛格维利尔国家公园；2. Geysir / Haukadalur 间歇泉区，看 Strokkur 喷发；3. Gullfoss 黄金瀑布；4. Kerið 火山口湖 → 返回雷克雅未克；官网核对说明：按英文官网详细行程整理；实际停留听向导安排。当晚仍不安排追极光。核对日期：2026/09/24（北京时间）；<a href=\"https://adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
+    "10/04": "官网返程：官网未提供第 1 天抵达住宿的固定钟点；当天不返回雷克雅未克，晚上住团含东南部乡村住宿。08:30 起在 Bus Stop #13 等候，接车窗口 08:30–09:00。官网参考顺序：1. 雷克雅未克接车 → Gljúfrabúi 隐藏瀑布；2. Seljalandsfoss 塞里雅兰瀑布；3. Skógafoss 斯科加瀑布；4. Reynisfjara 雷尼斯黑沙滩；5. 东南部乡村住宿（具体酒店以团方确认为准）；官网核对说明：按官网 Day 1 详细行程整理，天气和路况可能调整顺序。官网当前团期写 11–3 月，与已订 10/04–10/05 日期不一致：保留已订订单，出发前向 Nice Travel 核对 10 月适用路线及冰洞安排。核对日期：2026/09/24（北京时间）；<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
+    "10/05": "官网返程：官网预计约 21:00 回雷克雅未克，市区送回各站还可能再需约 30 分钟；天气和路况可能延误。与已订 20:30 Caruso 晚餐存在冲突，需提前联系团方及餐厅协调。官网参考顺序：1. 团含住宿出发，早晨集合时间与位置听向导前一晚通知；2. Diamond Beach 钻石沙滩；3. Jökulsárlón 杰古沙龙冰河湖；4. 乘 Super Jeep 前往 Blue Ice Cave 蓝冰洞（官网探洞活动约 3 小时，含接驳，不代表在洞内待 3 小时）；5. 返回冰河湖，开始返程；6. Hofskirkja 草皮教堂；7. 途经 Eldhraun 熔岩原、Vík 维克村 → 返回雷克雅未克；官网核对说明：官网简表将冰洞列在前面，Day 2 详细正文则先写钻石沙滩、冰河湖，再去冰洞；这里采用详细正文作参考，非当天保证顺序。10 月冰洞及具体停留须由团方确认；官网没有每站固定钟点。核对日期：2026/09/24（北京时间）；<a href=\"https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
+  };
+  const jianhuangPlan = data.personPlans.find((person) => person.id === "jianhuang");
+  jianhuangPlan.days.forEach((day) => {
+    if (officialTourDetails[day[0]]) day[2] += " " + officialTourDetails[day[0]];
+  });
+
   data.roleViews.forEach((role) => {
     const itinerary = data.personPlans.find((person) => person.id === role.id);
     if (!itinerary) return;

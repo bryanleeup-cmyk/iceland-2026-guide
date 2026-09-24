@@ -149,6 +149,36 @@ test('cross-day qualifiers, pickup windows, and parenthetical semicolons remain 
   assert.match(portoItem, /姓名 Hector Pei；需前往 Porto 门店，迟到宽限 10 分钟/);
 });
 
+test('Jianhuang official routes preserve ordered stops and distinguish estimates from official return times', () => {
+  const routes = {
+    '09/29': ['Þingvellir', '安全说明', '150 米', 'Silfra 史费拉', 'Silfra Lagoon', '热巧克力'],
+    '09/30': ['Gullfoss Café', 'Ásgarður', 'Hveradalir', '原接车点'],
+    '10/01': ['Berserkjahraun', 'Kirkjufell', 'Djúpalónssandur', 'Ingjaldshólskirkja', 'Arnarstapi', 'Búðakirkja', 'Ytri-Tunga', 'Borgarnes'],
+    '10/02': ['Hjálparfoss', 'Sigöldufoss', 'Landmannalaugar', 'Ljótipollur', 'Hekla'],
+    '10/03': ['Þingvellir', 'Geysir', 'Gullfoss', 'Kerið'],
+    '10/04': ['Gljúfrabúi', 'Seljalandsfoss', 'Skógafoss', 'Reynisfjara', '东南部乡村住宿'],
+    '10/05': ['Diamond Beach', 'Jökulsárlón', 'Blue Ice Cave', '返回冰河湖', 'Hofskirkja', 'Eldhraun', 'Vík'],
+  };
+  for (const [date, stops] of Object.entries(routes)) {
+    const sections = getSections('jianhuang', date, details('jianhuang', date));
+    assert.equal(sections.length, 4, date);
+    const route = sections.find((section) => section.intro === '官网参考顺序：').items.join('');
+    let previous = -1;
+    for (const stop of stops) {
+      const position = route.indexOf(stop);
+      assert(position > previous, `${date}: missing or reordered ${stop}`);
+      previous = position;
+    }
+    const returned = sections.find((section) => section.intro === '官网返程：').items.join('');
+    if (['09/29', '09/30', '10/01'].includes(date)) assert.match(returned, /推算[\s\S]*没有固定返程钟点/);
+    if (date === '10/02') assert.match(returned, /官网预计约 19:00/);
+    if (date === '10/03') assert.match(returned, /官网写明约 18:00/);
+    if (date === '10/04') assert.match(returned, /未提供第 1 天.*固定钟点/);
+    if (date === '10/05') assert.match(returned, /21:00[\s\S]*20:30 Caruso[\s\S]*冲突/);
+    assert.match(sections.at(-1).items.join(''), /官方详细行程与时长/);
+  }
+});
+
 test('time highlighting preserves link HTML, URL punctuation, and label punctuation', () => {
   const original = '查看 <a href="https://example.test/path?at=12:30&amp;place=集合；入口。">路线 12:30；立即打开。</a>；之后 14:30 出发。';
   const html = renderDetail('jianhuang', '10/07', original);
