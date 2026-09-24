@@ -203,7 +203,7 @@ test('Lisbon bus voucher survives overrides with the correct local time and sepa
     const meeting = vm.runInContext(`renderDailyMeeting('${personId}', '09/27')`, context);
     assert.match(meeting, /大巴发车 · 葡萄牙当地时间/);
     assert.doesNotMatch(meeting, /冰岛当地时间/);
-    assert.equal(getSections(personId, '09/27', detail).length, 3);
+    assert.equal(getSections(personId, '09/27', detail).length, personId === 'jianhuang' ? 5 : 3);
   }
   assert.match(details('niangniang', '09/27'), /20:50 从波尔图/);
   assert.match(details('jianhuang', '09/27'), /Mercure Porto Gaia Hotel/);

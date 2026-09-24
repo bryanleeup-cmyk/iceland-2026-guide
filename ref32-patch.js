@@ -89,8 +89,8 @@
     );
     replaceDay(
       "09/27",
-      "里斯本 → 波尔图",
-      lisbonPortoBusDetail + "12:00 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Meia-Nau%20Porto\" target=\"_blank\" rel=\"noreferrer\">Meia-Nau Porto</a> 午餐（3 人，姓名 Hector Pei；需前往 Porto 门店，迟到宽限 10 分钟）。下午玩老城河岸、路易一世大桥和杜罗河边。娘娘乘荷兰泛航航空 HV6004，09/27 20:50 从波尔图起飞，09/28 00:25（次日凌晨）到阿姆斯特丹，均为当地时间；建皇和龙龙 21:00 左右办理入住波尔图盖亚美居酒店（Mercure Porto Gaia Hotel）：标准双人床房（带加床），1 间 1 晚；订单入住 09/27、退房 09/28，建皇（两人）和龙龙共 3 人入住，实付款 ¥544.94。"
+      "里斯本 → 波尔图 + Brasão 已订晚餐",
+      lisbonPortoBusDetail + "12:00 已订 <a href=\"https://www.google.com/maps/search/?api=1&query=Meia-Nau%20Porto\" target=\"_blank\" rel=\"noreferrer\">Meia-Nau Porto</a> 午餐（3 人，姓名 Hector Pei；需前往 Porto 门店，迟到宽限 10 分钟）。下午玩老城河岸、路易一世大桥和杜罗河边。" + portoDinner + "娘娘乘荷兰泛航航空 HV6004，09/27 20:50 从波尔图起飞，09/28 00:25（次日凌晨）到阿姆斯特丹，均为当地时间；建皇和龙龙 21:00 左右办理入住波尔图盖亚美居酒店（Mercure Porto Gaia Hotel）：标准双人床房（带加床），1 间 1 晚；订单入住 09/27、退房 09/28，建皇（两人）和龙龙共 3 人入住，实付款 ¥544.94。"
     );
         replaceDay("10/05", "已订：南岸两日团第二天 + 蓝冰洞（7 人） + Caruso 已订晚餐", `继续已订的 Nice Travel 南岸两日团：早晨集合时间和地点听向导前一晚通知；看蓝冰洞、杰古沙龙冰河湖和钻石沙滩，预计约 21:00 回雷克雅未克，受天气和路况影响；提前确认 10/06 傍晚去雷克雅未克凯夫拉维克机场的交通。<a href="https://nicetravel.is/iceland-tours/2-day-south-coast-tour-blue-ice-cave-jokulsarlon-black-beach-waterfalls/" target="_blank" rel="noreferrer">查看团页</a> ${southCoastDinner}`);
     replaceDay("10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） → 米兰转机", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。退房后先确认行李寄存与取回安排，出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场起飞，10/07 01:30 到米兰马尔彭萨机场，航班维兹航空马耳他 W46454。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>");

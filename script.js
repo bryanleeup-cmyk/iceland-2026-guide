@@ -16,6 +16,8 @@ const lisbonPortoBus = {
 };
 const lisbonPortoBusDetail = `已订 09/27（周日）FlixBus 1000，时间均为葡萄牙当地时间。建议 07:45 前到站，08:00 从 <a href="${lisbonPortoBus.url}" target="_blank" rel="noopener noreferrer">Lisbon (Oriente) · 上车地图</a> 的 39D 站台发车（地址：${lisbonPortoBus.address}）。11:15 计划抵达 <a href="${lisbonPortoBus.arrivalUrl}" target="_blank" rel="noopener noreferrer">Porto (TIC - Campanhã) · 下车地图</a>（地址：R. de Bonjóia, 691, 4300 Porto），车程 3 小时 15 分。建皇（两人）、娘娘、龙龙共 4 人同车；本张三人联票座位为 20C、20D、20E，龙龙单独购票且乘同一班大巴，座位以他的车票为准。`;
 
+const portoDinner = "18:30（葡萄牙当地时间 WEST / UTC+1）在 <a href=\"https://www.google.com/maps/search/?api=1&query=Bras%C3%A3o%20Aliados%20Rua%20de%20Ramalho%20Ortig%C3%A3o%2028%20Porto\" target=\"_blank\" rel=\"noopener noreferrer\">Brasão Aliados · 餐厅地图</a> 吃晚餐，已订 3 人，预约已确认。地址：Rua de Ramalho Ortigão 28，Porto。到店出示手机保存的原始预约凭证。";
+
 const data = {
   meta: {
     timelineStart: "2026-09-29T00:00:00",
@@ -573,7 +575,7 @@ const data = {
       days: [
         ["09/25", "北京 → 伦敦中转 → 里斯本", "13:35 从北京首都机场 T3 起飞，17:40 落地伦敦希思罗机场 T2；伦敦中转 1 小时 05 分，18:45 从伦敦希思罗机场 T2 起飞，21:35 落地里斯本机场 T1。落地后入住已订的 The Delight Hostel 豪华四人间：建皇（两人）、龙龙、娘娘共 4 人入住。"],
         ["09/26", "里斯本郊区海边一日游", "建皇（两人）、龙龙和娘娘四人报名这个专业路线：09:00 从里斯本市区出发，10:00 地狱之口，10:50 罗卡角，12:00 雷加莱拉庄园，14:30 辛特拉王宫，16:00 佩纳宫。主打大西洋海岸、欧亚大陆最西端、雷加莱拉庄园创始之井和两座宫殿；当天不再叠加里斯本市区重行程。"],
-        ["09/27", "里斯本 → 波尔图", lisbonPortoBusDetail + "下午玩老城河岸、路易一世大桥、杜罗河边。娘娘乘荷兰泛航航空 HV6004，09/27 20:50 从波尔图起飞，09/28 00:25（次日凌晨）到阿姆斯特丹，均为当地时间；建皇（两人）和龙龙晚上入住波尔图盖亚美居酒店，实付 ¥544.94。"],
+        ["09/27", "里斯本 → 波尔图 + Brasão 已订晚餐", lisbonPortoBusDetail + "下午玩老城河岸、路易一世大桥、杜罗河边。" + portoDinner + "娘娘乘荷兰泛航航空 HV6004，09/27 20:50 从波尔图起飞，09/28 00:25（次日凌晨）到阿姆斯特丹，均为当地时间；建皇（两人）和龙龙晚上入住波尔图盖亚美居酒店，实付 ¥544.94。"],
         ["09/28", "波尔图 → 巴黎夜游 + 已订寄存（不住酒店）", `09:05 从波尔图弗朗西斯科卡内罗机场起飞，12:15 落地巴黎奥利机场 T1，航班易捷航空 U24886；巴黎跨夜中转 17 小时 45 分，第二天 06:00 从巴黎戴高乐机场 T2D 起飞去冰岛；娘娘已在 09/27 晚从波尔图飞回阿姆斯特丹。落地后从奥利机场直接前往 <a href="${parisLuggage.url}" target="_blank" rel="noopener noreferrer">${parisLuggage.name} · 打开门店地图</a> 寄存行李。${parisLuggage.detail} 13:00 是预约开始时间，不是必须抵达门店的时间；从机场取行李后按实际交通情况前往。<a href="https://www.google.com/maps/dir/?api=1&origin=Paris%20Orly%20Airport%20Terminal%201&destination=82%20Rue%20du%20Faubourg%20Saint-Martin%2075010%20Paris&travelmode=transit" target="_blank" rel="noopener noreferrer">奥利机场 → 寄存点公共交通导航</a>。寄存好行李后先去 <a href="https://www.google.com/maps/search/?api=1&query=Carr%C3%A9%20Pain%20de%20Mie%205%20Rue%20Rambuteau%2075004%20Paris" target="_blank" rel="noopener noreferrer">Carré Pain de Mie · 餐厅地图</a> 吃虾排三明治；地址：5 Rue Rambuteau, 75004 Paris（玛黑区），到店时间按落地和寄存进度安排。14:30（巴黎当地时间）在 <a href="https://www.google.com/maps/search/?api=1&query=Bouillon%20Julien%2016%20rue%20du%20Faubourg%20Saint%20Denis%2075010%20Paris" target="_blank" rel="noopener noreferrer">Bouillon Julien · 餐厅地图</a> 用餐，已订 2 人；预订姓名：hector pei。地址：16 rue du Faubourg Saint Denis, 75010 Paris；到店出示手机保存的原始预约凭证。12:15 落地后还需取行李、进城、寄存及两店转场，时间较紧；请预留 14:30 预约到店时间。寄存后在巴黎游玩，保留日落塞纳河游船、20:00 埃菲尔铁塔亮灯 / 闪灯安排；当晚不订酒店。半夜返回同一门店取行李，再直接去戴高乐机场；约 02:00 为计划出发时间，需提前落实夜间交通，预留取件、路程和机场值机安检时间。<a href="https://www.google.com/maps/dir/?api=1&origin=82%20Rue%20du%20Faubourg%20Saint-Martin%2075010%20Paris&destination=Charles%20de%20Gaulle%20Airport%20Terminal%202D&travelmode=driving" target="_blank" rel="noopener noreferrer">寄存点 → 戴高乐 T2D 乘车路线</a>。门店法国客服电话：+33 1 87 21 88 44；<a href="https://lockandenjoy.com/en/paris-chooselockers/gare-de-lest/" target="_blank" rel="noopener noreferrer">寄存门店官网</a>。`],
         ["09/29", "巴黎 → 冰岛 + 史费拉浮潜（已订 ¥2585.04/2人）", "凌晨从 LOCK & enjoy! 巴黎东站店取回行李，计划约 02:00 从寄存点出发去戴高乐机场 T2D；前一晚不住酒店，寄存订单截至当天 04:00，需在出发去机场前完成取件。06:00 从巴黎戴高乐机场 T2D 起飞，07:50 落地雷克雅未克凯夫拉维克机场，航班易捷航空 U24629；飞行 3 小时 50 分。落地后进雷克雅未克市区放行李/换保暖衣物；12:00 在 Klettur Hótel（Mjölnisholt 12–14）等候 Arctic Adventures 接车，接车可能需要 30 分钟。浮潜订单包含雷市接送，无需自行前往辛格维利尔国家公园；实际回城时间听向导安排，晚上雷克雅未克市区吃饭和轻量 CityWalk。<a href=\"https://cn.adventures.is/iceland/day-tours/snorkeling-and-diving/into-the-blue/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
         ["09/30", "已订：Kerlingarfjoll 高地徒步团（¥2568.57/2人）", "已订 Kerlingarfjoll Hiking Tour；08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车，接车可能需要 30 分钟；徒步路线听向导安排。<a href=\"https://cn.adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noreferrer\">查看团页</a>"],
@@ -699,11 +701,11 @@ const data = {
       title: "路易一世大桥 + 老城河岸",
       image: "assets/spots/porto.webp",
       images: ["assets/spots/porto.webp", "assets/spots/gallery/porto-1.webp"],
-      bestTime: "17:00-19:45",
+      bestTime: "下午游览；18:30 已订 Brasão Aliados 晚餐",
       open: "桥梁和河岸全天可看；酒窖参观需看各酒庄预约。",
       sunset: "波尔图 09/27 日落约 19:24",
       viewpoint: "Jardim do Morro / Serra do Pilar，看大桥、老城和杜罗河日落。",
-      notes: [lisbonPortoBusDetail, "下午只抓老城河岸、路易一世大桥、杜罗河边这些高性价比区域。", "娘娘 20:50 从波尔图飞阿姆斯特丹；建皇 09/28 09:05 从波尔图飞巴黎奥利机场，晚上别喝太晚。"],
+      notes: [lisbonPortoBusDetail, "下午只抓老城河岸、路易一世大桥、杜罗河边这些高性价比区域。", portoDinner, "娘娘 20:50 从波尔图飞阿姆斯特丹；建皇 09/28 09:05 从波尔图飞巴黎奥利机场，晚上别喝太晚。"],
     },
     {
       id: "paris-cruise",
@@ -1480,8 +1482,14 @@ function getDailyDetailSections(personId, date, detail) {
   const fallback = [{ items: splitDailyDetail(detail) }];
   if (date === "09/27" && ["jianhuang", "niangniang"].includes(personId)) {
     const starts = [0, detail.indexOf("12:00 已订"), detail.indexOf("下午玩")];
-    if (starts.some((start, index) => index > 0 && start <= starts[index - 1])) return fallback;
     const labels = ["大巴 · 已订车票", "午餐 · 已订", "下午与晚间"];
+    const dinnerStart = detail.indexOf("18:30（葡萄牙当地时间 WEST / UTC+1）");
+    if (personId === "jianhuang" && dinnerStart >= 0) {
+      starts.push(dinnerStart, detail.indexOf("娘娘乘荷兰泛航航空"));
+      labels[2] = "下午 · 老城游览";
+      labels.push("晚餐 · 已订", "晚间交通与住宿");
+    }
+    if (starts.some((start, index) => index > 0 && start <= starts[index - 1])) return fallback;
     return starts.map((start, index) => ({ label: labels[index], items: splitDailyDetail(detail.slice(start, starts[index + 1])) }));
   }
   if (personId === "jianhuang" && date === "09/28") {
