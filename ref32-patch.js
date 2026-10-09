@@ -37,7 +37,7 @@
 
   const role = data.roleViews.find((item) => item.id === "jianhuang");
   if (role) {
-    role.notes[0] = "重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 Kerlingarfjoll 高地徒步已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 7 人南岸两日、10/06 已订 Sky Lagoon 温泉（13:00，无接送） + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。";
+    role.notes[0] = "重点看：9/26 里斯本郊区海边团、9/27 里斯本到波尔图大巴、9/28 波尔图飞巴黎奥利机场转冰岛、9/29 史费拉浮潜 + 雷克雅未克市区、09/30 雷克雅内斯火山地貌团已订、10/01 斯奈山半岛小团已订、10/02 兰德曼那劳卡高地超级吉普一日团已订、10/03 黄金圈下午团已订、10/04-10/05 7 人南岸两日、10/06 已订 Sky Lagoon 温泉（13:00，无接送） + 晚飞米兰、10/07 里斯本半日、10/08 哥本哈根转机。";
     role.facts[3] = ["离开冰岛", "10/06 19:20", "13:00 Sky Lagoon；自行公共交通，预留机场交通时间"];
     role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/05")] = ["10/05", "蓝冰洞后回雷市 + Caruso 已订晚餐", `早晨集合时间和地点听向导前一晚通知；预计约 21:00 回雷克雅未克，受天气和路况影响；次日 13:00 Sky Lagoon，预留公共交通和取行李时间。 ${southCoastDinner}`];
     role.focusDays[role.focusDays.findIndex((day) => day[0] === "10/06")] = ["10/06", "已订：Sky Lagoon 温泉（¥1441.87/2人） + 晚飞米兰", "13:00 到 Sky Lagoon 入场；重新预订不含接送，需自行乘公共交通前往。出发前查询往返公交班次，预留步行、换乘、取行李和机场值机时间；19:20 从雷克雅未克凯夫拉维克机场飞米兰马尔彭萨。<a href=\"https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Lind%20Reykjavik&destination=Sky%20Lagoon%20Kopavogur&travelmode=transit\" target=\"_blank\" rel=\"noreferrer\">查看公共交通路线</a>"];
@@ -481,7 +481,7 @@
   // Official route references supplement the confirmed bookings; they do not replace them.
   const officialTourDetails = {
     "09/29": "官网返程：含雷市接送约 5.5 小时；按订单 12:00 接车推算约 17:30 回雷克雅未克，仅供安排晚间活动参考。官网没有固定返程钟点，接人和路况可能延误。官网参考顺序：1. 雷克雅未克接车，前往 Þingvellir 辛格维利尔国家公园；2. 穿保温干式潜水服，听安全说明；3. 步行约 150 米到入水点；4. 穿行 Silfra 史费拉裂缝，水中约 30–35 分钟；5. 在 Silfra Lagoon 出水，步行约 350 米回停车区；6. 热巧克力、饼干，结束后乘车返回雷克雅未克；官网核对说明：英文官网区分现场活动约 3 小时和含雷市接送约 5.5 小时；本订单属于后者。现场自驾集合说明不适用于你们，仍在 Klettur Hótel 等车。核对日期：2026/09/24（北京时间）；<a href=\"https://adventures.is/iceland/day-tours/snorkeling-and-diving/into-the-blue/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
-    "09/30": "官网返程：雷市出发全程约 11.5 小时；按订单 08:00 接车推算约 19:30 回雷克雅未克。官网没有固定返程钟点，天气、道路和步道可能造成延误。官网参考顺序：1. 雷克雅未克接车；2. Gullfoss Café，官网约 10:15–10:30 接从这里参团的客人（不是你们的上车点，也不是保证游览黄金瀑布的时刻）；3. Ásgarður 山谷 Highland Base，休息和伸展；4. Hveradalir 地热谷，从停车场徒步下谷并探索约 2 小时；5. 离开高地，送回雷克雅未克原接车点；官网核对说明：按英文官网详细行程整理；天气、道路及步道状况可能调整路线，不自行进入封闭区域。核对日期：2026/09/24（北京时间）；<a href=\"https://adventures.is/iceland/day-tours/hiking/kerlingarfjoll-hiking-tour/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
+    "09/30": "新订 Hike to Volcanic Eruption Sites & Reykjanes Tour：08:00 在 Bus Stop 13（Rauðarárstígur，Laugavegur 120）集合，接车可能持续至 08:30。团方未公布固定结束钟点，路线、停留与返程按 BusTravel Iceland 当天安排及火山区域安全条件调整；原 Kerlingarfjöll 高地徒步团已取消并全额退款。核对日期：2026/09/24（北京时间）；<a href=\"https://bustravel.is/\" target=\"_blank\" rel=\"noopener noreferrer\">BusTravel Iceland 团方网站 ↗</a>。",
     "10/01": "官网返程：全程约 11 小时；按订单 08:00 接车推算约 19:00 回雷克雅未克。官网没有固定返程钟点，接齐乘客最多需 30 分钟，实际可能延误。官网参考顺序：1. 雷克雅未克接车 → Berserkjahraun 熔岩原；2. Kirkjufell 教会山及瀑布景观；3. Djúpalónssandur 黑卵石海滩；4. Ingjaldshólskirkja 红顶教堂；5. Arnarstapi 渔村、Miðgjá 石桥与海岸线；6. Búðakirkja 黑教堂；7. Ytri-Tunga 海豹海滩；8. Borgarnes 短停（可买冰岛热狗）→ 返回雷克雅未克；官网核对说明：中英文官网叙述顺序有差别，此处按当前英文 Itinerary 的先后顺序整理。实际停靠和顺序由向导按天气与安全状况调整，不保证遇到海豹。核对日期：2026/09/24（北京时间）；<a href=\"https://adventures.is/iceland/day-tours/sightseeing-tours/snaefellsnes-peninsula-small-group-tour/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
     "10/02": "官网返程：官网预计约 19:00 返回雷克雅未克，全程约 11 小时。08:00 起接车，接齐乘客最多需 30 分钟，天气和道路可能延误。官网参考顺序：1. 雷克雅未克接车 → Hjálparfoss 哈加帕瀑布；2. Sigöldufoss 瀑布（通纳河上约 10 米高的瀑布）；3. Landmannalaugar 兰德曼纳劳卡彩色高地，可泡天然温泉；4. Ljótipollur 火山口湖；5. Hekla 海克拉火山附近 → 返回雷克雅未克；官网核对说明：官网中文页将 Sigöldufoss 译作“眼泪谷瀑布群”；按官方拉丁名识别，不把它当作 Sigöldugljúfur 峡谷。路线、温泉停留及返程以天气、道路和向导安排为准。核对日期：2026/09/24（北京时间）；<a href=\"https://cn.adventures.is/iceland/day-tours/super-jeeps/landmannalaugar-safari/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
     "10/03": "官网返程：官网写明约 18:00 返回雷克雅未克，全程约 6 小时；天气可能造成延误。12:00 开始接车，接齐乘客最多需 30 分钟。官网参考顺序：1. 雷克雅未克接车 → Þingvellir 辛格维利尔国家公园；2. Geysir / Haukadalur 间歇泉区，看 Strokkur 喷发；3. Gullfoss 黄金瀑布；4. Kerið 火山口湖 → 返回雷克雅未克；官网核对说明：按英文官网详细行程整理；实际停留听向导安排。当晚仍不安排追极光。核对日期：2026/09/24（北京时间）；<a href=\"https://adventures.is/iceland/day-tours/golden-circle-tours/golden-circle-afternoon/\" target=\"_blank\" rel=\"noopener noreferrer\">官方详细行程与时长 ↗</a>。",
@@ -507,6 +507,61 @@
     allRoleAfterTongtongUpdate.focusDays[1] = ["10/04-10/05", "南岸两日 + 蓝冰洞（7 人）", `10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等车，接车窗口 08:30–09:00，团含南部住宿；10/05 早晨集合听向导前一晚通知，预计约 21:00 回雷市，受天气和路况影响。 ${southCoastDinner}`];
     allRoleAfterTongtongUpdate.focusDays[3] = ["10/06+", "5 人 → 3 人后续段", "10/06 高地、10/07 斯奈山、10/08 黄金圈、10/09 温泉；人数按截图递减。"];
   }
+
+  // 09/30 booking replacement: the original highland tour was cancelled and refunded.
+  const sept30Detail = "原 Kerlingarfjöll 高地徒步团已取消并全额退款；新团 Hike to Volcanic Eruption Sites & Reykjanes Tour（BusTravel Iceland，2 人，¥1670.53）08:00 在 <a href=\"https://www.google.com/maps/search/?api=1&query=Tour%20Bus%20Stop%2013%20Rau%C3%B0ar%C3%A1rst%C3%ADgur%20Laugavegur%20120%20Reykjavik\" target=\"_blank\" rel=\"noopener noreferrer\">Bus Stop 13 · Rauðarárstígur（Laugavegur 120）</a> 集合，接车可能持续至 08:30；路线与返程以团方当天安排为准。<a href=\"https://bustravel.is/\" target=\"_blank\" rel=\"noreferrer\">查看团方网站</a>";
+  const finalJianhuangPlan = data.personPlans.find((person) => person.id === "jianhuang");
+  if (finalJianhuangPlan) {
+    const dayIndex = finalJianhuangPlan.days.findIndex(([date]) => date === "09/30");
+    if (dayIndex >= 0) finalJianhuangPlan.days[dayIndex] = ["09/30", "已订：Hike to Volcanic Eruption Sites & Reykjanes Tour（¥1670.53/2人）", sept30Detail];
+  }
+  const finalJianhuangRole = data.roleViews.find((role) => role.id === "jianhuang");
+  if (finalJianhuangRole) {
+    const dayIndex = finalJianhuangRole.focusDays.findIndex(([date]) => date === "09/30");
+    if (dayIndex >= 0 && finalJianhuangPlan) finalJianhuangRole.focusDays[dayIndex] = finalJianhuangPlan.days.find(([date]) => date === "09/30");
+    finalJianhuangRole.notes[0] = finalJianhuangRole.notes[0].replace("09/30 Kerlingarfjoll 高地徒步已订", "09/30 雷克雅内斯火山地貌团已订");
+  }
+  const replacedSpot = data.spots.find((spot) => spot.id === "kerlingarfjoll");
+  if (replacedSpot) Object.assign(replacedSpot, {
+    participant: "建皇组合 09/30 已订",
+    transport: "BusTravel Iceland Hike to Volcanic Eruption Sites & Reykjanes Tour；08:00 在 Bus Stop 13（Rauðarárstígur，Laugavegur 120）集合，接车可能持续至 08:30",
+    city: "雷克雅内斯半岛",
+    title: "Hike to Volcanic Eruption Sites & Reykjanes Tour（已订 ¥1670.53/2人）",
+    image: "assets/spots/iceland/blue-lagoon-1.webp",
+    images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/season/snaefellsnes-autumn.webp"],
+    bestTime: "08:00 在 Bus Stop 13 集合；接车可能持续至 08:30",
+    open: "已订 BusTravel Iceland Hike to Volcanic Eruption Sites & Reykjanes Tour；08:00 在 Bus Stop 13（Rauðarárstígur，Laugavegur 120）集合，接车可能持续至 08:30。",
+    sunset: "雷克雅未克 / 雷克雅内斯 09/30 日出约 07:31 / 日落约 18:59",
+    viewpoint: "雷克雅内斯火山喷发地貌、熔岩海岸与半岛景观；具体停留听向导和当天安全安排。",
+    notes: ["原 Kerlingarfjöll 高地徒步团已取消并全额退款，不再执行。", "新团 09/30 08:00 在 Bus Stop 13（Rauðarárstígur，Laugavegur 120）集合，接车可能持续至 08:30。", "两人订单总价 ¥1670.53；具体路线和返程以 BusTravel Iceland 当天安排为准。", "<a href=\"https://bustravel.is/\" target=\"_blank\" rel=\"noreferrer\">打开 BusTravel Iceland 团方网站</a>"],
+  });
+  const replacedRoute = data.coreDays.find((day) => day.date === "09/30");
+  if (replacedRoute) Object.assign(replacedRoute, {
+    title: "雷克雅内斯火山地貌团",
+    route: "雷克雅未克 → Bus Stop 13 集合 → 雷克雅内斯火山喷发地貌与海岸景观 → 雷克雅未克",
+    roads: "跟团车从雷克雅未克前往雷克雅内斯半岛；具体道路、停靠顺序和开放区域由 BusTravel Iceland 及当天安全条件决定。",
+    terrain: "火山熔岩、黑色海岸和雷克雅内斯半岛的地质景观。",
+    caution: "08:00 在 Bus Stop 13（Rauðarárstígur，Laugavegur 120）集合，接车可能持续至 08:30；请提前到站并认准 13 号旅游接车站牌。原 Kerlingarfjöll 团已取消并退款。",
+    images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp"],
+    points: [[183, 452, "雷克雅未克", "08:00 集合 / 住宿"], [245, 404, "雷克雅内斯", "火山地貌与海岸景观"], [183, 452, "雷克雅未克", "返程住宿"]],
+  });
+  const sept30Meeting = dailyMeetings.find((meeting) => meeting.date === "09/30" && meeting.roles.includes("jianhuang"));
+  if (sept30Meeting) Object.assign(sept30Meeting, {
+    label: "接车",
+    time: "08:00",
+    place: "Bus Stop 13 · Rauðarárstígur",
+    address: "Laugavegur 120，Reykjavík；接车可能持续至 08:30",
+    url: "https://www.google.com/maps/search/?api=1&query=Tour%20Bus%20Stop%2013%20Rau%C3%B0ar%C3%A1rst%C3%ADgur%20Laugavegur%20120%20Reykjavik",
+    linkLabel: "打开集合点地图",
+    note: "BusTravel Iceland 新团；请在 08:00 前到站，接车可能持续至 08:30。原 Kerlingarfjöll 团已取消并全额退款。",
+  });
+  dailyVisuals["jianhuang|09/30"] = {
+    city: "雷克雅未克 / 雷克雅内斯",
+    sunrise: "07:31",
+    sunset: "18:59",
+    season: "雷克雅内斯火山与海岸线天气变化快；早晨先到 Bus Stop 13 集合，具体路线按向导和安全条件调整。",
+    images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp", "assets/spots/season/snaefellsnes-autumn.webp"],
+  };
   data.hotel.checkout = "各组按离开冰岛时间退房：建皇 10/06 白天退房、晚上离开；赶海组 10/08 离开；彤彤 10/09 转住机场附近，10/10 清晨离开冰岛";
 })();
 

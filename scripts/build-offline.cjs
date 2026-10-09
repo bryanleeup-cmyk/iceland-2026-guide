@@ -5,10 +5,13 @@ const { execFileSync } = require('node:child_process');
 const root = path.resolve(__dirname, '..');
 execFileSync(process.execPath, [path.join(__dirname, 'build-travel-backup.cjs')], { cwd: root, stdio: 'inherit' });
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const billHtmlPath = path.join(root, 'bill.html');
+const billHtml = fs.existsSync(billHtmlPath) ? fs.readFileSync(billHtmlPath, 'utf8') : '';
 const swPath = path.join(root, 'sw.js');
 const swRelease = /\n\/\/ offline release [a-f0-9]{12}\n?$/;
 const swSource = fs.readFileSync(swPath, 'utf8').replace(swRelease, '\n');
-const core = ['index.html', 'travel-backup.html', ...Array.from(html.matchAll(/(?:src|href)="([^"?]+\.(?:js|css)(?:\?[^\"]*)?)"/g), (match) => match[1])];
+const siteResources = [html, billHtml].flatMap((source) => Array.from(source.matchAll(/(?:src|href)="([^"?]+\.(?:js|css)(?:\?[^\"]*)?)"/g), (match) => match[1]));
+const core = ['index.html', 'travel-backup.html', ...(billHtml ? ['bill.html'] : []), ...new Set(siteResources)];
 function walk(directory) {
   return fs.readdirSync(path.join(root, directory), { withFileTypes: true }).flatMap((entry) => {
     const name = `${directory}/${entry.name}`;

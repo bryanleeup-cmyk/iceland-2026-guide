@@ -99,7 +99,7 @@ a {
 .topbar {
   position: absolute;
   z-index: 2;
-  top: 18px;
+  top: max(18px, env(safe-area-inset-top));
   left: 50%;
   transform: translateX(-50%);
   width: min(1120px, calc(100% - 32px));
@@ -3335,8 +3335,8 @@ footer {
     bottom: max(12px, env(safe-area-inset-bottom));
     transform: translateX(-50%);
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: min(360px, calc(100% - 28px));
+    grid-template-columns: repeat(5, 1fr);
+    width: min(420px, calc(100% - 20px));
     overflow: hidden;
     border: 1px solid rgba(23, 78, 120, 0.18);
     border-radius: 999px;
@@ -3379,7 +3379,7 @@ footer {
   }
 
   .topbar {
-    top: 12px;
+    top: max(12px, env(safe-area-inset-top));
   }
 
   .hero__lead {

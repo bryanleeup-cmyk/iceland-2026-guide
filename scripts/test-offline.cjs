@@ -69,7 +69,8 @@ test('generated offline manifest matches every current core file and image', () 
   vm.runInNewContext(fs.readFileSync(path.join(root, 'offline-assets.js'), 'utf8'), context);
   const manifest = JSON.parse(JSON.stringify(context.self.TRAVEL_OFFLINE_MANIFEST));
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-  const core = ['index.html', 'travel-backup.html', ...Array.from(html.matchAll(/(?:src|href)="([^"?]+\.(?:js|css)(?:\?[^\"]*)?)"/g), (match) => match[1])];
+  const billHtml = fs.readFileSync(path.join(root, 'bill.html'), 'utf8');
+  const core = ['index.html', 'travel-backup.html', 'bill.html', ...new Set([html, billHtml].flatMap((source) => Array.from(source.matchAll(/(?:src|href)="([^"?]+\.(?:js|css)(?:\?[^\"]*)?)"/g), (match) => match[1])))];
   const walk = (directory) => fs.readdirSync(path.join(root, directory), { withFileTypes: true }).flatMap((entry) => {
     const name = `${directory}/${entry.name}`;
     return entry.isDirectory() ? walk(name) : [name];
@@ -77,6 +78,8 @@ test('generated offline manifest matches every current core file and image', () 
   const media = walk('assets').filter((name) => /\.(webp|png|jpg|svg)$/i.test(name)).sort();
   const rebuild = 'Offline artifacts are stale; run node scripts/build-offline.cjs.';
   assert.deepEqual(manifest.core, core, rebuild);
+  assert.ok(manifest.core.includes('bill.html'), 'bill.html must be part of the offline core');
+  assert.ok(manifest.core.includes('bill.js'), 'bill.js must be part of the offline core');
   assert.deepEqual(manifest.media, media, rebuild);
   const hash = crypto.createHash('sha256');
   const mediaHash = crypto.createHash('sha256');

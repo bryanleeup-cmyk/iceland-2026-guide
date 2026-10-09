@@ -9,7 +9,7 @@ const weatherRoutes = {
 const dailyWeatherPlaces = {
   jianhuang: {
     "09/25": ["beijing", "lisbon"], "09/26": weatherRoutes.coast, "09/27": ["porto"], "09/28": ["paris"],
-    "09/29": ["thingvellir", "reykjavik"], "09/30": ["kerlingarfjoll"], "10/01": weatherRoutes.peninsula,
+    "09/29": ["thingvellir", "reykjavik"], "09/30": ["keflavik"], "10/01": weatherRoutes.peninsula,
     "10/02": ["landmannalaugar"], "10/03": weatherRoutes.golden, "10/04": weatherRoutes.south,
     "10/05": weatherRoutes.glacier, "10/06": ["skyLagoon", "keflavik"],
     "10/07": ["lisbon", "copenhagen"], "10/08": ["copenhagen"], "10/09": ["beijing"],
@@ -135,6 +135,11 @@ const weatherPlaceShortNames = {
   skogafoss: "斯科加瀑布", vik: "维克区域", jokulsarlon: "冰河湖", skyLagoon: "Sky Lagoon",
 };
 
+function weatherPlaceLabel(personId, iso, id, place) {
+  if (personId === "jianhuang" && iso === "2026-09-30" && id === "keflavik") return "雷克雅内斯半岛（凯夫拉维克区域参考）";
+  return place?.name || weatherPlaceShortNames[id] || id;
+}
+
 function weatherQueryTime(snapshot, source) {
   return snapshot[`${source}RetrievedAt`] || snapshot.retrievedAt;
 }
@@ -172,7 +177,7 @@ function renderWeatherSummary(personId, date, snapshot) {
     const day = snapshot.places[id]?.daily[iso];
     const temperature = Number.isFinite(day?.min) && Number.isFinite(day?.max) ? `${day.min.toFixed(1)}–${day.max.toFixed(1)}°C` : "温度待报";
     const rain = Number.isFinite(day?.rain) ? `降水 ${day.rain}%` : "降水待报";
-    return `<span class="weather-summary__row"><span class="weather-summary__place">${weatherEscape(weatherPlaceShortNames[id])}</span><span>${weatherShortDescription(day?.code)}</span><b>${temperature}</b><span>${rain}</span></span>`;
+    return `<span class="weather-summary__row"><span class="weather-summary__place">${weatherEscape(weatherPlaceLabel(personId, iso, id, snapshot.places[id]))}</span><span>${weatherShortDescription(day?.code)}</span><b>${temperature}</b><span>${rain}</span></span>`;
   }).join("");
   const night = getAuroraNight(personId, iso);
   let aurora = "";
@@ -225,7 +230,7 @@ function renderDailyWeather(personId, date, visual, { expanded = false } = {}) {
       const day = place?.daily[iso];
       const temperature = Number.isFinite(day?.min) && Number.isFinite(day?.max) ? `${day.min.toFixed(1)}–${day.max.toFixed(1)}°C` : "温度暂未发布";
       const rain = Number.isFinite(day?.rain) ? `降水概率 ${day.rain}%` : "降水概率暂未发布";
-      return `<li><strong>${weatherEscape(place?.name || id)}</strong><div class="daily-weather__metrics"><span>${weatherDescription(day?.code)}</span><b>${temperature}</b><span>${rain}</span></div></li>`;
+      return `<li><strong>${weatherEscape(weatherPlaceLabel(personId, iso, id, place))}</strong><div class="daily-weather__metrics"><span>${weatherDescription(day?.code)}</span><b>${temperature}</b><span>${rain}</span></div></li>`;
     }).join("");
     return `<div class="daily-weather__day"><h5>${iso.slice(5).replace("-", "/")} · ${weatherDateLabel(iso, snapshot)}</h5><ul class="daily-weather__places">${rows}</ul>${renderAuroraWeather(personId, iso, snapshot)}</div>`;
   }).join("");

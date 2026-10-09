@@ -55,7 +55,9 @@ test('every final daily card has concrete local sunrise and sunset times', () =>
 });
 
 test('highlands, cross-border dates and return arrivals use the actual destinations', () => {
-  assert.deepEqual(plain(call('weatherPlaceIds', 'jianhuang', '2026-09-30')), ['kerlingarfjoll']);
+  assert.deepEqual(plain(call('weatherPlaceIds', 'jianhuang', '2026-09-30')), ['keflavik']);
+  assert.match(call('renderDailyWeather', 'jianhuang', '09/30', visual), /雷克雅内斯半岛（凯夫拉维克区域参考）/);
+  assert.doesNotMatch(call('renderDailyWeather', 'jianhuang', '09/30', visual), /Kerlingarfjöll 高地/);
   assert.deepEqual(plain(call('weatherPlaceIds', 'jianhuang', '2026-10-02')), ['landmannalaugar']);
   for (const id of ['tongyan', 'yueyue', 'haigang']) assert.deepEqual(plain(call('weatherPlaceIds', id, '2026-10-06')), ['landmannalaugar']);
   assert.deepEqual(plain(call('weatherCardDates', 'yueyue', '10/11-10/12')), ['2026-10-11', '2026-10-12']);

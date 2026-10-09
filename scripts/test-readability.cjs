@@ -152,7 +152,7 @@ test('cross-day qualifiers, pickup windows, and parenthetical semicolons remain 
 test('Jianhuang official routes preserve ordered stops and distinguish estimates from official return times', () => {
   const routes = {
     '09/29': ['Þingvellir', '安全说明', '150 米', 'Silfra 史费拉', 'Silfra Lagoon', '热巧克力'],
-    '09/30': ['Gullfoss Café', 'Ásgarður', 'Hveradalir', '原接车点'],
+    '09/30': ['Bus Stop 13', 'Rauðarárstígur', '雷克雅内斯'],
     '10/01': ['Berserkjahraun', 'Kirkjufell', 'Djúpalónssandur', 'Ingjaldshólskirkja', 'Arnarstapi', 'Búðakirkja', 'Ytri-Tunga', 'Borgarnes'],
     '10/02': ['Hjálparfoss', 'Sigöldufoss', 'Landmannalaugar', 'Ljótipollur', 'Hekla'],
     '10/03': ['Þingvellir', 'Geysir', 'Gullfoss', 'Kerið'],
@@ -161,6 +161,14 @@ test('Jianhuang official routes preserve ordered stops and distinguish estimates
   };
   for (const [date, stops] of Object.entries(routes)) {
     const sections = getSections('jianhuang', date, details('jianhuang', date));
+    if (date === '09/30') {
+      const replacement = sections.flatMap((section) => section.items).join('');
+      assert.match(replacement, /原 Kerlingarfjöll 高地徒步团已取消并全额退款/);
+      assert.match(replacement, /Hike to Volcanic Eruption Sites & Reykjanes Tour/);
+      assert.match(replacement, /Bus Stop 13[\s\S]*Rauðarárstígur/);
+      assert.match(replacement, /¥1670\.53/);
+      continue;
+    }
     assert.equal(sections.length, 4, date);
     const route = sections.find((section) => section.intro === '官网参考顺序：').items.join('');
     let previous = -1;

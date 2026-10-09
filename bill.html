@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#eaf3f4" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; frame-src 'none'" />
+    <title>建皇结算版｜2026 国庆旅行</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="bill.css" />
+  </head>
+  <body>
+    <header class="bill-hero">
+      <nav class="bill-topbar" aria-label="账单导航">
+        <a class="bill-back" href="./index.html?role=jianhuang#myDashboard">返回攻略</a>
+        <span aria-current="page">建皇结算</span>
+      </nav>
+      <div class="bill-hero__content">
+        <p class="bill-eyebrow">Post-trip ledger · 2026</p>
+        <h1>建皇结算版</h1>
+        <p>只算建皇组合已付款项，订单总额、个人应摊和待补金额分开看。</p>
+      </div>
+    </header>
+
+    <main class="bill-shell">
+      <section class="bill-note" aria-label="账单口径">
+        <strong>先看清口径</strong>
+        <p>人民币、欧元和冰岛克朗分别统计，不做汇率猜测。共同订单右侧的“建皇应摊”只在分摊规则明确时计算；有冲突或缺凭证的项目会保留在待确认区。</p>
+      </section>
+
+      <section class="bill-kpis" id="billSummary" aria-label="账单摘要" aria-live="polite"></section>
+
+      <section class="bill-panel bill-ledger-panel" aria-labelledby="ledgerTitle">
+        <div class="bill-section-head">
+          <div>
+            <p class="bill-eyebrow">Ledger</p>
+            <h2 id="ledgerTitle">全部账目</h2>
+          </div>
+          <p id="billResultCount">加载中…</p>
+        </div>
+        <div class="bill-toolbar" aria-label="账单筛选与操作">
+          <div class="bill-filter-row" role="group" aria-label="账单状态筛选">
+            <button class="bill-filter is-active" type="button" data-filter="all">全部</button>
+            <button class="bill-filter" type="button" data-filter="confirmed">已确认</button>
+            <button class="bill-filter" type="button" data-filter="needs-confirmation">待确认分摊</button>
+            <button class="bill-filter" type="button" data-filter="missing">待补金额</button>
+            <button class="bill-filter" type="button" data-filter="refunded">已退款</button>
+            <button class="bill-filter" type="button" data-filter="local">我新增的</button>
+          </div>
+          <div class="bill-actions">
+            <button class="bill-action bill-action--primary" id="toggleAddBill" type="button" aria-expanded="false" aria-controls="addBillPanel">添加一笔</button>
+            <button class="bill-action" id="exportBill" type="button">导出 CSV</button>
+            <button class="bill-action bill-action--quiet" id="clearLocalBills" type="button">清空我新增的</button>
+          </div>
+        </div>
+        <div class="bill-add-panel" id="addBillPanel" hidden>
+          <form id="addBillForm" novalidate>
+            <div class="bill-form-grid">
+              <label>日期<input name="date" type="text" placeholder="10/06" required /></label>
+              <label>类别<select name="category"><option>交通</option><option>住宿</option><option>团费</option><option>餐饮</option><option>门票</option><option>其他</option></select></label>
+              <label class="bill-form-wide">项目<input name="title" type="text" placeholder="例如：机场公交" required /></label>
+              <label>金额<input name="amount" type="number" min="0" step="0.01" placeholder="可留空" /></label>
+              <label>币种<select name="currency"><option value="CNY">人民币 ¥</option><option value="EUR">欧元 €</option><option value="ISK">冰岛克朗 ISK</option></select></label>
+              <label>建皇应摊<input name="shareAmount" type="number" min="0" step="0.01" placeholder="可留空" /></label>
+              <label class="bill-form-wide">备注<input name="note" type="text" placeholder="可选：付款人、分摊规则或凭证说明" /></label>
+            </div>
+            <div class="bill-form-actions">
+              <button class="bill-action bill-action--primary" type="submit">保存到本机</button>
+              <button class="bill-action" id="cancelAddBill" type="button">取消</button>
+              <span id="billFormStatus" role="status" aria-live="polite"></span>
+            </div>
+          </form>
+        </div>
+        <div class="bill-list" id="billList" aria-live="polite"></div>
+      </section>
+
+      <section class="bill-panel" aria-labelledby="itineraryTitle">
+        <div class="bill-section-head">
+          <div>
+            <p class="bill-eyebrow">Cross-reference</p>
+            <h2 id="itineraryTitle">按行程回看</h2>
+          </div>
+          <p>账单不复制攻略正文，点日期直接回原日程。</p>
+        </div>
+        <div class="bill-itinerary" id="billItinerary"></div>
+      </section>
+
+      <section class="bill-panel bill-footnote" aria-label="保存说明">
+        <strong>保存方式</strong>
+        <p>“添加一笔”只保存在当前设备浏览器；导出 CSV 可留档或在表格里继续核对。公开网页不会上传你新增的账目，也不放订单号和支付凭证。</p>
+      </section>
+    </main>
+
+    <footer class="bill-footer">
+      <a href="./index.html?role=jianhuang#myDashboard">攻略</a>
+      <a href="./bill.html#jianhuang" aria-current="page">结算</a>
+      <a href="./index.html?role=jianhuang#lodging-expenses">住宿 AA 表</a>
+    </footer>
+
+    <script src="bill-data.js" defer></script>
+    <script src="bill.js" defer></script>
+  </body>
+</html>
