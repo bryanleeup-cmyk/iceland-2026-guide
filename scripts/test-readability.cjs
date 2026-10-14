@@ -19,6 +19,7 @@ const context = {
   renderHotel() {},
   renderMobileTimeline() {},
   applyRoleView() {},
+  renderDailySpend() { return ''; },
 };
 vm.createContext(context);
 vm.runInContext(fs.readFileSync(path.join(root, 'weather-snapshot.js'), 'utf8'), context);

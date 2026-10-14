@@ -3268,6 +3268,11 @@ body[data-role="jianhuang"] .daily-weather {
   display: none;
 }
 
+body[data-role="jianhuang"] #bookedTours,
+body[data-role="jianhuang"] #reference {
+  display: none !important;
+}
+
 @media (max-width: 860px) {
   .memory-ledger__hero {
     grid-template-columns: 1fr;

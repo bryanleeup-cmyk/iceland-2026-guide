@@ -7,7 +7,7 @@
     <meta name="referrer" content="no-referrer" />
     <meta name="robots" content="noindex, nofollow" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; frame-src 'none'" />
-    <title>黄建皇开销归档｜2026 欧洲旅行回忆录</title>
+    <title>黄建皇开销明细｜2026 欧洲旅行回忆录</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="bill.css" />
     <link rel="stylesheet" href="password-gate.css" />
@@ -15,34 +15,34 @@
   <body class="password-gate-locked">
     <section class="password-gate" aria-labelledby="passwordGateTitle">
       <div class="password-gate__panel">
-        <p class="password-gate__eyebrow">Private itinerary</p>
-        <h1 id="passwordGateTitle">进入旅行网站</h1>
-        <p class="password-gate__prompt">请先回答一个问题：这个网站是谁做的？</p>
+        <p class="password-gate__eyebrow">Private memoir</p>
+        <h1 id="passwordGateTitle">进入回忆录</h1>
+        <p class="password-gate__prompt">这个网站是谁做的？</p>
         <form>
-          <label for="passwordGateAnswer">你的答案
+          <label for="passwordGateAnswer">答案
             <input id="passwordGateAnswer" name="answer" type="text" autocomplete="off" required />
           </label>
-          <button type="submit">进入网站</button>
+          <button type="submit">进入</button>
           <p class="password-gate__status" role="alert" aria-live="polite"></p>
         </form>
       </div>
     </section>
     <header class="bill-hero">
       <nav class="bill-topbar" aria-label="账单导航">
-        <a class="bill-back" href="./index.html?role=jianhuang#tripMemory">返回回忆录</a>
-        <span aria-current="page">开销归档</span>
+        <a class="bill-back" href="./index.html?role=jianhuang#tripMemory">回忆录</a>
+        <span aria-current="page">开销明细</span>
       </nav>
       <div class="bill-hero__content">
         <p class="bill-eyebrow">Travel ledger · 2026</p>
-        <h1>黄建皇开销归档</h1>
-        <p>94 笔个人开销完整计入，按大类和旅行日期归并回看。</p>
+        <h1>黄建皇开销明细</h1>
+        <p>94 笔开销，按类别和日期汇总。</p>
       </div>
     </header>
 
     <main class="bill-shell">
       <section class="bill-note" aria-label="账单口径">
-        <strong>个人最终口径</strong>
-        <p>全程合计 ¥29,712.53。Havfruen 午餐按个人刷卡 ¥532.07 计入一次；Icewear 退税 -¥72 已抵扣；葡萄牙、波尔图和巴黎的朋友代付结算均按已确认的独立支出计入。</p>
+        <strong>统计口径</strong>
+        <p>合计 ¥29,712.53。Havfruen 午餐 ¥532.07 计一次；Icewear 退税 ¥72 已扣除；朋友代付按确认金额计入。</p>
       </section>
 
       <section class="bill-kpis" id="billSummary" aria-label="账单摘要" aria-live="polite"></section>
@@ -59,15 +59,15 @@
           <div class="bill-filter-row" role="group" aria-label="账单状态筛选">
             <button class="bill-filter is-active" type="button" data-filter="all">全部</button>
             <button class="bill-filter" type="button" data-filter="confirmed">已确认</button>
-            <button class="bill-filter" type="button" data-filter="needs-confirmation">待确认分摊</button>
-            <button class="bill-filter" type="button" data-filter="missing">待补金额</button>
-            <button class="bill-filter" type="button" data-filter="refunded">已退款</button>
-            <button class="bill-filter" type="button" data-filter="local">我新增的</button>
+            <button class="bill-filter" type="button" data-filter="needs-confirmation">待确认</button>
+            <button class="bill-filter" type="button" data-filter="missing">待补</button>
+            <button class="bill-filter" type="button" data-filter="refunded">退款</button>
+            <button class="bill-filter" type="button" data-filter="local">本机新增</button>
           </div>
           <div class="bill-actions">
-            <button class="bill-action bill-action--primary" id="toggleAddBill" type="button" aria-expanded="false" aria-controls="addBillPanel">添加一笔</button>
-            <button class="bill-action" id="exportBill" type="button">导出 CSV</button>
-            <button class="bill-action bill-action--quiet" id="clearLocalBills" type="button">清空我新增的</button>
+            <button class="bill-action bill-action--primary" id="toggleAddBill" type="button" aria-expanded="false" aria-controls="addBillPanel">新增</button>
+            <button class="bill-action" id="exportBill" type="button">导出</button>
+            <button class="bill-action bill-action--quiet" id="clearLocalBills" type="button">清空本机</button>
           </div>
         </div>
         <div class="bill-add-panel" id="addBillPanel" hidden>
@@ -95,27 +95,27 @@
         <div class="bill-section-head">
           <div>
             <p class="bill-eyebrow">Cross-reference</p>
-            <h2 id="itineraryTitle">按行程回看</h2>
+            <h2 id="itineraryTitle">按日期回看</h2>
           </div>
-          <p>点日期回到照片、地点和当天花费。</p>
+          <p>照片、地点和当天花费。</p>
         </div>
         <div class="bill-itinerary" id="billItinerary"></div>
       </section>
 
       <section class="bill-panel bill-footnote" aria-label="保存说明">
-        <strong>保存方式</strong>
-        <p>“添加一笔”只保存在当前设备浏览器；导出 CSV 可留档或在表格里继续核对。公开网页不会上传你新增的账目，也不放订单号和支付凭证。</p>
+        <strong>本机保存</strong>
+        <p>新增记录只存于当前浏览器；可导出 CSV。</p>
       </section>
     </main>
 
     <footer class="bill-footer">
       <a href="./index.html?role=jianhuang#tripMemory">回忆录</a>
-      <a href="./bill.html#jianhuang" aria-current="page">开销归档</a>
+      <a href="./bill.html#jianhuang" aria-current="page">开销明细</a>
       <a href="./index.html?role=jianhuang#lodging-expenses">住宿开销</a>
     </footer>
 
-    <script src="memory-data.js?v=memory-20261014-1" defer></script>
-    <script src="bill-data.js?v=memory-20261014-1" defer></script>
+    <script src="memory-data.js?v=memory-20261014-2" defer></script>
+    <script src="bill-data.js?v=memory-20261014-2" defer></script>
     <script src="bill.js" defer></script>
     <script src="password-gate.js" defer></script>
   </body>

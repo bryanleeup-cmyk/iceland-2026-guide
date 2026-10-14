@@ -1552,7 +1552,7 @@ function renderDailyJump(personId, days) {
   return `<nav class="daily-jump" aria-label="日程日期定位">
     <label for="dailyJump">跳到日期</label>
     <select id="dailyJump">
-      <option value="">选择日期 · ${days.length} 条</option>
+      <option value="">选择日期 · ${days.length} 天</option>
       ${days.map(([date, title]) => `<option value="${dailyCardId(personId, date)}">${date} · ${escapeHtml(title)}</option>`).join("")}
     </select>
   </nav>`;
@@ -1607,7 +1607,7 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
       <div class="daily-card__body">
         ${
           personId === "jianhuang"
-            ? `<details class="daily-card__archive"><summary>当时的完整行程记录</summary><div class="daily-card__archive-body">${archivedDetail}</div></details>`
+            ? `<details class="daily-card__archive"><summary>行程记录</summary><div class="daily-card__archive-body">${archivedDetail}</div></details>`
             : archivedDetail
         }
         ${typeof renderDailyWeather === "function" ? renderDailyWeather(personId, date, visual) : `<p class="daily-card__season"><span class="daily-card__season-label">天气与风景 · 预报未加载</span>${visual.city}：${visual.season}</p>`}
@@ -1651,12 +1651,13 @@ const icelandRouteDays = [
   {
     id: "0929",
     date: "09/29",
-    title: "抵达冰岛 + 史费拉裂缝浮潜",
+    title: "Silfra 浮潜",
     color: "#197b8b",
     route: "凯夫拉未克机场 → 雷克雅未克 → Þingvellir 辛格维利尔 → 干衣 / 安全说明 → Silfra 史费拉 → Silfra Lagoon 出水 → 热巧克力 / 饼干 → 雷克雅未克",
     roads: "机场与市区走 41 号路；去 Þingvellir 走 36 号路。浮潜结束后返回雷克雅未克。",
     terrain: "北美板块与欧亚板块之间的裂谷水道，清澈冷泉、黑色火山岩和苔原草地。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
+    memory: "抵达冰岛，当天在 Silfra 浮潜。",
     caution: "浮潜团含雷市接送；12:00 在 Klettur Hótel（Mjölnisholt 12–14）等车，接车可能需要 30 分钟。官方写雷市往返约 5.5 小时，按集合时间推算约 17:30 前后结束；落地后先放行李、换保暖衣物。",
     images: ["assets/spots/tourlink/silfra-snorkel-1.webp", "assets/spots/tourlink/silfra-snorkel-2.webp"],
     points: [
@@ -1670,12 +1671,13 @@ const icelandRouteDays = [
   {
     id: "0930",
     date: "09/30",
-    title: "雷克雅内斯火山地貌团",
+    title: "Reykjanes 火山海岸",
     color: "#c76b35",
     route: "雷克雅未克 → Bus Stop 13 集合 → 雷克雅内斯火山喷发地貌与海岸景观 → 雷克雅未克",
     roads: "跟团车从雷克雅未克前往雷克雅内斯半岛；具体道路、停靠顺序和开放区域由 BusTravel Iceland 及当天安全条件决定。",
     terrain: "火山熔岩、黑色海岸和雷克雅内斯半岛的地质景观。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
+    memory: "走过雷克雅内斯的火山地貌与海岸。",
     caution: "08:00 在 Bus Stop 13（Rauðarárstígur，Laugavegur 120）集合，接车可能持续至 08:30；请提前到站并认准 13 号旅游接车站牌。原 Kerlingarfjöll 团已取消并退款。",
     images: ["assets/spots/iceland/blue-lagoon-1.webp", "assets/spots/iceland/reykjavik-coast.webp"],
     points: [
@@ -1687,12 +1689,13 @@ const icelandRouteDays = [
   {
     id: "1001",
     date: "10/01",
-    title: "斯奈山半岛小团",
+    title: "Snaefellsnes 半岛",
     color: "#356f9f",
     route: "雷克雅未克 → Berserkjahraun 熔岩原 → Kirkjufell 教会山 → Djúpalónssandur 黑卵石海滩 → Ingjaldshólskirkja 红顶教堂 → Arnarstapi / Miðgjá → Búðakirkja 黑教堂 → Ytri-Tunga 海豹海滩 → Borgarnes → 雷克雅未克",
     roads: "1 号路向北，经 Borgarnes 转 54 号路环行斯奈山半岛，再从西侧返回雷克雅未克。",
     terrain: "海蚀悬崖、黑沙滩、熔岩原、黑教堂与教会山，西部海岸线风力强。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
+    memory: "看教会山、黑教堂和斯奈山海岸。",
     caution: "08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车；官网时长约 11 小时，按接车时间推算约 19:00 回城，官网未给固定返程钟点；路线按英文官网参考顺序，实际可因天气与安全调整。地图仅示主要节点，完整顺序见日程。",
     images: ["assets/spots/season/snaefellsnes-autumn.webp", "assets/spots/tourlink/snaefellsnes-aa-1.webp"],
     points: [
@@ -1708,12 +1711,13 @@ const icelandRouteDays = [
   {
     id: "1002",
     date: "10/02",
-    title: "兰德曼那劳卡高地超级吉普",
+    title: "Landmannalaugar 高地",
     color: "#9a5b35",
     route: "雷克雅未克 → Hjálparfoss → Sigöldufoss → Landmannalaugar → Ljótipollur → Hekla 附近 → 雷克雅未克",
     roads: "跟团超级吉普进入 F225 / F208 高地道路；路线会根据河流、风雪和道路状态调整。",
     terrain: "彩色山脉、黑色熔岩原、温泉溪流与火山口地貌，属于冰岛内陆高原。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
+    memory: "乘超级吉普进入彩色高地。",
     caution: "08:00 在 Klettur Hótel（Mjölnisholt 12–14）接车；官网预计约 19:00 回雷市，接齐乘客最多等待 30 分钟；Sigöldufoss 是通纳河上的瀑布，不是 Sigöldugljúfur 峡谷。高地道路、温泉停留和实际回城时间受天气与道路影响；地图仅示主要节点，完整顺序见日程。",
     images: ["assets/spots/tourlink/landmannalaugar-aa-1.webp", "assets/spots/iceland/landmannalaugar-3.webp"],
     points: [
@@ -1725,12 +1729,13 @@ const icelandRouteDays = [
   {
     id: "1003",
     date: "10/03",
-    title: "黄金圈下午团",
+    title: "黄金圈",
     color: "#d29b32",
     route: "雷克雅未克 → Þingvellir 辛格维利尔 → Geysir / Strokkur → Gullfoss 黄金瀑布 → Kerið 火山口湖 → 雷克雅未克",
     roads: "黄金圈主线走 36 号路、37 号路和 35 号路；下午团结束后回雷克雅未克休息，当晚不安排追极光。",
     terrain: "裂谷断层、间歇泉地热区与宽阔瀑布峡谷，是冰岛最集中的地质景观组合。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
+    memory: "辛格维利尔、间歇泉、黄金瀑布和火山口湖。",
     caution: "建皇上午休息，约 10:00 和赶海组会合吃早午饭；12:00 在 Klettur Hótel（Mjölnisholt 12–14）接车。官网明确约 18:00 回雷市，天气可能延误。Gullfoss 之后到 Kerið 火山口湖再回城；地图仅示主要节点，完整顺序见日程。",
     images: ["assets/spots/tourlink/whale-golden-thingvellir.webp", "assets/spots/gallery/gullfoss-strokkur.webp"],
     points: [
@@ -1744,12 +1749,13 @@ const icelandRouteDays = [
   {
     id: "1004",
     date: "10/04",
-    title: "南岸两日团第 1 天",
+    title: "南岸 · 瀑布与黑沙滩",
     color: "#bd4f4d",
     route: "雷克雅未克 → Gljúfrabúi 隐藏瀑布 → Seljalandsfoss → Skógafoss → Reynisfjara → 东南部乡村住宿",
     roads: "沿 1 号环岛公路向东，瀑布与黑沙滩均在南岸主线附近；当天不自驾。",
     terrain: "冰川融水瀑布、海岸玄武岩、黑沙滩和海蚀柱，风浪大时远离浪线。",
     stay: "Nice Travel 南岸两日团含住宿（具体酒店以确认单为准）",
+    memory: "瀑布、黑沙滩，夜宿冰岛南岸。",
     caution: "10/04 08:30 在 Bus Stop #13（Rauðarárstígur）等车，接车窗口 08:30–09:00；官网未给抵达住宿的固定钟点，当天不回雷市，晚上为团含东南部乡村住宿。具体酒店听团方安排；地图仅示主要节点与住宿区域，完整顺序见日程。官网当前标注 11–3 月团期，出发前须向团方核对已订 10 月路线和冰洞安排。",
     images: ["assets/spots/tourlink/nice-south-waterfall-1.webp", "assets/spots/gallery/reynisfjara-seljalandsfoss.webp"],
     points: [
@@ -1764,12 +1770,13 @@ const icelandRouteDays = [
   {
     id: "1005",
     date: "10/05",
-    title: "南岸两日团第 2 天 + 蓝冰洞",
+    title: "南岸 · 冰河湖与蓝冰洞",
     color: "#5a76a7",
     route: "东南部乡村住宿 → Diamond Beach → Jökulsárlón → Super Jeep 蓝冰洞 → 返回冰河湖 → Hofskirkja → 途经 Eldhraun / Vík → 雷克雅未克",
     roads: "沿 1 号环岛公路继续向东到瓦特纳冰川国家公园一带，下午沿 1 号路回雷克雅未克。",
     terrain: "冰川舌、蓝冰洞、冰河湖浮冰和黑沙钻石海滩；冰洞进入必须听向导安排。",
     stay: "Fosshotel Lind（林德城河酒店），雷克雅未克",
+    memory: "冰河湖、钻石沙滩和蓝冰洞，晚间回到雷克雅未克。",
     caution: `10/05 次晨集合时间和具体位置，10/04 晚向导说明时确认；按官网 Day 2 正文顺序整理，官网简表顺序不同，实际听向导安排。官网预计约 21:00 回雷市，市区送回可能再耗约 30 分钟；蓝冰洞约 3 小时含接驳，10 月适用安排须向团方确认。地图仅示主要节点，完整顺序见日程。 ${southCoastDinner}`,
     images: ["assets/spots/iceland/jokulsarlon-1.webp", "assets/spots/iceland/diamond-beach-1.webp"],
     points: [
@@ -1784,12 +1791,13 @@ const icelandRouteDays = [
   {
     id: "1006",
     date: "10/06",
-    title: "Sky Lagoon 温泉 + 飞往米兰",
+    title: "Sky Lagoon → 米兰",
     color: "#8a5f9e",
     route: "林德城河酒店 → Sky Lagoon → 雷克雅未克市区 → 凯夫拉未克机场 → 米兰",
     roads: "温泉订单不含接送，自行乘公共交通前往 Sky Lagoon；提前查询往返公交班次，预留步行、换乘与取行李时间，再转乘机场交通前往 KEF。",
     terrain: "海湾城市、黑色火山海岸和地热温泉；这是离开冰岛前的收尾日，不再安排远途景点。",
     stay: "当晚无冰岛住宿：19:20 从凯夫拉未克机场飞往米兰",
+    memory: "在 Sky Lagoon 收尾，晚上飞往米兰。",
     caution: "13:00 到 Sky Lagoon 入场，温泉 ¥1441.87/2人，不含接送。自行安排公共交通，并预留取行李、机场交通和值机时间；19:20 飞米兰。",
     images: ["assets/spots/iceland/sky-lagoon-official.webp", "assets/spots/iceland/reykjavik-coast.webp"],
     points: [
@@ -1896,7 +1904,7 @@ function renderRouteAtlas(dayId = activeRouteDayId) {
       <div class="route-day-detail__facts">
         <div><span>地貌</span><strong>${selectedDay.terrain}</strong></div>
         <div><span>住宿</span><strong>${selectedDay.stay}</strong></div>
-        <div><span>提醒</span><strong>${selectedDay.caution}</strong></div>
+        <div><span>回忆</span><strong>${selectedDay.memory}</strong></div>
       </div>
       <ol class="route-stop-list">
         ${selectedDay.points
@@ -1906,7 +1914,7 @@ function renderRouteAtlas(dayId = activeRouteDayId) {
       </ol>
     </div>
     <div class="route-day-detail__media">
-      ${selectedDay.images.map((image, index) => `<figure><img ${imageSourceAttrs(image)} alt="${selectedDay.title}景观缩影 ${index + 1}" /><figcaption>${index === 0 ? selectedDay.terrain : "当天路线相关景观"}</figcaption></figure>`).join("")}
+      ${selectedDay.images.map((image, index) => `<figure><img ${imageSourceAttrs(image)} alt="${selectedDay.title}景观 ${index + 1}" /><figcaption>${index === 0 ? selectedDay.terrain : "沿途景观"}</figcaption></figure>`).join("")}
     </div>
   `;
   observeDeferredImages(routeAtlasDetailEl);
@@ -1974,7 +1982,8 @@ function getItineraryForRole(roleId) {
 }
 
 function formatPersonalSpend(amount) {
-  return `¥${Number(amount).toLocaleString("zh-CN", {
+  const value = Number(amount);
+  return `${value < 0 ? "-" : ""}¥${Math.abs(value).toLocaleString("zh-CN", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   })}`;
@@ -1995,13 +2004,13 @@ function renderMemorySummary(roleId) {
       <header class="memory-ledger__hero">
         <div class="memory-ledger__intro">
           <p class="memory-ledger__eyebrow">${memory.dateRange} · ${memory.transactionCount} 笔个人开销</p>
-          <h2 id="memoryLedgerTitle">一路走过，也一路花过</h2>
+          <h2 id="memoryLedgerTitle">旅行总账</h2>
           <p>${memory.route}</p>
         </div>
         <div class="memory-ledger__total">
-          <span>全程个人开销</span>
+          <span>总开销</span>
           <strong>${formatPersonalSpend(memory.total)}</strong>
-          <small>已含 -¥72.00 退税抵扣</small>
+          <small>已扣 ¥72.00 退税</small>
         </div>
       </header>
 
@@ -2009,12 +2018,12 @@ function renderMemorySummary(roleId) {
         <section class="memory-section" aria-labelledby="memoryCategoryTitle">
           <div class="memory-section__head">
             <div>
-              <span>钱花在了哪里</span>
-              <h3 id="memoryCategoryTitle">体验最多，日常其次</h3>
+              <span>开销分类</span>
+              <h3 id="memoryCategoryTitle">钱花在哪</h3>
             </div>
-            <p>全部 ${memory.transactionCount} 笔都已计入，页面只展示归并后的四大类。</p>
+            <p>${memory.transactionCount} 笔合并为四类。</p>
           </div>
-          <div class="memory-category-bar" role="img" aria-label="旅行团 36.3%，日常消费 27.9%，机票及城际交通 20.8%，住宿 15.0%">
+          <div class="memory-category-bar" role="img" aria-label="旅行体验 36.3%，日常消费 27.9%，机票及城际交通 20.8%，住宿 15.0%">
             ${memory.categories.map((category) => `<span style="width:${(category.amount / categoryTotal * 100).toFixed(3)}%;--category-color:${category.color}"></span>`).join("")}
           </div>
           <div class="memory-category-legend">
@@ -2033,9 +2042,8 @@ function renderMemorySummary(roleId) {
           <div class="memory-section__head">
             <div>
               <span>三段旅程</span>
-              <h3 id="memoryChapterTitle">冰岛八日是预算核心</h3>
+              <h3 id="memoryChapterTitle">冰岛花费最高</h3>
             </div>
-            <p>按路线分段，比逐笔流水更容易记起当时去了哪里。</p>
           </div>
           <div class="memory-chapters">
             ${memory.chapters.map((chapter, index) => `
@@ -2053,10 +2061,10 @@ function renderMemorySummary(roleId) {
         <section class="memory-section" aria-labelledby="memoryRhythmTitle">
           <div class="memory-section__head">
             <div>
-              <span>花费随行程起伏</span>
-              <h3 id="memoryRhythmTitle">点一天，回到那天的照片</h3>
+              <span>每日花费</span>
+              <h3 id="memoryRhythmTitle">每天花了多少</h3>
             </div>
-            <p>09/29 抵达冰岛并浮潜，是全程单日最高；10/04 南岸团紧随其后。</p>
+            <p>最高 09/29；其次 10/04。</p>
           </div>
           <div class="memory-spend-chart" aria-label="每日个人开销图">
             ${Object.entries(memory.days).map(([date, day]) => `
@@ -2068,14 +2076,14 @@ function renderMemorySummary(roleId) {
               </button>
             `).join("")}
           </div>
-          <p class="memory-ledger__adjustment">账本另含：${memory.adjustments.map((item) => `${item.label} ${formatPersonalSpend(item.amount)}`).join("；")}，已在全程总额中抵扣。</p>
+          <p class="memory-ledger__adjustment">${memory.adjustments.map((item) => `${item.label} ${formatPersonalSpend(item.amount)}`).join("；")}，已计入总额。</p>
         </section>
 
         <section class="memory-section" aria-labelledby="memoryHighlightTitle">
           <div class="memory-section__head">
             <div>
-              <span>最值得记住的体验</span>
-              <h3 id="memoryHighlightTitle">钱变成了这些画面</h3>
+              <span>旅行亮点</span>
+              <h3 id="memoryHighlightTitle">花费最高的体验</h3>
             </div>
           </div>
           <div class="memory-highlights">
@@ -2099,12 +2107,12 @@ function renderDailySpend(roleId, date) {
   const day = getMemoryData(roleId)?.days?.[date];
   if (!day) {
     return roleId === "jianhuang" && date === "10/09"
-      ? `<div class="daily-card__spend daily-card__spend--empty"><span>当天账本无新增</span><small>回到北京，旅程在这里收尾</small></div>`
+      ? `<div class="daily-card__spend daily-card__spend--empty"><span>无新增开销</span><small>抵达北京</small></div>`
       : "";
   }
   return `
     <div class="daily-card__spend">
-      <span>当天个人开销</span>
+      <span>当天开销</span>
       <strong>${formatPersonalSpend(day.total)}</strong>
       <small>${day.memory}</small>
       <div>${day.parts.map(([label, amount]) => `<em>${label} ${formatPersonalSpend(amount)}</em>`).join("")}</div>
@@ -2128,7 +2136,7 @@ function renderRoleDashboard(roleId = activeRoleId) {
     ${renderMemorySummary(roleId)}
     <div class="dashboard-plan" style="--accent:${role.accent}">
       <div class="dashboard-plan__title">
-        <strong>${role.name}每日回忆</strong>
+        <strong>${role.name} · 每日</strong>
       </div>
       ${renderDailyJump(roleId, days)}
       <div class="dashboard-days">

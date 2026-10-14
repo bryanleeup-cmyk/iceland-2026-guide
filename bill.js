@@ -113,19 +113,19 @@
 
     summaryEl.innerHTML = `
       <article class="bill-kpi">
-        <span class="bill-kpi__label">全程个人开销</span>
+        <span class="bill-kpi__label">总开销</span>
         <strong class="bill-kpi__value">${moneyLines(paidTotals)}</strong>
-        <p class="bill-kpi__note">94 笔账目按个人最终承担金额汇总。</p>
+        <p class="bill-kpi__note">94 笔个人账目。</p>
       </article>
       <article class="bill-kpi bill-kpi--share">
-        <span class="bill-kpi__label">分类复核合计</span>
+        <span class="bill-kpi__label">分类合计</span>
         <strong class="bill-kpi__value">${moneyLines(shareTotals)}</strong>
-        <p class="bill-kpi__note">四大类相加与全程总额一致。</p>
+        <p class="bill-kpi__note">与总额一致。</p>
       </article>
       <article class="bill-kpi bill-kpi--pending">
-        <span class="bill-kpi__label">已归并</span>
+        <span class="bill-kpi__label">分类</span>
         <strong class="bill-kpi__value">${records.length} 大类</strong>
-        <p class="bill-kpi__note">零碎餐饮、购物和交通不逐笔铺开。</p>
+        <p class="bill-kpi__note">零碎开销已合并。</p>
       </article>
     `;
   }
@@ -139,14 +139,14 @@
 
   function sourceLink(record) {
     if (!record.anchor) return "";
-    return `<a href="./index.html?role=jianhuang#${escapeAttr(record.anchor)}">回到回忆录</a>`;
+    return `<a href="./index.html?role=jianhuang#${escapeAttr(record.anchor)}">回忆录</a>`;
   }
 
   function renderRecord(record) {
     const [label, tone] = statusLabel(record);
     const shareText = record.shareAmount === null || record.shareAmount === undefined
       ? record.split
-      : `建皇应摊 ${formatMoney(record.shareAmount, record.shareCurrency || record.currency)} · ${record.split}`;
+      : `个人 ${formatMoney(record.shareAmount, record.shareCurrency || record.currency)}`;
     const estimateChip = record.shareStatus === "estimate" ? `<span class="bill-chip bill-chip--pending">暂估</span>` : "";
     return `
       <article class="bill-row">
@@ -163,7 +163,7 @@
           </div>
           <div class="bill-row__amount">
             <strong>${escapeHtml(formatMoney(record.amount, record.currency))}</strong>
-            <small>${record.status === "missing" || record.status === "refunded" || record.status === "needs-confirmation" ? "暂不计入合计" : `付款总额 · ${escapeHtml(currencyInfo(record.currency).label)}`}</small>
+            <small>${record.status === "missing" || record.status === "refunded" || record.status === "needs-confirmation" ? "未计入" : escapeHtml(currencyInfo(record.currency).label)}</small>
           </div>
         </div>
         <div class="bill-row__details">
@@ -176,8 +176,8 @@
 
   function renderLedger() {
     const records = filteredRecords();
-    resultCountEl.textContent = `${records.length} 类记录 · ${activeFilter === "all" ? "覆盖全部 94 笔" : "当前筛选"}`;
-    listEl.innerHTML = records.length ? records.map(renderRecord).join("") : `<div class="bill-empty">这个筛选下还没有账目。</div>`;
+    resultCountEl.textContent = `${records.length} 类 · ${activeFilter === "all" ? "94 笔" : "当前筛选"}`;
+    listEl.innerHTML = records.length ? records.map(renderRecord).join("") : `<div class="bill-empty">暂无记录。</div>`;
   }
 
   function renderItinerary() {
@@ -186,7 +186,7 @@
         <div class="bill-itinerary__item">
           <time>${escapeHtml(date)}</time>
           <strong>${escapeHtml(title)}</strong>
-          <a href="./index.html?role=jianhuang#${escapeAttr(anchor)}">查看当天</a>
+          <a href="./index.html?role=jianhuang#${escapeAttr(anchor)}">当天</a>
         </div>
       `)
       .join("");

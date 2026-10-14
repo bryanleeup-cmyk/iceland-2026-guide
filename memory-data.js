@@ -8,7 +8,7 @@
       dateRange: "09/23 - 10/08",
       route: "北京 → 里斯本 → 波尔图 → 巴黎 → 冰岛 → 米兰 / 里斯本 → 哥本哈根 → 北京",
       categories: [
-        { id: "tour", label: "旅行团 / 体验", amount: 10799.07, count: 8, color: "#2f6b7c" },
+        { id: "tour", label: "旅行体验", amount: 10799.07, count: 8, color: "#2f6b7c" },
         { id: "daily", label: "日常消费", amount: 8281.81, count: 74, color: "#4f8f86" },
         { id: "transport", label: "机票及城际交通", amount: 6189.01, count: 6, color: "#d4a24c" },
         { id: "stay", label: "住宿", amount: 4442.64, count: 6, color: "#7666a8" },
@@ -19,7 +19,7 @@
           title: "葡萄牙与巴黎",
           route: "巴黎寄存 → 里斯本 → Sintra / Cascais → 波尔图 → 巴黎",
           amount: 8274.75,
-          note: "国际机票、葡萄牙两日结算、跨城巴士和巴黎一日游",
+          note: "机票、住宿、跨城交通和巴黎一日",
           anchor: "day-jianhuang-09-25",
         },
         {
@@ -27,7 +27,7 @@
           title: "冰岛八日",
           route: "Silfra → Reykjanes → Snaefellsnes → Landmannalaugar → 黄金圈 → 南岸 → Sky Lagoon",
           amount: 19889.69,
-          note: "全程预算核心，包含进出冰岛交通、住宿和连续体验",
+          note: "交通、住宿和 8 项体验",
           anchor: "day-jianhuang-09-29",
         },
         {
@@ -35,7 +35,7 @@
           title: "回程与哥本哈根",
           route: "米兰 → 里斯本 → 哥本哈根 → 北京",
           amount: 1620.09,
-          note: "转机半日游、哥本哈根住宿与城市轻量线",
+          note: "转机、住宿和市内消费",
           anchor: "day-jianhuang-10-07",
         },
       ],
