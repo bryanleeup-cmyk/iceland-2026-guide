@@ -1562,6 +1562,23 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
   const visual = getDailyVisual(personId, date, title, detail);
   const images = visual.images || fallbackDailyVisual.images;
   const stay = getDailyStay(personId, date, title);
+  const memoryDay = personId === "jianhuang" ? window.TravelMemoryData?.[personId]?.days?.[date] : null;
+  const displayTitle = memoryDay?.place || title;
+  const archivedDetail = `
+    ${renderDailyMeeting(personId, date)}
+    ${renderDailyDetail(personId, date, detail)}
+    ${
+      stay
+        ? `<p class="daily-card__stayline">
+            ${stay.label}：${
+              stay.url
+                ? `<a href="${stay.url}" target="_blank" rel="noopener">${stay.name}</a>`
+                : `<strong>${stay.name}</strong>`
+            }
+          </p>`
+        : ""
+    }
+  `;
   return `
     <article class="daily-card" id="${dailyCardId(personId, date)}" tabindex="-1">
       <header class="daily-card__header">
@@ -1572,14 +1589,15 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
             <span>日落 ${visual.sunset}</span>
           </div>
         </div>
-        <h3 class="daily-card__title">${title}</h3>
+        <h3 class="daily-card__title">${displayTitle}</h3>
+        ${renderDailySpend(personId, date)}
       </header>
-      <div class="daily-card__media" tabindex="0" aria-label="${date} ${title} 真实照片${images.length > 1 ? "，可左右滑动或使用方向键" : ""}">
+      <div class="daily-card__media" tabindex="0" aria-label="${date} ${displayTitle} 真实照片${images.length > 1 ? "，可左右滑动或使用方向键" : ""}">
         ${images
           .map(
             (image, index) => `
               <figure>
-                <img ${imageSourceAttrs(image, priority && index === 0)} alt="${title}真实景色 ${index + 1}" draggable="false" />
+                <img ${imageSourceAttrs(image, priority && index === 0)} alt="${displayTitle}真实景色 ${index + 1}" draggable="false" />
                 <figcaption class="daily-card__photo-count">${index + 1} / ${images.length}${images.length > 1 ? " · 左右滑动" : ""}</figcaption>
               </figure>
             `,
@@ -1587,20 +1605,12 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
           .join("")}
       </div>
       <div class="daily-card__body">
-        ${renderDailyMeeting(personId, date)}
-        ${renderDailyDetail(personId, date, detail)}
-        ${typeof renderDailyWeather === "function" ? renderDailyWeather(personId, date, visual) : `<p class="daily-card__season"><span class="daily-card__season-label">天气与风景 · 预报未加载</span>${visual.city}：${visual.season}</p>`}
         ${
-          stay
-            ? `<p class="daily-card__stayline">
-                ${stay.label}：${
-                  stay.url
-                    ? `<a href="${stay.url}" target="_blank" rel="noopener">${stay.name}</a>`
-                    : `<strong>${stay.name}</strong>`
-                }
-              </p>`
-            : ""
+          personId === "jianhuang"
+            ? `<details class="daily-card__archive"><summary>当时的完整行程记录</summary><div class="daily-card__archive-body">${archivedDetail}</div></details>`
+            : archivedDetail
         }
+        ${typeof renderDailyWeather === "function" ? renderDailyWeather(personId, date, visual) : `<p class="daily-card__season"><span class="daily-card__season-label">天气与风景 · 预报未加载</span>${visual.city}：${visual.season}</p>`}
       </div>
     </article>
   `;
@@ -1632,6 +1642,8 @@ const routeAtlasDaysEl = document.querySelector("#routeAtlasDays");
 const routeAtlasLinesEl = document.querySelector("#routeAtlasLines");
 const routeAtlasStopsEl = document.querySelector("#routeAtlasStops");
 const routeAtlasDetailEl = document.querySelector("#routeAtlasDetail");
+const travelArchiveEl = document.querySelector("#travelReady");
+if (travelArchiveEl) document.querySelector("main")?.append(travelArchiveEl);
 const referenceTabIds = ["route", "cost", "tips", "packing"];
 let roleRenderToken = 0;
 
@@ -1961,6 +1973,145 @@ function getItineraryForRole(roleId) {
   return data.personPlans.find((person) => person.id === roleId) || null;
 }
 
+function formatPersonalSpend(amount) {
+  return `¥${Number(amount).toLocaleString("zh-CN", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;
+}
+
+function getMemoryData(roleId = activeRoleId) {
+  return window.TravelMemoryData?.[roleId] || null;
+}
+
+function renderMemorySummary(roleId) {
+  const memory = getMemoryData(roleId);
+  if (!memory) return "";
+  const maxDay = Math.max(...Object.values(memory.days).map((day) => day.total));
+  const categoryTotal = memory.categories.reduce((sum, category) => sum + category.amount, 0);
+
+  return `
+    <section class="memory-ledger" aria-labelledby="memoryLedgerTitle">
+      <header class="memory-ledger__hero">
+        <div class="memory-ledger__intro">
+          <p class="memory-ledger__eyebrow">${memory.dateRange} · ${memory.transactionCount} 笔个人开销</p>
+          <h2 id="memoryLedgerTitle">一路走过，也一路花过</h2>
+          <p>${memory.route}</p>
+        </div>
+        <div class="memory-ledger__total">
+          <span>全程个人开销</span>
+          <strong>${formatPersonalSpend(memory.total)}</strong>
+          <small>已含 -¥72.00 退税抵扣</small>
+        </div>
+      </header>
+
+      <div class="memory-ledger__body">
+        <section class="memory-section" aria-labelledby="memoryCategoryTitle">
+          <div class="memory-section__head">
+            <div>
+              <span>钱花在了哪里</span>
+              <h3 id="memoryCategoryTitle">体验最多，日常其次</h3>
+            </div>
+            <p>全部 ${memory.transactionCount} 笔都已计入，页面只展示归并后的四大类。</p>
+          </div>
+          <div class="memory-category-bar" role="img" aria-label="旅行团 36.3%，日常消费 27.9%，机票及城际交通 20.8%，住宿 15.0%">
+            ${memory.categories.map((category) => `<span style="width:${(category.amount / categoryTotal * 100).toFixed(3)}%;--category-color:${category.color}"></span>`).join("")}
+          </div>
+          <div class="memory-category-legend">
+            ${memory.categories.map((category) => `
+              <div>
+                <i style="--category-color:${category.color}"></i>
+                <span>${category.label}</span>
+                <strong>${formatPersonalSpend(category.amount)}</strong>
+                <small>${(category.amount / categoryTotal * 100).toFixed(1)}% · ${category.count} 笔</small>
+              </div>
+            `).join("")}
+          </div>
+        </section>
+
+        <section class="memory-section" aria-labelledby="memoryChapterTitle">
+          <div class="memory-section__head">
+            <div>
+              <span>三段旅程</span>
+              <h3 id="memoryChapterTitle">冰岛八日是预算核心</h3>
+            </div>
+            <p>按路线分段，比逐笔流水更容易记起当时去了哪里。</p>
+          </div>
+          <div class="memory-chapters">
+            ${memory.chapters.map((chapter, index) => `
+              <a href="#${chapter.anchor}" class="memory-chapter ${index === 1 ? "memory-chapter--primary" : ""}">
+                <span>${chapter.dates}</span>
+                <h4>${chapter.title}</h4>
+                <strong>${formatPersonalSpend(chapter.amount)}</strong>
+                <p>${chapter.route}</p>
+                <small>${chapter.note}</small>
+              </a>
+            `).join("")}
+          </div>
+        </section>
+
+        <section class="memory-section" aria-labelledby="memoryRhythmTitle">
+          <div class="memory-section__head">
+            <div>
+              <span>花费随行程起伏</span>
+              <h3 id="memoryRhythmTitle">点一天，回到那天的照片</h3>
+            </div>
+            <p>09/29 抵达冰岛并浮潜，是全程单日最高；10/04 南岸团紧随其后。</p>
+          </div>
+          <div class="memory-spend-chart" aria-label="每日个人开销图">
+            ${Object.entries(memory.days).map(([date, day]) => `
+              <button type="button" data-memory-day="${date}" data-memory-anchor="${day.anchor || `day-${roleId}-${date.replace("/", "-")}`}" aria-label="${date} ${day.place}，个人开销 ${formatPersonalSpend(day.total)}">
+                <span class="memory-spend-chart__value">${day.total >= 1000 ? `${(day.total / 1000).toFixed(1)}k` : Math.round(day.total)}</span>
+                <i style="--spend-height:${Math.max(4, day.total / maxDay * 100).toFixed(2)}%"></i>
+                <time>${date}</time>
+                <small>${day.place}</small>
+              </button>
+            `).join("")}
+          </div>
+          <p class="memory-ledger__adjustment">账本另含：${memory.adjustments.map((item) => `${item.label} ${formatPersonalSpend(item.amount)}`).join("；")}，已在全程总额中抵扣。</p>
+        </section>
+
+        <section class="memory-section" aria-labelledby="memoryHighlightTitle">
+          <div class="memory-section__head">
+            <div>
+              <span>最值得记住的体验</span>
+              <h3 id="memoryHighlightTitle">钱变成了这些画面</h3>
+            </div>
+          </div>
+          <div class="memory-highlights">
+            ${memory.highlights.map((highlight) => `
+              <a href="#${highlight.anchor}" class="memory-highlight">
+                <img src="${highlight.image}" alt="${highlight.title}" loading="lazy" />
+                <span>${highlight.date}</span>
+                <h4>${highlight.title}</h4>
+                <p>${highlight.subtitle}</p>
+                <strong>${formatPersonalSpend(highlight.amount)}</strong>
+              </a>
+            `).join("")}
+          </div>
+        </section>
+      </div>
+    </section>
+  `;
+}
+
+function renderDailySpend(roleId, date) {
+  const day = getMemoryData(roleId)?.days?.[date];
+  if (!day) {
+    return roleId === "jianhuang" && date === "10/09"
+      ? `<div class="daily-card__spend daily-card__spend--empty"><span>当天账本无新增</span><small>回到北京，旅程在这里收尾</small></div>`
+      : "";
+  }
+  return `
+    <div class="daily-card__spend">
+      <span>当天个人开销</span>
+      <strong>${formatPersonalSpend(day.total)}</strong>
+      <small>${day.memory}</small>
+      <div>${day.parts.map(([label, amount]) => `<em>${label} ${formatPersonalSpend(amount)}</em>`).join("")}</div>
+    </div>
+  `;
+}
+
 function renderRoleDashboard(roleId = activeRoleId) {
   roleDashboardEl.querySelectorAll("img[data-src]").forEach((image) => {
     deferredImageObserver?.unobserve(image);
@@ -1974,9 +2125,10 @@ function renderRoleDashboard(roleId = activeRoleId) {
   const itinerary = getItineraryForRole(roleId);
   const days = itinerary ? itinerary.days : role.focusDays;
   roleDashboardEl.innerHTML = `
+    ${renderMemorySummary(roleId)}
     <div class="dashboard-plan" style="--accent:${role.accent}">
       <div class="dashboard-plan__title">
-        <strong>${role.name}完整日程</strong>
+        <strong>${role.name}每日回忆</strong>
       </div>
       ${renderDailyJump(roleId, days)}
       <div class="dashboard-days">
@@ -2711,6 +2863,15 @@ roleDashboardEl.addEventListener(
 );
 
 roleDashboardEl.addEventListener("click", (event) => {
+  const memoryDay = event.target.closest("[data-memory-anchor]");
+  if (memoryDay) {
+    const target = document.getElementById(memoryDay.dataset.memoryAnchor);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.focus({ preventScroll: true });
+    }
+    return;
+  }
   const button = event.target.closest("button[data-role]");
   if (!button || button.dataset.role === activeRoleId) return;
   applyRoleView(button.dataset.role);

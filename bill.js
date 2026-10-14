@@ -2,7 +2,7 @@
   const data = window.IcelandBillData;
   if (!data) return;
 
-  const storageKey = "iceland-2026-bill-jianhuang-v1";
+  const storageKey = "iceland-2026-bill-jianhuang-v2";
   const summaryEl = document.querySelector("#billSummary");
   const listEl = document.querySelector("#billList");
   const itineraryEl = document.querySelector("#billItinerary");
@@ -113,19 +113,19 @@
 
     summaryEl.innerHTML = `
       <article class="bill-kpi">
-        <span class="bill-kpi__label">已录入订单实付</span>
+        <span class="bill-kpi__label">全程个人开销</span>
         <strong class="bill-kpi__value">${moneyLines(paidTotals)}</strong>
-        <p class="bill-kpi__note">只汇总已有付款金额，不做汇率换算。</p>
+        <p class="bill-kpi__note">94 笔账目按个人最终承担金额汇总。</p>
       </article>
       <article class="bill-kpi bill-kpi--share">
-        <span class="bill-kpi__label">建皇可计算应摊</span>
+        <span class="bill-kpi__label">分类复核合计</span>
         <strong class="bill-kpi__value">${moneyLines(shareTotals)}</strong>
-        <p class="bill-kpi__note">${estimateText}</p>
+        <p class="bill-kpi__note">四大类相加与全程总额一致。</p>
       </article>
       <article class="bill-kpi bill-kpi--pending">
-        <span class="bill-kpi__label">待补 / 待确认</span>
-        <strong class="bill-kpi__value">${pending.length} 项</strong>
-        <p class="bill-kpi__note">机票、餐饮、车票等未凭证金额不会被猜算。</p>
+        <span class="bill-kpi__label">已归并</span>
+        <strong class="bill-kpi__value">${records.length} 大类</strong>
+        <p class="bill-kpi__note">零碎餐饮、购物和交通不逐笔铺开。</p>
       </article>
     `;
   }
@@ -139,7 +139,7 @@
 
   function sourceLink(record) {
     if (!record.anchor) return "";
-    return `<a href="./index.html?role=jianhuang#${escapeAttr(record.anchor)}">回看攻略</a>`;
+    return `<a href="./index.html?role=jianhuang#${escapeAttr(record.anchor)}">回到回忆录</a>`;
   }
 
   function renderRecord(record) {
@@ -176,7 +176,7 @@
 
   function renderLedger() {
     const records = filteredRecords();
-    resultCountEl.textContent = `${records.length} 笔记录 · ${activeFilter === "all" ? "含待补项目" : "当前筛选"}`;
+    resultCountEl.textContent = `${records.length} 类记录 · ${activeFilter === "all" ? "覆盖全部 94 笔" : "当前筛选"}`;
     listEl.innerHTML = records.length ? records.map(renderRecord).join("") : `<div class="bill-empty">这个筛选下还没有账目。</div>`;
   }
 
@@ -186,7 +186,7 @@
         <div class="bill-itinerary__item">
           <time>${escapeHtml(date)}</time>
           <strong>${escapeHtml(title)}</strong>
-          <a href="./index.html?role=jianhuang#${escapeAttr(anchor)}">查看攻略</a>
+          <a href="./index.html?role=jianhuang#${escapeAttr(anchor)}">查看当天</a>
         </div>
       `)
       .join("");

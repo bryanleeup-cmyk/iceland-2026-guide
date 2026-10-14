@@ -7,80 +7,96 @@
     <meta name="referrer" content="no-referrer" />
     <meta name="robots" content="noindex, nofollow" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.open-meteo.com https://services.swpc.noaa.gov; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'" />
-    <meta name="description" content="2026 国庆葡萄牙、巴黎、布鲁塞尔、哥本哈根、冰岛旅行攻略。彤彤 10/03 经布鲁塞尔飞冰岛，月月同日经哥本哈根夜间抵达；冰岛南岸 7 人同行，后续按每日行程分为 5 人和 3 人。" />
+    <meta name="description" content="2026 国庆欧洲旅行回忆录：按同行者回看葡萄牙、巴黎、冰岛、哥本哈根的每日照片、路线、体验与个人开销。" />
     <link rel="icon" href="data:," />
-    <title>2026 国庆｜按角色看的冰岛行程</title>
+    <title>2026 欧洲旅行回忆录｜路线、照片与开销</title>
+    <link rel="stylesheet" href="password-gate.css" />
     <link rel="preload" as="image" href="assets/route-hero.webp" type="image/webp" fetchpriority="high" />
-    <link rel="stylesheet" href="styles.css?v=official-tours-20260924-1" />
+    <link rel="stylesheet" href="styles.css?v=memory-20261014-1" />
     <style>
       body:not([data-itinerary-status="ready"]) main > section:not(.travel-readiness) { display: none !important; }
       body[data-itinerary-status="ready"] #itineraryStatus { display: none; }
     </style>
   </head>
-  <body data-itinerary-status="loading">
+  <body class="password-gate-locked" data-itinerary-status="loading">
+    <section class="password-gate" aria-labelledby="passwordGateTitle">
+      <div class="password-gate__panel">
+        <p class="password-gate__eyebrow">Private itinerary</p>
+        <h1 id="passwordGateTitle">进入旅行网站</h1>
+        <p class="password-gate__prompt">请先回答一个问题：这个网站是谁做的？</p>
+        <form>
+          <label for="passwordGateAnswer">你的答案
+            <input id="passwordGateAnswer" name="answer" type="text" autocomplete="off" required />
+          </label>
+          <button type="submit">进入网站</button>
+          <p class="password-gate__status" role="alert" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
     <header class="hero">
       <div class="hero__shade"></div>
       <nav class="topbar" aria-label="页面导航">
-        <a href="#roleGate">选择组合</a>
-        <a href="#myDashboard">我的行程</a>
+        <a href="#roleGate">选择旅伴</a>
+        <a href="#tripMemory">旅行账本</a>
+        <a href="#myDashboard">每日回忆</a>
         <a href="#routeAtlas">冰岛路线</a>
-        <a href="#travelReady">离线与应急</a>
-        <a href="bill.html#jianhuang">建皇账单</a>
+        <a href="bill.html#jianhuang">开销归档</a>
       </nav>
       <div class="hero__content">
-        <p class="eyebrow">2026 国庆旅行同步表</p>
+        <p class="eyebrow">2026 · Europe travel memoir</p>
         <h1>
-          <span>葡萄牙 · 巴黎 · 冰岛</span>
-          <span>布鲁塞尔 · 哥本哈根</span>
-          <span>同行旅行行程</span>
+          <span>从里斯本海岸</span>
+          <span>到冰岛高地</span>
+          <span>我们的欧洲回忆录</span>
         </h1>
         <p class="hero__lead">
-          选组合，看自己的每天安排。
+          照片、路线和花费都放回同一条时间线。选一个同行者，重新走一遍这趟旅程。
         </p>
       </div>
       <div class="hero__next">
-        <span>冰岛同行窗口</span>
-        <strong>10/03 23:50 后 - 10/06 19:20 前</strong>
+        <span>这趟旅程</span>
+        <strong>15 天 · 7 城 · 从海岸走到冰川</strong>
       </div>
     </header>
 
     <main>
-      <section class="travel-readiness" id="travelReady" aria-labelledby="travelReadyTitle">
-        <h2 id="travelReadyTitle">出发前，保存一份到手机</h2>
-        <p id="itineraryStatus" role="alert">如果完整行程迟迟未显示，请打开下方文字备用版，或联网后刷新重试。</p>
-        <p id="offlineStatus" role="status" aria-live="polite">请联网打开一次，再保存离线行程；文字备用版可直接下载。</p>
+      <section class="travel-readiness travel-readiness--archive" id="travelReady" aria-labelledby="travelReadyTitle">
+        <h2 id="travelReadyTitle">把这趟旅行留在手机里</h2>
+        <p id="itineraryStatus" role="alert">如果完整回忆迟迟未显示，请打开下方文字归档版，或联网后刷新重试。</p>
+        <p id="offlineStatus" role="status" aria-live="polite">请联网打开一次，再保存离线回忆；文字归档版可直接下载。</p>
         <div class="travel-readiness__actions">
-          <button id="saveOffline" type="button" disabled>保存离线行程和照片</button>
+          <button id="saveOffline" type="button" disabled>保存离线回忆和照片</button>
           <button id="updateOffline" type="button" hidden>使用新版本</button>
-          <a href="travel-backup.html" download="2026国庆-文字备用行程.html">下载文字备用版</a>
-          <a href="travel-backup.html" target="_blank" rel="noopener noreferrer">直接看文字版</a>
+          <a href="travel-backup.html" download="2026国庆-文字行程归档.html">下载文字归档</a>
+          <a href="travel-backup.html" target="_blank" rel="noopener noreferrer">查看文字归档</a>
         </div>
-        <p class="travel-readiness__note">离线文件只保存在当前设备和浏览器。保存后请开飞行模式试一次；无痕浏览、清理浏览器或系统回收存储可能移除缓存。地图、实时天气、路况和团方网站仍需联网。</p>
+        <p class="travel-readiness__note">离线文件只保存在当前设备和浏览器。照片与主要行程可离线回看，外部地图和原始团方链接仍需联网。</p>
         <details>
-          <summary>出发检查与紧急信息</summary>
+          <summary>原行程与应急信息归档</summary>
           <div id="travelEmergency">
             <p><strong>紧急情况先拨 <a href="tel:112">112</a></strong>（冰岛及本次行程的欧盟国家）。在冰岛若 112 无法接通、断线或无法听清，可拨 <a href="tel:+3545990112">+354 599 0112</a>；备用号码按普通电话处理，不自动传送定位，请主动报告所在位置。<a href="https://www.112.is/en/important-information-regarding-calls-to-112" target="_blank" rel="noopener noreferrer">冰岛官方说明</a></p>
             <p>每天出发前联网查看 <a href="https://en.vedur.is/alerts" target="_blank" rel="noopener noreferrer">天气预警</a>、<a href="https://umferdin.is/en" target="_blank" rel="noopener noreferrer">官方路况</a> 和 <a href="https://safetravel.is/travel-conditions/" target="_blank" rel="noopener noreferrer">旅行安全提示</a>。离线行程不包含实时预警，现场封闭与向导安排优先。</p>
             <p>黑沙滩始终远离水边，不背对海浪；遵守警示灯、封闭线和现场人员指示，并注意崖壁落石。<a href="https://safetravel.is/travel-conditions/blackbeach-safety/" target="_blank" rel="noopener noreferrer">黑沙滩官方安全指引</a></p>
           </div>
-          <p>所有航班和集合时间均按当地时间；临行以航空公司及团方最新通知为准。车票、酒店确认单和保险救援电话请另存手机“文件”，不要只依赖本网站。</p>
+          <p>以下内容保留自出发前版本，作为当时行程安排的原始记录。</p>
           <p>赶海组 10/02 阿姆斯特丹大巴的公司、时刻和上下车点，以及部分住宿，仍需用订单核实。</p>
           <p>这是公开分享网页，角色选择不提供隐私保护。请勿把护照、完整订单号、密码或个人紧急联系人上传到本站。</p>
         </details>
         <noscript><p>当前浏览器未启用脚本，请打开上方文字备用版查看全部组合行程。</p></noscript>
       </section>
-      <section class="role-gate" id="roleGate" aria-label="选择自己的旅行角色">
+      <section class="role-gate" id="roleGate" aria-label="选择一起旅行的人">
         <div class="section-head section-head--compact">
           <div>
-            <h2>先选你是谁</h2>
+            <h2>从谁的视角回看</h2>
           </div>
         </div>
         <div id="roleChooser"></div>
       </section>
 
-      <section class="role-dashboard" id="myDashboard" aria-label="我的旅行重点">
+      <section class="role-dashboard" id="myDashboard" aria-label="我的旅行回忆">
+        <span class="section-anchor" id="tripMemory" aria-hidden="true"></span>
         <div class="weather-toolbar">
-          <button id="refreshWeather" type="button" disabled>刷新天气与极光</button>
+          <button id="refreshWeather" type="button" disabled>刷新历史天气资料</button>
           <p id="weatherRefreshStatus" role="status" aria-live="polite">天气数据加载中…</p>
         </div>
         <div id="roleDashboard"></div>
@@ -339,27 +355,27 @@
         <div class="section-head">
           <div>
             <p class="eyebrow">Lodging split</p>
-            <h2>建皇组合已付住宿 AA 表</h2>
+            <h2>建皇个人住宿开销</h2>
           </div>
-          <p>按各订单的实际入住人数分摊：里斯本 4 人、波尔图 3 人，其余订单 2 人；金额来自订单截图。</p>
+          <p>只保留建皇个人最终承担金额，与全程总账中的住宿分类一致。</p>
         </div>
         <div class="lodging-table-wrap">
           <table class="lodging-table">
             <thead>
-              <tr><th>日期</th><th>城市</th><th>酒店</th><th>实际总价</th><th>对应人均</th></tr>
+              <tr><th>日期</th><th>城市</th><th>酒店</th><th>个人金额</th><th>住了多久</th></tr>
             </thead>
             <tbody>
-              <tr><td>09/25-09/27</td><td>里斯本</td><td>The Delight Hostel（欢乐青年旅馆）</td><td>¥1787.44</td><td>¥223.43 / 人 / 晚（4 人、2 晚）</td></tr>
-              <tr><td>09/27-09/28</td><td>波尔图</td><td>Mercure Porto Gaia Hotel（波尔图盖亚美居酒店）</td><td>¥544.94</td><td>¥181.65 / 人（3 人）</td></tr>
-              <tr><td>09/29-10/03</td><td>雷克雅未克</td><td>Fosshotel Lind（林德城河酒店）</td><td>¥4804.42</td><td>¥2402.21 / 人（2 人、4 晚）</td></tr>
-              <tr><td>10/03-10/04</td><td>雷克雅未克</td><td>Fosshotel Lind（林德城河酒店）</td><td>¥1287.49</td><td>¥643.75 / 人（2 人）</td></tr>
-              <tr><td>10/05-10/06</td><td>雷克雅未克</td><td>Fosshotel Lind（林德城河酒店）</td><td>¥988.61</td><td>¥494.31 / 人（2 人）</td></tr>
-              <tr><td>10/07-10/08</td><td>哥本哈根</td><td>Cabinn Metro Hotel</td><td>¥547.72</td><td>¥273.86 / 人（2 人）</td></tr>
+              <tr><td>09/25-09/27</td><td>里斯本</td><td>The Delight Hostel</td><td>¥446.86</td><td>2 晚</td></tr>
+              <tr><td>09/27-09/28</td><td>波尔图</td><td>Mercure Porto Gaia</td><td>¥181.65</td><td>1 晚</td></tr>
+              <tr><td>09/29-10/03</td><td>雷克雅未克</td><td>Fosshotel Lind</td><td>¥2,402.21</td><td>4 晚</td></tr>
+              <tr><td>10/03-10/04</td><td>雷克雅未克</td><td>Fosshotel Lind · 续住</td><td>¥643.75</td><td>1 晚</td></tr>
+              <tr><td>10/05-10/06</td><td>雷克雅未克</td><td>Fosshotel Lind</td><td>¥494.31</td><td>1 晚</td></tr>
+              <tr><td>10/07-10/08</td><td>哥本哈根</td><td>Cabinn Metro</td><td>¥273.86</td><td>1 晚</td></tr>
             </tbody>
-            <tfoot><tr><th colspan="3">总住宿实付</th><th>¥9960.62</th><th>不同入住人数，不汇总</th></tr></tfoot>
+            <tfoot><tr><th colspan="3">个人住宿合计</th><th>¥4,442.64</th><th>10 晚</th></tr></tfoot>
           </table>
         </div>
-        <p class="lodging-table__note">里斯本实付 ¥1787.44，按建皇（两人）、龙龙、娘娘共 4 人和 2 晚计算，为 ¥223.43/人/晚；波尔图实付 ¥544.94，按建皇（两人）和龙龙共 3 人计算，为 ¥181.65/人。10/03-10/04 按预付 ¥3169.83 - 提前离店退款 ¥1882.34 = 实际支付 ¥1287.49；其余按订单显示金额记录。</p>
+        <p class="lodging-table__note">住宿个人合计 ¥4,442.64，共 6 笔。冰岛住宿 ¥3,540.27，占全部住宿的大部分。</p>
       </section>
 
       <section class="panel spot-panel" id="spots">
@@ -492,23 +508,25 @@
     <div class="tooltip" id="tooltip" role="status"></div>
 
     <footer>
-      <p>时间说明：冰岛 2026 年全年 GMT / UTC+0，本页冰岛段按当地时间展示。高地、海岸线和天气相关安排需出发前复核 road.is / safetravel.is。</p>
+      <p>2026 欧洲旅行回忆录 · 照片、路线与个人开销均按当时记录整理。</p>
     </footer>
 
     <nav class="h5-dock" aria-label="手机快捷导航">
-      <a href="#roleGate">组合</a>
-      <a href="#myDashboard">行程</a>
+      <a href="#roleGate">视角</a>
+      <a href="#tripMemory">开销</a>
+      <a href="#myDashboard">回忆</a>
       <a href="#routeAtlas">路线</a>
-      <a href="#lodging-expenses">住宿</a>
-      <a href="bill.html#jianhuang">账单</a>
+      <a href="bill.html#jianhuang">归档</a>
     </nav>
 
     <script src="offline.js?v=travel-ready-20260921-1" defer></script>
     <script src="weather-snapshot.js?v=weather-20260924-1" defer></script>
     <script src="weather-live.js?v=weather-live-20260924-2" defer></script>
     <script src="weather.js?v=sunlight-20260924-2" defer></script>
-    <script src="script.js?v=mobile-startup-20260924-1" defer></script>
+    <script src="memory-data.js?v=memory-20261014-1" defer></script>
+    <script src="script.js?v=memory-20261014-1" defer></script>
     <script src="ref32-patch.js?v=mobile-startup-20260924-1" defer></script>
     <script src="weather-controls.js?v=weather-live-20260924-3" defer></script>
+    <script src="password-gate.js" defer></script>
   </body>
 </html>
