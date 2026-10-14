@@ -147,13 +147,17 @@ test('unavailable snapshot retains the scenery and a working source link', () =>
   assert.match(html, /href="https:\/\/open-meteo.com\/"/);
 });
 
-test('backup includes all forecasts without script or network dependencies', () => {
+test('backup keeps forecasts while retired weather scripts stay out of the site shell', () => {
   const html = read('travel-backup.html');
   assert.equal((html.match(/class="daily-weather"/g) || []).length, 56);
   assert.equal((html.match(/class="daily-weather__aurora"/g) || []).length, 26);
   assert.doesNotMatch(html, /<(?:script|img|iframe|link)\b/i);
+  const index = read('index.html');
   const manifest = vm.runInNewContext(`${read('offline-assets.js')}\nself.TRAVEL_OFFLINE_MANIFEST`, { self: {} });
-  for (const name of ['weather.js', 'weather-snapshot.js']) assert(manifest.core.some((file) => file.split('?')[0] === name));
+  for (const name of ['weather.js', 'weather-snapshot.js', 'weather-live.js', 'weather-controls.js']) {
+    assert(!index.includes(name));
+    assert(!manifest.core.some((file) => file.split('?')[0] === name));
+  }
 });
 
 function weatherControls(initial, result, refreshed = initial) {

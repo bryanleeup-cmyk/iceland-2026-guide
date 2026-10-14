@@ -1610,7 +1610,7 @@ function renderDailyCard(personId, date, title, detail, { priority = false } = {
             ? `<details class="daily-card__archive"><summary>行程记录</summary><div class="daily-card__archive-body">${archivedDetail}</div></details>`
             : archivedDetail
         }
-        ${typeof renderDailyWeather === "function" ? renderDailyWeather(personId, date, visual) : `<p class="daily-card__season"><span class="daily-card__season-label">天气与风景 · 预报未加载</span>${visual.city}：${visual.season}</p>`}
+        <p class="daily-card__season"><span class="daily-card__season-label">风景与季节</span>${visual.city}：${visual.season}</p>
       </div>
     </article>
   `;
