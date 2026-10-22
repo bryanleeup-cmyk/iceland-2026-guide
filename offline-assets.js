@@ -1,5 +1,5 @@
 self.TRAVEL_OFFLINE_MANIFEST = {
-  "version": "45b08e1fd660",
+  "version": "e31ee3266b0c",
   "mediaVersion": "7cd66669d80c",
   "core": [
     "index.html",
@@ -95,7 +95,7 @@ self.TRAVEL_OFFLINE_MANIFEST = {
     "assets/spots/tourlink/whale-golden-thingvellir.webp"
   ],
   "integrity": {
-    "index.html": "sha256-HahvijmFe31aFTIm9UMjuhyFSW7dH2qH35VAz8hEjcg=",
+    "index.html": "sha256-ggUh9FQXsXWetGed9778jOHnbTRFXiuBqTpoxBARbjo=",
     "password-gate.css": "sha256-T/VhCSf8Q9wBarAGO/v/HIBGfbFiRgozm+2ZGvlJYB0=",
     "styles.css?v=memory-20261014-2": "sha256-JDiL1tvv1s5UOV4/sG4bWhjVwrK4Mzbw24Y9jImNDII=",
     "offline.js?v=travel-ready-20261014-2": "sha256-bJiaqntlfuYb15N5AqqQrzruOCSAAjcuDgmZA64lhII=",
