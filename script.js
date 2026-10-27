@@ -1408,7 +1408,7 @@ const dailyMeetings = [
   {
     roles: ["jianhuang", "haigang", "tongyan", "yueyue"], date: "10/04", time: "08:30", label: "到站等车",
     place: "Bus Stop #13 · Rauðarárstígur", address: "认“13 Rauðarárstígur”蓝底、红／粉色巴士图案的旅游接车站牌（不是公交 13 路）",
-    url: "https://www.google.com/maps/search/?api=1&query=64.142658%2C-21.913866",
+    url: "https://www.google.com/maps/search/?api=1&query=Bus%20Stop%20%2313%20Rau%C3%B0ar%C3%A1rst%C3%ADgur%20Reykjavik&query_place_id=ChIJJYT-6Nd11kgRpQn2hzfd85Q",
     links: [
       { url: "https://nicetravel.is/bus-stops/bus-stop-13-raudararstigur/", label: "Nice 官方站点说明" },
       { url: "https://busstop.is/assets/images/busstops/13_a.jpg", label: "查看官方站牌照片" },
